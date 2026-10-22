@@ -1,3 +1,5 @@
+// Per-source health report from the harvest database (no network calls).
+// Usage: npm run harvest:sources
 import { readStore } from "../services/harvest/store.js";
 
 const store = await readStore();
@@ -6,27 +8,26 @@ for (const item of store.items) {
   counts.set(item.sourceId, (counts.get(item.sourceId) ?? 0) + 1);
 }
 
-const top = [...counts.entries()]
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 20)
-  .map(([sourceId, count]) => ({ sourceId, count }));
-
-const focusIds = [
-  "allconferencealert-cs",
-  "conferenceindex-cs",
-  "call4paper-cs-events",
-  "call4paper-cs-journals",
-  "dst-project-calls",
-  "anrf-project-calls",
-  "icssr-fellowships-calls",
-  "aicte-fellowships-calls",
-];
-
-const focus = focusIds.map((sourceId) => ({
-  sourceId,
-  count: counts.get(sourceId) ?? 0,
-}));
+const sources = store.sourceReports
+  .map((report) => ({
+    sourceId: report.sourceId,
+    status: report.status,
+    lastRunCount: report.count,
+    storedItems: counts.get(report.sourceId) ?? 0,
+    error: report.error,
+  }))
+  .sort((a, b) => b.storedItems - a.storedItems);
 
 console.log(
-  JSON.stringify({ updatedAt: store.updatedAt, focus, top }, null, 2),
+  JSON.stringify(
+    {
+      updatedAt: store.updatedAt,
+      totalItems: store.items.length,
+      failing: sources.filter((source) => source.status === "error"),
+      empty: sources.filter((source) => source.status === "ok" && !source.lastRunCount),
+      top: sources.slice(0, 20),
+    },
+    null,
+    2,
+  ),
 );

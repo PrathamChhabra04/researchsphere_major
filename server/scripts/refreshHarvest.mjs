@@ -1,3 +1,5 @@
+// Force a full harvest of every source now and print counts and failures.
+// Usage: npm run harvest:refresh
 import { refreshHarvestData } from "../services/harvest/harvestService.js";
 
 const result = await refreshHarvestData({ force: true });

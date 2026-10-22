@@ -7,6 +7,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
+    "harvest:refresh": "node scripts/refreshHarvest.mjs",
+    "harvest:sources": "node scripts/sourceBreakdown.mjs",
+    "smoke:assistant": "node scripts/assistantSmoke.mjs",
     "probe:journals": "node scripts/journalFinderProbe.mjs",
     "build:journal-corpus": "node scripts/buildJournalCorpus.mjs"
   },
