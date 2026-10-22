@@ -9,19 +9,20 @@
 
 ## Build And Run
 
-- Frontend install: `npm install`
+- Install everything: `npm run setup`
+- Run API + web together: `npm run dev`
 - Frontend dev: `npm run dev`
 - Frontend build: `npm run build`
 - Frontend lint: `npm run lint`
 - Backend install: `cd server && npm install`
 - Backend dev: `cd server && npm run dev`
 - Backend start: `cd server && npm start`
-- Combined local startup: `powershell -ExecutionPolicy Bypass -File start.ps1`
+- Harvest maintenance: `cd server && npm run harvest:refresh` / `npm run harvest:sources`
 
 ## Environment And Ports
 
-- Frontend default dev port is `8080` (Vite), backend is `5000`.
-- Frontend API base should come from `VITE_API_URL` (default `http://localhost:5000/api`).
+- Frontend default dev port is `8080` (Vite), backend is `5001` (5000 clashes with macOS AirPlay).
+- Frontend API base should come from `VITE_API_URL` (default `http://localhost:5001/api`).
 - Backend CORS must continue to allow local frontend origins (`http://localhost:8080` and `http://localhost:5173`).
 
 ## Conventions
@@ -46,3 +47,8 @@
 - `CORS_FIXES.md`
 - `RATE_LIMITING_EXPLAINED.md`
 - `QUICK_START.md`
+
+## Harvested Data
+
+- Listings come from the harvester in `server/services/harvest/` and are stored in SQLite (`server/data/harvest.db`); never hard-code listings in pages.
+- Add sources in `SOURCE_REGISTRY` (see `docs/data-sources.md`); date parsing and expiry live in `dates.js`.
