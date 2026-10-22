@@ -27,3 +27,6 @@ dist-ssr
 # Harvest database (rebuilt automatically)
 server/data/harvest.db*
 server/data/*.migrated
+
+# Vite config bundling leftovers
+vite.config.ts.timestamp-*
