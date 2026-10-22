@@ -30,3 +30,9 @@ server/data/*.migrated
 
 # Vite config bundling leftovers
 vite.config.ts.timestamp-*
+
+# Raw journal-finder captures (regenerate with: cd server && npm run probe:journals)
+server/data/journal-finder-probe/*/*-page.*
+server/data/journal-finder-probe/*/*-network.json
+server/data/journal-finder-probe/*/springer-journals.json
+server/data/journal-finder-probe/*/elsevier-journals.json
