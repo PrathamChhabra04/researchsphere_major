@@ -1,3 +1,5 @@
+import PageHeader from "@/components/PageHeader";
+import { HandCoins as HandCoins } from "lucide-react";
 import DeadlineStatusBadge from "@/components/DeadlineStatusBadge";
 import { compareByDeadline, itemTimestamp } from "@/lib/itemDates";
 import { useEffect, useMemo, useState } from "react";
@@ -215,25 +217,14 @@ const ProjectCalls = () => {
 
       <div className="flex-1">
         <div className="container mx-auto max-w-[1380px] px-5 py-8 md:px-6 md:py-10">
-          <section className="rounded-[28px] border border-border bg-card shadow-sm overflow-hidden">
-            <div className="border-b border-border bg-gradient-to-r from-muted via-background to-background px-6 py-6 md:px-8 md:py-7">
-              <div className="max-w-4xl">
-                <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <Badge variant="secondary" className="px-3 py-1 text-xs">
-                    Research Project Calls
-                  </Badge>
-                  <Badge variant="outline" className="px-3 py-1 text-xs">
-                    Grants, proposals, and funding notices
-                  </Badge>
-                </div>
-                <p className="text-[15px] leading-7 text-muted-foreground md:text-base">
-                  Search active project calls, fellowships, and official funding
-                  announcements across major research sources, then jump
-                  straight to the source page for full submission details.
-                </p>
-              </div>
-            </div>
-
+          <PageHeader
+            icon={HandCoins}
+            eyebrow="Funding"
+            title="Project calls"
+            accent={projects.length > 0 ? `${projects.length} live` : undefined}
+            description="Grants, fellowships and calls for proposals from NSF, UKRI and Indian agencies, with deadlines where the source publishes them."
+          />
+          <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="p-6 md:p-8">
               <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                 <div className="space-y-4">

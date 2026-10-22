@@ -1,3 +1,4 @@
+import PageHeader from "@/components/PageHeader";
 import DeadlineStatusBadge from "@/components/DeadlineStatusBadge";
 import { compareByDeadline, itemTimestamp } from "@/lib/itemDates";
 import { useState, useEffect, useMemo } from "react";
@@ -152,28 +153,14 @@ const PhDPrograms = () => {
 
       <main className="flex-1">
         <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
-          <section className="overflow-hidden rounded-[28px] border border-border bg-gradient-to-br from-card via-muted/50 to-primary/10 shadow-[0_24px_70px_-50px_hsl(var(--primary)/0.25)]">
-            <div className="border-b border-border/80 px-5 py-5 sm:px-8 sm:py-7">
-              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-primary">
-                  Research opportunities
-                </span>
-                <span className="rounded-full border border-border bg-card px-3 py-1 text-muted-foreground">
-                  PhD programs
-                </span>
-              </div>
-              <div className="mt-4 max-w-3xl">
-                <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-[2.1rem]">
-                  Discover doctoral openings in computer science and adjacent research areas
-                </h1>
-                <p className="mt-3 text-[15px] leading-7 text-muted-foreground sm:text-base">
-                  Explore active PhD opportunities from academic job boards, department
-                  admissions pages, and research-focused sources without losing the cleaner
-                  ResearchSphere experience.
-                </p>
-              </div>
-            </div>
-
+          <PageHeader
+            icon={GraduationCap}
+            eyebrow="Opportunities"
+            title="PhD programs"
+            accent={phdPrograms.length > 0 ? `${phdPrograms.length} live` : undefined}
+            description="Funded PhD studentships and doctoral admissions in computer science, AI and data science, soonest deadline first."
+          />
+          <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="px-5 py-5 sm:px-8 sm:py-7">
               <div className="rounded-[24px] border border-border bg-card/90 p-4 shadow-sm sm:p-6">
                 <div className="grid gap-4 lg:grid-cols-[minmax(0,1.55fr)_240px_220px]">

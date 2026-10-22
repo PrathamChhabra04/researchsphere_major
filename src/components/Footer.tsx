@@ -1,150 +1,99 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Twitter, Linkedin, Mail, Eye } from "lucide-react";
+import { ArrowUpRight, Bell, Eye, MapPin, RefreshCw } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { trackPageVisit, getVisitCount } from "@/lib/analytics";
-import logo from "@/assets/logo.png";
+import BrandMark from "@/components/BrandMark";
+import { SECTIONS } from "@/lib/sections";
 
 const Footer = () => {
   const [visits, setVisits] = useState(0);
 
   useEffect(() => {
-    // Track visit on page load
     trackPageVisit();
     setVisits(getVisitCount());
   }, []);
+
+  const columns = [
+    { title: "Call for", links: SECTIONS.filter((section) => section.group === "publish") },
+    { title: "Opportunities", links: SECTIONS.filter((section) => section.group === "career") },
+    {
+      title: "Platform",
+      links: [
+        { path: "/general-finder", title: "Search everything" },
+        { path: "/user-hub", title: "User Hub" },
+        { path: "/about", title: "About" },
+        { path: "/research-collaboration", title: "Collaborate" },
+      ],
+    },
+  ];
+
   return (
-    <footer className="bg-card border-t border-border mt-20">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="mt-24">
+      <div className="container mx-auto px-4">
+        {/* Lime call-to-action band */}
+        <div className="tile-lime flex flex-col gap-5 rounded-[28px] px-6 py-7 md:flex-row md:items-center md:justify-between md:px-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img
-                src={logo}
-                alt="ResearchSphere Logo"
-                className="w-8 h-8 object-contain rounded-full"
-              />
-              <span className="text-lg font-bold text-foreground">
-                ResearchSphere
-              </span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              Your gateway to global research opportunities.
+            <p className="font-display text-2xl font-medium uppercase tracking-tight md:text-3xl">
+              Never miss a deadline again
+            </p>
+            <p className="mt-1 text-sm opacity-75">
+              Save listings to your watchlist and get reminders before they close.
             </p>
           </div>
-
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Navigation</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  to="/"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/conferences"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Conferences
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/journals"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Journals
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/book-chapters"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Book Chapters
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">
-              Opportunities
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  to="/phd-programs"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  PhD Programs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/postdoc-positions"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Postdoc Positions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/internships"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Internships
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/project-calls"
-                  className="text-muted-foreground hover:text-primary"
-                >
-                  Project Calls
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Newsletter</h3>
-            <p className="text-sm text-muted-foreground mb-3">
-              Subscribe to our newsletter for the latest updates.
-            </p>
-            <div className="flex gap-2">
-              <Input placeholder="Your email" className="flex-1" />
-              <Button>Subscribe</Button>
-            </div>
-            <div className="flex gap-3 mt-4">
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
-                <Mail className="h-5 w-5" />
-              </a>
-            </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="hidden items-center gap-2 text-sm opacity-75 lg:inline-flex">
+              <RefreshCw className="h-4 w-4" /> Refreshed automatically every 6 hours
+            </span>
+            <Link
+              to="/user-hub"
+              className="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.03]"
+            >
+              <Bell className="h-4 w-4" /> Set up alerts
+            </Link>
           </div>
         </div>
+      </div>
 
-        <div className="border-t border-border mt-8 pt-8">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 text-sm text-muted-foreground">
-            <div>© 2026 ResearchSphere. All rights reserved.</div>
-            {visits > 0 && (
-              <div className="flex items-center gap-2 text-xs">
-                <Eye className="h-4 w-4" />
-                <span>{visits.toLocaleString()} page views</span>
-              </div>
-            )}
+      <div className="mt-16 border-t border-border/60">
+        <div className="container mx-auto grid gap-10 px-4 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+          <div className="space-y-4">
+            <BrandMark />
+            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              A self-updating map of conferences, journals, funding and research careers in
+              computer science and AI.
+            </p>
+            <p className="inline-flex items-center gap-2 text-xs text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5 text-primary" /> Built for researchers, everywhere
+            </p>
           </div>
+
+          {columns.map((column) => (
+            <div key={column.title}>
+              <h3 className="eyebrow mb-4">{column.title}</h3>
+              <ul className="space-y-2.5 text-sm">
+                {column.links.map((link) => (
+                  <li key={link.path}>
+                    <Link
+                      to={link.path}
+                      className="group inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {link.title}
+                      <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="container mx-auto flex flex-col gap-3 border-t border-border/60 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} ResearchSphere. Listings belong to their original publishers.</span>
+          {visits > 0 && (
+            <span className="inline-flex items-center gap-2">
+              <Eye className="h-3.5 w-3.5" /> {visits.toLocaleString()} page views
+            </span>
+          )}
         </div>
       </div>
     </footer>

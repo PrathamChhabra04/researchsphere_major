@@ -252,6 +252,13 @@ export const getHarvestStatus = async () => {
     itemCount: store.items.length,
     sourceReports: store.sourceReports,
     refreshing: Boolean(refreshPromise),
+    // Live (non-expired) listings per section, used for the home page counters.
+    liveCounts: store.items.reduce((counts, item) => {
+      if (getItemStatus(item) === "expired") return counts;
+      const key = item.kind === "opportunity" ? item.subtype : item.kind;
+      counts[key] = (counts[key] || 0) + 1;
+      return counts;
+    }, {}),
     countsByStatus: store.items.reduce((counts, item) => {
       if (item.kind === "journal") return counts;
       const key = `${item.kind}:${getItemStatus(item)}`;

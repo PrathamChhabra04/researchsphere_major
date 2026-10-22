@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,89 +9,97 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  /* Light: cool paper-grey, steel-blue accents */
+  /* Light: warm paper, ink text, olive-lime signal (darker lime keeps text contrast on white) */
   :root {
-    --background: 214 32% 97%;
-    --foreground: 222 40% 12%;
+    --background: 60 9% 96%;
+    --foreground: 0 0% 7%;
     --card: 0 0% 100%;
-    --card-foreground: 222 40% 12%;
+    --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 40% 12%;
-    --primary: 199 89% 36%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 72 72% 34%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 214 28% 93%;
-    --secondary-foreground: 222 40% 12%;
-    --muted: 214 28% 93%;
-    --muted-foreground: 217 17% 38%;
-    --accent: 250 70% 55%;
+    --lime: 68 88% 62%;
+    --lime-foreground: 0 0% 4%;
+    --secondary: 60 6% 91%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 60 6% 92%;
+    --muted-foreground: 0 0% 38%;
+    --accent: 214 95% 52%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214 24% 84%;
-    --input: 214 24% 84%;
-    --ring: 199 89% 36%;
-    --radius: 0.5rem;
+    --border: 60 5% 84%;
+    --input: 60 5% 84%;
+    --ring: 72 72% 34%;
+    --radius: 1rem;
 
-    --hero-gradient-from: 214 32% 97%;
-    --hero-gradient-via: 214 32% 95%;
-    --hero-gradient-to: 214 32% 97%;
-    --grid-line: 222 40% 12%;
-    --glow: 199 89% 45%;
+    --hero-gradient-from: 60 9% 96%;
+    --hero-gradient-via: 60 9% 94%;
+    --hero-gradient-to: 60 9% 96%;
+    --grid-line: 0 0% 7%;
+    --glow: 68 88% 55%;
+    --display-from: 0 0% 4%;
+    --display-to: 0 0% 42%;
 
-    --badge-blue: 199 89% 92%;
-    --badge-blue-foreground: 199 89% 28%;
-    --badge-green: 160 70% 32%;
+    --badge-blue: 214 95% 94%;
+    --badge-blue-foreground: 214 80% 38%;
+    --badge-green: 72 72% 34%;
     --badge-green-foreground: 0 0% 100%;
-    --badge-purple: 250 70% 55%;
+    --badge-purple: 260 70% 55%;
     --badge-purple-foreground: 0 0% 100%;
     --badge-orange: 32 95% 44%;
     --badge-orange-foreground: 0 0% 100%;
 
-    --success: 160 70% 32%;
+    --success: 72 72% 34%;
     --warning: 38 92% 45%;
-    --info: 199 89% 36%;
+    --info: 214 95% 52%;
   }
 
-  /* Dark: deep ink-navy, cyan signal, violet secondary */
+  /* Dark: pure black canvas, charcoal cards, electric-lime signal, fiber-optic blue */
   .dark {
-    --background: 222 42% 6%;
-    --foreground: 214 30% 92%;
-    --card: 222 36% 9%;
-    --card-foreground: 214 30% 92%;
-    --popover: 222 38% 8%;
-    --popover-foreground: 214 30% 92%;
-    --primary: 190 92% 52%;
-    --primary-foreground: 222 45% 7%;
-    --secondary: 222 28% 14%;
-    --secondary-foreground: 214 30% 92%;
-    --muted: 222 28% 13%;
-    --muted-foreground: 217 16% 66%;
-    --accent: 252 90% 72%;
-    --accent-foreground: 222 45% 7%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 68 88% 64%;
+    --primary-foreground: 0 0% 4%;
+    --lime: 68 88% 64%;
+    --lime-foreground: 0 0% 4%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 62%;
+    --accent: 228 96% 62%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 56%;
     --destructive-foreground: 0 0% 100%;
-    --border: 222 24% 18%;
-    --input: 222 24% 18%;
-    --ring: 190 92% 52%;
+    --border: 0 0% 19%;
+    --input: 0 0% 19%;
+    --ring: 68 88% 64%;
 
-    --hero-gradient-from: 222 42% 6%;
-    --hero-gradient-via: 222 38% 8%;
-    --hero-gradient-to: 222 42% 6%;
-    --grid-line: 200 60% 80%;
-    --glow: 190 92% 52%;
+    --hero-gradient-from: 0 0% 0%;
+    --hero-gradient-via: 0 0% 4%;
+    --hero-gradient-to: 0 0% 0%;
+    --grid-line: 0 0% 100%;
+    --glow: 68 88% 64%;
+    --display-from: 0 0% 100%;
+    --display-to: 0 0% 58%;
 
-    --badge-blue: 190 80% 16%;
-    --badge-blue-foreground: 190 92% 68%;
-    --badge-green: 160 60% 38%;
-    --badge-green-foreground: 0 0% 100%;
-    --badge-purple: 252 70% 60%;
+    --badge-blue: 228 60% 18%;
+    --badge-blue-foreground: 228 96% 76%;
+    --badge-green: 68 88% 64%;
+    --badge-green-foreground: 0 0% 4%;
+    --badge-purple: 260 70% 62%;
     --badge-purple-foreground: 0 0% 100%;
     --badge-orange: 32 90% 52%;
-    --badge-orange-foreground: 222 45% 7%;
+    --badge-orange-foreground: 0 0% 4%;
 
-    --success: 160 60% 45%;
-    --warning: 38 92% 55%;
-    --info: 190 92% 52%;
+    --success: 68 88% 64%;
+    --warning: 38 92% 58%;
+    --info: 228 96% 66%;
   }
 }
 
@@ -103,7 +111,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family:
-      "IBM Plex Sans",
+      "Inter",
       -apple-system,
       BlinkMacSystemFont,
       "Segoe UI",
@@ -111,9 +119,16 @@ All colors MUST be HSL.
   }
 
   .heading-display {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Inter Tight", sans-serif;
     font-weight: 600;
     letter-spacing: -0.035em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Inter Tight", "Inter", sans-serif;
   }
 
   h1,
@@ -274,5 +289,177 @@ All colors MUST be HSL.
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--primary));
+  }
+}
+
+/* ---------- ResearchSphere visual language (black / charcoal / lime) ---------- */
+@layer components {
+  /* Giant uppercase headline with a white-to-grey sheen, as in the reference design */
+  .display-xl {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    background: linear-gradient(100deg, hsl(var(--display-from)) 35%, hsl(var(--display-to)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .display-lg {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    background: linear-gradient(100deg, hsl(var(--display-from)) 45%, hsl(var(--display-to)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Lime section label ("Our Services") */
+  .eyebrow {
+    @apply text-sm font-medium;
+    color: hsl(var(--primary));
+  }
+
+  .serif-accent {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+
+  /* Lime pill dropped inline into headlines */
+  .lime-chip {
+    @apply inline-flex items-center rounded-full px-[0.45em] align-middle;
+    font-family: "Instrument Serif", Georgia, serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    background: hsl(var(--lime));
+    color: hsl(var(--lime-foreground));
+    -webkit-text-fill-color: hsl(var(--lime-foreground));
+    box-shadow: 0 0 40px -6px hsl(var(--lime) / 0.55);
+  }
+
+  /* Outlined pill buttons ("View services", "Be a partner") */
+  .pill {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-5 py-2 text-sm font-medium transition-all duration-200;
+    border-color: hsl(var(--foreground) / 0.9);
+    color: hsl(var(--foreground));
+  }
+  .pill:hover {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+  .pill-lime {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200;
+    background: hsl(var(--lime));
+    color: hsl(var(--lime-foreground));
+  }
+  .pill-lime:hover {
+    filter: brightness(1.06);
+    box-shadow: 0 0 32px -6px hsl(var(--lime) / 0.6);
+  }
+
+  /* Small rounded tag chips ("Ai", "robot") */
+  .tag-chip {
+    @apply inline-flex items-center rounded-full px-3 py-1 text-xs;
+    background: hsl(var(--foreground) / 0.08);
+    color: hsl(var(--foreground) / 0.85);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Charcoal service card with an oversized ghost number */
+  .service-card {
+    @apply relative overflow-hidden rounded-2xl bg-card p-7 transition-all duration-300;
+    border: 1px solid hsl(var(--foreground) / 0.04);
+  }
+  .service-card:hover {
+    border-color: hsl(var(--primary) / 0.35);
+    transform: translateY(-2px);
+  }
+  .ghost-number {
+    @apply pointer-events-none absolute select-none font-normal leading-none;
+    font-family: "Inter Tight", sans-serif;
+    font-size: clamp(5rem, 9vw, 8.5rem);
+    letter-spacing: -0.06em;
+    color: transparent;
+    background: linear-gradient(180deg, hsl(var(--foreground) / 0.16), hsl(var(--foreground) / 0.03));
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .icon-orb {
+    @apply flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full;
+    background: hsl(var(--background) / 0.6);
+    color: hsl(var(--primary));
+  }
+
+  /* Decorative hero tiles */
+  .tile-fiber {
+    background:
+      radial-gradient(circle at 70% 20%, hsl(var(--accent) / 0.9) 0 2px, transparent 3px),
+      radial-gradient(circle at 30% 60%, hsl(var(--accent) / 0.8) 0 1.5px, transparent 2.5px),
+      radial-gradient(circle at 55% 80%, hsl(0 0% 100% / 0.8) 0 1.5px, transparent 2.5px),
+      radial-gradient(120% 90% at 50% 110%, hsl(var(--accent) / 0.85), transparent 60%),
+      linear-gradient(160deg, hsl(230 60% 8%), hsl(230 70% 16%));
+  }
+  .tile-circuit {
+    background-color: hsl(150 45% 14%);
+    background-image:
+      linear-gradient(hsl(68 88% 64% / 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(68 88% 64% / 0.18) 1px, transparent 1px),
+      radial-gradient(circle, hsl(68 88% 64% / 0.6) 1.5px, transparent 2px);
+    background-size: 22px 22px, 22px 22px, 44px 44px;
+  }
+  .tile-lime {
+    background: radial-gradient(120% 120% at 0% 0%, hsl(var(--lime)), hsl(68 70% 40%));
+    color: hsl(var(--lime-foreground));
+  }
+
+  .hero-glow {
+    background:
+      radial-gradient(50% 45% at 50% 40%, hsl(var(--foreground) / 0.06), transparent 70%),
+      hsl(var(--background));
+  }
+
+  /* Infinite logo/source marquee */
+  .marquee {
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .float-slow {
+    animation: floaty 7s ease-in-out infinite;
+  }
+  .float-slower {
+    animation: floaty 9s ease-in-out infinite reverse;
+  }
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(var(--tilt, 0deg)); }
+    50% { transform: translateY(-10px) rotate(var(--tilt, 0deg)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track, .float-slow, .float-slower {
+      animation: none;
+    }
   }
 }

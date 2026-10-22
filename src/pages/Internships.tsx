@@ -1,3 +1,5 @@
+import PageHeader from "@/components/PageHeader";
+import { Rocket as Rocket } from "lucide-react";
 import DeadlineStatusBadge from "@/components/DeadlineStatusBadge";
 import { compareByDeadline, itemTimestamp } from "@/lib/itemDates";
 import { useState, useEffect, useMemo } from "react";
@@ -171,28 +173,14 @@ const Internships = () => {
 
       <main className="flex-1">
         <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
-          <section className="overflow-hidden rounded-[28px] border border-border bg-gradient-to-br from-card via-muted/50 to-accent/10 shadow-[0_24px_70px_-50px_hsl(var(--primary)/0.25)]">
-            <div className="border-b border-border/80 px-5 py-5 sm:px-8 sm:py-7">
-              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-accent">
-                  Research opportunities
-                </span>
-                <span className="rounded-full border border-border bg-card px-3 py-1 text-muted-foreground">
-                  Internships
-                </span>
-              </div>
-              <div className="mt-4 max-w-3xl">
-                <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-[2.1rem]">
-                  Find research internships across India and international labs
-                </h1>
-                <p className="mt-3 text-[15px] leading-7 text-muted-foreground sm:text-base">
-                  Browse research internships in computer science, AI, machine learning,
-                  data science, systems, and adjacent fields from academic institutions,
-                  research labs, and curated global programs.
-                </p>
-              </div>
-            </div>
-
+          <PageHeader
+            icon={Rocket}
+            eyebrow="Opportunities"
+            title="Internships"
+            accent={internships.length > 0 ? `${internships.length} live` : undefined}
+            description="Research internships at AI labs, IITs, ETH, CERN and universities worldwide, soonest deadline first."
+          />
+          <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="px-5 py-5 sm:px-8 sm:py-7">
               <div className="rounded-[24px] border border-border bg-card/90 p-4 shadow-sm sm:p-6">
                 <div className="grid gap-4 lg:grid-cols-[minmax(0,1.55fr)_240px_220px]">

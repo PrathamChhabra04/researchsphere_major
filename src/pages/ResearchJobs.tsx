@@ -1,3 +1,5 @@
+import PageHeader from "@/components/PageHeader";
+import { BrainCircuit as BrainCircuit } from "lucide-react";
 import DeadlineStatusBadge from "@/components/DeadlineStatusBadge";
 import { compareByDeadline, itemTimestamp } from "@/lib/itemDates";
 import { useState, useEffect, useMemo } from "react";
@@ -152,28 +154,14 @@ const ResearchJobs = () => {
 
       <main className="flex-1">
         <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
-          <section className="overflow-hidden rounded-[28px] border border-border bg-gradient-to-br from-card via-muted/50 to-emerald-500/10 shadow-[0_24px_70px_-50px_hsl(var(--primary)/0.25)]">
-            <div className="border-b border-border/80 px-5 py-5 sm:px-8 sm:py-7">
-              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-emerald-500">
-                  Research opportunities
-                </span>
-                <span className="rounded-full border border-border bg-card px-3 py-1 text-muted-foreground">
-                  Research jobs
-                </span>
-              </div>
-              <div className="mt-4 max-w-3xl">
-                <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-[2.1rem]">
-                  Research jobs at universities and industry AI labs
-                </h1>
-                <p className="mt-3 text-[15px] leading-7 text-muted-foreground sm:text-base">
-                  Research scientist, research engineer, fellowship and faculty roles from university
-                  job boards and labs such as OpenAI, Anthropic, Cohere and Databricks, refreshed
-                  automatically every few hours.
-                </p>
-              </div>
-            </div>
-
+          <PageHeader
+            icon={BrainCircuit}
+            eyebrow="Opportunities"
+            title="Research jobs"
+            accent={researchJobs.length > 0 ? `${researchJobs.length} live` : undefined}
+            description="Research scientist, engineer, fellowship and faculty roles from universities and AI labs like OpenAI, Anthropic and Cohere."
+          />
+          <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="px-5 py-5 sm:px-8 sm:py-7">
               <div className="rounded-[24px] border border-border bg-card/90 p-4 shadow-sm sm:p-6">
                 <div className="grid gap-4 lg:grid-cols-[minmax(0,1.55fr)_240px_220px]">
@@ -269,13 +257,13 @@ const ResearchJobs = () => {
                   return (
                     <Card
                       key={position.id}
-                      className="overflow-hidden rounded-[24px] border border-border bg-card shadow-[0_18px_48px_-38px_hsl(var(--primary)/0.25)] transition-all duration-200 hover:border-emerald-500/30 hover:shadow-[0_24px_60px_-42px_rgba(16,185,129,0.35)]"
+                      className="overflow-hidden rounded-[24px] border border-border bg-card shadow-[0_18px_48px_-38px_hsl(var(--primary)/0.25)] transition-all duration-200 hover:border-primary/30 hover:shadow-[0_24px_60px_-42px_hsl(var(--primary)/0.3)]"
                     >
                       <CardContent className="p-0">
                         <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_280px]">
                           <div className="p-5 sm:p-6">
                             <div className="flex flex-wrap items-center gap-2">
-                              <Badge className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-500 hover:bg-emerald-500/10">
+                              <Badge className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary hover:bg-primary/10">
                                 Research role
                               </Badge>
                               <Badge
@@ -364,7 +352,7 @@ const ResearchJobs = () => {
                           <aside className="border-t border-border bg-muted/70 p-5 sm:p-6 lg:border-l lg:border-t-0">
                             <div className="flex h-full flex-col justify-between gap-5">
                               <div>
-                                <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-500">
+                                <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                                   <FlaskConical className="h-5 w-5" />
                                 </div>
                                 <h4 className="mt-4 text-base font-semibold text-foreground">

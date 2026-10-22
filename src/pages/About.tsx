@@ -1,3 +1,5 @@
+import { Users } from "lucide-react";
+import PageHeader from "@/components/PageHeader";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -90,18 +92,17 @@ const About = () => {
 
       <div className="flex-1">
         <div className="container mx-auto max-w-[1380px] px-5 py-8 md:px-6 md:py-10">
-          <section className="rounded-[28px] border border-border bg-card shadow-sm overflow-hidden">
-            <div className="border-b border-border bg-gradient-to-r from-muted via-background to-background px-6 py-6 md:px-8 md:py-7">
+          <PageHeader
+            icon={Users}
+            eyebrow="About"
+            title="Built by students"
+            accent="for researchers"
+            description="ResearchSphere is developed by a dedicated student team to make research opportunities in CS and AI easy to find."
+          />
+          <section className="overflow-hidden rounded-[28px] bg-card/60">
+            <div className="px-6 py-7 md:px-8 md:py-9">
               <div className="max-w-4xl">
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  <Badge variant="secondary" className="px-3 py-1 text-xs">
-                    About Team
-                  </Badge>
-                </div>
-                <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-                  ResearchSphere is developed by a dedicated team of student
-                </h1>
-                <div className="mt-6 space-y-6 text-[15px] leading-7 text-muted-foreground md:text-base">
+                <div className="space-y-6 text-[15px] leading-7 text-muted-foreground md:text-base">
                   <div>
                     <p className="font-semibold text-foreground">Mentor</p>
                     <p>Dr. Mohit Kumar</p>

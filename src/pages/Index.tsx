@@ -1,14 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import {
   Search,
-  BookOpen,
-  Users,
   ArrowRight,
-  Globe,
-  GraduationCap,
-  ExternalLink,
+  ArrowDown,
+  ArrowUpRight,
   Bookmark,
   Bell,
+  BrainCircuit,
+  Cpu,
+  Presentation,
+  Timer,
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,10 +24,15 @@ import {
 } from "@/components/ui/sheet";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SourceMarquee from "@/components/SourceMarquee";
+import DeadlineStatusBadge from "@/components/DeadlineStatusBadge";
+import { SphereIcon } from "@/components/BrandMark";
+import { SECTIONS } from "@/lib/sections";
 // import AssistantWidget from "@/components/AssistantWidget";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import {
+  getHarvestStatus,
   matchJournals,
   searchHarvestedData,
   type HarvestItem,
@@ -234,16 +240,37 @@ const Index = () => {
 
   const { data: featuredConferences = [], isLoading: conferencesLoading } =
     useQuery({
-      queryKey: ["home-featured-conferences", currentYear],
+      queryKey: ["home-featured-conferences"],
       queryFn: () =>
         searchHarvestedData({
           kind: "conference",
-          year: currentYear,
-          includePast: false,
-          limit: 6,
+          sort: "start",
+          limit: 10,
         }),
       staleTime: 1000 * 60 * 10,
     });
+
+  const { data: harvestStatus } = useQuery({
+    queryKey: ["harvest-status"],
+    queryFn: getHarvestStatus,
+    staleTime: 1000 * 60 * 10,
+  });
+  const liveCounts: Record<string, number> = harvestStatus?.liveCounts ?? {};
+  const sourceCount = harvestStatus?.sourcesConfigured ?? 140;
+
+  const { data: soonestDeadline } = useQuery({
+    queryKey: ["home-soonest-deadline"],
+    queryFn: async () =>
+      (
+        await searchHarvestedData({
+          kind: "opportunity",
+          status: "closing-soon,open",
+          sort: "deadline",
+          limit: 1,
+        })
+      )[0] ?? null,
+    staleTime: 1000 * 60 * 10,
+  });
 
   const { data: featuredJournals = [], isLoading: journalsLoading } = useQuery({
     queryKey: ["home-featured-journals", "machine-learning", "keyword"],
@@ -530,163 +557,259 @@ const Index = () => {
 
       <div className="flex-1">
         {/* Hero */}
-        <section className="gradient-hero border-b border-border">
-          <div className="container mx-auto px-4 py-12 md:py-20">
-            <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-12 items-start">
-              <div className="space-y-6">
-                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  ResearchSphere &mdash; {currentYear}
+        <section className="hero-glow relative overflow-hidden">
+          <div className="container relative mx-auto flex min-h-[calc(100svh-72px)] flex-col px-4 pb-8 pt-10 md:pt-14">
+            <div className="relative flex flex-1 items-center justify-center">
+              {/* Floating live tiles (desktop) */}
+              <Link
+                to="/conferences"
+                style={{ "--tilt": "-4deg" } as CSSProperties}
+                className="float-slow tile-lime absolute left-0 top-[4%] hidden w-44 rounded-2xl p-4 shadow-2xl xl:block xl:left-[2%] 2xl:left-[5%]"
+              >
+                <Presentation className="h-5 w-5" />
+                <p className="mt-6 font-display text-4xl font-semibold tracking-tight">
+                  {liveCounts.conference ?? "—"}
                 </p>
-                <h1 className="heading-display text-5xl md:text-6xl lg:text-[5rem] text-foreground leading-[1.08]">
-                  Find conferences,
-                  <br className="hidden md:block" />
-                  journals &amp;
-                  <br className="hidden md:block" />
-                  research opportunities.
-                </h1>
-                <p className="text-base text-muted-foreground max-w-lg leading-relaxed">
-                  A centralized research discovery platform for CS professionals
-                  &mdash; covering conferences, journals, PhD and postdoc calls.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Button
-                    size="lg"
-                    onClick={() => navigate("/journals")}
-                    className="h-11 px-6"
-                  >
-                    Journal Finder
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    onClick={() => navigate("/conferences")}
-                    className="h-11 px-6"
-                  >
-                    Browse Conferences
-                  </Button>
-                </div>
-              </div>
+                <p className="text-xs font-medium opacity-75">upcoming conferences</p>
+              </Link>
 
-              <div className="lg:pt-14">
-                <div className="bg-card/95 border border-border rounded-2xl p-5 shadow-sm">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-                    Quick Search
+              <Link
+                to="/journals"
+                style={{ "--tilt": "3deg" } as CSSProperties}
+                className="float-slower tile-circuit absolute right-0 top-0 hidden w-48 rounded-2xl p-4 text-white shadow-2xl xl:block xl:right-[2%] 2xl:right-[6%]"
+              >
+                <Cpu className="h-5 w-5 text-lime" />
+                <p className="mt-6 font-display text-4xl font-semibold tracking-tight">
+                  {liveCounts.journal ?? "—"}
+                </p>
+                <p className="text-xs opacity-75">papers &amp; articles indexed</p>
+              </Link>
+
+              {soonestDeadline && (
+                <a
+                  href={soonestDeadline.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ "--tilt": "2deg" } as CSSProperties}
+                  className="float-slower absolute bottom-[6%] left-[3%] hidden w-64 rounded-2xl border border-border bg-card/90 p-4 shadow-2xl backdrop-blur xl:block xl:left-[3%] 2xl:left-[9%]"
+                >
+                  <p className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-wider text-primary">
+                    <Timer className="h-3.5 w-3.5" /> Closing next
                   </p>
-                  <div className="flex flex-col gap-2.5">
-                    <div className="relative">
-                      <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                      <Input
-                        placeholder="e.g. NeurIPS, machine learning, postdoc..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onKeyPress={handleKeyPress}
-                        className="pl-9 h-10"
-                      />
-                    </div>
-                    <Button onClick={handleSearch} className="h-10 w-full">
-                      Search
-                    </Button>
+                  <p className="mt-2 line-clamp-2 text-sm font-medium text-foreground">{soonestDeadline.title}</p>
+                  <div className="mt-3">
+                    <DeadlineStatusBadge item={soonestDeadline} />
                   </div>
-                  <div className="mt-4 pt-4 border-t border-border/60">
-                    <p className="text-xs text-muted-foreground mb-2">
-                      Common searches
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {[
-                        "machine learning",
-                        "phd 2026",
-                        "NeurIPS",
-                        "data science",
-                      ].map((topic) => (
-                        <button
-                          key={topic}
-                          type="button"
-                          onClick={() =>
-                            navigate(
-                              `/general-finder?q=${encodeURIComponent(topic)}`,
-                            )
-                          }
-                          className="text-xs px-2.5 py-1 rounded-md bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                        >
-                          {topic}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+                </a>
+              )}
+
+              <Link
+                to="/research-jobs"
+                style={{ "--tilt": "-3deg" } as CSSProperties}
+                className="float-slow tile-fiber absolute bottom-0 right-[4%] hidden h-48 w-40 overflow-hidden rounded-2xl p-4 text-white shadow-2xl xl:block xl:right-[4%] 2xl:right-[14%]"
+              >
+                <BrainCircuit className="h-5 w-5" />
+                <p className="mt-14 font-display text-4xl font-semibold tracking-tight">
+                  {liveCounts.research ?? "—"}
+                </p>
+                <p className="text-xs opacity-80">research &amp; AI-lab roles</p>
+              </Link>
+
+              <div className="relative z-10 text-center">
+                <p className="eyebrow mb-6 inline-flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                  </span>
+                  Live from {sourceCount}+ sources
+                </p>
+                <h1 className="display-xl text-[2.7rem] sm:text-6xl md:text-7xl lg:text-[6.6rem]">
+                  Every open call
+                  <br />
+                  in the{" "}
+                  <Link to="/general-finder" className="lime-chip mx-1 text-[0.82em] transition-transform hover:scale-[1.03]">
+                    CS &amp; AI
+                  </Link>{" "}
+                  research
+                  <br />
+                  world, live
+                </h1>
+                <p className="mx-auto mt-7 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
+                  Conferences, journals, funding calls, PhDs, postdocs, internships and AI-lab
+                  research roles — harvested automatically, with deadlines you can act on.
+                </p>
+                <div className="mt-8 flex flex-wrap justify-center gap-3">
+                  <Link to="/phd-programs" className="pill-lime">
+                    Find opportunities <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                  <Link to="/journals" className="pill">
+                    Match a journal
+                  </Link>
                 </div>
               </div>
+            </div>
+
+            {/* Bottom bar: search + scroll cue */}
+            <div className="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <label className="flex w-full max-w-md items-center gap-3 border-b border-border pb-2 focus-within:border-primary">
+                <Search className="h-4 w-4 text-muted-foreground" />
+                <input
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleKeyPress}
+                  placeholder="Type to search — NeurIPS, LLM postdoc, funded PhD…"
+                  className="w-full bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
+                />
+                <button type="button" onClick={handleSearch} className="whitespace-nowrap text-xs font-medium text-primary">
+                  Enter ↵
+                </button>
+              </label>
+              <a href="#explore" className="hidden items-center gap-2 text-sm text-muted-foreground hover:text-foreground sm:inline-flex">
+                <ArrowDown className="h-4 w-4 animate-bounce" /> Keep scrolling
+              </a>
             </div>
           </div>
         </section>
 
-        {/* Quick navigation strip */}
-        <section className="border-b border-border">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
-              <Link
-                to="/conferences"
-                className="group flex items-center gap-3 px-4 py-5 hover:bg-muted/40 transition-colors first:pl-0"
-              >
-                <div className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                  <Users className="h-4 w-4" />
-                </div>
-                <div className="min-w-0">
-                  <p className="font-medium text-sm text-foreground">
-                    Conferences
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {currentYear} venues &amp; CFPs
-                  </p>
-                </div>
-                <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-              </Link>
-              <Link
-                to="/journals"
-                className="group flex items-center gap-3 px-4 py-5 hover:bg-muted/40 transition-colors"
-              >
-                <div className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                  <BookOpen className="h-4 w-4" />
-                </div>
-                <div className="min-w-0">
-                  <p className="font-medium text-sm text-foreground">
-                    Journals &amp; Preprints
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Latest research streams
-                  </p>
-                </div>
-                <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-              </Link>
-              <Link
-                to="/project-calls"
-                className="group flex items-center gap-3 px-4 py-5 hover:bg-muted/40 transition-colors last:pr-0"
-              >
-                <div className="p-2 rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                  <GraduationCap className="h-4 w-4" />
-                </div>
-                <div className="min-w-0">
-                  <p className="font-medium text-sm text-foreground">
-                    Research Opportunities
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    PhD, postdoc, internships
-                  </p>
-                </div>
-                <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-              </Link>
+        {/* Explore: one card per section with live counts */}
+        <section id="explore" className="container mx-auto scroll-mt-24 px-4 py-20 md:py-28">
+          <div className="grid gap-6 lg:grid-cols-3">
+            <div className="flex flex-col justify-between gap-10 lg:pr-8">
+              <p className="eyebrow">What we track</p>
+              <div className="space-y-6">
+                <p className="text-[15px] leading-relaxed text-muted-foreground">
+                  <span className="font-semibold text-foreground">Harvested, not hand-typed.</span>{" "}
+                  Every few hours we read feeds, job boards and lab APIs, parse their deadlines,
+                  and quietly retire listings once they close.
+                </p>
+                <Link to="/general-finder" className="pill">
+                  Search everything
+                </Link>
+              </div>
             </div>
+            <h2 className="display-lg text-4xl sm:text-5xl lg:col-span-2 lg:text-[3.6rem]">
+              We track{" "}
+              <span className="inline-flex h-[0.9em] w-[0.9em] items-center justify-center rounded-full bg-accent align-[-0.08em] text-white [-webkit-text-fill-color:white]">
+                <SphereIcon className="h-[0.6em] w-[0.6em]" />
+              </span>{" "}
+              every corner of CS research
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {SECTIONS.map((section, index) => {
+              const Icon = section.icon;
+              const count = liveCounts[section.countKey];
+              const numberAtTop = index % 2 === 1;
+              return (
+                <Link key={section.path} to={section.path} className="service-card group flex min-h-[260px] flex-col">
+                  <span
+                    className={`ghost-number right-3 ${numberAtTop ? "-top-4" : "-bottom-6"}`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="relative flex items-center gap-4">
+                    <span className="icon-orb">
+                      <Icon className="h-6 w-6" strokeWidth={1.5} />
+                    </span>
+                    <h3 className="text-xl font-normal tracking-tight text-foreground">{section.title}</h3>
+                    <ArrowUpRight className="ml-auto h-5 w-5 text-primary opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+                  </div>
+                  <p className={`relative text-sm leading-relaxed text-muted-foreground ${numberAtTop ? "mt-auto" : "mt-5"}`}>
+                    {section.description}
+                  </p>
+                  {typeof count === "number" && (
+                    <span className={`tag-chip relative w-fit ${numberAtTop ? "mt-4" : "mt-auto"}`}>
+                      <span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-primary" /> {count} live
+                    </span>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Upcoming conferences carousel */}
+        <section className="py-10 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+              <div>
+                <p className="eyebrow mb-4">On the calendar</p>
+                <h2 className="display-xl text-5xl sm:text-6xl lg:text-[5.2rem]">
+                  Upcoming
+                  <br />
+                  conferences{" "}
+                  <span className="serif-accent text-[0.55em] text-muted-foreground [-webkit-text-fill-color:currentColor]">
+                    {currentYear}–{String(currentYear + 1).slice(2)}
+                  </span>
+                </h2>
+              </div>
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between lg:flex-col xl:flex-row">
+                <p className="max-w-sm text-[15px] leading-relaxed text-muted-foreground">
+                  Sorted by event date, with submission status from each call for papers. Expired
+                  events disappear on their own.
+                </p>
+                <Link to="/conferences" className="pill shrink-0">
+                  All conferences
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 flex snap-x gap-4 overflow-x-auto px-4 pb-4 custom-scrollbar md:px-[max(1rem,calc((100vw-1400px)/2+2rem))]">
+            {conferencesLoading
+              ? [...Array(4)].map((_, i) => (
+                  <div key={i} className="h-[360px] w-[300px] shrink-0 rounded-2xl bg-card shimmer" />
+                ))
+              : featuredConferences.map((item: HarvestItem, index: number) => {
+                  const tile = ["tile-fiber text-white", "bg-card", "tile-circuit text-white", "bg-card"][index % 4];
+                  const startDate = item.startsAt
+                    ? new Date(item.startsAt).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })
+                    : item.eventDate;
+                  // WikiCFP: "ACRONYM 2026 : Full name"; Call4Paper: "Full name (ACRONYM 2026)"
+                  const [prefix, ...rest] = item.title.split(" : ");
+                  const parenthesised = item.title.match(/\(([A-Z][\w-]*(?: \d{4})?)\)\s*$/);
+                  const acronym = rest.length ? prefix : parenthesised?.[1] ?? "Conference";
+                  const fullName = rest.length
+                    ? rest.join(" : ")
+                    : item.title.replace(/\s*\([^)]*\)\s*$/, "");
+                  return (
+                    <a
+                      key={item.id}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${tile} group relative flex h-[360px] w-[300px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl p-6 transition-transform hover:-translate-y-1`}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <p className="font-display text-3xl font-semibold tracking-tight">{acronym}</p>
+                        <ArrowUpRight className="h-5 w-5 opacity-60 transition-opacity group-hover:opacity-100" />
+                      </div>
+                      <p className="mt-4 line-clamp-4 text-sm leading-relaxed opacity-80">{fullName}</p>
+                      <div className="mt-auto flex flex-wrap items-center gap-2">
+                        <DeadlineStatusBadge item={item} />
+                        {startDate && <span className="tag-chip">{startDate}</span>}
+                        {item.location && <span className="tag-chip max-w-full truncate">{item.location}</span>}
+                      </div>
+                    </a>
+                  );
+                })}
+          </div>
+
+          <div className="container mx-auto mt-14 px-4">
+            <p className="mb-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">Harvested from</p>
+            <SourceMarquee />
           </div>
         </section>
 
         {/* Trending topics */}
         <section className="container mx-auto px-4 py-10">
-          <div className="flex items-baseline gap-3 mb-5">
-            <h2 className="text-base font-semibold text-foreground">
-              Trending Research Areas
-            </h2>
-            <span className="text-xs text-muted-foreground">
-              Based on recent activity
-            </span>
+          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="eyebrow mb-3">Trending now</p>
+              <h2 className="display-lg text-4xl md:text-5xl">Research areas</h2>
+            </div>
+            <span className="text-sm text-muted-foreground">Based on recent activity</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {(trendingTopics.length > 0
@@ -707,7 +830,7 @@ const Index = () => {
               <button
                 key={topic}
                 type="button"
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-background text-sm text-foreground hover:border-primary hover:text-primary transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 onClick={() =>
                   navigate(`/general-finder?q=${encodeURIComponent(topic)}`)
                 }
@@ -721,69 +844,11 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Featured Conferences */}
-        <section className="bg-muted/30 border-y border-border py-10">
-          <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center mb-6">
-              <div>
-                <h2 className="text-base font-semibold text-foreground">
-                  Featured Conferences
-                </h2>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  {currentYear} upcoming venues
-                </p>
-              </div>
-              <Link to="/conferences">
-                <Button variant="ghost" size="sm" className="gap-1 text-xs h-8">
-                  View all <ArrowRight className="h-3.5 w-3.5" />
-                </Button>
-              </Link>
-            </div>
-
-            {conferencesLoading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {[...Array(6)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="h-28 bg-card border border-border rounded-lg shimmer"
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {featuredConferences.map((item: HarvestItem) => (
-                  <a
-                    key={item.id}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block bg-card border border-border rounded-lg p-4 hover:border-primary/50 hover:shadow-sm transition-all"
-                  >
-                    <h3 className="font-medium text-sm text-foreground line-clamp-2 mb-2 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                      {item.location && (
-                        <span className="flex items-center gap-1">
-                          <Globe className="h-3 w-3" /> {item.location}
-                        </span>
-                      )}
-                      {item.eventDate && <span>{item.eventDate}</span>}
-                    </div>
-                    <div className="mt-3 flex items-center gap-1 text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      Open <ExternalLink className="h-3 w-3" />
-                    </div>
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-
         <section className="container mx-auto px-4 py-10">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-base font-semibold text-foreground">For You</h2>
+              <p className="eyebrow mb-3">Personalised</p>
+              <h2 className="display-lg text-4xl md:text-5xl">For you</h2>
               <p className="text-xs text-muted-foreground mt-0.5">
                 Personalized using your interests and preferred location.
               </p>
@@ -860,9 +925,9 @@ const Index = () => {
         {/* Journals + Opportunities side by side */}
         <section className="container mx-auto px-4 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="rounded-2xl border border-border bg-card shadow-sm p-4 md:p-5">
+            <div className="rounded-[28px] bg-card p-5 md:p-7">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-base font-semibold text-foreground">
+                <h2 className="display-lg text-2xl md:text-3xl">
                   Latest Journals
                 </h2>
                 <Link to="/journals">
@@ -907,9 +972,9 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card shadow-sm p-4 md:p-5">
+            <div className="rounded-[28px] bg-card p-5 md:p-7">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-base font-semibold text-foreground">
+                <h2 className="display-lg text-2xl md:text-3xl">
                   Latest Opportunities
                 </h2>
                 <Link to="/project-calls">
@@ -958,30 +1023,21 @@ const Index = () => {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="border-t border-border py-12 md:py-14">
-          <div className="container mx-auto px-4">
-            <div className="max-w-xl">
-                <h2 className="heading-display text-3xl md:text-4xl text-foreground mb-3">
-                  Everything in one place.
-                </h2>
-                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                  Use General Finder to search across all sources &mdash;
-                  conferences, journals, PhD positions, postdoc calls, and more.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Link to="/general-finder">
-                    <Button className="gap-2 h-10">
-                      Open General Finder
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link to="/project-calls">
-                    <Button variant="outline" className="h-10">
-                      View Opportunities
-                    </Button>
-                  </Link>
-                </div>
+        {/* Statement CTA */}
+        <section className="container mx-auto px-4 pt-16">
+          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <h2 className="display-xl text-5xl sm:text-6xl lg:text-[5.5rem]">
+              One search.
+              <br />
+              <span className="lime-chip text-[0.8em]">Every</span> source.
+            </h2>
+            <div className="flex flex-wrap gap-3 md:pb-3">
+              <Link to="/general-finder" className="pill-lime">
+                Search everything <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link to="/research-jobs" className="pill">
+                Browse research jobs
+              </Link>
             </div>
           </div>
         </section>

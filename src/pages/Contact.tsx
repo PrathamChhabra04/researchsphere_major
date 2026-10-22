@@ -1,3 +1,5 @@
+import PageHeader from "@/components/PageHeader";
+import { Handshake as Handshake } from "lucide-react";
 import {
   Briefcase,
   BookOpen,
@@ -117,28 +119,14 @@ const Contact = () => {
 
       <div className="flex-1">
         <div className="container mx-auto max-w-[1380px] px-5 py-8 md:px-6 md:py-10">
-          <section className="rounded-[28px] border border-border bg-card shadow-sm overflow-hidden">
-            <div className="border-b border-border bg-gradient-to-r from-muted via-background to-background px-6 py-6 md:px-8 md:py-7">
-              <div className="max-w-4xl">
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  <Badge variant="secondary" className="px-3 py-1 text-xs">
-                    Research Collaboration
-                  </Badge>
-                  <Badge variant="outline" className="px-3 py-1 text-xs">
-                    CS and AI partnerships
-                  </Badge>
-                </div>
-                <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-                  Collaborate on high-impact research with our CS and AI lab.
-                </h1>
-                <p className="mt-3 text-[15px] leading-7 text-muted-foreground md:text-base">
-                  Share your proposal for co-authorship, funded projects,
-                  mentorship, or applied research. We review each request and
-                  respond with clear next steps.
-                </p>
-              </div>
-            </div>
-
+          <PageHeader
+            icon={Handshake}
+            eyebrow="Research collaboration"
+            title="Let's build"
+            accent={"together"}
+            description="Share a proposal for co-authorship, funded projects, mentorship or applied research. We review every request and reply with clear next steps."
+          />
+          <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="p-6 md:p-8">
               <div className="grid items-start gap-6 lg:grid-cols-[1fr_1.45fr]">
                 <div className="space-y-5">

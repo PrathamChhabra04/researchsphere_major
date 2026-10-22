@@ -1,3 +1,5 @@
+import PageHeader from "@/components/PageHeader";
+import { BookOpenText as BookOpenText } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
   Award,
@@ -154,25 +156,14 @@ const Journals = () => {
 
       <div className="flex-1">
         <div className="container mx-auto max-w-[1380px] px-5 py-8 md:px-6 md:py-10">
-          <section className="rounded-[28px] border border-border bg-card shadow-sm overflow-hidden">
-            <div className="border-b border-border bg-gradient-to-r from-muted via-background to-background px-6 py-6 md:px-8 md:py-7">
-              <div className="max-w-4xl">
-                <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <Badge variant="secondary" className="px-3 py-1 text-xs">
-                    Computer Science Journals
-                  </Badge>
-                  <Badge variant="outline" className="px-3 py-1 text-xs">
-                    Refined recommendations
-                  </Badge>
-                </div>
-                <p className="text-[15px] leading-7 text-muted-foreground md:text-base">
-                  Search by keyword for quick discovery, or paste an abstract to
-                  surface journals with strong topical alignment, editorial fit,
-                  and submission-ready details.
-                </p>
-              </div>
-            </div>
-
+          <PageHeader
+            icon={BookOpenText}
+            eyebrow="Journal finder"
+            title="Find your journal"
+            accent={undefined}
+            description="Search by keyword, or paste an abstract to surface Springer and Elsevier journals with strong topical fit and submission-ready details."
+          />
+          <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="p-6 md:p-8">
               <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                 <div className="flex flex-col gap-3 md:gap-4">
