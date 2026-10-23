@@ -2,16 +2,16 @@
 
 All sources are declared in `SOURCE_REGISTRY` in
 [`server/services/harvest/sources.js`](../server/services/harvest/sources.js)
-(142 at the time of writing). Run `cd server && npm run harvest:sources` to see which
+(180 at the time of writing). Run `cd server && npm run harvest:sources` to see which
 are healthy, failing or currently empty.
 
 ## What is harvested
 
 | Area | Sources |
 |---|---|
-| Conferences | WikiCFP RSS (29 tech categories), Call4Paper |
-| Preprints and articles | arXiv RSS (9 CS categories), IEEE Spectrum, Hugging Face, OpenAI, Google AI, TensorFlow, KDnuggets and other blogs |
-| PhD, postdoc and research jobs | jobs.ac.uk (20 topic searches × 3 pages), Science Careers feeds, AcademicJobsOnline |
+| Conferences | WikiCFP RSS (50 tech categories: AI, cloud, Web3, 6G, IoT, security, quantum, XR, fintech, semiconductors, …) with deadlines from each event page, Call4Paper |
+| Preprints and articles | arXiv RSS (17 categories incl. distributed/cloud, networking, HCI, robotics, hardware, emerging tech, quantum), IEEE Spectrum, Hugging Face, OpenAI, Google AI, TensorFlow, KDnuggets and other blogs |
+| PhD, postdoc and research jobs | jobs.ac.uk (26 topic searches incl. cloud, IoT, quantum, HPC, networks), Science Careers feeds, AcademicJobsOnline |
 | Industry AI labs | Greenhouse API (Anthropic, xAI, Together AI, Scale AI, Databricks, Stability AI) and Ashby API (OpenAI, Cohere, Perplexity, Cerebras, ElevenLabs, Anyscale); research-track roles only |
 | Funding and project calls | NSF, UKRI, Indian agencies (ANRF, ICSSR, MeitY, CSIR, ISRO, DRDO, AICTE, DST) |
 | Scholarships and fellowships | Opportunity Desk, Scholars4Dev, Mladiinfo, Opportunities Corners |
@@ -49,3 +49,13 @@ Then check it with `npm run harvest:refresh` and confirm it reports a non-zero c
 For opportunity and conference feeds, only items that pass the tech-relevance filter
 are kept. When a source is removed from the registry, its stored items are deleted on
 the next harvest.
+
+## WikiCFP deadlines
+
+WikiCFP feeds carry only event dates. After each harvest, `wikicfpDetails.js` fetches
+the event page of every live WikiCFP conference that has no cached copy (or one older
+than 14 days), extracts the abstract, submission, notification and camera-ready dates
+plus the official website, and stores them in the `detail_cache` table. Requests honour
+WikiCFP's robots.txt crawl delay of 5 s, so the first pass over ~450 events takes about
+40 minutes in the background; later passes only fetch new events. Progress is shown under
+`wikicfpDetails` in `GET /api/harvest/status`.

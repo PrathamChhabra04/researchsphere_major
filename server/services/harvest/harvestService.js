@@ -1,6 +1,11 @@
 import { readStore, writeStore, getStorePath, computeItemId, computeItemKey } from "./store.js";
 import { SOURCE_REGISTRY, runSourceHarvester } from "./sources.js";
 import { enrichItemDates, getItemStatus } from "./dates.js";
+import {
+  applyCachedWikiCfpDetails,
+  getWikiCfpEnrichmentStatus,
+  runWikiCfpDetailEnrichment,
+} from "./wikicfpDetails.js";
 
 // Scraped navigation text that occasionally slips through as a "title".
 const JUNK_TITLE_PATTERN = /^(skip to (main )?content|home|read more|click here|login|menu|apply( now)?)$/i;
@@ -186,7 +191,7 @@ export const refreshHarvestData = async ({ force = false } = {}) => {
         };
         sourceReports.push(report);
 
-        result.value.harvestedItems.forEach((item) => {
+        applyCachedWikiCfpDetails(result.value.harvestedItems).forEach((item) => {
           const title = (item.title || "").trim();
           if (title.length < 4 || JUNK_TITLE_PATTERN.test(title)) return;
           normalizedItems.push(
@@ -231,6 +236,9 @@ export const refreshHarvestData = async ({ force = false } = {}) => {
       activeSourceIds: SOURCE_REGISTRY.map((source) => source.id),
     });
 
+    // Deadlines live on WikiCFP event pages; fetch any missing ones in the background.
+    startWikiCfpEnrichment();
+
     return {
       refreshed: true,
       ...updatedStore,
@@ -252,6 +260,7 @@ export const getHarvestStatus = async () => {
     itemCount: store.items.length,
     sourceReports: store.sourceReports,
     refreshing: Boolean(refreshPromise),
+    wikicfpDetails: getWikiCfpEnrichmentStatus(),
     // Live (non-expired) listings per section, used for the home page counters.
     liveCounts: store.items.reduce((counts, item) => {
       if (getItemStatus(item) === "expired") return counts;
@@ -497,6 +506,12 @@ export const searchHarvestData = async (filters = {}) => {
 };
 
 
+function startWikiCfpEnrichment() {
+  runWikiCfpDetailEnrichment().catch((error) =>
+    console.error("[harvest] WikiCFP detail enrichment failed:", error.message),
+  );
+}
+
 const runBackgroundRefresh = (reason) => {
   if (refreshPromise) return;
   console.log(`[harvest] background refresh started (${reason})`);
@@ -512,7 +527,9 @@ const runBackgroundRefresh = (reason) => {
     })
     .catch((error) => {
       console.error("[harvest] background refresh failed:", error.message);
-    });
+    })
+    // Startup with a fresh cache still needs any missing WikiCFP deadlines.
+    .finally(startWikiCfpEnrichment);
 };
 
 // Serve whatever is cached immediately; only block when there is nothing to show yet.

@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
-import { Presentation as Presentation } from "lucide-react";
+import { Presentation } from "lucide-react";
+import ConferenceMilestones from "@/components/ConferenceMilestones";
 import DeadlineStatusBadge from "@/components/DeadlineStatusBadge";
 import { compareByDeadline, itemTimestamp } from "@/lib/itemDates";
 import { useState, useEffect, useMemo } from "react";
@@ -8,7 +9,7 @@ import {
   MapPin,
   Calendar,
   ExternalLink,
-  Globe,
+  Timer,
   CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -311,11 +312,17 @@ const Conferences = () => {
                             </div>
                             <div className="rounded-xl border border-border/70 px-4 py-4">
                               <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                                Venue type
+                                Submission deadline
                               </div>
                               <div className="mt-2 text-sm font-medium text-foreground flex items-center gap-2">
-                                <Globe className="h-4 w-4 text-muted-foreground" />
-                                {conf.kind || "Conference"}
+                                <Timer className="h-4 w-4 text-muted-foreground" />
+                                {conf.deadlineAt
+                                  ? new Date(conf.deadlineAt).toLocaleDateString(undefined, {
+                                      day: "numeric",
+                                      month: "short",
+                                      year: "numeric",
+                                    })
+                                  : "See call for papers"}
                               </div>
                             </div>
                           </div>
@@ -328,31 +335,44 @@ const Conferences = () => {
                         </div>
 
                         <div className="rounded-2xl bg-muted/90 border border-border p-6 flex flex-col justify-between">
-                          <div>
+                          {conf.milestones && Object.keys(conf.milestones).length > 0 ? (
+                            <div>
+                              <p className="eyebrow mb-4">CFP timeline</p>
+                              <ConferenceMilestones item={conf} />
+                            </div>
+                          ) : (
                             <div className="flex items-start gap-3">
                               <div className="mt-0.5 rounded-xl bg-card p-2 border border-border">
                                 <CheckCircle2 className="h-5 w-5 text-foreground/85" />
                               </div>
-                              <div>
-                                <p className="text-sm md:text-[15px] leading-7 text-foreground/85">
-                                  Review the venue page for deadlines, calls for
-                                  papers, and submission instructions before
-                                  planning your next conference submission.
-                                </p>
-                              </div>
+                              <p className="text-sm md:text-[15px] leading-7 text-foreground/85">
+                                Review the venue page for deadlines, calls for
+                                papers, and submission instructions before
+                                planning your next conference submission.
+                              </p>
                             </div>
-                          </div>
+                          )}
 
                           {conf.url && (
                             <div className="mt-6">
                               <Button
                                 size="lg"
                                 className="w-full rounded-xl"
-                                onClick={() => window.open(conf.url, "_blank")}
+                                onClick={() => window.open(conf.officialUrl || conf.url, "_blank")}
                               >
-                                Visit conference website
+                                {conf.officialUrl ? "Official website" : "Visit conference website"}
                                 <ExternalLink className="h-4 w-4" />
                               </Button>
+                              {conf.officialUrl && (
+                                <a
+                                  href={conf.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="mt-3 block text-center text-xs text-muted-foreground hover:text-foreground"
+                                >
+                                  View on {conf.sourceName?.split(" ")[0] || "source"}
+                                </a>
+                              )}
                             </div>
                           )}
                         </div>

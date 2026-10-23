@@ -35,6 +35,14 @@ export interface HarvestItem {
   firstSeenAt?: string | null;
   status?: "open" | "closing-soon" | "submissions-closed" | "upcoming" | "expired" | "unknown" | string;
   daysUntilDeadline?: number | null;
+  /** CFP milestone dates (WikiCFP event pages) */
+  milestones?: {
+    abstract?: string;
+    submission?: string;
+    notification?: string;
+    cameraReady?: string;
+  };
+  officialUrl?: string | null;
 }
 
 export interface HarvestSearchParams {

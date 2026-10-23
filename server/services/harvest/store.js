@@ -47,6 +47,12 @@ const openDb = () => {
       source_id TEXT PRIMARY KEY,
       data      TEXT NOT NULL
     );
+    -- Per-URL data scraped from listing detail pages (e.g. WikiCFP deadlines), refetched when stale.
+    CREATE TABLE IF NOT EXISTS detail_cache (
+      url        TEXT PRIMARY KEY,
+      fetched_at TEXT NOT NULL,
+      data       TEXT NOT NULL
+    );
     CREATE TABLE IF NOT EXISTS meta (
       key   TEXT PRIMARY KEY,
       value TEXT
@@ -181,6 +187,40 @@ export const writeStore = async ({
   cachedStore = null;
   const store = await readStore();
   return { ...store, pruned };
+};
+
+/** Cached detail-page data for the given URLs: Map<url, { fetchedAt, data }>. */
+export const getDetailCache = (urls) => {
+  openDb();
+  const lookup = db.prepare("SELECT fetched_at, data FROM detail_cache WHERE url = ?");
+  const result = new Map();
+  for (const url of urls) {
+    const row = lookup.get(url);
+    if (row) result.set(url, { fetchedAt: row.fetched_at, data: JSON.parse(row.data) });
+  }
+  return result;
+};
+
+export const setDetailCache = (url, data) => {
+  openDb();
+  db.prepare(
+    "INSERT INTO detail_cache (url, fetched_at, data) VALUES (?, ?, ?) ON CONFLICT(url) DO UPDATE SET fetched_at = excluded.fetched_at, data = excluded.data",
+  ).run(url, new Date().toISOString(), JSON.stringify(data));
+};
+
+/** Merge fields into every stored item with this URL (used by background enrichers). */
+export const updateItemsByUrl = (url, fields) => {
+  openDb();
+  const rows = db.prepare("SELECT id, data FROM items WHERE url = ?").all(url);
+  const update = db.prepare("UPDATE items SET data = ?, deadline_at = ? WHERE id = ?");
+  db.transaction(() => {
+    for (const row of rows) {
+      const merged = { ...JSON.parse(row.data), ...fields };
+      update.run(JSON.stringify(merged), merged.deadlineAt ?? null, row.id);
+    }
+  })();
+  if (rows.length) cachedStore = null;
+  return rows.length;
 };
 
 // One-time import of the old JSON cache so existing data (and firstSeenAt history) survives.

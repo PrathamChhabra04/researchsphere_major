@@ -14,7 +14,10 @@
   `opportunity`), `subtype` (`phd`, `postdoc`, `internship`, `research`, `project-call`,
   `book-chapter`, …), `title`, `summary`, `url`, `location`, `deadline`, `eventDate`.
 - **Politeness**: requests to the same host are serialised with a minimum gap
-  (1.2 s, or 3.5 s for arXiv), so parallel sources never trigger rate limits.
+  (1.2 s; 3.5 s for arXiv; 5 s for WikiCFP per its robots.txt), so parallel sources never
+  trigger rate limits.
+- **Detail enrichment**: `wikicfpDetails.js` adds CFP milestones and the official site from
+  WikiCFP event pages in a background pass after each harvest (cached in `detail_cache`).
 - **Classification**: `classifyOpportunitySubtype` decides the category from the
   *title* first (an internship source can still publish a lecturer job); the source's
   subtype is only a fallback. Relevance filters match whole words, so "ai" never matches
