@@ -178,7 +178,7 @@ const Internships = () => {
             eyebrow="Opportunities"
             title="Internships"
             accent={internships.length > 0 ? `${internships.length} live` : undefined}
-            description="Research internships at AI labs, IITs, ETH, CERN and universities worldwide, soonest deadline first."
+            description="Research internships at industry labs, IITs, ETH, CERN and universities worldwide, soonest deadline first."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="px-5 py-5 sm:px-8 sm:py-7">

@@ -9,7 +9,7 @@ are healthy, failing or currently empty.
 
 | Area | Sources |
 |---|---|
-| Conferences | WikiCFP RSS (29 CS/AI categories), Call4Paper |
+| Conferences | WikiCFP RSS (29 tech categories), Call4Paper |
 | Preprints and articles | arXiv RSS (9 CS categories), IEEE Spectrum, Hugging Face, OpenAI, Google AI, TensorFlow, KDnuggets and other blogs |
 | PhD, postdoc and research jobs | jobs.ac.uk (20 topic searches × 3 pages), Science Careers feeds, AcademicJobsOnline |
 | Industry AI labs | Greenhouse API (Anthropic, xAI, Together AI, Scale AI, Databricks, Stability AI) and Ashby API (OpenAI, Cohere, Perplexity, Cerebras, ElevenLabs, Anyscale); research-track roles only |
@@ -46,6 +46,6 @@ Add an entry to `SOURCE_REGISTRY`. The `type` selects the harvester:
 ```
 
 Then check it with `npm run harvest:refresh` and confirm it reports a non-zero count.
-For opportunity and conference feeds, only items that pass the CS/AI relevance filter
+For opportunity and conference feeds, only items that pass the tech-relevance filter
 are kept. When a source is removed from the registry, its stored items are deleted on
 the next harvest.

@@ -159,7 +159,7 @@ const ResearchJobs = () => {
             eyebrow="Opportunities"
             title="Research jobs"
             accent={researchJobs.length > 0 ? `${researchJobs.length} live` : undefined}
-            description="Research scientist, engineer, fellowship and faculty roles from universities and AI labs like OpenAI, Anthropic and Cohere."
+            description="Research scientist, engineer, fellowship and faculty roles from universities and industry labs like OpenAI, Databricks and Scale AI."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="px-5 py-5 sm:px-8 sm:py-7">

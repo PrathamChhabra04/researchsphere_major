@@ -33,6 +33,10 @@ const CS_AREAS = [
   "Computer Networks",
   "Human-Computer Interaction",
   "Distributed Systems",
+  "Web3",
+  "Internet of Things",
+  "Edge Computing",
+  "Robotics",
 ];
 
 const PLATFORM_FEATURES = [
@@ -40,7 +44,7 @@ const PLATFORM_FEATURES = [
     icon: FileSearch,
     label: "Conference Discovery",
     description:
-      "CFPs and call-for-papers across top CS venues, filtered by topic, deadline, and year. Sourced live from WikiCFP and other registries.",
+      "CFPs and call-for-papers across top tech research venues, filtered by topic, deadline, and year. Sourced live from WikiCFP and other registries.",
   },
   {
     icon: BookOpen,
@@ -81,7 +85,7 @@ const DATA_SOURCES = [
   ["FindAPhD", "Doctoral positions"],
   ["ResearchTweet", "Global opportunities feed"],
   ["NoticeBard", "India-based opportunities"],
-  ["IJERT", "Engineering and CS journals"],
+  ["IJERT", "Engineering and computing journals"],
   ["Papers With Code", "ML papers and benchmarks"],
 ] as const;
 
@@ -97,7 +101,7 @@ const About = () => {
             eyebrow="About"
             title="Built by students"
             accent="for researchers"
-            description="ResearchSphere is developed by a dedicated student team to make research opportunities in CS and AI easy to find."
+            description="ResearchSphere is developed by a dedicated student team to make research opportunities across technology easy to find."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="px-6 py-7 md:px-8 md:py-9">
@@ -165,7 +169,7 @@ const About = () => {
                         ],
                         [
                           "Computer-science focused",
-                          "Taxonomy, tags, and ranking are tuned for CS and AI topics.",
+                          "Taxonomy, tags, and ranking are tuned for computing and emerging-tech topics.",
                         ],
                         [
                           "Source transparent",
@@ -189,7 +193,7 @@ const About = () => {
                     <div className="mt-5 grid grid-cols-3 gap-2">
                       {[
                         [String(PLATFORM_FEATURES.length), "Core sections"],
-                        [String(CS_AREAS.length), "CS topic areas"],
+                        [String(CS_AREAS.length), "Tech research areas"],
                         ["1", "Unified finder"],
                       ].map(([value, label]) => (
                         <div
@@ -254,7 +258,7 @@ const About = () => {
                 Research areas
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Topics used to classify and prioritize relevant CS records.
+                Topics used to classify and prioritize relevant tech research records.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

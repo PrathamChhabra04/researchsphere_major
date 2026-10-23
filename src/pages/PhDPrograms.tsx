@@ -158,7 +158,7 @@ const PhDPrograms = () => {
             eyebrow="Opportunities"
             title="PhD programs"
             accent={phdPrograms.length > 0 ? `${phdPrograms.length} live` : undefined}
-            description="Funded PhD studentships and doctoral admissions in computer science, AI and data science, soonest deadline first."
+            description="Funded PhD studentships and doctoral admissions across computing and emerging tech, soonest deadline first."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="px-5 py-5 sm:px-8 sm:py-7">
@@ -224,7 +224,7 @@ const PhDPrograms = () => {
           <section className="mt-8">
             <div className="flex flex-col gap-2 border-b border-border pb-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-sm font-medium text-muted-foreground">Computer science research opportunities</p>
+                <p className="text-sm font-medium text-muted-foreground">Tech research opportunities</p>
                 <h2 className="mt-1 text-2xl font-semibold tracking-tight text-foreground">
                   {processedPhdPrograms.length} PhD programs found
                 </h2>

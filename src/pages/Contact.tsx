@@ -141,14 +141,14 @@ const Contact = () => {
                             Research Laboratory
                           </p>
                           <p className="text-xs text-muted-foreground">
-                            Computer Science and AI
+                            Computing &amp; emerging technologies
                           </p>
                         </div>
                       </div>
 
                       <p className="mb-4 text-sm leading-7 text-muted-foreground">
-                        Our group works at the intersection of artificial
-                        intelligence, data science, and software systems,
+                        Our group works across artificial intelligence, cloud,
+                        security, data and software systems,
                         combining academic rigor with practical collaboration
                         across universities and industry.
                       </p>

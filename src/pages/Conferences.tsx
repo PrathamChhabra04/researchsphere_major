@@ -157,7 +157,7 @@ const Conferences = () => {
             eyebrow="Call for papers"
             title="Conferences"
             accent={conferences.length > 0 ? `${conferences.length} live` : undefined}
-            description="Upcoming CS and AI venues sorted by event date, with submission status pulled from each call for papers."
+            description="Upcoming tech research venues sorted by event date, with submission status pulled from each call for papers."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="p-6 md:p-8">

@@ -612,7 +612,7 @@ const Index = () => {
                 <p className="mt-14 font-display text-4xl font-semibold tracking-tight">
                   {liveCounts.research ?? "—"}
                 </p>
-                <p className="text-xs opacity-80">research &amp; AI-lab roles</p>
+                <p className="text-xs opacity-80">research &amp; industry-lab roles</p>
               </Link>
 
               <div className="relative z-10 text-center">
@@ -626,17 +626,16 @@ const Index = () => {
                 <h1 className="display-xl text-[2.7rem] sm:text-6xl md:text-7xl lg:text-[6.6rem]">
                   Every open call
                   <br />
-                  in the{" "}
+                  in{" "}
                   <Link to="/general-finder" className="lime-chip mx-1 text-[0.82em] transition-transform hover:scale-[1.03]">
-                    CS &amp; AI
-                  </Link>{" "}
-                  research
+                    frontier tech
+                  </Link>
                   <br />
-                  world, live
+                  research, live
                 </h1>
                 <p className="mx-auto mt-7 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-                  Conferences, journals, funding calls, PhDs, postdocs, internships and AI-lab
-                  research roles — harvested automatically, with deadlines you can act on.
+                  Conferences, journals, funding calls, PhDs, postdocs, internships and industry-lab
+                  research roles across AI, cloud, Web3, security and beyond — harvested automatically, with deadlines you can act on.
                 </p>
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
                   <Link to="/phd-programs" className="pill-lime">
@@ -692,7 +691,7 @@ const Index = () => {
               <span className="inline-flex h-[0.9em] w-[0.9em] items-center justify-center rounded-full bg-accent align-[-0.08em] text-white [-webkit-text-fill-color:white]">
                 <SphereIcon className="h-[0.6em] w-[0.6em]" />
               </span>{" "}
-              every corner of CS research
+              every corner of tech research
             </h2>
           </div>
 

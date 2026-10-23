@@ -1,6 +1,6 @@
 # ResearchSphere
 
-A self-updating directory of research opportunities for Computer Science, IT and AI:
+A self-updating directory of technology research opportunities — AI, cloud, Web3, cybersecurity, data, systems and more:
 conferences, journals, book-chapter calls, project/funding calls, PhD programmes,
 postdocs, internships and research jobs (universities and industry AI labs).
 

@@ -59,8 +59,8 @@ const Footer = () => {
           <div className="space-y-4">
             <BrandMark />
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A self-updating map of conferences, journals, funding and research careers in
-              computer science and AI.
+              A self-updating map of conferences, journals, funding and research careers across
+              technology — from AI and cloud to Web3 and security.
             </p>
             <p className="inline-flex items-center gap-2 text-xs text-muted-foreground">
               <MapPin className="h-3.5 w-3.5 text-primary" /> Built for researchers, everywhere
