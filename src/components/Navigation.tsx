@@ -43,35 +43,39 @@ const Navigation = () => {
   const [profile, setProfile] = useState<UserPreferences>(getUserPreferences());
   const [interestsInput, setInterestsInput] = useState("");
 
-  const mainNavItems = [
-    { name: "Home", path: "/" },
-    { name: "Search All", path: "/general-finder" },
-    // { name: "Assistant", path: "/assistant" },
-    { name: "About", path: "/about" },
-    { name: "Collaborate", path: "/research-collaboration" },
+  const visibleSectionItems = [
+    { name: "Find Journals", path: "/journals" },
+    { name: "Conferences", path: "/conferences" },
   ];
 
-  const discoverItems = [
-    { name: "Conferences", path: "/conferences" },
-    { name: "Journals", path: "/journals" },
+  const callForItems = [
     { name: "Book Chapters", path: "/book-chapters" },
     { name: "Project Calls", path: "/project-calls" },
   ];
 
-  const researchOpportunitiesItems = [
+  const opportunityItems = [
     { name: "PhD Programs", path: "/phd-programs" },
     { name: "Postdoc Positions", path: "/postdoc-positions" },
     { name: "Internships", path: "/internships" },
     { name: "Research Jobs", path: "/research-jobs" },
   ];
 
+  const mobileNavItems = [
+    { name: "Home", path: "/" },
+    { name: "Search All", path: "/general-finder" },
+    ...visibleSectionItems,
+    ...callForItems,
+    ...opportunityItems,
+    { name: "About", path: "/about" },
+    { name: "Collaborate", path: "/research-collaboration" },
+  ];
+
+  const isCallForActive = callForItems.some((item) => location.pathname === item.path);
+  const isOpportunitiesActive = opportunityItems.some(
+    (item) => location.pathname === item.path,
+  );
+
   const isActive = (path: string) => location.pathname === path;
-  const isDiscoverActive = discoverItems.some(
-    (item) => location.pathname === item.path,
-  );
-  const isResearchOpportunitiesActive = researchOpportunitiesItems.some(
-    (item) => location.pathname === item.path,
-  );
 
   useEffect(() => {
     if (!profileOpen) return;
@@ -107,39 +111,49 @@ const Navigation = () => {
   };
 
   const linkClass = (active: boolean) =>
-    `relative px-3 py-2 text-sm transition-colors ${
-      active ? "text-primary" : "text-foreground/80 hover:text-foreground"
+    `relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-2.5 text-[clamp(17px,1.35vw,21px)] font-medium tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background 2xl:px-3 ${
+      active
+        ? "bg-primary/10 text-primary"
+        : "text-foreground/80 hover:bg-muted hover:text-foreground"
     }`;
 
   const renderDropdown = (
     label: string,
-    items: typeof discoverItems,
+    items: Array<{ name: string; path: string }>,
     active: boolean,
   ) => (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button type="button" className={`${linkClass(active)} inline-flex items-center gap-1 outline-none`}>
+        <button type="button" className={`${linkClass(active)} outline-none`}>
           {label}
-          <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+          <ChevronDown className="h-4 w-4 opacity-60" />
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="center" className="w-72 rounded-2xl border-border bg-popover p-2">
+      <DropdownMenuContent align="start" className="w-80 rounded-2xl border-border bg-popover p-2">
         {items.map((item) => {
           const section = SECTIONS.find((entry) => entry.path === item.path);
           const Icon = section?.icon;
           return (
             <DropdownMenuItem key={item.path} asChild className="rounded-xl p-0 focus:bg-muted">
-              <Link to={item.path} className="flex w-full cursor-pointer items-center gap-3 px-3 py-2.5">
+              <Link to={item.path} className="flex w-full cursor-pointer items-center gap-3 px-3 py-3">
                 {Icon && (
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-muted text-primary">
-                    <Icon className="h-4 w-4" />
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-muted text-primary">
+                    <Icon className="h-5 w-5" />
                   </span>
                 )}
                 <span className="min-w-0">
-                  <span className={`block text-sm ${isActive(item.path) ? "text-primary" : "text-foreground"}`}>
+                  <span
+                    className={`block text-base font-medium ${
+                      isActive(item.path) ? "text-primary" : "text-foreground"
+                    }`}
+                  >
                     {item.name}
                   </span>
-                  {section && <span className="block text-xs text-muted-foreground">{section.short}</span>}
+                  {section && (
+                    <span className="block text-sm text-muted-foreground">
+                      {section.short}
+                    </span>
+                  )}
                 </span>
               </Link>
             </DropdownMenuItem>
@@ -150,62 +164,93 @@ const Navigation = () => {
   );
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="container mx-auto px-4">
-        <div className="flex h-[72px] items-center justify-between gap-4">
-          <BrandMark />
+    <nav
+      aria-label="Primary"
+      className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-xl"
+    >
+      <div className="w-full px-6 min-[1400px]:px-8 2xl:px-10">
+        <div className="grid h-[84px] grid-cols-[1fr_auto_1fr] items-center gap-3">
+          <div className="justify-self-start">
+            <BrandMark large />
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden items-center lg:flex">
-            {mainNavItems.slice(0, 2).map((item) => (
-              <Link key={item.path} to={item.path} className={linkClass(isActive(item.path))}>
+          <div className="hidden items-center justify-center gap-2 min-[1400px]:gap-2.5 2xl:gap-4 xl:flex">
+            <Link
+              to="/"
+              className={linkClass(isActive("/"))}
+              aria-current={isActive("/") ? "page" : undefined}
+            >
+              Home
+            </Link>
+            <Link
+              to="/general-finder"
+              className={linkClass(isActive("/general-finder"))}
+              aria-current={isActive("/general-finder") ? "page" : undefined}
+            >
+              Search All
+            </Link>
+            {visibleSectionItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={linkClass(isActive(item.path))}
+                aria-current={isActive(item.path) ? "page" : undefined}
+              >
                 {item.name}
               </Link>
             ))}
-            {renderDropdown("Call for", discoverItems, isDiscoverActive)}
-            {renderDropdown("Opportunities", researchOpportunitiesItems, isResearchOpportunitiesActive)}
-            {mainNavItems.slice(2, 3).map((item) => (
-              <Link key={item.path} to={item.path} className={linkClass(isActive(item.path))}>
-                {item.name}
-              </Link>
-            ))}
+            {renderDropdown("Call for", callForItems, isCallForActive)}
+            {renderDropdown("Opportunities", opportunityItems, isOpportunitiesActive)}
+            <Link
+              to="/about"
+              className={linkClass(isActive("/about"))}
+              aria-current={isActive("/about") ? "page" : undefined}
+            >
+              About
+            </Link>
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-self-end gap-1.5 min-[1400px]:gap-2">
             <button
               type="button"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="relative flex h-10 w-10 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
+              className="relative flex h-11 w-11 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-muted hover:text-foreground"
             >
-              <Sun className="h-[18px] w-[18px] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[18px] w-[18px] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </button>
             <button
               type="button"
               onClick={() => setProfileOpen(true)}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-lime to-lime/40 text-lime-foreground ring-2 ring-background transition-transform hover:scale-105"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-lime to-lime/40 text-lime-foreground ring-2 ring-background transition-transform hover:scale-105"
               title="Your research preferences"
             >
               {profile.name ? (
-                <span className="text-sm font-semibold">{profile.name.trim().charAt(0).toUpperCase()}</span>
+                <span className="text-base font-semibold">{profile.name.trim().charAt(0).toUpperCase()}</span>
               ) : (
-                <User className="h-[18px] w-[18px]" />
+                <User className="h-5 w-5" />
               )}
               <span className="sr-only">Your research preferences</span>
             </button>
-            <Link to="/research-collaboration" className="pill hidden md:inline-flex">
+            <Link
+              to="/research-collaboration"
+              className="pill hidden px-5 py-2.5 text-base min-[1400px]:px-6 md:inline-flex"
+            >
               Collaborate
             </Link>
 
             {/* Mobile menu button */}
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-muted lg:hidden"
+              aria-expanded={mobileMenuOpen}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-muted xl:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               <span className="sr-only">Menu</span>
             </button>
           </div>
@@ -213,47 +258,27 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="space-y-6 pb-6 pt-2 lg:hidden">
-            <div className="flex flex-wrap gap-2">
-              {mainNavItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`rounded-full border px-4 py-1.5 text-sm ${
-                    isActive(item.path) ? "border-primary text-primary" : "border-border text-foreground"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+          <div className="pb-6 pt-2 xl:hidden">
+            <div className="grid grid-cols-2 gap-2">
+              {mobileNavItems.map((item) => {
+                const active = isActive(item.path);
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`flex items-center rounded-xl px-4 py-3 text-lg font-medium transition-colors ${
+                      active
+                        ? "bg-primary/10 text-primary"
+                        : "bg-card text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
-            {[
-              { label: "Call for", items: discoverItems },
-              { label: "Opportunities", items: researchOpportunitiesItems },
-            ].map((group) => (
-              <div key={group.label}>
-                <p className="eyebrow mb-2">{group.label}</p>
-                <div className="grid grid-cols-2 gap-2">
-                  {group.items.map((item) => {
-                    const Icon = SECTIONS.find((entry) => entry.path === item.path)?.icon;
-                    return (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className={`flex items-center gap-2 rounded-xl bg-card px-3 py-2.5 text-sm ${
-                          isActive(item.path) ? "text-primary" : "text-foreground"
-                        }`}
-                      >
-                        {Icon && <Icon className="h-4 w-4 text-primary" />}
-                        {item.name}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
           </div>
         )}
       </div>

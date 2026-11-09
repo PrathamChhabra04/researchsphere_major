@@ -20,11 +20,25 @@ export const SphereIcon = ({ className = "h-6 w-6" }: { className?: string }) =>
   </svg>
 );
 
-const BrandMark = ({ compact = false }: { compact?: boolean }) => (
+const BrandMark = ({
+  compact = false,
+  large = false,
+}: {
+  compact?: boolean;
+  large?: boolean;
+}) => (
   <Link to="/" className="group flex items-center gap-2.5 text-foreground" aria-label="ResearchSphere home">
-    <SphereIcon className="h-7 w-7 transition-transform duration-500 group-hover:rotate-[24deg]" />
+    <SphereIcon
+      className={`${
+        large ? "h-8 w-8 min-[1400px]:h-9 min-[1400px]:w-9" : "h-7 w-7"
+      } transition-transform duration-500 group-hover:rotate-[24deg]`}
+    />
     {!compact && (
-      <span className="font-display text-[17px] font-medium tracking-tight">
+      <span
+        className={`font-display font-medium tracking-tight ${
+          large ? "text-xl min-[1400px]:text-2xl" : "text-[17px]"
+        }`}
+      >
         Research<span className="text-muted-foreground">Sphere</span>
       </span>
     )}
