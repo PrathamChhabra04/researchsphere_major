@@ -1,0 +1,32 @@
+{
+  "query": "computer architecture",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-36-25-257Z-both-computer-architecture",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-36-25-257Z-both-computer-architecture\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=computer+architecture&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 40,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-36-25-257Z-both-computer-architecture\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "computer architecture",
+    "springerCount": 20,
+    "elsevierCount": 40,
+    "mergedCount": 60,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-36-25-257Z-both-computer-architecture\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-36-25-257Z-both-computer-architecture\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-36-25-257Z-both-computer-architecture\\journals-merged.json"
+    }
+  }
+}

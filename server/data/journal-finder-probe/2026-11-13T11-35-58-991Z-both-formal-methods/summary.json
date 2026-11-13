@@ -1,0 +1,32 @@
+{
+  "query": "formal methods",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-58-991Z-both-formal-methods",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-58-991Z-both-formal-methods\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=formal+methods&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 39,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-58-991Z-both-formal-methods\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "formal methods",
+    "springerCount": 20,
+    "elsevierCount": 39,
+    "mergedCount": 59,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-58-991Z-both-formal-methods\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-58-991Z-both-formal-methods\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-58-991Z-both-formal-methods\\journals-merged.json"
+    }
+  }
+}

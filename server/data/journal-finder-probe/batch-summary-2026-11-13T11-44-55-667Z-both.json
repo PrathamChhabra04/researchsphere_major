@@ -1,0 +1,262 @@
+{
+  "provider": "both",
+  "createdAt": "2026-11-13T11:44:55.651Z",
+  "topicCount": 39,
+  "completedCount": 23,
+  "skippedCount": 16,
+  "failedCount": 0,
+  "topics": [
+    "machine learning",
+    "deep learning",
+    "artificial intelligence",
+    "natural language processing",
+    "computer vision",
+    "blockchain",
+    "cybersecurity",
+    "cloud computing",
+    "distributed systems",
+    "data mining",
+    "software engineering",
+    "internet of things",
+    "edge computing",
+    "federated learning",
+    "reinforcement learning",
+    "quantum computing",
+    "robotics",
+    "computer graphics",
+    "human-computer interaction",
+    "computer networks",
+    "wireless networks",
+    "information security",
+    "databases",
+    "big data",
+    "information retrieval",
+    "programming languages",
+    "formal methods",
+    "computer architecture",
+    "operating systems",
+    "embedded systems",
+    "high performance computing",
+    "bioinformatics",
+    "health informatics",
+    "generative artificial intelligence",
+    "recommender systems",
+    "smart cities",
+    "digital twins",
+    "6G networks",
+    "unmanned aerial vehicles"
+  ],
+  "results": [
+    {
+      "topic": "machine learning",
+      "status": "skipped",
+      "runName": "2026-03-19T15-59-30-789Z-both-machine-learning",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "deep learning",
+      "status": "skipped",
+      "runName": "2026-03-19T16-00-05-232Z-both-deep-learning",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "artificial intelligence",
+      "status": "skipped",
+      "runName": "2026-03-19T16-00-41-022Z-both-artificial-intelligence",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "natural language processing",
+      "status": "skipped",
+      "runName": "2026-03-19T16-01-15-075Z-both-natural-language-processing",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "computer vision",
+      "status": "skipped",
+      "runName": "2026-03-19T16-01-47-800Z-both-computer-vision",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "blockchain",
+      "status": "skipped",
+      "runName": "2026-03-19T16-02-21-456Z-both-blockchain",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "cybersecurity",
+      "status": "skipped",
+      "runName": "2026-03-19T16-02-51-760Z-both-cybersecurity",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "cloud computing",
+      "status": "skipped",
+      "runName": "2026-03-19T15-07-35-371Z-both-cloud-computing",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "distributed systems",
+      "status": "skipped",
+      "runName": "2026-03-19T16-03-24-104Z-both-distributed-systems",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "data mining",
+      "status": "skipped",
+      "runName": "2026-03-19T16-03-56-461Z-both-data-mining",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "software engineering",
+      "status": "skipped",
+      "runName": "2026-03-19T16-04-30-474Z-both-software-engineering",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "internet of things",
+      "status": "skipped",
+      "runName": "2026-03-19T16-05-08-196Z-both-internet-of-things",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "edge computing",
+      "status": "skipped",
+      "runName": "2026-03-19T16-05-39-379Z-both-edge-computing",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "federated learning",
+      "status": "skipped",
+      "runName": "2026-03-19T16-06-11-737Z-both-federated-learning",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "reinforcement learning",
+      "status": "skipped",
+      "runName": "2026-03-19T16-06-47-799Z-both-reinforcement-learning",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "quantum computing",
+      "status": "skipped",
+      "runName": "2026-11-13T11-31-34-194Z-both-quantum-computing",
+      "reason": "Existing run found"
+    },
+    {
+      "topic": "robotics",
+      "status": "completed",
+      "runName": "2026-11-13T11-32-05-350Z-both-robotics"
+    },
+    {
+      "topic": "computer graphics",
+      "status": "completed",
+      "runName": "2026-11-13T11-32-27-332Z-both-computer-graphics"
+    },
+    {
+      "topic": "human-computer interaction",
+      "status": "completed",
+      "runName": "2026-11-13T11-32-49-034Z-both-human-computer-interaction"
+    },
+    {
+      "topic": "computer networks",
+      "status": "completed",
+      "runName": "2026-11-13T11-33-09-054Z-both-computer-networks"
+    },
+    {
+      "topic": "wireless networks",
+      "status": "completed",
+      "runName": "2026-11-13T11-33-29-196Z-both-wireless-networks"
+    },
+    {
+      "topic": "information security",
+      "status": "completed",
+      "runName": "2026-11-13T11-33-51-230Z-both-information-security"
+    },
+    {
+      "topic": "databases",
+      "status": "completed",
+      "runName": "2026-11-13T11-34-22-477Z-both-databases"
+    },
+    {
+      "topic": "big data",
+      "status": "completed",
+      "runName": "2026-11-13T11-34-44-137Z-both-big-data"
+    },
+    {
+      "topic": "information retrieval",
+      "status": "completed",
+      "runName": "2026-11-13T11-35-07-902Z-both-information-retrieval"
+    },
+    {
+      "topic": "programming languages",
+      "status": "completed",
+      "runName": "2026-11-13T11-35-33-198Z-both-programming-languages"
+    },
+    {
+      "topic": "formal methods",
+      "status": "completed",
+      "runName": "2026-11-13T11-35-58-991Z-both-formal-methods"
+    },
+    {
+      "topic": "computer architecture",
+      "status": "completed",
+      "runName": "2026-11-13T11-36-25-257Z-both-computer-architecture"
+    },
+    {
+      "topic": "operating systems",
+      "status": "completed",
+      "runName": "2026-11-13T11-36-53-114Z-both-operating-systems"
+    },
+    {
+      "topic": "embedded systems",
+      "status": "completed",
+      "runName": "2026-11-13T11-37-16-510Z-both-embedded-systems"
+    },
+    {
+      "topic": "high performance computing",
+      "status": "completed",
+      "runName": "2026-11-13T11-37-36-156Z-both-high-performance-computing"
+    },
+    {
+      "topic": "bioinformatics",
+      "status": "completed",
+      "runName": "2026-11-13T11-38-04-979Z-both-bioinformatics"
+    },
+    {
+      "topic": "health informatics",
+      "status": "completed",
+      "runName": "2026-11-13T11-39-45-313Z-both-health-informatics"
+    },
+    {
+      "topic": "generative artificial intelligence",
+      "status": "completed",
+      "runName": "2026-11-13T11-40-16-341Z-both-generative-artificial-intelligence"
+    },
+    {
+      "topic": "recommender systems",
+      "status": "completed",
+      "runName": "2026-11-13T11-40-49-994Z-both-recommender-systems"
+    },
+    {
+      "topic": "smart cities",
+      "status": "completed",
+      "runName": "2026-11-13T11-41-37-223Z-both-smart-cities"
+    },
+    {
+      "topic": "digital twins",
+      "status": "completed",
+      "runName": "2026-11-13T11-41-55-252Z-both-digital-twins"
+    },
+    {
+      "topic": "6G networks",
+      "status": "completed",
+      "runName": "2026-11-13T11-43-50-219Z-both-6g-networks"
+    },
+    {
+      "topic": "unmanned aerial vehicles",
+      "status": "completed",
+      "runName": "2026-11-13T11-44-24-763Z-both-unmanned-aerial-vehicles"
+    }
+  ]
+}

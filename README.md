@@ -53,6 +53,7 @@ pages fill in as soon as it finishes.
 | server | `npm run harvest:sources` | Per-source health report from the database (no network) |
 | server | `npm run smoke:assistant` | Exercise the assistant with sample queries |
 | server | `npm run probe:journals` / `build:journal-corpus` | Rebuild the journal-finder corpus |
+| server | `npm run enrich:journal-scopes` | Scrape missing Springer aims-and-scope text (slow, one-time) |
 
 ## Configuration
 

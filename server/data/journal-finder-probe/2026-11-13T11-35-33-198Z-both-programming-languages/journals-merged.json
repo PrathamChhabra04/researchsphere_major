@@ -1,0 +1,1101 @@
+[
+  {
+    "provider": "elsevier",
+    "rank": 1,
+    "title": "Journal of Clinical Epidemiology",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-clinical-epidemiology/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/JCEPI",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-clinical-epidemiology/publish/guide-for-authors",
+    "acronym": "JCE",
+    "issn": "0895-4356",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.8,
+    "citeScore": 9.4,
+    "decisionDays": 7,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Public Health and Health Policy",
+      "Health"
+    ],
+    "articleTypes": [
+      "Original Research",
+      "Commentary",
+      "Protocol",
+      "VSI: Living guidelines series - Original Article",
+      "VSI: Living guidelines series - Review Article",
+      "VSI: Living guidelines series - Commentary"
+    ],
+    "scope": "Metascience and innovative methods to improve population health The Journal of Clinical Epidemiology (JCE) aims to advance science that can improve health care decision-making and contribute to the evolving discipline of clinical epidemiology. The JCE publishes methods-focused articles across the spectrum of the research ecosystem, including primary research (qualitative, quantitative, and mixed); evidence syntheses; guidelines; and implementation science. The journal welcomes registered reports, protocols, and simulation studies that advance the journal’s aims. The JCE promotes inclusive research and health equity and is committed to ensuring a diversity of perspectives across its content, contributors, editorial board, and leadership. The journal publishes topics including: Meta-science Patient-oriented research Development, evaluation, and implementation of reporting guidelines Research integrity and culture Open science Emerging methodologies Developing and evaluating outcome measures Education and learning programs for clinical epidemiologist The JCE does not accept the following submissions except in exceptional circumstances: Bibliometric studies and those on infodemiology, social media trends, and health informatics Papers written primarily for a statistical audience Artificial intelligence and machine learning studies without critical evaluation of the method and transparent reporting Meta-research studies that demonstrate weaknesses or limitations in the evidence ecosystem but lack reflection on how these might be addressed Effectiveness studies, including Mendelian randomization studies and target trial emulations; systematic reviews; prevalence and incidence studies; prognostic or diagnostic research where the main focus is not on the methods Studies limited to one country, jurisdiction, or clinical area with limited generalizability, such as: translating an outcome measure into a different language; a study focused on one clinical specialty; a Delphi/consensus-based study where all the authors are from one country; or a survey of participants from one setting or with a limited response rate Studies with a single author where it was more appropriate for a multi-disciplinary team to conduct the research Studies that do not include patient partners as members of the research team in circumstances where that would be considered essential Animal studies Pharmacovigilance and pharmacoepidemiology studies",
+    "editorInChief": "David Tovey | Andrea Tricco",
+    "goldOpenAccessFee": 4560,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/08954356.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 2,
+    "title": "English for Specific Purposes",
+    "sourceUrl": "https://www.sciencedirect.com/journal/english-for-specific-purposes/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ESPJ",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/english-for-specific-purposes/publish/guide-for-authors",
+    "acronym": "ESP",
+    "issn": "0889-4906",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3,
+    "citeScore": 7.5,
+    "decisionDays": 23,
+    "acceptanceDays": 16,
+    "subjectAreas": [
+      "Education",
+      "Linguistics and Language",
+      "Language and Linguistics"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "VSI: AI, Multimodality & Justice",
+      "VSI: Collaboration and Impact"
+    ],
+    "scope": "English For Specific Purposes is an international peer-reviewed journal that welcomes submissions from across the world. Authors are encouraged to submit articles and research/discussion notes on topics relevant to the teaching and learning of discourse for specific communities: academic, occupational, or otherwise specialized. Topics such as the following may be treated from the perspective of English for specific purposes : second language acquisition in specialized contexts, needs assessment, curriculum development and evaluation, materials preparation, discourse analysis, descriptions of specialized varieties of English, teaching and testing techniques, the effectiveness of various approaches to language learning and language teaching, and the training or retraining of teachers for the teaching of ESP. In addition, the journal welcomes articles and discussions that identify aspects of ESP needing development, areas into which the practice of ESP may be expanded, possible means of cooperation between ESP programs and learners&#39; professional or vocational interests, and implications that findings from related disciplines can have for the profession of ESP . The journal also carries reviews of scholarly books on topics of interest to the profession.",
+    "editorInChief": "Marina Bondi | Elena Cotos",
+    "goldOpenAccessFee": 3540,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/08894906.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 3,
+    "title": "International Journal of Artificial Intelligence in Education",
+    "sourceUrl": "https://www.editorialmanager.com/ijaie/default2.aspx",
+    "submissionLink": "https://www.editorialmanager.com/ijaie/default2.aspx",
+    "guideForAuthors": null,
+    "acronym": "IJAIED",
+    "issn": "1560-4292",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 10.1,
+    "citeScore": 18.5,
+    "decisionDays": null,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Education"
+    ],
+    "articleTypes": [
+      "Research Article",
+      "Review Article",
+      "Short Communication"
+    ],
+    "scope": "The International Journal of Artificial Intelligence in Education (IJAIED) publishes papers concerned with the application of AI to education. It aims to help the development of principles for the design of computer-based learning systems. Its premise is that such principles involve the modeling and representation of relevant aspects of knowledge, before implementation or during execution, and hence require the application of AI techniques and concepts. Coverage extends to agent-based learning environments, architectures for AIED systems, bayesian and statistical methods, cognitive tools for learning, computer-assisted language learning, distributed learning environments, educational robotics, human factors and interface design, intelligent agents on the internet, natural language interfaces for instructional systems, real-world applications of AIED systems, tools for administration and curriculum integration, and more. The International Journal of Artificial Intelligence in Education is published in conjunction with the International Artificial Intelligence in Education Society (IAIED). IJAIED has a very broad notion of the scope of AI and of a &#39;computer-based learning system&#39;, as indicated by the following list of topics considered to be within the scope of IJAIED: adaptive and intelligent multimedia and hypermedia systems agent-based learning environments AIED and teacher education architectures for AIED systems assessment and testing of learning outcomes authoring systems and shells for AIED systems bayesian and statistical methods case-based systems cognitive development cognitive models of problem-solving cognitive tools for learning computer-assisted language learning computer-supported collaborative learning dialogue (argumentation, explanation, negotiation, etc.) discovery environments and microworlds distributed learning environments educational robotics embedded training systems empirical studies to inform the design of learning environments environments to support the learning of programming evaluation of AIED systems formal models of components of AIED systems help and advice systems human factors and interface design instructional design principles instructional planning intelligent agents on the internet intelligent courseware for computer-based training intelligent tutoring systems knowledge and skill acquisition knowledge representation for instruction modelling metacognitive skills modelling pedagogical interactions motivation natural language interfaces for instructional systems networked learning and teaching systems neural models applied to AIED systems performance support systems practical, real-world applications of AIED systems qualitative reasoning in simulations situated learning and cognitive apprenticeship social and cultural aspects of learning student modelling and cognitive diagnosis support for knowledge building communities support for networked communication theories of learning and conceptual change tools for administration and curriculum integration tools for the guided exploration of information resources",
+    "editorInChief": "Vincent Aleven | Cristina Conati | Marcus Specht",
+    "goldOpenAccessFee": 3680,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15604292.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 4,
+    "title": "Results in Control and Optimization",
+    "sourceUrl": "https://www.sciencedirect.com/journal/results-in-control-and-optimization/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/RICO/default.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/results-in-control-and-optimization/publish/guide-for-authors",
+    "acronym": "RICO",
+    "issn": "2666-7207",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 3.8,
+    "citeScore": 7.8,
+    "decisionDays": 11,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Control and Optimization"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Microarticle",
+      "VSI: RICO_Soft Robotics Control"
+    ],
+    "scope": "Results in Control and Optimization (RICO) is a gold open access journal offering authors the opportunity to publish in all fundamental and interdisciplinary areas of control and optimization enabling a safe and sustainable interconnected human society in a rapid way. Results in Control and Optimization accepts papers that are scientifically sound, technically correct and provide valuable new knowledge to both mathematics and engineering community. Theoretical work, experimental work or case studies are all welcome. The journal also publishes survey papers. However, survey papers will be considered only with prior approval from the editor-in-chief and should provide additional insights into the topic surveyed rather than a mere compilation of known results. Topics on well-studied classical control and optimization methods such as pole assignment and linear programming are not within the scope of the journal. Furthermore topics such as Artificial Intelligence (AI) and Reinforcement Learning (RL) are welcome. Re-publication of a paper from another language to English is acceptable, provided that there is full and prominent disclosure of its original source at the time of submission.",
+    "editorInChief": "Professor Qianchuan Zhao",
+    "goldOpenAccessFee": 2350,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/26667207.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 5,
+    "title": "International Journal of Medical Informatics",
+    "sourceUrl": "https://www.sciencedirect.com/journal/international-journal-of-medical-informatics/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/IJMEDI",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/international-journal-of-medical-informatics/publish/guide-for-authors",
+    "acronym": "IJB",
+    "issn": "1386-5056",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5,
+    "citeScore": 8.8,
+    "decisionDays": 1,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Computer Science Applications",
+      "Information Systems",
+      "Nursing and Health Professions (General)",
+      "Health Informatics"
+    ],
+    "articleTypes": [
+      "Implementation Report",
+      "Original Research Article",
+      "Review",
+      "Short Communication",
+      "VSI: Digital health maturity (Review)"
+    ],
+    "scope": "Official journal of the European Federation for Medical Informatics (EFMI) and IMIA . The International Journal of Medical Informatics (IJMI) provides an international medium for the dissemination of original results and interpretative reviews in the field of medical informatics. As a leading international venue for health informatics research, IJMI has moved from concept to clinic, rigorously evaluated when deployed at scale in real-world settings. The journal serves a global audience with cross-national, comparative evidence on informatics performance across diverse regulatory, linguistic, cultural, and healthcare system contexts. The journal focuses on the design, development, integration, implementation, deployment, evaluation, and application of information and communication technologies (ICT) in healthcare. Submissions are expected to prioritize implementation fidelity, measurable clinical/population impact, equity, sustainability, and long-term governance over algorithmic novelty alone. IJMI seeks high-impact contributions in several priority areas, including AI implementation and governance, interoperability at scale, clinical implementation science, digital health equity, policy and workforce development, clinical decision support systems, health management information systems, interoperability across healthcare information systems and services, and human factors, safety, and experience. These priorities reflect the journal’s commitment to publishing rigorous and consequential informatics research that advances patient care, clinician well-being, health equity, and system performance worldwide. In scope: Health information systems, including national/international registries, hospital and clinical information systems, electronic medical/health records, consumer informatics, public/population health informatics, digital ecosystems, terminologies and standards, human-computer interaction, user adoption and acceptance, systems integration, and interoperability—in support of patient care delivery through ICT. Clinical decision support systems and AI, systems that employ heuristics, algorithms, data structures, statistical methods, decision theory, protocol-based reasoning, and artificial intelligence, including knowledge discovery techniques. Studies focusing solely on AI, ML, deep learning, or large language models will only be considered when integrated into clinical systems demonstrating impact by robust external validation and comprehensive clinical outcome evaluation. Education and workforce, ICT-based educational programs, digital literacy initiatives, and informatics training including organizational frameworks, curricula design, economic evaluations, social and clinical impact assessments, and ethical/cost-benefit analyses of healthcare applications. Evidence synthesis, literature reviews (systematic, scoping, integrative, critical, meta-analytic) that contribute to clinical informatics knowledge base through the evaluation of ICT applications (e.g., telehealth, AI, cybersecurity, electronic health/patient records) in clinical practice. Safety and policy, research addressing patient safety, data privacy, security, confidentiality, legal/regulatory frameworks, policy processes, system maturity models, and ICT governance in healthcare delivery. As an international journal in medical informatics, the publication prioritizes studies that apply rigorous methodologies enabling global researchers to replicate, validate, and build upon ICT applications in healthcare. Contributions from researchers worldwide are welcomed, especially those demonstrating the clinical significance and practical implementation of informatics solutions. Out of scope : Studies whose primary outcome is technical model performance (e.g., AUC, F1, precision/recall) without prospective clinical deployment, validated patient or provider outcomes, or a documented Clinical Translation Roadmap detailing a specific pathway to real-world application. Single-site studies without a transferability analysis, implementation framework, or explicit discussion of generalizability — unless conducted in under-represented settings where the contextual contribution itself is the primary scholarly value. Bibliometric, scientometric, or citation analysis studies. Conceptual models, frameworks, or architecture designs without implementation results or empirical evaluation. Standalone genetics, genomics, or biomarker studies without informatics implementation or clinical translation. Medical image analysis focusing solely on mathematical modeling, algorithmic development, or technical performance without empirical clinical applications or patient outcomes. Methodological studies or algorithm performance evaluations without clinical implementation or patient impact assessment. Studies whose primary data source is non-peer-reviewed social media or consumer video content, unless the platform itself is integral to the informatics intervention under evaluation. Stand-alone consumer applications without a predefined evaluation protocol, validated outcomes, and linkage to clinical or public health workflows.",
+    "editorInChief": "Prof. Dr. Heimar Marin",
+    "goldOpenAccessFee": 3450,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/13865056.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 6,
+    "title": "Computers and Composition",
+    "sourceUrl": "https://www.sciencedirect.com/journal/computers-and-composition/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/COCOMP",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/computers-and-composition/publish/guide-for-authors",
+    "acronym": "COCOMP",
+    "issn": "8755-4615",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4.4,
+    "citeScore": 5,
+    "decisionDays": 2,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Linguistics and Language",
+      "Language and Linguistics",
+      "Education"
+    ],
+    "articleTypes": [
+      "Research Paper"
+    ],
+    "scope": "Computers and Composition: An International Journal is devoted to exploring the use of computers in writing classes, writing programs, and writing research. It provides a forum for discussing issues connected with writing and computer use across diverse and global contexts. The journal offers information about integrating computers into writing programs on the basis of sound theoretical and pedagogical decisions, and empirical evidence. The journal welcomes scholarly contributions that examine the intersection of digital technologies and writing practices. We seek articles that advance our understanding of how technology shapes composition theory, practice, and pedagogy. Founded in 1983, the journal has evolved alongside technological developments, maintaining its commitment to publishing cutting-edge research connected to writing and technology use in educational and professional settings. Computers and Composition publishes a variety of scholarly work, including: Research on effective and equitable integration of technology in writing instruction Theoretical explorations of how digital environments influence composing processes Case studies of innovative approaches to teaching with technology Critical and rhetorical examinations of software and hardware used in writing contexts Analyses of digital literacy practices and their implications for writing Historical perspectives on the evolution of computers in composition Investigations of assessment practices in technology-enhanced writing environments Explorations of ethical, social, cultural, linguistic, multimodal, and environmental dimensions of technology use Examinations of diverse epistemological perspectives on technology and composition, including non-Western and Indigenous lenses Studies of writing program administration in digital contexts While rooted in the traditions of rhetoric and composition, the journal recognizes the increasingly interconnected nature of writing instruction worldwide. We welcome perspectives from scholars and practitioners who bring diverse experiences and approaches to the study of computers and writing. The journal maintains humanistic inquiry standards while embracing methodological diversity, including appropriate social science approaches. Computers and Composition remains committed to publishing work that not only contributes to scholarly discourse but also informs classroom practice and organizational processes. By fostering dialogue among researchers, practitioners, teachers, and program administrators, the journal aims to advance our collective understanding of how technology can enhance writing in varied settings.",
+    "editorInChief": "Dr. Jason Tham",
+    "goldOpenAccessFee": 4130,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/87554615.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 7,
+    "title": "Early Childhood Research Quarterly",
+    "sourceUrl": "https://www.sciencedirect.com/journal/early-childhood-research-quarterly/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ECRQ",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/early-childhood-research-quarterly/publish/guide-for-authors",
+    "acronym": "EARCHI",
+    "issn": "0885-2006",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.6,
+    "citeScore": 5.9,
+    "decisionDays": 26,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Applied Psychology",
+      "Education",
+      "Sociology and Political Science",
+      "Developmental and Educational Psychology"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short communication",
+      "VSI: Artificial Intelligence (AI) in ECDE",
+      "VSI: Early Childhood Policy",
+      "VSI: Family Engagement in ECE",
+      "VSI: Infant-Toddler Care and Services"
+    ],
+    "scope": "Early Childhood Research Quarterly (ECRQ) publishes research on early childhood education and development from birth through 8 years of age. ECRQ publishes only empirical research (quantitative or mixed methods) on issues of interest to early childhood development, theory, and educational practice. The journal also occasionally publishes significant, rigorous meta-analytic reviews of research. It will no longer publish non-quantitative reviews, such as systematic or scoping reviews. As an applied research journal, we are interested in work that has social, policy, and educational relevance and implications and work that strengthens links between research and practice. Topics of interest include, but are not limited to: • Children&#39;s social, emotional, cognitive, behavioral, language, and motor development applied to early childhood settings. • Center- and home-based care, program quality, and children&#39;s transition to school • Program evaluations related to early intervention, prevention or interventions that will influence early childhood education practice and policy • Implementation science related to early childhood education initiatives • Public policy, early childhood education, and child development • Best classroom practices and effective early childhood curricula • Caregiver professional development and training and well-being • Relationships between early childhood education and family or parental engagement • The larger contexts and systems including schools, neighborhoods and communities in which early childhood education programs take place.",
+    "editorInChief": "Nirmala Rao",
+    "goldOpenAccessFee": 3820,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/08852006.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 8,
+    "title": "Intelligent Systems with Applications",
+    "sourceUrl": "https://www.sciencedirect.com/journal/intelligent-systems-with-applications/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/iswa/default.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/intelligent-systems-with-applications/publish/guide-for-authors",
+    "acronym": "ISWA",
+    "issn": "2667-3053",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 5.5,
+    "citeScore": 13.1,
+    "decisionDays": 2,
+    "acceptanceDays": 8,
+    "subjectAreas": [
+      "Computer Science Applications",
+      "Computer Networks and Communications",
+      "Artificial Intelligence"
+    ],
+    "articleTypes": [
+      "Discussion",
+      "Full length article",
+      "Review article",
+      "Short communication",
+      "Short review"
+    ],
+    "scope": "Intelligent Systems with Applications (ISWA) is a peer reviewed open-access journal which focuses on the achievements of research and applications related to intelligent systems (IS). IS can be applied to all aspects of human enterprize, such as business &amp; finance, manufacturing &amp; supply chains, agriculture, transportation, engineering, medicine and health, education, entertainment, culture, travel, media, the Internet, etc. ISWA covers a broad spectrum of applications in the community, including industry , government , and academia . The journal aims to publish papers dealing with, but not limited to, the following research fields: Knowledge Representation and Reasoning, Machine Learning (ML) and Neural Computing, Evolutionary Computation, Fuzzy Systems, Intelligent Information Processing, Intelligent Control and Robotics, Multi-agent Systems and Programming. The journal welcomes submissions of IS-applications in various areas: Intelligent Cities, Industries, Consuming, Medical Treatment and Health, Agriculture, Business and Finance, Internet of Things (IoT). Research addressing IS-applications in other fields is also encouraged. Submissions must be novel, technically sound, and clearly presented. ISWA accepts both regular papers and survey articles. Submissions meeting journal criteria will undergo a single-blind review process, utilizing a minimum of two (2) external referees. Our dedicated editorial team, together with active researchers from related fields, will ensure that papers move through the evaluation and review as rapidly as possible without compromising on the quality of the process. The journal audience comprises academia, industry, and practitioners. Authors are strongly encouraged to make their datasets and software publicly accessible via a repository of their choosing. Please see our Guide for Authors for information on article submission. If you require any further information or help, please visit our Support Center . Software Publication We invite you to convert your open source software into an additional journal publication in Software Impacts , a multi-disciplinary open access journal. Software Impacts provides a scholarly reference to software that has been used to address a research challenge. The journal disseminates impactful and re-usable scientific software through Original Software Publications which describe the application of the software to research and the published outputs. For more information contact us at: software.impacts@elsevier.com Focal points include, but are not limited to innovative applications of: Basic Theory Knowledge Representation and Reasoning Machine Learning (ML) and Neural Computing Evolutionary Computation Fuzzy Systems Intelligent Methodology Intelligent Information Processing (Video, Image, Audio, Language and other Multi-modal Information) Data Ming and Knowledge Discovery Pattern Recognition (PR) and Computer Vision (CV) Audio Signal Processing Natural Language Processing (NLP) Intelligent Control and Robotics Multi-agent Systems and Programming Intelligent Applications Intelligent Cities Intelligent Transportation Intelligent Systems for Security and Management Intelligent Systems for Industry Intelligent Supply Chain Unmanned factory and flexible manufacturing Unmanned Warehouse Service Robot Intelligent Systems for Consuming Intelligent Hardware and Smart Wearable Devices Intelligent Furniture New Retails Unmanned Driving and Autonomous Systems Intelligent Systems for Medical Treatment and Health Intelligent Systems for Agriculture Intelligent Systems for Business and Finance Internet of Things and its Applications",
+    "editorInChief": "Hua Xu",
+    "goldOpenAccessFee": 2830,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/26673053.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 9,
+    "title": "Computer Standards & Interfaces",
+    "sourceUrl": "https://www.sciencedirect.com/journal/computer-standards-and-interfaces/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/CSI",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/computer-standards-and-interfaces/publish/guide-for-authors",
+    "acronym": "CSI",
+    "issn": "0920-5489",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4.6,
+    "citeScore": 12.1,
+    "decisionDays": 2,
+    "acceptanceDays": 8,
+    "subjectAreas": [
+      "Software",
+      "Computer Science Applications",
+      "Computer Networks and Communications",
+      "Information Systems and Management"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "VSI: STMAIoT",
+      "VSI: Secure AI Agents in CI",
+      "VSI:SW Meas. Std._Research Paper",
+      "VSI:SW Meas. Std._Review Article"
+    ],
+    "scope": "Researchers interested in submitting a special issue proposal should adhere to the Special Content Submission Guidelines . The International Journal on the Development and Application of Standards for Computers, Software Quality, Data Communications, Interfaces and Measurement The quality of software, well-defined interfaces (hardware and software), the process of digitalisation, and accepted standards in these fields are essential for building and exploiting complex computing, communication, multimedia and measuring systems. Standards can simplify the design and construction of individual hardware and software components and help to ensure satisfactory interworking. Computer Standards &amp; Interfaces is an international journal dealing specifically with these topics. The journal • Provides information about activities and progress on the definition of computer standards , software quality , interfaces and methods, at national, European and international levels • Publishes critical comments on standards and standards activities • Disseminates user&#39;s experiences and case studies in the application and exploitation of established or emerging standards, interfaces and methods • Offers a forum for discussion on actual projects, standards, interfaces and methods by recognised experts • Stimulates relevant research by providing a specialised refereed medium. Computer Standards &amp; Interfaces is concerned with the specification, development and application of standards and with high-level publications of developments and methods in the following areas: • Standards , Information Management , Formal Methods - Computers, Processors, Storage, Operating systems, Languages, Databases, Graphics, User interface, Multimedia, Information security, Office automation, Development of standards and instruments, Applications • Software Quality , Software Process - Languages, Operating systems, Programming, Requirements specification, Design &amp; implementation, Inspection &amp; test, Maintenance, Product and process evaluation, Performance, Tools, Metrics, Embedded systems, Software in measurement and technical systems including real-time aspects, Development of International Standards in Software Engineering • Distributed Systems , Open Systems , E-Topics - Digital interfaces, System and device buses, Fieldbuses, Data communication, Distributed computing, Protocols, Open systems interconnection, Local and wide area networks, Internet, Worldwide Web, Network security, Cryptology, E-services, E-business, E-commerce • Data Acquisition - Analog-to-digital conversion, Specification, Modelling, Industrial electronics, Real-time systems, Laboratory automation, Automatic measurement, Process control, Electromagnetic compatibility • Digital Instruments Standardisation - Forum of EUPAS, European Project for ADC-based devices, Standardisation (IMEKO TC-4 Working Group on A/D and D/A Converter Metrology), IEEE TC-10, IEC TC-42-WG8, IEC TC-85-WG16; Standardi-sation of specifications, modelling, testing, and analog and digital processing for digital instruments The last issue of a volume includes an author index and a subject index. CS&amp;I also covers general topics concerning the standardisation process, such as technical, political and commercial aspects of standards, their impact on the marketplace, cost/benefit analyses, legislative issues, and relationships among national and international standards bodies.",
+    "editorInChief": "Ricardo Colomo-Palacios",
+    "goldOpenAccessFee": 2990,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/09205489.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 10,
+    "title": "Journal of Systems Architecture",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-systems-architecture/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/JSA",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-systems-architecture/publish/guide-for-authors",
+    "acronym": "SYSARC",
+    "issn": "1383-7621",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.3,
+    "citeScore": 9.1,
+    "decisionDays": 1,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Computer Networks and Communications",
+      "Hardware and Architecture",
+      "Computer Science Applications",
+      "Control and Systems Engineering",
+      "Software"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "VSI: LLMEI [EGE:Meikang Qiu]",
+      "VSI:AEiC2027"
+    ],
+    "scope": "The Journal of Systems Architecture: Embedded Software Design (JSA) is a journal covering all design and architectural aspects related to embedded systems and software . It ranges from the microarchitecture level via the system software level up to the application-specific architecture level. Aspects such as real-time systems, operating systems, programming languages, communications (limited to analysis and the software stack), mobile systems, parallel and distributed architectures as well as additional subjects in the computer and system architecture area will fall within the scope of this journal. Technology will not be a main focus, but its use and relevance to particular designs will be. Case studies are welcome but must contribute more than just a design for a particular piece of software. Design automation of such systems including methodologies, techniques and tools for their design as well as novel designs of software components fall within the scope of this journal. Novel applications that use embedded systems are also central in this journal. While JSA does not focus on hardware design, hardware/software co-design techniques with an emphasis on software are also relevant here. We invite you to convert your open source software into an additional journal publication in Software Impacts , a multi-disciplinary open access journal. Software Impacts provides a scholarly reference to software that has been used to address a research challenge. The journal disseminates impactful and re-usable scientific software through Original Software Publications (OSP) which describe the application of the software to research and the published outputs.",
+    "editorInChief": "Zonghua Gu",
+    "goldOpenAccessFee": 2260,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/13837621.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 11,
+    "title": "Applied Computing and Geosciences",
+    "sourceUrl": "https://www.sciencedirect.com/journal/applied-computing-and-geosciences/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ACAGS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/applied-computing-and-geosciences/publish/guide-for-authors",
+    "acronym": "ACAGS",
+    "issn": "2590-1974",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 4,
+    "citeScore": 4.4,
+    "decisionDays": 4,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Earth and Planetary Sciences (General)",
+      "Computers in Earth Sciences"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review Article",
+      "VSI: AI for Deep-Time Earth",
+      "VSI: AI in Mineral Exploration",
+      "VSI: GEOLLM and GEOKG"
+    ],
+    "scope": "Applied Computing &amp; Geosciences is an online-only, open access journal focused on all aspects of computing in the geosciences. Like its companion title Computers &amp; Geosciences , Applied Computing &amp; Geosciences &#39; mission is to advance and disseminate knowledge in all the related areas of at the interface between computer sciences and geosciences. Applied Computing &amp; Geosciences publishes original articles, review articles and case-studies. Alongside welcoming direct submissions, the journal will benefit from an Article Transfer Service which will allow the author(s) to transfer their manuscript online from Computers &amp; Geosciences thus saving authors time and effort spent on formatting and resubmitting. Applied Computing &amp; Geosciences offers the community an innovative, efficient and flexible route for the publication of scientifically and ethically sound articles which address problems in the geosciences which includes: Algorithms; Artificial Intelligence; Computational Methods; Computer Graphics; Computer Visualization; Data Models; Data Processing; Database Retrieval; Distributed Systems; E-Geoscience; Geocomputation; Geographical Information Systems; Geoinformatics; Geomathematics; Image Analysis; Information Retrieval; Modelling; Near and Remote Sensing Data Analysis; Ontologies; Parallel Systems; Programming Languages; Remote Sensing; Simulation; Social Media; Software Engineering; Spatial Analysis and The World-Wide Web. The term Geoscience is used in a broad sense to refer to the physical Earth sciences including: Atmospheric Sciences; Climatology; Economic Geology; Environmental Science; Geochemistry; Geodesy; Geology; Geomatics; Geomorphology; Geological and Geotechnical Engineering; Geophysics; Glaciology; Hydrogeology; Hydrology; Meteorology; Mineralogy; Oceanography; Ore Geology; Paleogeography; Paleontology; Petrology; Physical Geography; Planetary Science; Sedimentology; Seismology; Soil Science; Stratigraphy and Structural Geology. Our highly experienced and well-respected editorial team ensures that all papers are promptly, rigorously and fairly peer-reviewed by the experts in the field. Research paper (5,000 words) : Providing an original contribution to the scientific fields of study outlined above. Review paper (10,000 words) : Critically describing the state-of-the art of applications of computer science in the geosciences, as a stand-alone contribution or to frame a special issue. Application article (5,000 words) : Describing a real-world case study on the scientific fields of study outlined above. Criteria for assessment shall be: completeness, depth, novelty, timeliness, quality, and interest to the Journal&#39;s readership. Before submitting review paper manuscripts, a review outline should be approved by one of the editors of the Journal.",
+    "editorInChief": "Xiaogang Ma | Alessandra Menafoglio",
+    "goldOpenAccessFee": 2230,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/25901974.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 12,
+    "title": "Information and Computation",
+    "sourceUrl": "https://www.sciencedirect.com/journal/information-and-computation/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/YINCO",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/information-and-computation/publish/guide-for-authors",
+    "acronym": "YINCO",
+    "issn": "0890-5401",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 1.4,
+    "citeScore": 2.5,
+    "decisionDays": 5,
+    "acceptanceDays": 5,
+    "subjectAreas": [
+      "Theoretical Computer Science",
+      "Computational Theory and Mathematics"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review",
+      "Data in Brief",
+      "Short Communication",
+      "VSI:FoIKS 2026"
+    ],
+    "scope": "Information and Computation welcomes original papers in all areas of theoretical computer science and computational applications of information theory . Survey articles of exceptional quality will also be considered. Particularly welcome are papers contributing new results in active theoretical areas such as Biological computation and computational biology Computational complexity Computer theorem-proving Concurrency and distributed process theory Cryptographic theory Data base theory Decision problems in logic Design and analysis of algorithms Discrete optimization and mathematical programming Inductive inference and learning theory Logic &amp; constraint programming Program verification &amp; model checking Probabilistic &amp; Quantum computation Semantics of programming languages Symbolic computation, lambda calculus , and rewriting systems Types and typechecking This journal has an Open Archive . All published items, including research articles, have unrestricted access and will remain permanently free to read and download 48 months after publication. All papers in the Archive are subject to Elsevier&#39;s user license .",
+    "editorInChief": "Peleg",
+    "goldOpenAccessFee": 2980,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/08905401.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 13,
+    "title": "Journal of Symbolic Computation",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-symbolic-computation/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/jsco/default.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-symbolic-computation/publish/guide-for-authors",
+    "acronym": "YJSCO",
+    "issn": "0747-7171",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 0.9,
+    "citeScore": 2.1,
+    "decisionDays": 14,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Algebra and Number Theory",
+      "Computational Mathematics",
+      "Artificial Intelligence"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Tutorial",
+      "Survey Paper",
+      "VSI: ISSAC 2026",
+      "VSI: JSC-ISSAC-23",
+      "VSI: MEGA 2026 (Open until Nov 15th)",
+      "VSI: SCML",
+      "VSI: Unification"
+    ],
+    "scope": "An international journal, the Journal of Symbolic Computation , founded by Bruno Buchberger in 1985, is directed to mathematicians and computer scientists who have a particular interest in symbolic computation . The journal provides a forum for research in the algorithmic treatment of all types of symbolic objects : objects in formal languages (terms, formulas, programs); algebraic objects (elements in basic number domains, polynomials, residue classes, etc.); and geometrical objects. It is the explicit goal of the journal to promote the integration of symbolic computation by establishing one common avenue of communication for researchers working in the different subareas. It is also important that the algorithmic achievements of these areas should be made available to the human problem-solver in integrated software systems for symbolic computation. To help this integration, the journal publishes invited tutorial surveys as well as Applications Letters and System Descriptions. Research Areas Include: Computational algebra Computational geometry (non-linear) Automated theorem proving Automatic programming Design and implementation of symbolic computation languages and systems Applications in education, science, engineering and industry",
+    "editorInChief": "Cordian Riener | Josef Schicho",
+    "goldOpenAccessFee": 3280,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/07477171.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 14,
+    "title": "Parallel Computing",
+    "sourceUrl": "https://www.sciencedirect.com/journal/parallel-computing/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/PARCO/default.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/parallel-computing/publish/guide-for-authors",
+    "acronym": "PARCO",
+    "issn": "0167-8191",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 1.1,
+    "citeScore": 6,
+    "decisionDays": 7,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Computer Science Applications",
+      "Hardware and Architecture",
+      "Control and Systems Engineering"
+    ],
+    "articleTypes": [
+      "Research Article",
+      "Review Article",
+      "Short Communication",
+      "VSI: Heterogeneous Computing",
+      "VSI:Data-Intensive HPC Techniques"
+    ],
+    "scope": "Researchers interested in submitting a special issue proposal should adhere to the Submission Guidelines . Parallel Computing is an international journal presenting the practical use of parallel computer systems, including high-performance architecture, system software, programming systems and tools, and applications. Within this context, the journal covers all aspects of high-end parallel computing from single homogeneous or heterogenous computing nodes to large-scale multi-node systems. Parallel Computing features original research work and review articles as well as novel or illustrative accounts of application experience with (and techniques for) the use of parallel computers. We also welcome studies reproducing prior publications that either confirm or disprove prior published results. Technical areas of interest include, but are not limited to: · System software for parallel computer systems including programming languages (new languages as well as compilation techniques), operating systems (including middleware), and resource management (scheduling and load-balancing). · Enabling software including debuggers, performance tools, and system and numeric libraries. · General hardware (architecture) concepts, new technologies enabling the realization of such new concepts, and details of commercially available systems. · Software engineering and productivity as it relates to parallel computing. · Applications (including scientific computing, deep learning, machine learning) or tool case studies demonstrating novel ways to achieve parallelism. · Performance measurement results on state-of-the-art systems. · Approaches to effectively utilize large-scale parallel computing, including new algorithms or algorithm analysis with demonstrated relevance to real applications using existing or next generation parallel computer architectures. · Parallel I/O systems, both hardware and software. · Networking technology for support of high-speed computing, demonstrating the impact of high-speed computation on parallel applications · Programming models and software for hybrid quantum-classical computing, and hybrid quantum-classical algorithms for high-performance computing.",
+    "editorInChief": "Anne Benoit",
+    "goldOpenAccessFee": 3400,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01678191.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 15,
+    "title": "Theoretical Computer Science",
+    "sourceUrl": "https://www.sciencedirect.com/journal/theoretical-computer-science/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/TCS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/theoretical-computer-science/publish/guide-for-authors",
+    "acronym": "TCS",
+    "issn": "0304-3975",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 1.1,
+    "citeScore": 2.5,
+    "decisionDays": 11,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Theoretical Computer Science",
+      "Computational Theory and Mathematics"
+    ],
+    "articleTypes": [
+      "Long Paper ( &gt; 40 pages)",
+      "Regular Paper (10 - 40 pages)",
+      "Note ( &lt; 10 pages)",
+      "VSI: AAIM 2026",
+      "VSI: ESA 2026",
+      "VSI:ALGOWIN2026",
+      "VSI:CIAA 2026 Special Issue",
+      "VSI:COCOON 2026",
+      "VSI:Fun with Algorithms 2026",
+      "VSI:Honoring Maxime Crochemore",
+      "VSI:IJTCS-FAW 2025_Closed",
+      "VSI:LATIN 2026",
+      "VSI:SAND 2026",
+      "VSI:TileAut",
+      "VSI:UNILOP"
+    ],
+    "scope": "Theoretical Computer Science is mathematical and abstract in spirit, but it derives its motivation from practical and everyday computation. Its aim is to understand the nature of computation and, as a consequence of this understanding, provide more efficient methodologies. All papers introducing or studying mathematical, logic and formal concepts and methods are welcome, provided that their motivation is clearly drawn from the field of computing . Any queries about submissions and peer review should be addressed to the TCS editorial office: tcseditorialoffice@elsevier.com . Papers published in Theoretical Computer Science are grouped in three sections according to their nature. The first section `Algorithms, automata, complexity and games&#39; is devoted to the study of algorithms and their complexity using analytical, combinatorial or probabilistic methods. It includes the whole field of abstract complexity (i.e. all the results about the hierarchies that can be defined using Turing machines), the whole field of automata and language theory (including automata on infinite words and infinitary languages), the whole field of geometrical (graphic) applications and the whole field of measurement of system performance using statistical methods. The second section,`Logic, semantics and theory of programming&#39;, is devoted to formal methods to check properties of programs or implement formally described languages; it contains all papers dealing with semantics of sequential and parallel programming languages . All formal methods treating these problems are published in this section, including rewriting techniques, abstract data types, automatic theorem proving, calculi such as SCP or CCS, Petri nets, new logic calculi and developments in categorical methods. The third section, &#39;Natural Computing&#39;, is devoted to the study of computing occurring in nature and computing inspired by nature. In the rapidly evolving field of computer science , natural computing plays an important role as the catalyst for the synergy of human designed computing with the computing going on in nature. This synergy leads to a deeper and broader understanding of the nature of computation. Although natural computing is concerned also with experiments and applications, this section of Theoretical Computer Science is focused on the theoretical aspects of natural computing with clear relevance to computing. Among others, it will contain papers dealing with the theoretical issues in evolutionary computing, neural networks, molecular computing, and quantum computing. Theoretical Computer Science will now publish high-quality advanced introductions. Advanced introductions, which are by invitation only, should cover a focused topic within the scope of TCS at a level that would be appropriate for a scientist who is new to the topic and wishes to gain an up-to-date understanding. Articles should be self-contained, including motivation and basic definitions, and proceed to advanced material and/or open problems which may - but need not - include new results. Sufficient references should be given to provide the reader with entry points to the research literature on the topic as well as the origins of the main ideas. Submissions will go through the standard review process of TCS.",
+    "editorInChief": "Lila Kari | Seth Pettie | Vladimiro Sassone",
+    "goldOpenAccessFee": 3190,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/03043975.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 16,
+    "title": "Science of Computer Programming",
+    "sourceUrl": "https://www.sciencedirect.com/journal/science-of-computer-programming/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/SCICO",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/science-of-computer-programming/publish/guide-for-authors",
+    "acronym": "SCICO",
+    "issn": "0167-6423",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 1.6,
+    "citeScore": 3.9,
+    "decisionDays": 6,
+    "acceptanceDays": 5,
+    "subjectAreas": [
+      "Software",
+      "Computational Theory and Mathematics"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Viewpoint",
+      "Original Software Publication",
+      "VSI: FLOPS 2026",
+      "VSI: NLBSE26-Research",
+      "VSI: TASE2026",
+      "VSI:CIbSE 2026",
+      "VSI:DisCoTec 2026 Artifacts",
+      "VSI: NLBSE26-Software",
+      "VSI:RV24-software [EGE- Erika Abraham]",
+      "VSI:termCOMP participants"
+    ],
+    "scope": "Methods of Software Design: Techniques and Applications Science of Computer Programming is dedicated to the distribution, via publication of papers and software , of research results in the areas of software systems development, use and maintenance, including the software aspects of hardware design . The journal has a wide scope ranging from the many facets of methodological foundations to the details of technical issues and aspects of industrial practice. The subjects of interest to SCP cover the entire spectrum of methods for the entire life cycle of software systems, including: Requirements, specification, design, validation, verification, coding, testing, maintenance, metrics and renovation of software ; Design, implementation and evaluation of programming languages ; Programming environments, development tools, visualisation and animation; Management of the development process; Human factors in software, software for social interaction, software for social computing; Cyber physical systems, and software for the interaction between the physical and the machine; Software aspects of infrastructure services, system administration, and network management. Special emphasis is given to recent trends in software development, such as software architecture, component-based software development and web-based software engineering. SCP is divided into two tracks. These are: (1) Research papers and (2) Software. Research Papers Track These cover four lines of work: (1) Concepts and methodology, (2) Formal techniques, (3) Experimental software technology, (4) Descriptive software technology. Concepts and methodology is open for methodological, philosophical and sociological studies on all aspects of computer software production and usage, including ethics. Also short papers are allowed here, called viewpoints. Formal techniques emphasizes the development and the pragmatic application of formal and semi-formal techniques. Submissions that the editors consider mainly mathematical or theoretical in nature, with the preliminary consent of the authors, will formally be forwarded to the sister journal TCS . Experimental software technology is open for expositions on implementations of and experiments with novel programming languages, systems and methods. Descriptive software technology deals with observational studies of current software development practices, reporting on new languages, systems and methods, including survey reports on the various themes. Software Track See the specific submission instructions for the Software Track in the Guide for Authors. The Software Track of Science of Computer Programming publishes Original Software Publications (OSP) to disseminate existing and useful software in the areas of programming (languages) and software development. Research on programming and software development may involve the creation of (huge) software systems to perform all kinds of experiments related to programming (languages) and software development. Special Issues : The Journal welcomes Special Issues within its Scope either resulting from conferences or workshops or from dedicated editorial efforts. There can be special issues for research papers or for software.",
+    "editorInChief": "Mousavi | De Lucia",
+    "goldOpenAccessFee": 3150,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01676423.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 17,
+    "title": "Journal of Computer Languages",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-computer-languages/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/COLA",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-computer-languages/publish/guide-for-authors",
+    "acronym": "COLA",
+    "issn": "2590-1184",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2,
+    "citeScore": 4.5,
+    "decisionDays": 2,
+    "acceptanceDays": 15,
+    "subjectAreas": [
+      "Computer Science Applications",
+      "Human-Computer Interaction"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review Article"
+    ],
+    "scope": "Following the merger of Computer Languages, Systems and Structures with the Journal of Visual Languages and Computing in 2018, we are excited to present the Journal of Computer Languages , a single publication which covers all areas of computer languages. The Journal of Computer Languages (COLA) welcomes papers on all aspects of the design, implementation, and use of computer languages (specification, modelling, programming; textual or visual) and human-centric computing, from theory to practice. Most papers describe original technical research, but the journal also welcome empirical studies and survey articles. Current research areas for the Journal of Computer Languages include: Block-based languages Cognitive, perceptive and motoric systems and models Compilers and interpreters Computational thinking Design and development of concurrent, distributed, parallel, quantum and sequential languages Domain-specific languages End-user development Generative approaches, meta-programming, meta-modelling Human aspects and psychology of designing languages Information visualization Interaction models and languages Location-based data and processes Language design and implementation Language-based security Language evolution, integration, composition, and coordination Language product lines Language workbenches, meta-languages and development frameworks Languages, models, and frameworks for visual analytics Languages for large-scale scientific computing Languages for software specification and verification Libraries, run-time environments and language ecosystems Modelling and programming languages Modularity and extensibility of language specifications and programming Parallel/distributed/neural computing and representations for visual information processing Pattern languages Pictorial systems and languages Program analysis and optimization Program comprehension Program visualization and animation Programming environments and tools Programming paradigms (agent-oriented, aspect-oriented, intermittent, etc.) Scientific visualization Scripting languages Semantics of computer languages Semantics-based verification Software language engineering Software visualization Type systems User interface design languages Visual languages and programming",
+    "editorInChief": "Mernik",
+    "goldOpenAccessFee": 2820,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/25901184.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "springer",
+    "rank": 1,
+    "title": "Annals of Mathematics and Artificial Intelligence",
+    "sourceUrl": "https://link.springer.com/journal/10472?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10472/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10472/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.62025,
+    "impactFactorText": "1.6 (2025)",
+    "downloads": 74930,
+    "decisionDays": 7,
+    "decisionTimeText": "7 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Mathematics",
+      "Computer Science",
+      "Complex Systems"
+    ],
+    "scope": "Artificial Intelligence, Mathematics, Computer Science, Complex Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 2,
+    "title": "Software and Systems Modeling",
+    "sourceUrl": "https://link.springer.com/journal/10270?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10270/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10270/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.02025,
+    "impactFactorText": "3.0 (2025)",
+    "downloads": 523749,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Software Engineering",
+      "Programming Techniques",
+      "Compilers and Interpreters",
+      "Computer and Information Systems Applications",
+      "IT in Business"
+    ],
+    "scope": "Software Engineering, Programming Techniques, Compilers and Interpreters, Computer and Information Systems Applications, IT in Business",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 3,
+    "title": "Empirical Software Engineering",
+    "sourceUrl": "https://link.springer.com/journal/10664?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10664/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10664/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.42025,
+    "impactFactorText": "3.4 (2025)",
+    "downloads": 1103599,
+    "decisionDays": 24,
+    "decisionTimeText": "24 days",
+    "subjectAreas": [
+      "Software Engineering",
+      "Compilers and Interpreters"
+    ],
+    "scope": "Software Engineering, Compilers and Interpreters",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 4,
+    "title": "SN Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/42979?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42979/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42979/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1696119,
+    "decisionDays": 96,
+    "decisionTimeText": "96 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Computer Engineering and Networks",
+      "Software Engineering",
+      "Data Structures and Information Theory",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics"
+    ],
+    "scope": "Computer Science, Computer Engineering and Networks, Software Engineering, Data Structures and Information Theory, Computer Imaging, Vision, Pattern Recognition and Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 5,
+    "title": "Journal of Automated Reasoning",
+    "sourceUrl": "https://link.springer.com/journal/10817?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10817/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10817/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 0.72025,
+    "impactFactorText": "0.7 (2025)",
+    "downloads": 141193,
+    "decisionDays": 7,
+    "decisionTimeText": "7 days",
+    "subjectAreas": [
+      "Formal Languages and Automata Theory",
+      "Artificial Intelligence",
+      "Mathematical Logic and Foundations",
+      "Symbolic and Algebraic Manipulation"
+    ],
+    "scope": "Formal Languages and Automata Theory, Artificial Intelligence, Mathematical Logic and Foundations, Symbolic and Algebraic Manipulation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 6,
+    "title": "The Journal of Supercomputing",
+    "sourceUrl": "https://link.springer.com/journal/11227?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11227/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11227/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.52025,
+    "impactFactorText": "3.5 (2025)",
+    "downloads": 1311828,
+    "decisionDays": 38,
+    "decisionTimeText": "38 days",
+    "subjectAreas": [
+      "Compilers and Interpreters",
+      "Processor Architectures",
+      "Computer Science"
+    ],
+    "scope": "Compilers and Interpreters, Processor Architectures, Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 7,
+    "title": "Innovations in Systems and Software Engineering",
+    "sourceUrl": "https://link.springer.com/journal/11334?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11334/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11334/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.42025,
+    "impactFactorText": "1.4 (2025)",
+    "downloads": 80945,
+    "decisionDays": 42,
+    "decisionTimeText": "42 days",
+    "subjectAreas": [
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Computer and Information Systems Applications"
+    ],
+    "scope": "Software Engineering, Artificial Intelligence, Computer and Information Systems Applications",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 8,
+    "title": "Software Quality Journal",
+    "sourceUrl": "https://link.springer.com/journal/11219?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11219/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11219/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.42025,
+    "impactFactorText": "2.4 (2025)",
+    "downloads": 176684,
+    "decisionDays": 12,
+    "decisionTimeText": "12 days",
+    "subjectAreas": [
+      "Software Engineering",
+      "Compilers and Interpreters",
+      "Data Structures and Information Theory",
+      "Operating Systems"
+    ],
+    "scope": "Software Engineering, Compilers and Interpreters, Data Structures and Information Theory, Operating Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 9,
+    "title": "International Journal on Software Tools for Technology Transfer",
+    "sourceUrl": "https://link.springer.com/journal/10009?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10009/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10009/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.72025,
+    "impactFactorText": "1.7 (2025)",
+    "downloads": 129351,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Software Engineering",
+      "Theory of Computation"
+    ],
+    "scope": "Software Engineering, Theory of Computation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 10,
+    "title": "Formal Methods in System Design",
+    "sourceUrl": "https://link.springer.com/journal/10703?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10703/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10703/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.02025,
+    "impactFactorText": "1.0 (2025)",
+    "downloads": 95478,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Electronic Circuits and Systems",
+      "Electrical and Electronic Engineering",
+      "Computer-Aided Engineering (CAD, CAE) and Design",
+      "Software Engineering"
+    ],
+    "scope": "Electronic Circuits and Systems, Electrical and Electronic Engineering, Computer-Aided Engineering (CAD, CAE) and Design, Software Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 11,
+    "title": "Journal of Computer Science and Technology",
+    "sourceUrl": "https://link.springer.com/journal/11390?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11390/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11390/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.82025,
+    "impactFactorText": "1.8 (2025)",
+    "downloads": 81625,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Computer Science",
+      "Software Engineering",
+      "Theory of Computation",
+      "Data Structures and Information Theory",
+      "Artificial Intelligence",
+      "Computer and Information Systems Applications"
+    ],
+    "scope": "Computer Science, Software Engineering, Theory of Computation, Data Structures and Information Theory, Artificial Intelligence, Computer and Information Systems Applications",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 12,
+    "title": "International Journal of Parallel Programming",
+    "sourceUrl": "https://link.springer.com/journal/10766?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10766/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10766/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.12025,
+    "impactFactorText": "1.1 (2025)",
+    "downloads": 93045,
+    "decisionDays": 46,
+    "decisionTimeText": "46 days",
+    "subjectAreas": [
+      "Theory of Computation",
+      "Processor Architectures",
+      "Software Engineering"
+    ],
+    "scope": "Theory of Computation, Processor Architectures, Software Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 13,
+    "title": "The VLDB Journal",
+    "sourceUrl": "https://link.springer.com/journal/778?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/778/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/778/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.32025,
+    "impactFactorText": "5.3 (2025)",
+    "downloads": 285623,
+    "decisionDays": 12,
+    "decisionTimeText": "12 days",
+    "subjectAreas": [
+      "Database Management"
+    ],
+    "scope": "Database Management",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 14,
+    "title": "Cluster Computing",
+    "sourceUrl": "https://link.springer.com/journal/10586?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10586/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10586/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.52025,
+    "impactFactorText": "5.5 (2025)",
+    "downloads": 979293,
+    "decisionDays": 25,
+    "decisionTimeText": "25 days",
+    "subjectAreas": [
+      "Processor Architectures",
+      "Operating Systems",
+      "Computer Communication Networks"
+    ],
+    "scope": "Processor Architectures, Operating Systems, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 15,
+    "title": "Computing",
+    "sourceUrl": "https://link.springer.com/journal/607?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/607/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/607/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.62025,
+    "impactFactorText": "3.6 (2025)",
+    "downloads": 352365,
+    "decisionDays": 6,
+    "decisionTimeText": "6 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Computer and Information Systems Applications",
+      "Computer Communication Networks",
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Computer Application in Administrative Data Processing"
+    ],
+    "scope": "Computer Science, Computer and Information Systems Applications, Computer Communication Networks, Software Engineering, Artificial Intelligence, Computer Application in Administrative Data Processing",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 16,
+    "title": "Frontiers of Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/11704?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11704/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11704/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 7.32025,
+    "impactFactorText": "7.3 (2025)",
+    "downloads": 213247,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Computer Science"
+    ],
+    "scope": "Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 17,
+    "title": "Machine Learning",
+    "sourceUrl": "https://link.springer.com/journal/10994?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10994/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10994/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.92025,
+    "impactFactorText": "4.9 (2025)",
+    "downloads": 2405141,
+    "decisionDays": 5,
+    "decisionTimeText": "5 days",
+    "subjectAreas": [
+      "Machine Learning",
+      "Control, Robotics, Automation",
+      "Artificial Intelligence",
+      "Computer Modelling",
+      "Natural Language Processing (NLP)"
+    ],
+    "scope": "Machine Learning, Control, Robotics, Automation, Artificial Intelligence, Computer Modelling, Natural Language Processing (NLP)",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 18,
+    "title": "Neural Computing and Applications",
+    "sourceUrl": "https://link.springer.com/journal/521?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/521/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/521/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 3095663,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Data Mining and Knowledge Discovery",
+      "Probability and Statistics in Computer Science",
+      "Computational Science and Engineering",
+      "Computer Vision",
+      "Computational and Systems Biology"
+    ],
+    "scope": "Artificial Intelligence, Data Mining and Knowledge Discovery, Probability and Statistics in Computer Science, Computational Science and Engineering, Computer Vision, Computational and Systems Biology",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 19,
+    "title": "Artificial Intelligence Review",
+    "sourceUrl": "https://link.springer.com/journal/10462?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10462/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10462/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 18.82025,
+    "impactFactorText": "18.8 (2025)",
+    "downloads": 5050019,
+    "decisionDays": 12,
+    "decisionTimeText": "12 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Computer Science"
+    ],
+    "scope": "Artificial Intelligence, Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 20,
+    "title": "Genetic Programming and Evolvable Machines",
+    "sourceUrl": "https://link.springer.com/journal/10710?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10710/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10710/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.92025,
+    "impactFactorText": "1.9 (2025)",
+    "downloads": 162966,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Software Engineering",
+      "Electrical and Electronic Engineering",
+      "Programming Techniques",
+      "Compilers and Interpreters",
+      "Biomedical Engineering and Bioengineering"
+    ],
+    "scope": "Artificial Intelligence, Software Engineering, Electrical and Electronic Engineering, Programming Techniques, Compilers and Interpreters, Biomedical Engineering and Bioengineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  }
+]

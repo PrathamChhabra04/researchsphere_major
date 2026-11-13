@@ -1,0 +1,32 @@
+{
+  "query": "health informatics",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-39-45-313Z-both-health-informatics",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 17,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-39-45-313Z-both-health-informatics\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=health+informatics&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 40,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-39-45-313Z-both-health-informatics\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "health informatics",
+    "springerCount": 17,
+    "elsevierCount": 40,
+    "mergedCount": 57,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-39-45-313Z-both-health-informatics\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-39-45-313Z-both-health-informatics\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-39-45-313Z-both-health-informatics\\journals-merged.json"
+    }
+  }
+}

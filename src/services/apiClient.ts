@@ -131,6 +131,13 @@ export interface JournalMatchItem {
   matchReasons?: string[];
   overlapTokens?: string[];
   matchedPhrases?: string[];
+  matchedSubjectAreas?: string[];
+  matchedTopics?: string[];
+  whyMatched?: string;
+  warnings?: string[];
+  semanticScore?: number;
+  bm25Score?: number;
+  qualityScore?: number;
 }
 
 export interface JournalMatchResponse {
@@ -139,6 +146,8 @@ export interface JournalMatchResponse {
     topics: string[];
     totalCorpus: number;
     mode: "keyword" | "abstract";
+    semanticAvailable?: boolean;
+    indexBuiltAt?: string | null;
   };
   count: number;
 }

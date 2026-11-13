@@ -1,0 +1,32 @@
+{
+  "query": "6G networks",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-43-50-219Z-both-6g-networks",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 16,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-43-50-219Z-both-6g-networks\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=6G+networks&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 1,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-43-50-219Z-both-6g-networks\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "6G networks",
+    "springerCount": 16,
+    "elsevierCount": 1,
+    "mergedCount": 17,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-43-50-219Z-both-6g-networks\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-43-50-219Z-both-6g-networks\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-43-50-219Z-both-6g-networks\\journals-merged.json"
+    }
+  }
+}

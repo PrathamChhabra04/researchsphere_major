@@ -149,6 +149,8 @@ router.get("/journals/match", async (req, res, next) => {
         topics: result.topics,
         totalCorpus: result.totalCorpus,
         mode: result.mode,
+        semanticAvailable: result.semanticAvailable,
+        indexBuiltAt: result.indexBuiltAt,
       },
       count: result.items.length,
     });

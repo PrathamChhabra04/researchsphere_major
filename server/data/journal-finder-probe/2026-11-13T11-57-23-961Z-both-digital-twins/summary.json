@@ -1,0 +1,32 @@
+{
+  "query": "digital twins",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-57-23-961Z-both-digital-twins",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 18,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-57-23-961Z-both-digital-twins\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=digital+twins&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 38,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-57-23-961Z-both-digital-twins\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "digital twins",
+    "springerCount": 18,
+    "elsevierCount": 38,
+    "mergedCount": 56,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-57-23-961Z-both-digital-twins\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-57-23-961Z-both-digital-twins\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-57-23-961Z-both-digital-twins\\journals-merged.json"
+    }
+  }
+}

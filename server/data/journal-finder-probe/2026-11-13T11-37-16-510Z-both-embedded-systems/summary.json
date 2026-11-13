@@ -1,0 +1,32 @@
+{
+  "query": "embedded systems",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-16-510Z-both-embedded-systems",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-16-510Z-both-embedded-systems\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=embedded+systems&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 21,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-16-510Z-both-embedded-systems\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "embedded systems",
+    "springerCount": 20,
+    "elsevierCount": 21,
+    "mergedCount": 41,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-16-510Z-both-embedded-systems\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-16-510Z-both-embedded-systems\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-16-510Z-both-embedded-systems\\journals-merged.json"
+    }
+  }
+}

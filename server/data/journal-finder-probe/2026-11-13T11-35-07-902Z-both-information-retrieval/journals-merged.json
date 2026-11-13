@@ -1,0 +1,1085 @@
+[
+  {
+    "provider": "elsevier",
+    "rank": 1,
+    "title": "Computers & Geosciences",
+    "sourceUrl": "https://www.sciencedirect.com/journal/computers-and-geosciences/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/CAGEO",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/computers-and-geosciences/publish/guide-for-authors",
+    "acronym": "CAGEO",
+    "issn": "0098-3004",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4.1,
+    "citeScore": 9.2,
+    "decisionDays": 13,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Computers in Earth Sciences",
+      "Information Systems",
+      "Computer Science Applications"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Case study",
+      "Opinion Paper",
+      "Short Note"
+    ],
+    "scope": "Computers &amp; Geosciences publishes original, high-impact research at the interface between computing/informatics and the geosciences. Submissions must make a substantive contribution in both dimensions: (1) an innovative computational, informatics, or software element, and (2) a clear geoscientific contribution addressing a scientific problem of broad interest to the geoscience community. Manuscripts are suitable for the journal only when the computational/informatics component is central to the work and advances the state of the art beyond routine implementation, straightforward application, or incremental adaptation of existing methods. It is expected that code is provided for all scientific research articles. Relevant computational/informatics contributions include, but are not limited to: novel algorithms; computational methods; scientific software; data models; scientific databases and retrieval systems; machine learning and artificial intelligence; inversion and data assimilation frameworks; uncertainty quantification workflows; visualization and human-computer interaction for geoscientific analysis; high-performance, parallel, cloud, or distributed computing; reproducible research infrastructures; and interoperable digital frameworks for geoscientific data and modelling. Relevant geoscientific domains include: geology; geophysics; geochemistry; geomorphology; sedimentology; stratigraphy; palaeontology; tectonics and structural geology; seismology; volcanology; hydrology; hydrogeology; and Earth-system science. Manuscripts centered primarily on generic environmental engineering, routine GIS applications, signal processing, agriculture, ecology, or other topics outside the core geosciences are normally outside the journal’s scope unless the geoscientific contribution is explicit, substantial, and of clear interest to the readership. Code, software, data, and reproducibility requirements For any manuscript presenting software, code, workflows, trained models, computational pipelines, or implementation details essential to the results, public access to the corresponding repository is mandatory at submission and required for acceptance. A manuscript will not be accepted for review without a GitHub repository or equivalent public repository that is properly documented and enables evaluation, reuse, and long-term utility to the community. there needs to be a link to the repository in the manuscript and at a minimum, the repository must include: a clear license; a ReadMe file in English with basic usage and installation instructions; documentation of dependencies and computational requirements; sufficient material to reproduce the main results in the paper, or a clear explanation of any justified limitations if data cannot be shared, a dummy model or a synthetic dataset for test cases should be provided how-to files or tutorials for typical use cases; a user guide describing inputs, outputs, options, and expected behaviour; and for security reasons, a single compacted file is not accepted (e.g. .zip, .rar, .7z) any comments in the code must be in English Repositories that are incomplete, poorly documented, inaccessible, private at the review or acceptance stage, or lacking reproducible examples are grounds for rejection. Manuscripts describing software that is not open source are normally desk rejected. Computers &amp; Geosciences will not consider manuscripts that fall into any of the following categories: geoscience studies with no genuine computational or informatics innovation; computer science or informatics papers with no clear and substantive geoscientific contribution; routine application of established methods, software, machine learning models, GIS workflows, or visualization tools to a case study; incremental code implementations of already published methods without a clear methodological or software advance; manuscripts focused mainly on engineering design, operational management, consultancy-style case studies, or site-specific technical problem solving rather than geoscientific insight of broader relevance; papers in which the computational element is peripheral, cosmetic, or limited to software packaging or interface development; purely methodological developments (e.g. geophysics, hydrology) purely analytical developments unless they have significant implications on computational geoscientific problems pure case studies and application examples less they have significant implications on computational geoscientific problems GUI papers unless the interface itself solves a significant, non-trivial scientific-computing problem; benchmark or comparison papers lacking novelty, reproducibility, or transferable insight; papers whose results cannot be independently evaluated because code, workflow details, trained models, key parameters, or supporting data are unavailable; and manuscripts generated around black-box tools or proprietary workflows with insufficient transparency for scientific scrutiny. Submissions should make clear, from the title, abstract, and introduction onward, what is new computationally, what is new geoscientifically, and why both matter. Manuscripts better aligned with applied implementation, software deployment, or practical case studies may be more suitable for the companion journal Applied Computing &amp; Geosciences.",
+    "editorInChief": "Leonardo Azevedo | J. Jaime Gómez-Hernández | Ute Mueller",
+    "goldOpenAccessFee": 3870,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/00983004.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 2,
+    "title": "Journal of Web Semantics",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-web-semantics/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/JOWS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-web-semantics/publish/guide-for-authors",
+    "acronym": "WEBSEM",
+    "issn": "1570-8268",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 3.2,
+    "citeScore": 10.2,
+    "decisionDays": 68,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Software",
+      "Information Systems"
+    ],
+    "articleTypes": [
+      "Benchmark papers",
+      "Briefing Paper",
+      "Ontology Paper",
+      "Position Paper",
+      "Research Paper",
+      "Survey Paper",
+      "System Paper",
+      "Letter",
+      "VSI: EthicalKE",
+      "VSI: KGAI",
+      "VSI: Multi-dimensional KG"
+    ],
+    "scope": "The Journal of Web Semantics (JWS) is an interdisciplinary forum at the intersection of the Semantic Web, Knowledge Graphs (KGs), and Artificial Intelligence (AI), with a strong emphasis on both theoretical and applied research. Building on its foundation as a venue for exploring knowledge-intensive and intelligent Web technologies, JWS recognizes the pivotal role that KGs and Semantic Web (SW) technologies play in the evolving AI landscape, particularly amid recent breakthroughs in Generative AI, neuro-symbolic systems, and autonomous agents. JWS seeks to capture the critical convergence between symbolic and statistical approaches to AI, focusing on the methods, architectures, and foundational theories that drive the integration of Semantic Web and KG technologies with machine learning, deep learning, Large Language Models (LLMs), and other AI techniques. The journal encourages contributions that not only demonstrate impactful applications but also advance the theoretical understanding of how structured, semantic knowledge can enhance intelligent systems. We welcome high-quality submissions that include, but are not limited to, the following areas: Theoretical Foundations and Methodological Advances Formal Models and Representations : New theoretical frameworks and formalisms for KGs, ontologies, reasoning, and semantic data management, including studies on expressivity, consistency, change management, and evolution in complex or dynamic systems. Hybrid and Neuro-Symbolic Architectures : Methodological insights into combining symbolic knowledge representation with sub-symbolic learning, including formal characterizations of neuro-symbolic systems and architectures. KG-AI Integration Methods : Novel algorithms and frameworks that tightly couple KGs with AI methods in ways that yield results unattainable by either approach alone, including Logic Augmented Generation and reasoning-enhanced learning. Evaluation and Benchmarking : Research on robust evaluation methodologies for KG-AI systems, with attention to correctness, scalability, data quality, reliability, interpretability, and accountability. Applied and Interdisciplinary Research Cross-Disciplinary Studies : Integrative work drawing from ontology engineering, databases, NLP, machine learning, human-computer interaction, and cognitive science, among others, with clear theoretical or methodological contributions. Domain Applications : Real-world use cases showing how KGs and SW technologies enable or enhance AI in specific domains: Healthcare and Life Sciences, Education, Legal Tech, Scientific Discovery, Smart Cities, Industry, Finance, Cultural Heritage, Art and Creativity, etc. Engineering, Resources, and System Integration KG Engineering Automation : AI-driven approaches to the (semi-)automatic creation, population, alignment, and refinement of KGs and ontologies, especially using LLMs and foundation models. System Descriptions and Architectures : Descriptions of integrated KG-AI systems, with technical insights into issues such as hallucination mitigation, knowledge retrieval, cross-modal integration, and interaction design. Auditing, Explanation, and Governance : Research on how KGs contribute to transparency, robustness, and auditability of AI systems, including formal representation of workflows, provenance, and ethical constraints. Data and Knowledge Resources : Descriptions of high-impact ontologies, datasets, benchmarks, and tools that enable research or deployment in SW/AI integration. JWS is especially interested in papers that address current and future challenges in the field, including: Modelling expressivity for complex systems Knowledge engineering automation Integration of heterogeneous data and knowledge sources Scalable, efficient reasoning with large-scale KGs Accessibility and usability of semantic systems Provenance, privacy, and interoperability in AI-KG ecosystems Societal impacts, costs, risks, and sustainability of KG-based AI Evaluation of semantic methods and systems Finally, we value contributions that demonstrate real-world impact and uptake, including usability studies, deployment evaluations, and comparative analyses with alternative technologies. By promoting both foundational insights and practical innovations, JWS aims to remain a leading venue for advancing the role of Semantic Web and Knowledge Graph technologies in shaping the future of Artificial Intelligence.",
+    "editorInChief": "Valentina Presutti",
+    "goldOpenAccessFee": 1730,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15708268.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 3,
+    "title": "Signal Processing: Image Communication",
+    "sourceUrl": "https://www.sciencedirect.com/journal/signal-processing-image-communication/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/IMAGE",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/signal-processing-image-communication/publish/guide-for-authors",
+    "acronym": "IMAGE",
+    "issn": "0923-5965",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.1,
+    "citeScore": 7.3,
+    "decisionDays": 15,
+    "acceptanceDays": 8,
+    "subjectAreas": [
+      "Computer Vision and Pattern Recognition",
+      "Electrical and Electronic Engineering",
+      "Signal Processing"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Short Communication",
+      "Perspective article",
+      "VSI: Extreme Super-Resolution"
+    ],
+    "scope": "Theory, Techniques &amp; Applications A publication of the European Association for Signal Processing (EURASIP) Signal Processing: Image Communication is an international journal for the development of the theory and practice of image communication . Its primary objectives are the following: To present a forum for the advancement of theory and practice of image communication. To stimulate cross-fertilization between areas similar in nature which have traditionally been separated, for example, various aspects of visual communications and information systems . To contribute to a rapid information exchange between the industrial and academic environments. The editorial policy and the technical content of the journal are the responsibility of the Editor-in-Chief, the Area Editors and the Advisory Editors. The Journal is self-supporting from subscription income and contains a minimum amount of advertisements. Advertisements are subject to the prior approval of the Editor-in-Chief. The journal welcomes contributions from every country in the world. Signal Processing: Image Communication publishes articles relating to aspects of the design, implementation and use of image communication systems . The journal features original research work, tutorial and review articles, and accounts of practical developments. Subjects of interest include: Multimedia coding, 3D and multi-view compression for human and machine consumption 3D and multi-view representations, multimedia pre/post processing, video restoration and super-resolution, video synthesis Peer-to-peer video networking, wireless video broadcasting and communication, visual surveillance, video processing for automation and remote operation, architectures for image/video processing and communication Interactive visual communication, Virtual Reality (VR), Augmented Reality (AR) and eXtended Reality (XR) systems, point cloud processing and compression, light field capture and rendering, immersive media technologies, real-time 3D environment reconstruction Multimedia quality assessment and measures, models for QoS and QoE Multi-camera video analysis, motion analysis, content-based media indexing and retrieval, semantics, face and gesture processing",
+    "editorInChief": "Federica Battisti",
+    "goldOpenAccessFee": 2830,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/09235965.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 4,
+    "title": "The Egyptian Journal of Remote Sensing and Space Sciences",
+    "sourceUrl": "https://www.sciencedirect.com/journal/the-egyptian-journal-of-remote-sensing-and-space-sciences/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/EJRS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/the-egyptian-journal-of-remote-sensing-and-space-sciences/publish/guide-for-authors",
+    "acronym": "EJRS",
+    "issn": "1110-9823",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 5.1,
+    "citeScore": 10.5,
+    "decisionDays": null,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Earth and Planetary Sciences (General)"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Case Report"
+    ],
+    "scope": "The Egyptian Journal of Remote Sensing and Space Sciences (EJRS) is dedicated to publishing high-quality, peer-reviewed research articles that demonstrate innovative advancements in methodologies, techniques, algorithms, and scientific understanding within the fields of remote sensing and space sciences. EJRS emphasizes contributions that push the boundaries of knowledge and offer transformative solutions to real-world challenges in the following areas: 1. Space and ground remote sensing technology: Image and signal processing for: Optical and RADAR image processing theories and technical development Image enhancement and restoration, machine learning, data fusion, etc Image understanding such as pattern recognition, classification techniques, object and change detection, and content-based retrieval of images Geophysical measurements and LIDAR image processing theories and technical development 2. Advanced Applications of Remote Sensing and GIS in: Geology: New methodologies for planetary geology, geomorphology, structural geology, hydrogeology, mineral exploration, space archaeology, and coastal/marine geology Agriculture: Soil Science - Crop conditions assessment, Development of precision agriculture techniques, innovative irrigation management systems, advanced tools for crop yield estimation and agro-environmental protection Urban Planning: Novel GIS-based solutions for highway layouts, site investigations, engineering soil mapping, and urban corridor surveys Hydrology: Advanced modeling techniques for water resource management - dam sites location - flash flood analysis - water quality modeling and monitoring Environment: Land Degradation assessment- Disasters - Desertification-- Coastal and Marine Environment - climate change impact studies - Land Evaluation Geomatics: Innovations in digital photogrammetry, LIDAR, hyperspectral imaging, change detection, and feature extraction Machine Learning and AI: Pioneering applications in natural hazard assessment, mitigation, and natural resource exploration 3 . Space Sciences: Methodological Advances in Space Engineering and Technology Development: Novel systems for guidance, navigation, dynamics, and control Breakthroughs in space environment modeling, thermal control, and structural design Innovations in space software, onboard computing, and strategic mission planning Cutting-edge developments in space optics, communications, and power electronics. Key Submission Criteria: EJRS encourages submissions that present innovative research with a clear emphasis on the development or application of novel methodologies, techniques, or algorithms. Articles must demonstrate a significant contribution to advancing the scientific understanding or technical application of remote sensing, GIS, or space sciences. The Egyptian Journal of Remote Sensing and Space Sciences publish the following article types: • Research Paper • Review Paper • Invited Paper • Case Report Please see our Guide for Authors for information on article submission. If you require any further information or help, please visit our support pages: https://service.elsevier.com . You can also contact the editorial board by an email to , Editor-in-Chief: Professor Islam Abou Elmagd and Vice Editor-in-Chief and Executive Editor Professor Abd-Alla Gad Abd-Alla. The Egyptian Journal of Remote Sensing &amp; Space Sciences (EJRS) is a gold open access journal. EJRS continues with the same aims and scope, editorial team, submission system and rigorous peer review. EJRS is also offering a waiving opportunity for 10 quality manuscript (MS) according to predefined criteria. For more details please consult the waiving criteria . Scientists who are interested to apply their MS within this competing offer are requested to submit, with the MS, a brief description of the research specifying the novelty of the idea and/or the application approach in a paragraph of not more than 50 words. It also important to define which &quot; waive category &quot; the author is applying for and specify—from your opinion—the reason for which the MS deserve the waive opportunity. For queries related to the journal, please contact poffice.ejrs@narss.sci.eg",
+    "editorInChief": "Professor Islam Abou El-Magd",
+    "goldOpenAccessFee": 2300,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/11109823.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 5,
+    "title": "Data Science and Informetrics",
+    "sourceUrl": "https://www.editorialmanager.com/dsim/default2.aspx",
+    "submissionLink": "https://www.editorialmanager.com/dsim/default2.aspx",
+    "guideForAuthors": null,
+    "acronym": "DSIM",
+    "issn": "2694-6106",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": null,
+    "citeScore": null,
+    "decisionDays": null,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Information Systems and Management",
+      "Library and Information Sciences",
+      "Information Systems"
+    ],
+    "articleTypes": [
+      "Research Article",
+      "Review",
+      "Short Communication",
+      "Technical Reports",
+      "Case Report",
+      "Short Survey",
+      "Data",
+      "Micro Article",
+      "Original Software Publication",
+      "Replication Study"
+    ],
+    "scope": "The contents of Volume 1 to Volume 3 can be found here ( https://dsi.hdu.edu.cn ) Data Science and Informetrics ( DSI ) covers the trends, scientific foundations, techniques and applications of the field. The journal publishes research papers, technical reports subject reviews, short comments and book reviews, providing a platform for data scientists, computer scientists, industry practitioners, and potential users of data science and analytics. Topics covered include but are not limited to: • Theory and mathematical foundations for data science and informetrics. • Data analytics, knowledge discovery, machine learning, and deep learning, and intelligent processing of various data (including text, image, video, graph and network). • Big data architecture, infrastructure, computing, matching, indexing, query processing, mapping, search, retrieval, interopera­bility, exchange and recommendation. • Data science applications, intelligent services in scientific, business, governmental, cultural, behavioral, social and economic, health and medical, human, natural and artificial (including online/Web, cloud, IoT, mobile and social media) domains. • Ethics, quality, privacy, safety and security, trust and risk on data science and big data. • The convergence of bibliometrics, scientometrics, webometrics, altmetrics, informetrics and data science. • Informetric problems using methods from other quantitative fields, such as mathematics, statistics, computer science, network science and data science.",
+    "editorInChief": null,
+    "goldOpenAccessFee": 0,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/26946106.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 6,
+    "title": "Infectious Disease Modelling",
+    "sourceUrl": "https://www.keaipublishing.com/en/journals/infectious-disease-modelling/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/IDM/default.aspx",
+    "guideForAuthors": "https://www.keaipublishing.com/en/journals/infectious-disease-modelling/guide-for-authors",
+    "acronym": "IDM",
+    "issn": "2468-0427",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": 3.1,
+    "citeScore": 5.6,
+    "decisionDays": 20,
+    "acceptanceDays": 5,
+    "subjectAreas": [
+      "Public Health and Health Policy",
+      "Health Informatics",
+      "Infectious Diseases"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "VSI: Data-Driven Biomathematical Modelling"
+    ],
+    "scope": "Infectious Disease Modelling is a peer-reviewed open access journal aiming to promote research working to interface mathematical modelling, infection disease data retrieval and analysis, and public health decision support. The journal welcomes original research contributing to the enhancement of this interface, and review articles of cutting edge methodologies motivated by and applicable to data collection and informatics for public health decision making and policy. Published papers must contain substantial novelty which could include: - Developing new frameworks, models and methodologies including comparisons with existing models, theories and methods to indicate demonstrable advantages; - Applications of exiting models and methodologies to new infectious diseases and/or public health issues; - Integrative use of methodologies and interdisciplinary approaches to evaluate intervention programs and to inform surveillance design; -Developing linkages between data, modelling, analytics and policy. Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 1100,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/24680427.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 7,
+    "title": "Computer Speech and Language",
+    "sourceUrl": "https://www.sciencedirect.com/journal/computer-speech-and-language/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/ycsla/",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/computer-speech-and-language/publish/guide-for-authors",
+    "acronym": "YCSLA",
+    "issn": "0885-2308",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3,
+    "citeScore": 10.9,
+    "decisionDays": 3,
+    "acceptanceDays": 12,
+    "subjectAreas": [
+      "Experimental and Cognitive Psychology",
+      "Electrical and Electronic Engineering",
+      "Linguistics and Language",
+      "Signal Processing",
+      "Language and Linguistics"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "VSI: Acoustical Intelligence in the Wild",
+      "VSI: Security and Privacy in Speech Communication",
+      "VSI: Speaker Characterization",
+      "VSI: Speech Eval & Synthesis",
+      "VSI: Spoken Lang Generation",
+      "VSI: WearableSpeechProcessing"
+    ],
+    "scope": "An official publication of the International Speech Communication Association (ISCA) Computer Speech &amp; Language publishes reports of original research related to the analysis, recognition, understanding, production, synthesis, coding and mining of speech and spoken language, including spoken language dialogue systems and speech-based interaction with ‘intelligent’ artefacts, and their wide-ranging applications. The journal provides a focus for this work, and encourages an interdisciplinary approach to speech and spoken language research and technology. Thus contributions from all of the related fields are welcomed in the form of reports of theoretical or experimental studies, reviews, and pertaining to models and their implementation, or reports of fundamental research leading to the improvement of such models. Research Areas Include Algorithms and models for speech recognition and synthesis Natural language processing for speech understanding and generation Computational models of spoken language discourse and dialogue Speech and spoken-language inclusive multimodal approaches and systems Information retrieval, extraction and summarization of spoken language media Speaker and spoken language recognition Computational models of speech production and perception Signal processing for speech analysis, enhancement and transformation Evaluation of speech-based interactive systems Applications of speech and spoken language technologies Note that we are no longer accepting submissions devoted to pure Natural Language Processing NLP (i.e. all new manuscripts must address some aspect of spoken language processing).",
+    "editorInChief": "Moore",
+    "goldOpenAccessFee": 3240,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/08852308.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 8,
+    "title": "Chip",
+    "sourceUrl": "https://www.sciencedirect.com/journal/chip/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/CHIP",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/chip/publish/guide-for-authors",
+    "acronym": "CHIP",
+    "issn": "2709-4723",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 8.6,
+    "citeScore": 13.4,
+    "decisionDays": 3,
+    "acceptanceDays": 7,
+    "subjectAreas": [
+      "Information Systems",
+      "Computer Science Applications"
+    ],
+    "articleTypes": [
+      "Research Article",
+      "Review",
+      "VSI: Het-Integ. Photon Chips - Research Article",
+      "VSI: Het-Integ. Photon Chips - Review"
+    ],
+    "scope": "An official journal of Shanghai Jiao Tong University . Chip is an international journal that publishes innovative research in the emerging field of integrated chips that feature revolutionary information technology. Chip will bridge the boundaries between theory and technology and form the aggregation effect of chip research. It aims to become a competitive top journal with strong international recognition and will serve as a platform for graduate students, professionals, and the engineering industry to jointly boost the cutting-edge information sciences and technologies. The journal focuses on the rapid development and potential application of new-generation information technologies. These include but are not limited to the following fields: •Quantum information: quantum algorithm, quantum machine learning, analog quantum computing, quantum circuits, quantum annealing•New types of Non-von Neumann computing and post-Moore devices: photonic computing, neuromorphic computing, other promising classical (not quantum) computing technologies•Internet of things and edge computing: advanced sensors, wireless signal transmission, low-power computing, energy harvesting, biomedical systems•Big Data and artificial intelligence: innovative hardware and architecture for data mining, information retrieval, machine learning, natural language processing, computer vision, robotics•Interdisciplinary area related to chip issues: new chip materials, new device manufacturing techniques, algorithm and architecture of chips. The Print ISSN of the journal is 2709-4723.",
+    "editorInChief": "Professor Jun-Fa Mao",
+    "goldOpenAccessFee": 2000,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/27094723.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 9,
+    "title": "Information Systems",
+    "sourceUrl": "https://www.sciencedirect.com/journal/information-systems/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/INFOSYS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/information-systems/publish/guide-for-authors",
+    "acronym": "IS",
+    "issn": "0306-4379",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4,
+    "citeScore": 11.8,
+    "decisionDays": 5,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Computer Science Applications",
+      "Information Systems and Management",
+      "Information Systems",
+      "Hardware and Architecture",
+      "Management Information Systems",
+      "Software",
+      "Management of Technology and Innovation",
+      "Computational Theory and Mathematics",
+      "Artificial Intelligence"
+    ],
+    "articleTypes": [
+      "Research paper",
+      "Review article",
+      "Replication study (RPL)",
+      "VSI: CAiSE 2026",
+      "VSI: DOLAP 2026",
+      "VSI: Process M. & Visual A"
+    ],
+    "scope": "Databases: Their Creation, Management and Utilization Information systems are the software and hardware systems that support data-intensive applications. The journal Information Systems publishes articles concerning the design and implementation of languages, data models, process models, algorithms, software and hardware for information systems. Subject areas include data management issues as presented in the principal international database conferences (e.g., ACM SIGMOD/PODS, VLDB, ICDE and ICDT/EDBT) as well as data-related issues from the fields of data mining/machine learning, information retrieval coordinated with structured data, internet and cloud data management, business process management, web semantics, visual and audio information systems, scientific computing, and data science. We welcome systems papers that focus on implementation considerations in massively parallel data management, fault tolerance, and special purpose hardware for data-intensive systems; theoretical papers that either break significant new ground or unify and extend existing algorithms for data-intensive applications; and manuscripts from application domains, such as urban informatics, social and natural science, and Internet of Things, which present innovative, high-performance, and scalable solutions to data management problems for those domains. All papers should motivate the problems they address with compelling examples from real or potential applications. Systems papers must be serious about experimentation either on real systems or simulations based on traces from real systems. Papers from industrial organizations are welcome. Theoretical papers should have a clear motivation from applications and clearly state which ideas have potentially wide applicability. Authors of selected articles that have been accepted for publication in Information Systems are invited by the EiCs to submit the experiment described in their papers for reproducibility validation. The resulting additional reproducibility paper is co-authored by the reproducibility reviewers and the authors of the original publication. As part of its commitment to reproducible science, Information Systems also welcomes experimental reproducible survey papers. Such submissions must: (i) apply a substantial portion of the different surveyed techniques to at least one existing benchmark and perhaps one or more new benchmarks, and (ii) be reproducible (the validation of reproducibility will result in a separate paper following the guidelines of our Reproducibility Editor). In addition to publishing submitted articles, the Editors-in-Chief will invite retrospective articles that describe significant projects by the principal architects of those projects. Authors of such articles should write in the first person, tracing the social as well as technical history of their projects, describing the evolution of ideas, mistakes made, and reality tests. We will make every effort to allow authors the right to republish papers appearing in Information Systems in their own books and monographs.",
+    "editorInChief": "Stefanie Rinderle-Ma | Dennis Shasha | Matthias Weidlich",
+    "goldOpenAccessFee": 3150,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/03064379.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 10,
+    "title": "Library & Information Science Research",
+    "sourceUrl": "https://www.sciencedirect.com/journal/library-and-information-science-research/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/LIBINF",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/library-and-information-science-research/publish/guide-for-authors",
+    "acronym": "LIBINF",
+    "issn": "0740-8188",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.6,
+    "citeScore": 5.2,
+    "decisionDays": 9,
+    "acceptanceDays": 13,
+    "subjectAreas": [
+      "Library and Information Sciences"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review article"
+    ],
+    "scope": "Library &amp; Information Science Research , a cross-disciplinary and refereed journal, focuses on the research process in library and information science , especially demonstrations of innovative methods and theoretical frameworks or unusual extensions or applications of well-known methods and tools. Library &amp; Information Science Research publishes research articles primarily from a social science perspective. LISR does not normally publish technical information science studies (e.g., algorithmic methods related to information retrieval or natural language processing) or most bibliometric studies, as these would find greater readership in the many fine journals covering these areas.",
+    "editorInChief": "June Abbas",
+    "goldOpenAccessFee": 3550,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/07408188.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 11,
+    "title": "Pattern Recognition Letters",
+    "sourceUrl": "https://www.sciencedirect.com/journal/pattern-recognition-letters/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/PRLETTERS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/pattern-recognition-letters/publish/guide-for-authors",
+    "acronym": "PATREC",
+    "issn": "0167-8655",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3.5,
+    "citeScore": 7.8,
+    "decisionDays": 17,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Signal Processing",
+      "Electrical and Electronic Engineering",
+      "Computer Vision and Pattern Recognition"
+    ],
+    "articleTypes": [
+      "Regular Article",
+      "Survey papers by IAPR fellows",
+      "Commentary",
+      "Note"
+    ],
+    "scope": "An official publication of the International Association for Pattern Recognition Pattern Recognition Letters aims at rapid publication of concise articles of a broad interest in pattern recognition . Subject areas include all the current fields of interest represented by the Technical Committees of the International Association of Pattern Recognition , and other developing themes involving learning and recognition. Examples include: • Statistical, structural, syntactic pattern recognition; • Neural networks, machine learning, data mining; • Discrete geometry, algebraic, graph-based techniques for pattern recognition; • Signal analysis, image coding and processing, shape and texture analysis; • Computer vision, robotics, remote sensing; • Document processing, text and graphics recognition, digital libraries; • Speech recognition, music analysis, multimedia systems; • Natural language analysis, information retrieval; • Biometrics, biomedical pattern analysis and information systems; • Special hardware architectures, software packages for pattern recognition. We invite contributions as research reports or commentaries. Research reports should be concise summaries of methodological inventions and findings, with strong potential of wide applications. Alternatively, they can describe significant and novel applications of an established technique that are of high reference value to the same application area and other similar areas. Commentaries can be lecture notes, subject reviews, reports on a conference, or debates on critical issues that are of wide interests. To serve the interests of a diverse readership, the introduction should provide a concise summary of the background of the work in an accepted terminology in pattern recognition, state the unique contributions, and discuss broader impacts of the work outside the immediate subject area. All contributions are reviewed on the basis of scientific merits and breadth of potential interests.",
+    "editorInChief": "De Marsico | Liu | Lu",
+    "goldOpenAccessFee": 2320,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01678655.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 12,
+    "title": "International Journal of Approximate Reasoning",
+    "sourceUrl": "https://www.sciencedirect.com/journal/international-journal-of-approximate-reasoning/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/IJA",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/international-journal-of-approximate-reasoning/publish/guide-for-authors",
+    "acronym": "IJA",
+    "issn": "0888-613X",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.8,
+    "citeScore": 6.3,
+    "decisionDays": 1,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Electrical and Electronic Engineering",
+      "Statistics and Probability",
+      "Computer Science Applications",
+      "Statistics, Probability and Uncertainty",
+      "Information Systems and Management",
+      "Information Systems",
+      "Artificial Intelligence"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "VSI: Memory of Thomas Augustin",
+      "VSI: Numbers of the Future",
+      "VSI: PGM 2026"
+    ],
+    "scope": "Uncertainty in Intelligent Systems The International Journal of Approximate Reasoning is intended to serve as a forum for the treatment of imprecision and uncertainty in Artificial and Computational Intelligence , covering both the foundations of uncertainty theories, and the design of intelligent systems for scientific and engineering applications. It publishes high-quality research papers describing theoretical developments or innovative applications, as well as review articles on topics of general interest. Relevant topics include, but are not limited to, probabilistic reasoning and Bayesian networks, imprecise probabilities, random sets, belief functions (Dempster-Shafer theory), possibility theory, fuzzy sets, rough sets, decision theory, non-additive measures and integrals, qualitative reasoning about uncertainty, comparative probability orderings, game-theoretic probability, default reasoning, nonstandard logics, argumentation systems, inconsistency tolerant reasoning, elicitation techniques, philosophical foundations and psychological models of uncertain reasoning. Domains of application for uncertain reasoning systems include risk analysis and assessment, information retrieval and database design, information fusion, machine learning, data and web mining, computer vision, image and signal processing, intelligent data analysis, statistics, multi-agent systems, etc. The journal is affiliated with the Society for Imprecise Probability: Theories and Applications (SIPTA) , and Beliefs functions and Applications Society (BFAS) .",
+    "editorInChief": "Thierry Denoeux",
+    "goldOpenAccessFee": 3280,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/0888613X.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 13,
+    "title": "Information Processing & Management: Applications",
+    "sourceUrl": "https://www.editorialmanager.com/ipma/default2.aspx",
+    "submissionLink": "https://www.editorialmanager.com/ipma/default2.aspx",
+    "guideForAuthors": null,
+    "acronym": "IPMA",
+    "issn": "3118-1643",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": null,
+    "citeScore": null,
+    "decisionDays": null,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Information Systems",
+      "Management Information Systems",
+      "Information Systems and Management",
+      "Library and Information Sciences"
+    ],
+    "articleTypes": [
+      "Research Article",
+      "Review Article",
+      "Short Communication",
+      "Case Report"
+    ],
+    "scope": "Information Processing &amp; Management: Applications (IPMA) publishes original research at the intersection of computing and information science, with the emphasis on work that has been carried through to application. As the gold open access companion to Information Processing &amp; Management , IPMA shares the subject breadth of the parent journal: the theory, methods, systems and practices through which information is represented, processed, retrieved, analysed, managed, communicated and used. What distinguishes IPMA is the focus on evidence. A method comes into the scope of interest of this journal once it has met data, users or a deployment. The journal publishes systems built and evaluated in their target setting. This also includes empirical studies conducted on operational data or with the target users, evaluations, benchmarks, datasets and resources that allow others to measure progress. Also, and accounts of what it took to move a method out of a paper and into practical use. Studies reporting a limitation, a failed transfer, a negative result or a replication are also within scope, but will be assessed on the quality of the evidence. The journal covers applications across business and management, healthcare and biomedicine, education, government and public services, law, media, culture and heritage, tourism, and industry, and it welcomes work on languages, populations and settings that the current literature does not serve in sufficient amount. Authors working outside academia are explicitly invited. Alongside the standard research article types, IPMA runs two article types written for and by practitioners, Impact Communications and Practitioner Insights , supported by a review panel spanning research and practice, so that work produced under industrial constraints is assessed by people who understand those constraints. Peer review is double anonymised for all article types, and the journal applies the same standards of evidence and reporting to industrial and academic submissions. IPMA welcomes submissions on the following topics, and on others at the same intersection. The list includes, but is not limited to the following topics: Information retrieval, search and question answering Recommender systems and personalisation Natural language processing and language technology Multilingual, multimodal and cross-domain information processing Data mining, text mining and knowledge discovery Knowledge organisation, metadata, ontologies and knowledge graphs Large language models and generative systems in applied settings Social computing, computational social science and social media analysis Content moderation, online safety, harmful content and trust Human-information interaction, information behaviour and information &nbsp;&nbsp;&nbsp;&nbsp;literacy Information systems, information governance and information management Digital libraries, archives, records and scholarly communication Privacy, security, compliance and accountability in information systems Evaluation methodology, benchmarks, datasets and shared tasks Responsible, fair and explainable deployment of information technologies Applications in health, education, government, law, business, finance, &nbsp;&nbsp;&nbsp;&nbsp;manufacturing, tourism, heritage and the public sector",
+    "editorInChief": "Michal Ptaszynski",
+    "goldOpenAccessFee": 2500,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/31181643.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 14,
+    "title": "Expert Systems with Applications",
+    "sourceUrl": "https://www.sciencedirect.com/journal/expert-systems-with-applications/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/eswa/Default.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/expert-systems-with-applications/publish/guide-for-authors",
+    "acronym": "ESWA",
+    "issn": "0957-4174",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 9.4,
+    "citeScore": 17,
+    "decisionDays": 5,
+    "acceptanceDays": 7,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Management of Technology and Innovation",
+      "Artificial Intelligence",
+      "Management Science and Operations Research",
+      "Computer Science Applications",
+      "Management Information Systems"
+    ],
+    "articleTypes": [
+      "Full length article",
+      "Review article"
+    ],
+    "scope": "Expert Systems With Applications is a refereed international journal whose focus is on exchanging information relating to expert and intelligent systems applied in industry , government , and universities worldwide. The thrust of the journal is to publish original papers dealing with the design, development, testing, implementation, and/or management of expert and intelligent systems, and also to provide practical guidelines in the development and management of these systems. The journal will publish papers in expert and intelligent systems technology and application in the areas of, but not limited to: finance, accounting, engineering, marketing, auditing, law, procurement and contracting, project management, risk assessment, information management, information retrieval, crisis management, stock trading, strategic management, network management, telecommunications, space education, intelligent front ends, intelligent database management systems, medicine, chemistry, human resources management, human capital, business, production management, archaeology, economics and energy. Papers in multi-agent systems, knowledge management, neural networks, knowledge discovery, data and text mining, multimedia mining, and genetic algorithms will also be published in the journal. The journal no longer considers papers that contain applications to military/defense systems. Papers detailing algorithms which repurpose existing concepts within the framework of metaphors inspired by various systems and processes, such as natural, technical, or social ones are discouraged as this can hinder effective algorithm comparisons and scientific advancement. Submissions from this field are required to convincingly demonstrate their contribution to the field in order to be considered for further evaluation. Authors are urged to present their methods with clarity, employing standard optimization terminology, and to provide compelling explanations for how their components are adapted to specific problem-solving contexts. The emphasis is on genuine innovation rather than the renaming of existing concepts. Natural metaphor articles - new nature-inspired proposals detailed in papers must provide formal, mathematically grounded explanations for how they differ from established methods and the use of metaphors as superficial embellishments is discouraged. Software Publication We invite you to convert your open source software into an additional journal publication in Software Impacts , a multi-disciplinary open access journal. Software Impacts provides a scholarly reference to software that has been used to address a research challenge. The journal disseminates impactful and re-usable scientific software through Original Software Publications which describe the application of the software to research and the published outputs.",
+    "editorInChief": "Professor Ling Wang",
+    "goldOpenAccessFee": 3630,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/09574174.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 15,
+    "title": "Applied Computing and Geosciences",
+    "sourceUrl": "https://www.sciencedirect.com/journal/applied-computing-and-geosciences/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ACAGS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/applied-computing-and-geosciences/publish/guide-for-authors",
+    "acronym": "ACAGS",
+    "issn": "2590-1974",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 4,
+    "citeScore": 4.4,
+    "decisionDays": 4,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Earth and Planetary Sciences (General)",
+      "Computers in Earth Sciences"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review Article",
+      "VSI: AI for Deep-Time Earth",
+      "VSI: AI in Mineral Exploration",
+      "VSI: GEOLLM and GEOKG"
+    ],
+    "scope": "Applied Computing &amp; Geosciences is an online-only, open access journal focused on all aspects of computing in the geosciences. Like its companion title Computers &amp; Geosciences , Applied Computing &amp; Geosciences &#39; mission is to advance and disseminate knowledge in all the related areas of at the interface between computer sciences and geosciences. Applied Computing &amp; Geosciences publishes original articles, review articles and case-studies. Alongside welcoming direct submissions, the journal will benefit from an Article Transfer Service which will allow the author(s) to transfer their manuscript online from Computers &amp; Geosciences thus saving authors time and effort spent on formatting and resubmitting. Applied Computing &amp; Geosciences offers the community an innovative, efficient and flexible route for the publication of scientifically and ethically sound articles which address problems in the geosciences which includes: Algorithms; Artificial Intelligence; Computational Methods; Computer Graphics; Computer Visualization; Data Models; Data Processing; Database Retrieval; Distributed Systems; E-Geoscience; Geocomputation; Geographical Information Systems; Geoinformatics; Geomathematics; Image Analysis; Information Retrieval; Modelling; Near and Remote Sensing Data Analysis; Ontologies; Parallel Systems; Programming Languages; Remote Sensing; Simulation; Social Media; Software Engineering; Spatial Analysis and The World-Wide Web. The term Geoscience is used in a broad sense to refer to the physical Earth sciences including: Atmospheric Sciences; Climatology; Economic Geology; Environmental Science; Geochemistry; Geodesy; Geology; Geomatics; Geomorphology; Geological and Geotechnical Engineering; Geophysics; Glaciology; Hydrogeology; Hydrology; Meteorology; Mineralogy; Oceanography; Ore Geology; Paleogeography; Paleontology; Petrology; Physical Geography; Planetary Science; Sedimentology; Seismology; Soil Science; Stratigraphy and Structural Geology. Our highly experienced and well-respected editorial team ensures that all papers are promptly, rigorously and fairly peer-reviewed by the experts in the field. Research paper (5,000 words) : Providing an original contribution to the scientific fields of study outlined above. Review paper (10,000 words) : Critically describing the state-of-the art of applications of computer science in the geosciences, as a stand-alone contribution or to frame a special issue. Application article (5,000 words) : Describing a real-world case study on the scientific fields of study outlined above. Criteria for assessment shall be: completeness, depth, novelty, timeliness, quality, and interest to the Journal&#39;s readership. Before submitting review paper manuscripts, a review outline should be approved by one of the editors of the Journal.",
+    "editorInChief": "Xiaogang Ma | Alessandra Menafoglio",
+    "goldOpenAccessFee": 2230,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/25901974.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 16,
+    "title": "World Patent Information",
+    "sourceUrl": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/WPI",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/world-patent-information/publish/guide-for-authors",
+    "acronym": "WPI",
+    "issn": "0172-2190",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.4,
+    "citeScore": 4.5,
+    "decisionDays": 6,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Renewable Energy, Sustainability and the Environment",
+      "Library and Information Sciences",
+      "Mechanical Engineering",
+      "Process Chemistry and Technology",
+      "Computer Science Applications",
+      "Energy Engineering and Power Technology",
+      "Law",
+      "Management of Technology and Innovation",
+      "Fuel Technology",
+      "Industrial and Manufacturing Engineering",
+      "Bioengineering"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "VSI: AI-powered tech mining",
+      "VSI: LLM/GenAI/Agentic AI for IP analytics and strategy"
+    ],
+    "scope": "World Patent Information is a journal dedicated to intellectual property (IP) information and its retrieval, documentation, classification, searching, analysis, and management. The journal aims to encompass the broad field of IP information while focusing on intellectual property rights (IPRs) associated with industrially applicable innovations and their management, analysis, policy, education, and the use of big-data analytics. World Patent Information publishes articles addressing best practices in legal and commercial patent searching and analysis. Topics include freedom-to-operate (FTO) and clearance searches; state-of-the-art searches; validity and invalidity searches; prior-art searches; technical landscaping; technology scouting; technology forecasting; patentability analyses; and competitive intelligence based on patent information. The journal also welcomes research on metadata associated with IPRs, including legal-status data, classification systems, and bibliographic information. Articles concerning IP documentation, information retrieval, classification, and information services and news from IP offices are also encouraged. Reviews of the state of the art in specific industries, e.g., reviews of patents, IPs, scientific and technical databases, and their applications, are particularly welcome. The journal also publishes research and review articles on information relating to non-patent IPRs, including copyrights, trademarks, utility models, registered designs, design rights, trade secrets, database rights, traditional knowledge, Indigenous knowledge, and geographical indications, particularly where these rights have impacts on technological innovations. Other areas of interest include best practices in IP data sources and searching; IP management; invention harvesting; IP intermediary service innovations; and the applications of advanced artificial intelligence (AI), machine learning (ML), language modeling, text and data mining to IP-related research. The journal welcomes research on information retrieval (IR) across all aspects of published IP information, e.g., textual, document, non-textual, numerical, and graphical information. Relevant topics include multilingual search; image search; retrieval from tables and non-textual information; and information extraction from patents, including mathematical formulae, chemical and biological information, plant-related data, and other structured or unstructured information. The journal encourages additional research areas including system evaluation and benchmarking, real data collections for information-retrieval experiments, and best practices in IP information management. The journal covers IP management across patents and non-patent IPRs (e.g., trademarks, designs, copyrights, and trade secrets). Topics related to innovation management are relevant, including the impact of patent/IP management on innovation; the best practices of IP innovation processes and management. Technology management from an IP perspective is an important area of interest. Relevant topics include the characteristics and dynamics of technologies; IP portfolio benchmarking; IP valuation; geographic and technological analysis; patent expiries; and advanced market-, corporate-, and policy-level analyses. The journal also welcomes research on statistical analysis, business-method patenting, standards and standard-essential patents (SEPs), patent pools, and other emerging issues at the intersections of IP, technology, information, and innovation management.",
+    "editorInChief": "Amy Trappey",
+    "goldOpenAccessFee": 2800,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01722190.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "springer",
+    "rank": 1,
+    "title": "Applied Intelligence",
+    "sourceUrl": "https://link.springer.com/journal/10489?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10489/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10489/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.52025,
+    "impactFactorText": "3.5 (2025)",
+    "downloads": 1626056,
+    "decisionDays": 45,
+    "decisionTimeText": "45 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Mechanical Engineering",
+      "Machines, Tools, Processes"
+    ],
+    "scope": "Artificial Intelligence, Mechanical Engineering, Machines, Tools, Processes",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 2,
+    "title": "Knowledge and Information Systems",
+    "sourceUrl": "https://link.springer.com/journal/10115?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10115/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10115/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.62025,
+    "impactFactorText": "3.6 (2025)",
+    "downloads": 668155,
+    "decisionDays": 12,
+    "decisionTimeText": "12 days",
+    "subjectAreas": [
+      "Computer Engineering and Networks",
+      "Database Management",
+      "Data Mining and Knowledge Discovery",
+      "Information Storage and Retrieval",
+      "Computer and Information Systems Applications",
+      "IT in Business"
+    ],
+    "scope": "Computer Engineering and Networks, Database Management, Data Mining and Knowledge Discovery, Information Storage and Retrieval, Computer and Information Systems Applications, IT in Business",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 3,
+    "title": "International Journal of Machine Learning and Cybernetics",
+    "sourceUrl": "https://link.springer.com/journal/13042?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/13042/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/13042/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.92025,
+    "impactFactorText": "2.9 (2025)",
+    "downloads": 504526,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Computational Intelligence",
+      "Artificial Intelligence",
+      "Control, Robotics, Automation",
+      "Complex Systems",
+      "Computational and Systems Biology",
+      "Automated Pattern Recognition"
+    ],
+    "scope": "Computational Intelligence, Artificial Intelligence, Control, Robotics, Automation, Complex Systems, Computational and Systems Biology, Automated Pattern Recognition",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 4,
+    "title": "Multimedia Systems",
+    "sourceUrl": "https://link.springer.com/journal/530?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/530/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/530/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.82025,
+    "impactFactorText": "2.8 (2025)",
+    "downloads": 403207,
+    "decisionDays": 41,
+    "decisionTimeText": "41 days",
+    "subjectAreas": [
+      "Cryptology",
+      "Computer Communication Networks",
+      "Operating Systems",
+      "Data Storage Representation",
+      "Multimedia Information Systems",
+      "Computer Graphics"
+    ],
+    "scope": "Cryptology, Computer Communication Networks, Operating Systems, Data Storage Representation, Multimedia Information Systems, Computer Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 5,
+    "title": "World Wide Web",
+    "sourceUrl": "https://link.springer.com/journal/11280?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11280/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11280/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.52025,
+    "impactFactorText": "4.5 (2025)",
+    "downloads": 247475,
+    "decisionDays": 11,
+    "decisionTimeText": "11 days",
+    "subjectAreas": [
+      "Computer and Information Systems Applications",
+      "Database Management",
+      "Operating Systems"
+    ],
+    "scope": "Computer and Information Systems Applications, Database Management, Operating Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 6,
+    "title": "Neural Processing Letters",
+    "sourceUrl": "https://link.springer.com/journal/11063?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11063/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11063/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.82025,
+    "impactFactorText": "2.8 (2025)",
+    "downloads": 513053,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Complex Systems",
+      "Computational Intelligence"
+    ],
+    "scope": "Artificial Intelligence, Complex Systems, Computational Intelligence",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 7,
+    "title": "Multimedia Tools and Applications",
+    "sourceUrl": "https://link.springer.com/journal/11042?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11042/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11042/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 3529016,
+    "decisionDays": 34,
+    "decisionTimeText": "34 days",
+    "subjectAreas": [
+      "Multimedia Information Systems",
+      "Computer Communication Networks",
+      "Data Structures and Information Theory",
+      "Special Purpose and Application-Based Systems"
+    ],
+    "scope": "Multimedia Information Systems, Computer Communication Networks, Data Structures and Information Theory, Special Purpose and Application-Based Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 8,
+    "title": "SN Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/42979?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42979/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42979/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1696119,
+    "decisionDays": 96,
+    "decisionTimeText": "96 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Computer Engineering and Networks",
+      "Software Engineering",
+      "Data Structures and Information Theory",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics"
+    ],
+    "scope": "Computer Science, Computer Engineering and Networks, Software Engineering, Data Structures and Information Theory, Computer Imaging, Vision, Pattern Recognition and Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 9,
+    "title": "Neural Computing and Applications",
+    "sourceUrl": "https://link.springer.com/journal/521?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/521/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/521/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 3095663,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Data Mining and Knowledge Discovery",
+      "Probability and Statistics in Computer Science",
+      "Computational Science and Engineering",
+      "Computer Vision",
+      "Computational and Systems Biology"
+    ],
+    "scope": "Artificial Intelligence, Data Mining and Knowledge Discovery, Probability and Statistics in Computer Science, Computational Science and Engineering, Computer Vision, Computational and Systems Biology",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 10,
+    "title": "Complex & Intelligent Systems",
+    "sourceUrl": "https://link.springer.com/journal/40747?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/40747/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/40747/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.52025,
+    "impactFactorText": "4.5 (2025)",
+    "downloads": 2277536,
+    "decisionDays": 20,
+    "decisionTimeText": "20 days",
+    "subjectAreas": [
+      "Computational Intelligence",
+      "Applied Dynamical Systems",
+      "Data Structures and Information Theory"
+    ],
+    "scope": "Computational Intelligence, Applied Dynamical Systems, Data Structures and Information Theory",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 11,
+    "title": "The Journal of Supercomputing",
+    "sourceUrl": "https://link.springer.com/journal/11227?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11227/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11227/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.52025,
+    "impactFactorText": "3.5 (2025)",
+    "downloads": 1311828,
+    "decisionDays": 38,
+    "decisionTimeText": "38 days",
+    "subjectAreas": [
+      "Compilers and Interpreters",
+      "Processor Architectures",
+      "Computer Science"
+    ],
+    "scope": "Compilers and Interpreters, Processor Architectures, Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 12,
+    "title": "Journal of King Saud University Computer and Information Sciences",
+    "sourceUrl": "https://link.springer.com/journal/44443?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/44443/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/44443/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 6.42025,
+    "impactFactorText": "6.4 (2025)",
+    "downloads": 373421,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Mathematics and Computing",
+      "Computer Science",
+      "Theory of Computation",
+      "Database Management System",
+      "Software Engineering",
+      "Data and Information Security"
+    ],
+    "scope": "Mathematics and Computing, Computer Science, Theory of Computation, Database Management System, Software Engineering, Data and Information Security",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 13,
+    "title": "Data Mining and Knowledge Discovery",
+    "sourceUrl": "https://link.springer.com/journal/10618?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10618/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10618/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.52025,
+    "impactFactorText": "5.5 (2025)",
+    "downloads": 563919,
+    "decisionDays": 3,
+    "decisionTimeText": "3 days",
+    "subjectAreas": [
+      "Data Mining and Knowledge Discovery",
+      "Artificial Intelligence",
+      "Information Storage and Retrieval",
+      "Statistics in Engineering, Physics, Computer Science, Chemistry and Earth Sciences"
+    ],
+    "scope": "Data Mining and Knowledge Discovery, Artificial Intelligence, Information Storage and Retrieval, Statistics in Engineering, Physics, Computer Science, Chemistry and Earth Sciences",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 14,
+    "title": "Journal of Intelligent Information Systems",
+    "sourceUrl": "https://link.springer.com/journal/10844?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10844/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10844/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.52025,
+    "impactFactorText": "3.5 (2025)",
+    "downloads": 270313,
+    "decisionDays": 5,
+    "decisionTimeText": "5 days",
+    "subjectAreas": [
+      "Information Storage and Retrieval",
+      "Data Structures and Information Theory",
+      "Artificial Intelligence",
+      "IT in Business",
+      "Natural Language Processing (NLP)"
+    ],
+    "scope": "Information Storage and Retrieval, Data Structures and Information Theory, Artificial Intelligence, IT in Business, Natural Language Processing (NLP)",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 15,
+    "title": "Mobile Networks and Applications",
+    "sourceUrl": "https://link.springer.com/journal/11036?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11036/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11036/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.72025,
+    "impactFactorText": "1.7 (2025)",
+    "downloads": 309048,
+    "decisionDays": 17,
+    "decisionTimeText": "17 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Computer Communication Networks",
+      "Electrical and Electronic Engineering",
+      "IT in Business"
+    ],
+    "scope": "Communications Engineering, Networks, Computer Communication Networks, Electrical and Electronic Engineering, IT in Business",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 16,
+    "title": "Machine Learning",
+    "sourceUrl": "https://link.springer.com/journal/10994?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10994/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10994/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.92025,
+    "impactFactorText": "4.9 (2025)",
+    "downloads": 2405141,
+    "decisionDays": 5,
+    "decisionTimeText": "5 days",
+    "subjectAreas": [
+      "Machine Learning",
+      "Control, Robotics, Automation",
+      "Artificial Intelligence",
+      "Computer Modelling",
+      "Natural Language Processing (NLP)"
+    ],
+    "scope": "Machine Learning, Control, Robotics, Automation, Artificial Intelligence, Computer Modelling, Natural Language Processing (NLP)",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 17,
+    "title": "Journal of Ambient Intelligence and Humanized Computing",
+    "sourceUrl": "https://link.springer.com/journal/12652?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/12652/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/12652/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 790156,
+    "decisionDays": 19,
+    "decisionTimeText": "19 days",
+    "subjectAreas": [
+      "Computational Intelligence",
+      "Artificial Intelligence",
+      "Control, Robotics, Automation",
+      "User Interfaces and Human Computer Interaction"
+    ],
+    "scope": "Computational Intelligence, Artificial Intelligence, Control, Robotics, Automation, User Interfaces and Human Computer Interaction",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 18,
+    "title": "Frontiers of Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/11704?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11704/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11704/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 7.32025,
+    "impactFactorText": "7.3 (2025)",
+    "downloads": 213247,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Computer Science"
+    ],
+    "scope": "Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 19,
+    "title": "Cluster Computing",
+    "sourceUrl": "https://link.springer.com/journal/10586?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10586/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10586/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.52025,
+    "impactFactorText": "5.5 (2025)",
+    "downloads": 979293,
+    "decisionDays": 25,
+    "decisionTimeText": "25 days",
+    "subjectAreas": [
+      "Processor Architectures",
+      "Operating Systems",
+      "Computer Communication Networks"
+    ],
+    "scope": "Processor Architectures, Operating Systems, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 20,
+    "title": "Social Network Analysis and Mining",
+    "sourceUrl": "https://link.springer.com/journal/13278?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/13278/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/13278/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.22025,
+    "impactFactorText": "3.2 (2025)",
+    "downloads": 695913,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Data Mining and Knowledge Discovery",
+      "Graph Theory",
+      "Game Theory",
+      "Statistics in Social Sciences, Humanities, Law, Education, Behavorial Sciences, Public Policy",
+      "Sociology of Migration"
+    ],
+    "scope": "Data Mining and Knowledge Discovery, Graph Theory, Game Theory, Statistics in Social Sciences, Humanities, Law, Education, Behavorial Sciences, Public Policy, Sociology of Migration",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "query": "generative artificial intelligence",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-40-16-341Z-both-generative-artificial-intelligence",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 19,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-40-16-341Z-both-generative-artificial-intelligence\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=generative+artificial+intelligence&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 40,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-40-16-341Z-both-generative-artificial-intelligence\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "generative artificial intelligence",
+    "springerCount": 19,
+    "elsevierCount": 40,
+    "mergedCount": 59,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-40-16-341Z-both-generative-artificial-intelligence\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-40-16-341Z-both-generative-artificial-intelligence\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-40-16-341Z-both-generative-artificial-intelligence\\journals-merged.json"
+    }
+  }
+}

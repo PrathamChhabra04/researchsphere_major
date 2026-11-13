@@ -36,3 +36,7 @@ server/data/journal-finder-probe/*/*-page.*
 server/data/journal-finder-probe/*/*-network.json
 server/data/journal-finder-probe/*/springer-journals.json
 server/data/journal-finder-probe/*/elsevier-journals.json
+
+# Generated local journal matching index + embedding model cache
+server/data/journal-match-index.json
+server/data/journal-match-model-cache/

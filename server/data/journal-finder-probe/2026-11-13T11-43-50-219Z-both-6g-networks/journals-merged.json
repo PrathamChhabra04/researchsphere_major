@@ -1,0 +1,444 @@
+[
+  {
+    "provider": "elsevier",
+    "rank": 1,
+    "title": "ICT Express",
+    "sourceUrl": "https://www.sciencedirect.com/journal/ict-express/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ICTE",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/ict-express/publish/guide-for-authors",
+    "acronym": "ICTE",
+    "issn": "2405-9595",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 4.6,
+    "citeScore": 11.4,
+    "decisionDays": null,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Computer Science Applications",
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Research article",
+      "Review article"
+    ],
+    "scope": "ICT Express (Information &amp; Communications Technology Express) is an open-access journal published by the Korean Institute of Communications and Information Sciences (KICS). The journal aims to publish research that advances both theoretical and practical understanding in the following areas: AI and its applications Communications and Networks for B5G and 6G Blockchain and Security Services, Applications, and Emerging topics. We particularly welcome submissions that contribute to the advancement of ICT technologies and academic knowledge, fostering innovation and practical solutions in the field. The journal invites original research articles (up to 6 pages in double-column format) that address the unique technical challenges arising from the convergence of ICT disciplines. ICT Express also strongly encourages the submission of survey and tutorial papers. While there is no formal page limit, we recommend keeping them under 30 pages (double-column format) to ensure clarity and readability. As an open-access journal, ICT Express provides a high-quality platform with a rigorous yet rapid peer review process, typically completed within 4 to 6 weeks.",
+    "editorInChief": "Yeong Min Jang",
+    "goldOpenAccessFee": 1500,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/24059595.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "springer",
+    "rank": 1,
+    "title": "Journal of Fluorescence",
+    "sourceUrl": "https://link.springer.com/journal/10895?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10895/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10895/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.42025,
+    "impactFactorText": "3.4 (2025)",
+    "downloads": 717388,
+    "decisionDays": 11,
+    "decisionTimeText": "11 days",
+    "subjectAreas": [
+      "Biomedical Research",
+      "Biophysics",
+      "Biotechnology",
+      "Chemical Biology",
+      "Analytical Chemistry"
+    ],
+    "scope": "Biomedical Research, Biophysics, Biotechnology, Chemical Biology, Analytical Chemistry",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 3,
+    "title": "Optical and Quantum Electronics",
+    "sourceUrl": "https://link.springer.com/journal/11082?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11082/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11082/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1009479,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Laser",
+      "Electrical and Electronic Engineering",
+      "Characterization and Analytical Technique",
+      "Computer Communication Networks"
+    ],
+    "scope": "Laser, Electrical and Electronic Engineering, Characterization and Analytical Technique, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 4,
+    "title": "Journal of Applied Spectroscopy",
+    "sourceUrl": "https://link.springer.com/journal/10812?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10812/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10812/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 0.72025,
+    "impactFactorText": "0.7 (2025)",
+    "downloads": 71268,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Atomic and Molecular Structure and Properties",
+      "Analytical Chemistry"
+    ],
+    "scope": "Atomic and Molecular Structure and Properties, Analytical Chemistry",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 5,
+    "title": "Journal of Optics",
+    "sourceUrl": "https://link.springer.com/journal/12596?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/12596/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/12596/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.22025,
+    "impactFactorText": "2.2 (2025)",
+    "downloads": 303036,
+    "decisionDays": 13,
+    "decisionTimeText": "13 days",
+    "subjectAreas": [
+      "Physics and Astronomy",
+      "Laser"
+    ],
+    "scope": "Physics and Astronomy, Laser",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 6,
+    "title": "Applied Physics B",
+    "sourceUrl": "https://link.springer.com/journal/340?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/340/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/340/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.82025,
+    "impactFactorText": "1.8 (2025)",
+    "downloads": 603781,
+    "decisionDays": 7,
+    "decisionTimeText": "7 days",
+    "subjectAreas": [
+      "Physics and Astronomy",
+      "Physical Chemistry",
+      "Laser",
+      "Quantum Optics",
+      "Technology and Engineering"
+    ],
+    "scope": "Physics and Astronomy, Physical Chemistry, Laser, Quantum Optics, Technology and Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 7,
+    "title": "Microchimica Acta",
+    "sourceUrl": "https://link.springer.com/journal/604?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/604/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/604/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.42025,
+    "impactFactorText": "5.4 (2025)",
+    "downloads": 1724312,
+    "decisionDays": 5,
+    "decisionTimeText": "5 days",
+    "subjectAreas": [
+      "Nanochemistry",
+      "Nanotechnology",
+      "Characterization and Analytical Technique",
+      "Analytical Chemistry",
+      "Microsystems and MEMS"
+    ],
+    "scope": "Nanochemistry, Nanotechnology, Characterization and Analytical Technique, Analytical Chemistry, Microsystems and MEMS",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 8,
+    "title": "Plasmonics",
+    "sourceUrl": "https://link.springer.com/journal/11468?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11468/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11468/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.62025,
+    "impactFactorText": "5.6 (2025)",
+    "downloads": 541424,
+    "decisionDays": 10,
+    "decisionTimeText": "10 days",
+    "subjectAreas": [
+      "Biotechnology",
+      "Nanotechnology",
+      "Biophysics",
+      "Chemical Biology"
+    ],
+    "scope": "Biotechnology, Nanotechnology, Biophysics, Chemical Biology",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 9,
+    "title": "Science China Chemistry",
+    "sourceUrl": "https://link.springer.com/journal/11426?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11426/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11426/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 9.82025,
+    "impactFactorText": "9.8 (2025)",
+    "downloads": 851954,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Chemistry"
+    ],
+    "scope": "Chemistry",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 10,
+    "title": "Analytical and Bioanalytical Chemistry",
+    "sourceUrl": "https://link.springer.com/journal/216?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/216/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/216/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.12025,
+    "impactFactorText": "4.1 (2025)",
+    "downloads": 4142735,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Analytical Chemistry",
+      "Chemical Biology",
+      "Biomedical Research",
+      "Characterization and Analytical Technique",
+      "Food Science",
+      "Environmental Monitoring"
+    ],
+    "scope": "Analytical Chemistry, Chemical Biology, Biomedical Research, Characterization and Analytical Technique, Food Science, Environmental Monitoring",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 11,
+    "title": "Science China Materials",
+    "sourceUrl": "https://link.springer.com/journal/40843?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/40843/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/40843/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 7.72025,
+    "impactFactorText": "7.7 (2025)",
+    "downloads": 606744,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Materials Science",
+      "Chemistry"
+    ],
+    "scope": "Materials Science, Chemistry",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 12,
+    "title": "Chemical Research in Chinese Universities",
+    "sourceUrl": "https://link.springer.com/journal/40242?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/40242/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/40242/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.72025,
+    "impactFactorText": "4.7 (2025)",
+    "downloads": 166315,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Chemistry",
+      "Analytical Chemistry",
+      "Inorganic Chemistry",
+      "Organic Chemistry",
+      "Physical Chemistry"
+    ],
+    "scope": "Chemistry, Analytical Chemistry, Inorganic Chemistry, Organic Chemistry, Physical Chemistry",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 13,
+    "title": "Optoelectronics Letters",
+    "sourceUrl": "https://link.springer.com/journal/11801?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11801/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11801/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.42025,
+    "impactFactorText": "1.4 (2025)",
+    "downloads": 42371,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Laser"
+    ],
+    "scope": "Laser",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 15,
+    "title": "Applied Nanoscience",
+    "sourceUrl": "https://link.springer.com/journal/13204?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/13204/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/13204/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 641350,
+    "decisionDays": 6,
+    "decisionTimeText": "6 days",
+    "subjectAreas": [
+      "Nanotechnology",
+      "Membrane Trafficking",
+      "Microsystems and MEMS",
+      "Nanochemistry"
+    ],
+    "scope": "Nanotechnology, Membrane Trafficking, Microsystems and MEMS, Nanochemistry",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 16,
+    "title": "The European Physical Journal Plus",
+    "sourceUrl": "https://link.springer.com/journal/13360?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/13360/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/13360/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.92025,
+    "impactFactorText": "2.9 (2025)",
+    "downloads": 1376128,
+    "decisionDays": 11,
+    "decisionTimeText": "11 days",
+    "subjectAreas": [
+      "Applied and Technical Physics",
+      "Theoretical, Mathematical and Computational Physics",
+      "Complex Systems",
+      "Condensed Matter Physics",
+      "Atomic, Molecular and Chemical Physics"
+    ],
+    "scope": "Applied and Technical Physics, Theoretical, Mathematical and Computational Physics, Complex Systems, Condensed Matter Physics, Atomic, Molecular and Chemical Physics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 19,
+    "title": "Journal of Cluster Science",
+    "sourceUrl": "https://link.springer.com/journal/10876?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10876/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10876/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.12025,
+    "impactFactorText": "4.1 (2025)",
+    "downloads": 325118,
+    "decisionDays": 11,
+    "decisionTimeText": "11 days",
+    "subjectAreas": [
+      "Catalysis",
+      "Inorganic Chemistry",
+      "Physical Chemistry",
+      "Nanochemistry"
+    ],
+    "scope": "Catalysis, Inorganic Chemistry, Physical Chemistry, Nanochemistry",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 20,
+    "title": "Chemical Papers",
+    "sourceUrl": "https://link.springer.com/journal/11696?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11696/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11696/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.72025,
+    "impactFactorText": "2.7 (2025)",
+    "downloads": 706558,
+    "decisionDays": 7,
+    "decisionTimeText": "7 days",
+    "subjectAreas": [
+      "Chemistry",
+      "Industrial Chemistry",
+      "Chemical Biology",
+      "Medicinal Chemistry",
+      "Materials Science",
+      "Biotechnology"
+    ],
+    "scope": "Chemistry, Industrial Chemistry, Chemical Biology, Medicinal Chemistry, Materials Science, Biotechnology",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  }
+]

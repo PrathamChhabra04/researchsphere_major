@@ -135,6 +135,11 @@ const dismissCommonOverlays = async (page) => {
     '[data-cc-banner]',
     ".cc-banner",
     'dialog[open].cc-banner',
+    "#onetrust-banner-sdk",
+    "#onetrust-consent-sdk",
+    '[id*="cookie"][role="dialog"]',
+    '[class*="cookie-banner"]',
+    '[class*="CookieBanner"]',
   ];
 
   for (const selector of bannerSelectors) {
@@ -143,12 +148,16 @@ const dismissCommonOverlays = async (page) => {
     if (!count) continue;
 
     const buttons = [
+      banner.getByRole("button", { name: /accept all/i }),
       banner.getByRole("button", { name: /accept/i }),
       banner.getByRole("button", { name: /agree/i }),
       banner.getByRole("button", { name: /allow/i }),
+      banner.getByRole("button", { name: /reject optional/i }),
       banner.locator('button:has-text("Accept")'),
       banner.locator('button:has-text("Accept all")'),
       banner.locator('button:has-text("I agree")'),
+      banner.locator("#onetrust-accept-btn-handler"),
+      banner.locator("#onetrust-reject-all-handler"),
     ];
 
     for (const button of buttons) {
@@ -162,6 +171,27 @@ const dismissCommonOverlays = async (page) => {
       } catch {
         // keep trying
       }
+    }
+  }
+
+  const extraSelectors = [
+    "#onetrust-accept-btn-handler",
+    "#onetrust-reject-all-handler",
+    'button[id*="accept-all"]',
+    'button[data-test="cookie-accept-all"]',
+  ];
+
+  for (const selector of extraSelectors) {
+    const button = page.locator(selector).first();
+    const count = await button.count().catch(() => 0);
+    if (!count) continue;
+
+    try {
+      await button.click({ timeout: 3000 });
+      await page.waitForTimeout(1500);
+      return;
+    } catch {
+      // Ignore and keep trying.
     }
   }
 
@@ -310,15 +340,9 @@ const extractSpringerJournals = async (page) => {
     .filter((journal) => journal.title && journal.sourceUrl);
 };
 
-const extractElsevierJournals = (networkEvents) => {
-  const resultSets = networkEvents
-    .filter((event) => event.url.includes("/journals/keywords-search"))
-    .flatMap((event) =>
-      Array.isArray(event.json?.results) ? event.json.results : [],
-    );
-
-  return dedupeBy(
-    resultSets.map((item, index) => ({
+const mapElsevierJournals = (items) =>
+  dedupeBy(
+    items.map((item, index) => ({
       provider: "elsevier",
       rank: item.ranking ?? index + 1,
       title: normalizeWhitespace(item.title),
@@ -354,6 +378,65 @@ const extractElsevierJournals = (networkEvents) => {
     })),
     (item) => item.issn || `${item.provider}:${item.title.toLowerCase()}`,
   );
+
+const collectElsevierItems = (networkEvents) =>
+  networkEvents
+    .filter(
+      (event) =>
+        event.url.includes("/journals/keywords-search") ||
+        event.url.includes("/api/journals/search"),
+    )
+    .flatMap((event) =>
+      Array.isArray(event.json?.results) ? event.json.results : [],
+    );
+
+const buildElsevierSearchBody = (query) => ({
+  citeScoreGte: null,
+  citeScoreLt: null,
+  impactFactorGte: null,
+  impactFactorLt: null,
+  timeToFirstDecisionLt: null,
+  timeToAcceptanceLt: null,
+  goldOpenAccess: true,
+  subscription: true,
+  sortBy: "default",
+  sortOrder: "desc",
+  query,
+  mode: "search",
+  ecrId: "",
+  agreementsFilter: "all-journals",
+});
+
+/**
+ * The journal finder UI now POSTs to /api/journals/search. Call it directly;
+ * this avoids loading the SPA and is much faster for corpus refreshes.
+ */
+const fetchElsevierViaApi = async (query, timeoutMs = 45000) => {
+  const response = await fetch(
+    "https://journalfinder.elsevier.com/api/journals/search",
+    {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        origin: "https://journalfinder.elsevier.com",
+        referer: "https://journalfinder.elsevier.com/results",
+        "user-agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+      },
+      body: JSON.stringify(buildElsevierSearchBody(query)),
+      signal: AbortSignal.timeout(timeoutMs),
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(
+      `Elsevier search API responded ${response.status} ${response.statusText}`,
+    );
+  }
+
+  const json = await response.json();
+  return Array.isArray(json.results) ? json.results : [];
 };
 
 const writeNormalizedOutputs = async (runDir, query, resultsByProvider) => {
@@ -391,6 +474,51 @@ const writeNormalizedOutputs = async (runDir, query, resultsByProvider) => {
   };
 };
 
+const submitSpringerSearch = async (page) => {
+  const button = page.locator('button[data-test="main-button"]').first();
+
+  try {
+    await button.click({ timeout: 15000 });
+    await page.waitForTimeout(8000);
+    return;
+  } catch {
+    // Cookie banners can intercept the click; retry after dismissing, then
+    // fall back to a DOM-level submit that ignores overlays and hit testing.
+  }
+
+  await dismissCommonOverlays(page);
+
+  try {
+    await button.click({ timeout: 8000 });
+    await page.waitForTimeout(8000);
+    return;
+  } catch {
+    // Fall through to the DOM submit.
+  }
+
+  const submitted = await page
+    .evaluate(() => {
+      const form = document.querySelector("form");
+      if (form && typeof form.requestSubmit === "function") {
+        form.requestSubmit();
+        return "requestSubmit";
+      }
+      const element = document.querySelector('button[data-test="main-button"]');
+      if (element instanceof HTMLElement) {
+        element.click();
+        return "dom-click";
+      }
+      return null;
+    })
+    .catch(() => null);
+
+  if (!submitted) {
+    throw new Error("Could not submit the Springer journal finder search.");
+  }
+
+  await page.waitForTimeout(8000);
+};
+
 const scrapeSpringer = async (page, query, runDir) => {
   const networkEvents = [];
 
@@ -422,10 +550,7 @@ const scrapeSpringer = async (page, query, runDir) => {
   await input.scrollIntoViewIfNeeded().catch(() => {});
   await input.fill(query, { timeout: 10000 });
 
-  await Promise.all([
-    page.locator('button[data-test="main-button"]').click(),
-    page.waitForTimeout(8000),
-  ]);
+  await submitSpringerSearch(page);
 
   const finalUrl = page.url();
   const html = await page.content();
@@ -461,48 +586,69 @@ const buildElsevierResultsUrl = (query) => {
 };
 
 const scrapeElsevier = async (page, query, runDir) => {
-  const networkEvents = [];
+  const finalUrl = buildElsevierResultsUrl(query);
+  let items = [];
+  let via = "api";
+  let networkCaptureCount = 0;
 
-  page.on("response", async (response) => {
-    const url = response.url();
-    if (
-      !url.includes("authorhub.elsevier.com/api/v1") &&
-      !url.includes("/api/")
-    ) {
-      return;
-    }
+  try {
+    items = await fetchElsevierViaApi(query);
+  } catch (error) {
+    console.warn(`Elsevier API request failed, falling back to browser: ${error.message}`);
+  }
 
-    const json = await collectJsonResponse(response);
-    if (!json) return;
+  if (!items.length) {
+    via = "browser";
+    const networkEvents = [];
 
-    networkEvents.push({
-      url,
-      status: response.status(),
-      json,
+    page.on("response", async (response) => {
+      const url = response.url();
+      if (
+        !url.includes("authorhub.elsevier.com/api/v1") &&
+        !url.includes("/api/")
+      ) {
+        return;
+      }
+
+      const json = await collectJsonResponse(response);
+      if (!json) return;
+
+      networkEvents.push({
+        url,
+        status: response.status(),
+        json,
+      });
     });
+
+    await page.goto(finalUrl, {
+      waitUntil: "domcontentloaded",
+      timeout: 90000,
+    });
+
+    await page.waitForTimeout(12000);
+
+    const html = await page.content();
+    const text = await page.locator("body").innerText().catch(() => "");
+
+    await fs.writeFile(path.join(runDir, "elsevier-page.html"), html, "utf8");
+    await fs.writeFile(path.join(runDir, "elsevier-page.txt"), text, "utf8");
+    await safeWriteJson(path.join(runDir, "elsevier-network.json"), networkEvents);
+
+    networkCaptureCount = networkEvents.length;
+    items = collectElsevierItems(networkEvents);
+  }
+
+  const journals = mapElsevierJournals(items);
+  await safeWriteJson(path.join(runDir, "elsevier-search.json"), {
+    query,
+    via,
+    totalResults: items.length,
   });
-
-  const url = buildElsevierResultsUrl(query);
-  await page.goto(url, {
-    waitUntil: "domcontentloaded",
-    timeout: 90000,
-  });
-
-  await page.waitForTimeout(12000);
-
-  const finalUrl = page.url();
-  const html = await page.content();
-  const text = await page.locator("body").innerText().catch(() => "");
-  const journals = extractElsevierJournals(networkEvents);
-
-  await fs.writeFile(path.join(runDir, "elsevier-page.html"), html, "utf8");
-  await fs.writeFile(path.join(runDir, "elsevier-page.txt"), text, "utf8");
-  await safeWriteJson(path.join(runDir, "elsevier-network.json"), networkEvents);
 
   return {
     provider: "elsevier",
-    finalUrl,
-    networkCaptureCount: networkEvents.length,
+    finalUrl: via === "browser" ? page.url() : finalUrl,
+    networkCaptureCount,
     recommendationCount: journals.length,
     journals,
   };

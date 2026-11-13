@@ -1,617 +1,583 @@
-import fs from "fs/promises";
-import path from "path";
-import { fileURLToPath } from "url";
+import { MATCH_CONFIG } from "./journalMatch/config.js";
+import { loadJournalCorpus } from "./journalMatch/corpus.js";
+import { embedTexts } from "./journalMatch/embedding.js";
+import { loadJournalIndex } from "./journalMatch/indexStore.js";
+import {
+  clamp,
+  extractExcludedTopics,
+  normalizeKey,
+  normalizeWhitespace,
+  round,
+  snippet,
+  splitAbstract,
+  splitSentences,
+  tokenize,
+  unique,
+} from "./journalMatch/text.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const probeRoot = path.resolve(__dirname, "../data/journal-finder-probe");
+/**
+ * Journal matching service.
+ *
+ * Pipeline (all local, no network at request time):
+ *   1. Semantic similarity against a pre-built MiniLM chunk index.
+ *   2. BM25 (MiniSearch) over title / subjectAreas (x3) / scope.
+ *   3. Quality prior (impact factor, CiteScore, editorial speed).
+ *   Final = 0.6 semantic + 0.3 bm25 + 0.1 quality, then excluded-topic penalty.
+ */
 
-const STOP_WORDS = new Set([
-  "a",
-  "about",
-  "across",
-  "after",
-  "all",
-  "an",
-  "and",
-  "any",
-  "are",
-  "as",
-  "at",
-  "based",
-  "be",
-  "because",
-  "been",
-  "being",
-  "between",
-  "both",
-  "by",
-  "can",
-  "from",
-  "for",
-  "how",
-  "if",
-  "in",
-  "into",
-  "is",
-  "it",
-  "its",
-  "journal",
-  "method",
-  "methods",
-  "of",
-  "on",
-  "or",
-  "our",
-  "paper",
-  "research",
-  "results",
-  "study",
-  "system",
-  "systems",
-  "that",
-  "the",
-  "their",
-  "them",
-  "these",
-  "this",
-  "those",
-  "to",
-  "using",
-  "via",
-  "we",
-  "which",
-  "with",
-]);
+const { weights, fallbackWeights, semantic, bm25, quality } = MATCH_CONFIG;
 
-const CORE_CS_TERMS = [
-  "computer",
-  "software",
-  "information",
-  "informatics",
-  "artificial intelligence",
-  "machine learning",
-  "deep learning",
-  "data science",
-  "data mining",
-  "computer vision",
-  "natural language processing",
-  "robotics",
-  "network",
-  "distributed",
-  "cloud",
-  "security",
-  "cybersecurity",
-  "blockchain",
-  "edge computing",
-  "internet of things",
-];
+let apiBm25Cache = null;
+let embeddingFailureLogged = false;
+const excludedFallbackCache = new Map();
 
-let corpusCache = null;
+const clampDecisionDays = (value) =>
+  typeof value === "number" &&
+  Number.isFinite(value) &&
+  value > 0 &&
+  value <= quality.maxReasonableDecisionDays
+    ? value
+    : null;
 
-const normalizeWhitespace = (value) =>
-  String(value ?? "")
-    .replace(/\s+/g, " ")
-    .trim();
+/* ------------------------------------------------------------------ */
+/* Query parsing                                                       */
+/* ------------------------------------------------------------------ */
 
-const normalizeKey = (value) => normalizeWhitespace(value).toLowerCase();
+/** "machine learning + blockchain" -> ["machine learning", "blockchain"] */
+export const splitTopics = (query) => {
+  const raw = normalizeWhitespace(query);
+  if (!raw) return [];
 
-const tokenize = (value) =>
-  normalizeKey(value)
-    .replace(/[^a-z0-9\s]/g, " ")
-    .split(/\s+/)
-    .filter((token) => token.length > 2 && !STOP_WORDS.has(token));
+  const parts = raw.split(/\s*(?:,|;|\n|\+|\/|\band\b|\&)\s*/i);
+  const topics = unique(
+    parts
+      .map((part) => normalizeWhitespace(part))
+      .filter((part) => part.length >= 2 && tokenize(part).length > 0),
+  );
 
-const unique = (items) => [...new Set(items.filter(Boolean))];
-
-const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
-
-const round = (value, decimals = 4) =>
-  Number.parseFloat(Number(value).toFixed(decimals));
-
-const snippet = (value, maxLength = 260) => {
-  const text = normalizeWhitespace(value);
-  if (text.length <= maxLength) return text;
-  return `${text.slice(0, maxLength - 3)}...`;
+  return topics.slice(0, semantic.maxTopics);
 };
 
-const pickBetterNumber = (left, right) => {
-  if (left == null) return right ?? null;
-  if (right == null) return left ?? null;
-  return Math.max(left, right);
-};
-
-const pickLowerNumber = (left, right) => {
-  if (left == null) return right ?? null;
-  if (right == null) return left ?? null;
-  return Math.min(left, right);
-};
-
-const toAbsoluteField = (value) => normalizeWhitespace(value);
-
-const buildNGrams = (tokens, size) => {
-  const grams = [];
-  for (let index = 0; index <= tokens.length - size; index += 1) {
-    grams.push(tokens.slice(index, index + size).join(" "));
-  }
-  return grams;
-};
-
-const idf = (term, docFreq, docCount) => {
-  const df = docFreq.get(term) || 0;
-  return Math.log(1 + (docCount - df + 0.5) / (df + 0.5));
-};
-
-const countOccurrences = (tokens) => {
+const topAbstractTerms = (abstract, maxTerms = bm25.abstractTerms) => {
   const counts = new Map();
-  for (const token of tokens) {
+  for (const token of tokenize(abstract)) {
     counts.set(token, (counts.get(token) || 0) + 1);
   }
-  return counts;
+  return [...counts.entries()]
+    .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]))
+    .slice(0, maxTerms)
+    .map(([token]) => token);
 };
 
-const average = (values) =>
-  values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : 0;
+/* ------------------------------------------------------------------ */
+/* BM25                                                                */
+/* ------------------------------------------------------------------ */
 
-const hasAnyCoreCsTerm = (value) => {
-  const text = normalizeKey(value);
-  return CORE_CS_TERMS.some((term) => text.includes(term));
+const buildBm25Index = async (journals) => {
+  try {
+    const { default: MiniSearch } = await import("minisearch");
+    const index = new MiniSearch({
+      fields: ["title", "subjectAreas", "scope"],
+      storeFields: ["title"],
+      searchOptions: {
+        boost: { ...bm25.boost },
+        fuzzy: bm25.fuzzy,
+        prefix: bm25.prefix,
+        combineWith: "OR",
+      },
+    });
+    index.addAll(
+      journals.map((journal) => ({
+        id: journal.id,
+        title: journal.title,
+        subjectAreas: (journal.subjectAreas || []).join(" "),
+        scope: journal.scope,
+      })),
+    );
+    return index;
+  } catch (error) {
+    console.warn(`[journal-match] MiniSearch unavailable: ${error.message}`);
+    return null;
+  }
 };
 
-const buildJournalProfileText = (journal) =>
-  [
-    journal.title,
-    journal.scope,
-    ...(journal.subjectAreas || []),
-    ...(journal.topicSeeds || []),
-    journal.provider,
-    journal.publishingModel,
-  ]
-    .map(normalizeWhitespace)
-    .filter(Boolean)
-    .join(" ");
-
-const toCorpusJournal = (item, topicSeed, sourceRun) => ({
-  provider: item.provider,
-  title: toAbsoluteField(item.title),
-  sourceUrl: item.sourceUrl || null,
-  submissionLink: item.submissionLink || null,
-  guideForAuthors: item.guideForAuthors || null,
-  acronym: item.acronym || null,
-  issn: item.issn || null,
-  publishingModel: item.publishingModel || null,
-  openAccessType: item.openAccessType || null,
-  impactFactor: item.impactFactor ?? null,
-  citeScore: item.citeScore ?? null,
-  decisionDays: item.decisionDays ?? null,
-  acceptanceDays: item.acceptanceDays ?? null,
-  subjectAreas: Array.isArray(item.subjectAreas) ? item.subjectAreas : [],
-  articleTypes: Array.isArray(item.articleTypes) ? item.articleTypes : [],
-  scope: toAbsoluteField(item.scope),
-  editorInChief: item.editorInChief || null,
-  goldOpenAccessFee: item.goldOpenAccessFee ?? null,
-  goldOpenAccessCurrency: item.goldOpenAccessCurrency || null,
-  coverImage: item.coverImage || null,
-  hasAgreements: item.hasAgreements ?? null,
-  topicSeeds: unique([topicSeed]),
-  sourceRuns: unique([sourceRun]),
-  rank: item.rank ?? null,
-});
-
-const mergeJournalRecords = (current, incoming, topicSeed) => ({
-  ...current,
-  title: current.title || incoming.title,
-  sourceUrl: current.sourceUrl || incoming.sourceUrl,
-  submissionLink: current.submissionLink || incoming.submissionLink,
-  guideForAuthors: current.guideForAuthors || incoming.guideForAuthors,
-  acronym: current.acronym || incoming.acronym || null,
-  issn: current.issn || incoming.issn || null,
-  publishingModel: current.publishingModel || incoming.publishingModel || null,
-  openAccessType: current.openAccessType || incoming.openAccessType || null,
-  impactFactor: pickBetterNumber(current.impactFactor, incoming.impactFactor),
-  citeScore: pickBetterNumber(current.citeScore, incoming.citeScore),
-  decisionDays: pickLowerNumber(current.decisionDays, incoming.decisionDays),
-  acceptanceDays: pickLowerNumber(
-    current.acceptanceDays,
-    incoming.acceptanceDays,
-  ),
-  subjectAreas: unique([
-    ...(current.subjectAreas || []),
-    ...(incoming.subjectAreas || []),
-  ]),
-  articleTypes: unique([
-    ...(current.articleTypes || []),
-    ...(incoming.articleTypes || []),
-  ]),
-  scope:
-    normalizeWhitespace(current.scope).length >=
-    normalizeWhitespace(incoming.scope).length
-      ? current.scope
-      : incoming.scope,
-  editorInChief: current.editorInChief || incoming.editorInChief || null,
-  goldOpenAccessFee:
-    current.goldOpenAccessFee ?? incoming.goldOpenAccessFee ?? null,
-  goldOpenAccessCurrency:
-    current.goldOpenAccessCurrency || incoming.goldOpenAccessCurrency || null,
-  coverImage: current.coverImage || incoming.coverImage || null,
-  hasAgreements:
-    current.hasAgreements ?? incoming.hasAgreements ?? null,
-  topicSeeds: unique([...(current.topicSeeds || []), topicSeed]),
-  sourceRuns: unique([...(current.sourceRuns || []), ...(incoming.sourceRuns || [])]),
-  rank: Math.min(
-    current.rank || Number.MAX_SAFE_INTEGER,
-    incoming.rank || Number.MAX_SAFE_INTEGER,
-  ),
-});
-
-const listCorpusRuns = async () => {
-  const entries = await fs.readdir(probeRoot, { withFileTypes: true }).catch(() => []);
-  return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name);
+const getBm25Index = async (corpus) => {
+  if (apiBm25Cache && apiBm25Cache.size === corpus.journals.length) {
+    return apiBm25Cache;
+  }
+  const index = await buildBm25Index(corpus.journals);
+  apiBm25Cache = index ? { index, size: corpus.journals.length } : null;
+  return apiBm25Cache;
 };
 
-const readRunSummary = async (runName) => {
-  const summaryPath = path.join(probeRoot, runName, "summary.json");
-  const mergedPath = path.join(probeRoot, runName, "journals-merged.json");
-  const [summaryText, mergedText] = await Promise.all([
-    fs.readFile(summaryPath, "utf8"),
-    fs.readFile(mergedPath, "utf8"),
-  ]);
+const runBm25Query = (bm25Cache, query, allowedIds) => {
+  if (!bm25Cache || !query) return new Map();
+  let results = [];
+  try {
+    results = bm25Cache.index.search(query, {
+      boost: { ...bm25.boost },
+      fuzzy: bm25.fuzzy,
+      prefix: bm25.prefix,
+      combineWith: "OR",
+    });
+  } catch {
+    return new Map();
+  }
 
-  return {
-    runName,
-    summary: JSON.parse(summaryText),
-    journals: JSON.parse(mergedText),
-  };
+  const scores = new Map();
+  for (const result of results) {
+    if (allowedIds && !allowedIds.has(result.id)) continue;
+    scores.set(result.id, result.score || 0);
+  }
+  return scores;
 };
 
-const prepareJournal = (journal, stats) => {
-  const fieldTexts = {
-    title: normalizeKey(journal.title),
-    scope: normalizeKey(journal.scope),
-    subjects: normalizeKey((journal.subjectAreas || []).join(" ")),
-    topicSeeds: normalizeKey((journal.topicSeeds || []).join(" ")),
-  };
-
-  const fieldTokens = {
-    title: tokenize(fieldTexts.title),
-    scope: tokenize(fieldTexts.scope),
-    subjects: tokenize(fieldTexts.subjects),
-    topicSeeds: tokenize(fieldTexts.topicSeeds),
-  };
-
-  return {
-    ...journal,
-    profileText: buildJournalProfileText(journal),
-    fieldTexts,
-    fieldTokens,
-    tokenCounts: {
-      title: countOccurrences(fieldTokens.title),
-      scope: countOccurrences(fieldTokens.scope),
-      subjects: countOccurrences(fieldTokens.subjects),
-      topicSeeds: countOccurrences(fieldTokens.topicSeeds),
-    },
-    fieldLengths: {
-      title: Math.max(fieldTokens.title.length, 1),
-      scope: Math.max(fieldTokens.scope.length, 1),
-      subjects: Math.max(fieldTokens.subjects.length, 1),
-      topicSeeds: Math.max(fieldTokens.topicSeeds.length, 1),
-    },
-    csSignal:
-      hasAnyCoreCsTerm(journal.title) ||
-      hasAnyCoreCsTerm(journal.scope) ||
-      (journal.subjectAreas || []).some((subject) => hasAnyCoreCsTerm(subject)),
-    avgFieldLength: stats.avgFieldLength,
-  };
+const normalizeScoreMap = (scores) => {
+  const max = Math.max(0, ...scores.values());
+  if (max <= 0) return scores;
+  const normalized = new Map();
+  for (const [id, score] of scores) normalized.set(id, score / max);
+  return normalized;
 };
 
-const buildCorpusStats = (journals, topics) => {
-  const fields = ["title", "scope", "subjects", "topicSeeds"];
-  const tokenDf = new Map();
-  const fieldDf = Object.fromEntries(fields.map((field) => [field, new Map()]));
-  const fieldLengths = Object.fromEntries(fields.map((field) => [field, []]));
+/**
+ * BM25 scoring. In keyword mode each topic is scored separately and combined
+ * with a geometric mean, so journals covering every topic beat single-topic
+ * matches (same intent as the semantic combination).
+ */
+const searchBm25 = ({ bm25Cache, query, topics, mode, allowedIds }) => {
+  if (!bm25Cache) return new Map();
 
-  for (const journal of journals) {
-    const fieldTokens = {
-      title: tokenize(journal.title),
-      scope: tokenize(journal.scope),
-      subjects: tokenize((journal.subjectAreas || []).join(" ")),
-      topicSeeds: tokenize((journal.topicSeeds || []).join(" ")),
-    };
+  if (mode === "abstract" || topics.length <= 1) {
+    return normalizeScoreMap(runBm25Query(bm25Cache, query, allowedIds));
+  }
 
-    const seenGlobal = new Set();
-    for (const field of fields) {
-      const seenField = new Set(fieldTokens[field]);
-      fieldLengths[field].push(fieldTokens[field].length || 1);
-      for (const token of seenField) {
-        fieldDf[field].set(token, (fieldDf[field].get(token) || 0) + 1);
-        if (!seenGlobal.has(token)) {
-          tokenDf.set(token, (tokenDf.get(token) || 0) + 1);
-          seenGlobal.add(token);
+  const perTopic = topics.map((topic) =>
+    normalizeScoreMap(runBm25Query(bm25Cache, topic, allowedIds)),
+  );
+
+  const allIds = new Set();
+  for (const scores of perTopic) {
+    for (const id of scores.keys()) allIds.add(id);
+  }
+
+  const combined = new Map();
+  for (const id of allIds) {
+    const values = perTopic.map((scores) =>
+      Math.max(scores.get(id) || 0, bm25.topicFloor),
+    );
+    const logSum = values.reduce((sum, value) => sum + Math.log(value), 0);
+    combined.set(id, Math.exp(logSum / values.length));
+  }
+
+  return normalizeScoreMap(combined);
+};
+
+/* ------------------------------------------------------------------ */
+/* Vector math                                                         */
+/* ------------------------------------------------------------------ */
+
+const dot = (vectors, offset, query, dims) => {
+  let total = 0;
+  for (let index = 0; index < dims; index += 1) {
+    total += vectors[offset + index] * query[index];
+  }
+  return total;
+};
+
+const normalizeVector = (vector) => {
+  let norm = 0;
+  for (const value of vector) norm += value * value;
+  norm = Math.sqrt(norm);
+  if (!norm) return vector;
+  return vector.map((value) => value / norm);
+};
+
+const averageVectors = (vectors) => {
+  if (!vectors.length) return [];
+  const dims = vectors[0].length;
+  const total = new Array(dims).fill(0);
+  for (const vector of vectors) {
+    for (let index = 0; index < dims; index += 1) total[index] += vector[index];
+  }
+  return normalizeVector(total.map((value) => value / vectors.length));
+};
+
+const geometricMean = (values, floor) => {
+  if (!values.length) return 0;
+  const safe = values.map((value) => Math.max(value, floor));
+  const logSum = safe.reduce((sum, value) => sum + Math.log(value), 0);
+  return Math.exp(logSum / safe.length);
+};
+
+/* ------------------------------------------------------------------ */
+/* Semantic scoring                                                    */
+/* ------------------------------------------------------------------ */
+
+const buildJournalRanges = (index) => {
+  const ranges = new Map();
+  for (const journal of index.journals.values()) {
+    if (journal.chunkCount > 0) {
+      ranges.set(journal.id, {
+        start: journal.chunkStart,
+        count: journal.chunkCount,
+      });
+    }
+  }
+  return ranges;
+};
+
+/**
+ * Returns Map<journalId, { score, bestChunkIndex, topicScores }> or null when
+ * the index/model is unavailable.
+ */
+const computeSemanticScores = async ({ mode, query, topics, index }) => {
+  if (!index) return null;
+
+  let queryVectors;
+  try {
+    if (mode === "abstract") {
+      const pieces = splitAbstract(query, semantic.abstractChunks);
+      const embeddings = await embedTexts(pieces);
+      const averaged = averageVectors(embeddings);
+      queryVectors = [{ label: null, vector: averaged }];
+    } else {
+      const embeddings = await embedTexts(topics);
+      queryVectors = topics.map((topic, position) => ({
+        label: topic,
+        vector: normalizeVector(embeddings[position]),
+      }));
+    }
+  } catch (error) {
+    if (!embeddingFailureLogged) {
+      embeddingFailureLogged = true;
+      console.warn(
+        `[journal-match] Query embedding unavailable (${error.message}). Falling back to BM25 scoring.`,
+      );
+    }
+    return null;
+  }
+
+  if (!queryVectors.length || !queryVectors[0].vector?.length) return null;
+
+  const ranges = buildJournalRanges(index);
+  const dims = index.dims;
+  const scores = new Map();
+
+  for (const journal of index.journals.values()) {
+    const range = ranges.get(journal.id);
+    if (!range) continue;
+
+    const topicScores = [];
+    let bestScore = 0;
+    let bestChunkIndex = -1;
+
+    for (const queryVector of queryVectors) {
+      let maxScore = 0;
+      let maxChunk = -1;
+      for (let chunk = 0; chunk < range.count; chunk += 1) {
+        const chunkIndex = range.start + chunk;
+        const similarity = clamp(
+          dot(index.vectors, chunkIndex * dims, queryVector.vector, dims),
+          0,
+          1,
+        );
+        if (similarity > maxScore) {
+          maxScore = similarity;
+          maxChunk = chunkIndex;
         }
       }
+      topicScores.push(maxScore);
+      if (maxScore > bestScore) {
+        bestScore = maxScore;
+        bestChunkIndex = maxChunk;
+      }
     }
+
+    const score =
+      mode === "abstract"
+        ? topicScores[0] || 0
+        : geometricMean(topicScores, semantic.topicFloor);
+
+    scores.set(journal.id, { score, bestChunkIndex, topicScores });
   }
 
-  const avgFieldLength = Object.fromEntries(
-    fields.map((field) => [field, average(fieldLengths[field]) || 1]),
-  );
-
-  return {
-    fields,
-    topics,
-    docCount: Math.max(journals.length, 1),
-    tokenDf,
-    fieldDf,
-    avgFieldLength,
-  };
+  return scores;
 };
 
-const extractQueryFeatures = (query, mode, stats) => {
-  const normalized = normalizeWhitespace(query);
-  const tokens = tokenize(normalized);
-  const counts = countOccurrences(tokens);
-  const uniqueTokens = unique(tokens);
+/* ------------------------------------------------------------------ */
+/* Scoring helpers                                                     */
+/* ------------------------------------------------------------------ */
 
-  const tokenWeights = uniqueTokens
-    .map((token) => ({
-      token,
-      weight: idf(token, stats.tokenDf, stats.docCount) * (counts.get(token) || 1),
-    }))
-    .sort((left, right) => right.weight - left.weight);
-
-  const weightedTokens = tokenWeights
-    .slice(0, mode === "abstract" ? 24 : 14)
-    .map((item) => item.token);
-
-  const grams = unique([
-    ...buildNGrams(tokens, 2),
-    ...buildNGrams(tokens, 3),
-  ]);
-  const phraseWeights = grams
-    .map((phrase) => ({
-      phrase,
-      weight: average(
-        phrase.split(" ").map((token) => idf(token, stats.tokenDf, stats.docCount)),
-      ),
-    }))
-    .sort((left, right) => right.weight - left.weight);
-
-  const phrases = phraseWeights
-    .slice(0, mode === "abstract" ? 12 : 8)
-    .map((item) => item.phrase);
-
-  return {
-    normalized: normalizeKey(normalized),
-    tokens: weightedTokens,
-    tokenWeights: new Map(tokenWeights.map((item) => [item.token, item.weight])),
-    phrases,
+const qualityScore = (journal) => {
+  const components = [];
+  const add = (value, cap, weight) => {
+    if (typeof value !== "number" || !Number.isFinite(value) || value < 0) return;
+    components.push({ value: clamp(value / cap), weight });
   };
-};
 
-const bm25FieldScore = (queryTokens, journal, field, stats, weight) => {
-  const k1 = 1.2;
-  const b = 0.75;
-  const counts = journal.tokenCounts[field];
-  const fieldLength = journal.fieldLengths[field];
-  const avgLength = stats.avgFieldLength[field] || 1;
-  const fieldDf = stats.fieldDf[field];
+  add(journal.impactFactor, quality.impactFactorCap, quality.weights.impactFactor);
+  add(journal.citeScore, quality.citeScoreCap, quality.weights.citeScore);
 
-  let score = 0;
-  for (const token of queryTokens) {
-    const tf = counts.get(token) || 0;
-    if (!tf) continue;
-    const termIdf = idf(token, fieldDf, stats.docCount);
-    const numerator = tf * (k1 + 1);
-    const denominator = tf + k1 * (1 - b + b * (fieldLength / avgLength));
-    score += termIdf * (numerator / denominator);
+  const decisionDays = clampDecisionDays(journal.decisionDays);
+  if (decisionDays != null) {
+    const speed = clamp(
+      (quality.slowDays - decisionDays) / (quality.slowDays - quality.fastDays),
+      0,
+      1,
+    );
+    components.push({ value: speed, weight: quality.weights.speed });
   }
 
-  return score * weight;
+  const totalWeight = components.reduce((sum, item) => sum + item.weight, 0);
+  if (!totalWeight) return 0;
+  return components.reduce((sum, item) => sum + item.value * item.weight, 0) / totalWeight;
 };
 
-const routeQueryToTopics = (queryFeatures, stats) => {
-  const routed = stats.topics
-    .map((topic) => {
-      const topicTokens = unique(tokenize(topic));
-      const overlap = queryFeatures.tokens.filter((token) => topicTokens.includes(token));
-      const phraseBoost = queryFeatures.phrases.some((phrase) => normalizeKey(topic).includes(phrase))
-        ? 0.4
-        : 0;
-      const coverage = overlap.length / Math.max(topicTokens.length, 1);
-      return {
-        topic,
-        score: coverage + phraseBoost,
-      };
+const getExcludedTopics = (index, journal) => {
+  if (index?.excludedTopicsByJournal?.has(journal.id)) {
+    return index.excludedTopicsByJournal.get(journal.id);
+  }
+  if (excludedFallbackCache.has(journal.id)) {
+    return excludedFallbackCache.get(journal.id);
+  }
+  const extracted = extractExcludedTopics(journal.scope, {
+    title: journal.title,
+    subjectAreas: journal.subjectAreas,
+  });
+  excludedFallbackCache.set(journal.id, extracted);
+  return extracted;
+};
+
+const findExcludedMatches = ({ topics, journal, index }) => {
+  const excluded = getExcludedTopics(index, journal);
+  if (!excluded.length) return [];
+
+  const topicTokenSets = topics.map((topic) => ({
+    topic,
+    phrase: normalizeKey(topic),
+    tokens: new Set(tokenize(topic)),
+  }));
+  const matches = [];
+
+  for (const entry of excluded) {
+    const termSet = new Set(entry.terms || []);
+
+    // Exact phrase in the exclusion clause is the strongest signal.
+    const phraseHit = topicTokenSets.some(
+      (topic) =>
+        topic.phrase.length > 4 && normalizeKey(entry.sentence).includes(topic.phrase),
+    );
+
+    if (phraseHit) {
+      matches.push(entry.sentence);
+      continue;
+    }
+
+    // Otherwise require real multi-term overlap: one shared generic word is
+    // not enough to penalise a journal.
+    const termHit = topicTokenSets.some((topic) => {
+      const tokens = [...topic.tokens];
+      if (!tokens.length) return false;
+      const overlap = tokens.filter((token) => termSet.has(token));
+      if (tokens.length === 1) {
+        return overlap.length === 1 && tokens[0].length >= 5;
+      }
+      return overlap.length >= 2;
+    });
+
+    if (termHit) matches.push(entry.sentence);
+  }
+
+  return unique(matches).slice(0, 2);
+};
+
+const findMatchedSubjectAreas = (journal, queryTokens) => {
+  if (!queryTokens.length) return [];
+  const querySet = new Set(queryTokens);
+  return (journal.subjectAreas || [])
+    .map((subject) => {
+      const subjectTokens = tokenize(subject);
+      const overlap = subjectTokens.filter((token) => querySet.has(token)).length;
+      return { subject, overlap };
     })
-    .filter((item) => item.score >= 0.35)
-    .sort((left, right) => right.score - left.score)
-    .slice(0, 4);
-
-  return routed;
+    .filter((item) => item.overlap > 0)
+    .sort((left, right) => right.overlap - left.overlap)
+    .map((item) => item.subject)
+    .slice(0, 3);
 };
 
-const computeSeedAlignment = (journal, routedTopics) => {
-  if (!routedTopics.length || !(journal.topicSeeds || []).length) return 0;
+const scoreSentence = (text, queryTokens) => {
+  if (!text) return { sentence: "", overlap: 0 };
+  const querySet = new Set(queryTokens);
+  let best = "";
+  let bestOverlap = 0;
 
-  let best = 0;
-  for (const routed of routedTopics) {
-    for (const seed of journal.topicSeeds || []) {
-      const routedTokens = unique(tokenize(routed.topic));
-      const seedTokens = unique(tokenize(seed));
-      const overlap = routedTokens.filter((token) => seedTokens.includes(token));
-      const overlapRatio = overlap.length / Math.max(routedTokens.length, 1);
-      best = Math.max(best, overlapRatio * routed.score);
+  for (const sentence of splitSentences(text)) {
+    let overlap = 0;
+    for (const token of tokenize(sentence)) {
+      if (querySet.has(token)) overlap += 1;
+    }
+    if (overlap > bestOverlap) {
+      bestOverlap = overlap;
+      best = sentence;
     }
   }
 
-  return clamp(best);
+  return { sentence: bestOverlap > 0 ? best : "", overlap: bestOverlap };
 };
 
-const computePhraseScore = (journal, phrases) => {
-  if (!phrases.length) return 0;
-  let score = 0;
-  for (const phrase of phrases) {
-    if (journal.fieldTexts.title.includes(phrase)) score += 0.45;
-    if (journal.fieldTexts.topicSeeds.includes(phrase)) score += 0.45;
-    if (journal.fieldTexts.subjects.includes(phrase)) score += 0.35;
-    if (journal.fieldTexts.scope.includes(phrase)) score += 0.2;
-  }
-  return clamp(score / Math.max(phrases.length, 1));
-};
+const buildWhyMatched = ({
+  journal,
+  mode,
+  topics,
+  queryTokens,
+  semanticEntry,
+  index,
+}) => {
+  const chunkText =
+    semanticEntry?.bestChunkIndex >= 0
+      ? index?.chunks?.[semanticEntry.bestChunkIndex]?.text || ""
+      : "";
 
-const computeTokenCoverage = (journal, queryFeatures) => {
-  const profileTokens = new Set([
-    ...journal.fieldTokens.title,
-    ...journal.fieldTokens.scope,
-    ...journal.fieldTokens.subjects,
-    ...journal.fieldTokens.topicSeeds,
-  ]);
+  const chunkMatch = scoreSentence(chunkText, queryTokens);
+  const scopeMatch = scoreSentence(journal.scope, queryTokens);
+  const matchedSentence =
+    scopeMatch.overlap > chunkMatch.overlap
+      ? scopeMatch.sentence
+      : chunkMatch.sentence || scopeMatch.sentence;
 
-  const matched = queryFeatures.tokens.filter((token) => profileTokens.has(token));
-  const totalWeight = queryFeatures.tokens.reduce(
-    (sum, token) => sum + (queryFeatures.tokenWeights.get(token) || 0),
-    0,
-  );
-  const matchedWeight = matched.reduce(
-    (sum, token) => sum + (queryFeatures.tokenWeights.get(token) || 0),
-    0,
-  );
+  const topicLabel =
+    mode === "abstract"
+      ? queryTokens.slice(0, 5).join(", ")
+      : topics.slice(0, 4).join(", ");
 
-  return {
-    matchedTokens: matched,
-    coverage: totalWeight ? matchedWeight / totalWeight : 0,
-  };
-};
-
-const buildReasons = (journal, matchedTokens, routedTopics) => {
-  const reasons = [];
-
-  const routedMatches = routedTopics.filter((item) =>
-    (journal.topicSeeds || []).some((seed) => normalizeKey(seed) === normalizeKey(item.topic)),
-  );
-  if (routedMatches.length) {
-    reasons.push(`Strong topical fit: ${routedMatches.slice(0, 2).map((item) => item.topic).join(", ")}`);
-  }
-
-  if ((journal.subjectAreas || []).length) {
-    reasons.push(
-      `Subject areas: ${(journal.subjectAreas || []).slice(0, 3).join(", ")}`,
+  if (matchedSentence) {
+    return snippet(
+      topicLabel ? `Matches ${topicLabel}: ${matchedSentence}` : matchedSentence,
+      280,
     );
   }
 
-  if (matchedTokens.length) {
-    reasons.push(`Matched concepts: ${matchedTokens.slice(0, 5).join(", ")}`);
-  }
+  return snippet(
+    topicLabel ? `Matches ${topicLabel}. ${journal.scope}` : journal.scope,
+    280,
+  );
+};
 
-  if (journal.decisionDays != null) {
+const buildReasons = (journal, matchedSubjectAreas, excludedWarnings) => {
+  const reasons = [];
+  if (matchedSubjectAreas.length) {
+    reasons.push(`Subject areas: ${matchedSubjectAreas.join(", ")}`);
+  }
+  if (journal.decisionDays != null && clampDecisionDays(journal.decisionDays) != null) {
     reasons.push(`First decision: ${journal.decisionDays} days`);
   }
-
+  if (excludedWarnings.length) {
+    reasons.push("Check scope exclusions before submitting");
+  }
   return unique(reasons).slice(0, 3);
 };
 
-const scoreJournal = (journal, queryFeatures, mode, stats) => {
-  if (!queryFeatures.tokens.length) return null;
+/* ------------------------------------------------------------------ */
+/* Main scoring                                                        */
+/* ------------------------------------------------------------------ */
 
-  const bm25 =
-    bm25FieldScore(queryFeatures.tokens, journal, "title", stats, 3.2) +
-    bm25FieldScore(queryFeatures.tokens, journal, "topicSeeds", stats, 2.7) +
-    bm25FieldScore(queryFeatures.tokens, journal, "subjects", stats, 2.0) +
-    bm25FieldScore(queryFeatures.tokens, journal, "scope", stats, mode === "abstract" ? 2.6 : 1.8);
+const scoreJournal = ({
+  journal,
+  mode,
+  topics,
+  queryTokens,
+  bm25Scores,
+  semanticScores,
+  index,
+}) => {
+  const semanticEntry = semanticScores?.get(journal.id) || null;
+  const semanticScore = semanticEntry?.score ?? 0;
+  const bm25Score = bm25Scores.get(journal.id) ?? 0;
+  const qualityValue = qualityScore(journal);
 
-  const routedTopics = routeQueryToTopics(queryFeatures, stats);
-  const seedAlignment = computeSeedAlignment(journal, routedTopics);
-  const phraseScore = computePhraseScore(journal, queryFeatures.phrases);
-  const { matchedTokens, coverage } = computeTokenCoverage(journal, queryFeatures);
-  const csBoost = journal.csSignal ? 0.06 : 0;
-  const impactBoost = clamp((journal.impactFactor || 0) / 25, 0, 0.08);
-  const decisionBoost =
-    journal.decisionDays != null
-      ? clamp((60 - journal.decisionDays) / 60, 0, 1) * 0.04
-      : 0;
+  const activeWeights = semanticScores ? weights : fallbackWeights;
+  const blended =
+    activeWeights.semantic * semanticScore +
+    activeWeights.bm25 * bm25Score +
+    activeWeights.quality * qualityValue;
 
-  const normalizedBm25 = clamp(bm25 / (mode === "abstract" ? 30 : 24));
+  if (blended < MATCH_CONFIG.minimumScore) return null;
 
-  const score =
-    mode === "abstract"
-      ? normalizedBm25 * 0.4 +
-        coverage * 0.24 +
-        seedAlignment * 0.18 +
-        phraseScore * 0.1 +
-        impactBoost +
-        decisionBoost +
-        csBoost
-      : normalizedBm25 * 0.34 +
-        coverage * 0.2 +
-        seedAlignment * 0.24 +
-        phraseScore * 0.12 +
-        impactBoost +
-        decisionBoost +
-        csBoost;
+  const excludedWarnings = findExcludedMatches({
+    topics,
+    journal,
+    index,
+  }).map(
+    (sentence) =>
+      `Journal states: "${sentence}" — confirm your topic is in scope.`,
+  );
 
-  const bounded = clamp(score);
-  const minimum = mode === "abstract" ? 0.22 : 0.18;
-  if (bounded < minimum) return null;
+  const finalScore = excludedWarnings.length
+    ? blended * MATCH_CONFIG.excludedTopicPenalty
+    : blended;
+
+  const matchedSubjectAreas = findMatchedSubjectAreas(journal, queryTokens);
+  const whyMatched = buildWhyMatched({
+    journal,
+    mode,
+    topics,
+    queryTokens,
+    semanticEntry,
+    index,
+  });
 
   return {
     ...journal,
-    score: round(bounded),
+    score: round(clamp(finalScore)),
+    matchPercent: Math.round(clamp(finalScore) * 100),
+    semanticScore: round(semanticScore),
+    bm25Score: round(bm25Score),
+    qualityScore: round(qualityValue),
     scopeSnippet: snippet(journal.scope),
-    matchReasons: buildReasons(journal, matchedTokens, routedTopics),
-    routedTopics: routedTopics.map((item) => item.topic),
+    matchReasons: buildReasons(journal, matchedSubjectAreas, excludedWarnings),
+    matchedSubjectAreas,
+    matchedTopics: topics,
+    whyMatched,
+    warnings: excludedWarnings,
   };
 };
 
-const loadAndPrepareCorpus = async () => {
-  if (corpusCache) return corpusCache;
+/* ------------------------------------------------------------------ */
+/* Public API                                                          */
+/* ------------------------------------------------------------------ */
 
-  const runs = await listCorpusRuns();
-  const loadedRuns = await Promise.allSettled(runs.map(readRunSummary));
-  const byKey = new Map();
-  const topics = new Set();
-
-  for (const loaded of loadedRuns) {
-    if (loaded.status !== "fulfilled") continue;
-    const { runName, summary, journals } = loaded.value;
-    const topicSeed = normalizeWhitespace(summary.query || "").toLowerCase();
-    if (topicSeed) topics.add(topicSeed);
-
-    for (const item of journals) {
-      const normalized = toCorpusJournal(item, topicSeed, runName);
-      const key = normalized.issn
-        ? `${normalized.provider}:${normalized.issn}`
-        : `${normalized.provider}:${normalizeKey(normalized.title)}`;
-
-      if (byKey.has(key)) {
-        byKey.set(key, mergeJournalRecords(byKey.get(key), normalized, topicSeed));
-      } else {
-        byKey.set(key, normalized);
-      }
-    }
+/** Load the local index + corpus without loading the embedding model. */
+export const warmupJournalMatcher = async () => {
+  const [corpus, index] = await Promise.all([
+    loadJournalCorpus().catch(() => null),
+    loadJournalIndex(),
+  ]);
+  if (corpus) {
+    await getBm25Index(corpus);
   }
-
-  const rawJournals = [...byKey.values()];
-  const stats = buildCorpusStats(rawJournals, [...topics].sort());
-  const journals = rawJournals
-    .map((journal) => prepareJournal(journal, stats))
-    .sort((left, right) => left.title.localeCompare(right.title));
-
-  corpusCache = {
-    journals,
-    stats,
-    topics: [...topics].sort(),
-    totalRuns: loadedRuns.filter((run) => run.status === "fulfilled").length,
+  return {
+    corpusLoaded: Boolean(corpus),
+    indexLoaded: Boolean(index),
+    journals: corpus?.journals?.length || 0,
+    chunks: index?.chunks?.length || 0,
   };
-
-  return corpusCache;
 };
 
-export const loadJournalCorpus = async () => {
-  const corpus = await loadAndPrepareCorpus();
+export const getJournalMatcherStatus = async () => {
+  const [corpus, index] = await Promise.all([
+    loadJournalCorpus().catch(() => null),
+    loadJournalIndex(),
+  ]);
   return {
-    journals: corpus.journals,
-    topics: corpus.topics,
-    totalRuns: corpus.totalRuns,
+    journals: corpus?.journals?.length || 0,
+    topics: corpus?.topics?.length || 0,
+    totalRuns: corpus?.totalRuns || 0,
+    indexAvailable: Boolean(index),
+    indexBuiltAt: index?.builtAt || null,
+    indexChunks: index?.chunks?.length || 0,
+    model: MATCH_CONFIG.semantic.modelId,
   };
 };
 
@@ -631,27 +597,73 @@ export const searchJournalCorpus = async ({
     };
   }
 
-  const corpus = await loadAndPrepareCorpus();
-  const queryFeatures = extractQueryFeatures(normalizedQuery, mode, corpus.stats);
+  const corpus = await loadJournalCorpus();
+  const normalizedMode = mode === "abstract" ? "abstract" : "keyword";
+  const topics =
+    normalizedMode === "abstract"
+      ? topAbstractTerms(normalizedQuery)
+      : splitTopics(normalizedQuery);
+
   const filtered =
     provider === "all"
       ? corpus.journals
       : corpus.journals.filter((journal) => journal.provider === provider);
 
+  const allowedIds = new Set(filtered.map((journal) => journal.id));
+  const bm25Cache = await getBm25Index(corpus);
+  const bm25Query =
+    normalizedMode === "abstract"
+      ? topAbstractTerms(normalizedQuery, bm25.abstractTerms).join(" ")
+      : normalizedQuery;
+  const bm25Scores = searchBm25({
+    bm25Cache,
+    query: bm25Query,
+    topics,
+    mode: normalizedMode,
+    allowedIds,
+  });
+
+  const index = await loadJournalIndex();
+  const semanticScores = await computeSemanticScores({
+    mode: normalizedMode,
+    query: normalizedQuery,
+    topics,
+    index,
+  });
+
+  const queryTokens = unique([
+    ...tokenize(normalizedQuery),
+    ...topics.flatMap((topic) => tokenize(topic)),
+  ]).slice(0, 40);
+
   const items = filtered
-    .map((journal) => scoreJournal(journal, queryFeatures, mode, corpus.stats))
+    .map((journal) =>
+      scoreJournal({
+        journal,
+        mode: normalizedMode,
+        topics,
+        queryTokens,
+        bm25Scores,
+        semanticScores,
+        index,
+      }),
+    )
     .filter(Boolean)
     .sort((left, right) => {
       if (right.score !== left.score) return right.score - left.score;
       return (right.impactFactor || 0) - (left.impactFactor || 0);
     })
-    .slice(0, limit);
+    .slice(0, Math.max(1, limit));
 
   return {
     items,
     topics: corpus.topics,
     totalCorpus: corpus.journals.length,
-    mode,
+    mode: normalizedMode,
+    semanticAvailable: Boolean(semanticScores),
+    indexBuiltAt: index?.builtAt || null,
   };
 };
 
+// Backwards-compatible re-export (previously part of this module).
+export { loadJournalCorpus };

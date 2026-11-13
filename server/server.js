@@ -6,6 +6,7 @@ import compression from "compression";
 import dotenv from "dotenv";
 import apiRoutes from "./routes/api.js";
 import { startHarvestScheduler } from "./services/harvest/harvestService.js";
+import { warmupJournalMatcher } from "./services/journalMatcherService.js";
 
 // Load environment variables
 dotenv.config();
@@ -73,6 +74,20 @@ app.listen(PORT, () => {
   );
   console.log(`✅ Health check: http://localhost:${PORT}/health`);
   startHarvestScheduler();
+
+  // Load the journal matching corpus + pre-built embedding index in the
+  // background. The embedding model itself stays lazy until the first search.
+  warmupJournalMatcher()
+    .then((status) => {
+      console.log(
+        `🧭 Journal matcher ready: ${status.journals} journals, ${status.chunks} chunks${
+          status.indexLoaded ? "" : " (embedding index not built — BM25 fallback)"
+        }`,
+      );
+    })
+    .catch((error) => {
+      console.warn(`⚠️ Journal matcher warmup failed: ${error.message}`);
+    });
 });
 
 export default app;

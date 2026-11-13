@@ -1,0 +1,32 @@
+{
+  "query": "high performance computing",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-36-156Z-both-high-performance-computing",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-36-156Z-both-high-performance-computing\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=high+performance+computing&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 40,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-36-156Z-both-high-performance-computing\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "high performance computing",
+    "springerCount": 20,
+    "elsevierCount": 40,
+    "mergedCount": 60,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-36-156Z-both-high-performance-computing\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-36-156Z-both-high-performance-computing\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-37-36-156Z-both-high-performance-computing\\journals-merged.json"
+    }
+  }
+}

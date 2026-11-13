@@ -56,6 +56,33 @@ SQLite via `better-sqlite3` at `server/data/harvest.db` (configurable with `HARV
   from sources that were removed from the registry.
 - An old `harvest-cache.json` is imported automatically once and renamed `*.migrated`.
 
+## Journal matching (`server/services/journalMatch/`)
+
+The Journals page is served by a fully local matcher (no LLM, no external API at query time).
+
+- **Corpus**: every `server/data/journal-finder-probe/*/journals-merged.json` is merged by
+  `provider + ISSN` (or title) in `corpus.js`. Springer cards only expose subject areas, so
+  `server/scripts/enrichJournalScopes.mjs` (run manually, Playwright, polite delay) scrapes each
+  journal's public `link.springer.com/journal/<id>/aims-and-scope` page into
+  `server/data/journal-scope-enrichment.json`; `corpus.js` merges it at load and prefers the
+  longer scope. Invalid decision/acceptance times (>365 days) are nulled here.
+- **Index**: `scripts/buildJournalIndex.js` (run manually) cleans HTML entities/boilerplate,
+  builds one identity chunk per journal (title + subjectAreas + articleTypes) and 180-word
+  scope chunks, then embeds them with `Xenova/all-MiniLM-L6-v2` (mean pooling, normalized).
+  Output is a single `server/data/journal-match-index.json` holding vectors, the chunk → journal
+  map, and per-journal excluded-topic rules. The model is cached in
+  `server/data/journal-match-model-cache/`. Both are generated and gitignored.
+- **Runtime** (`journalMatcherService.js`): loads the index once (warmup from `server.js`), and
+  the model lazily on first search. Final score =
+  `0.6 * semantic + 0.3 * bm25 + 0.1 * quality` (weights in `journalMatch/config.js`).
+  Keyword queries are split on commas/`+`/`and`/newlines and combined with a geometric mean so
+  journals covering every topic outrank single-topic matches. If the index or model is missing,
+  the service degrades to BM25 + quality and the route keeps working.
+- **Excluded topics**: clauses around "will not be considered", "out of scope", "excluded",
+  "moratorium" and "do not accept" are stored per journal; matching topics multiply the score
+  by 0.4 and attach a warning.
+- Sanity check: `node scripts/testMatching.js`.
+
 ## Frontend
 
 Each listing page calls `searchHarvestedData({ kind, subtype, … })` from

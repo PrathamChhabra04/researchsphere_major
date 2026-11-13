@@ -135,7 +135,9 @@ const runProbeForTopic = (topic, options) =>
       String(options.timeoutMs),
     ];
 
-    if (!options.headless) {
+    if (options.headless) {
+      args.push("--headless");
+    } else {
       args.push("--headed");
     }
 

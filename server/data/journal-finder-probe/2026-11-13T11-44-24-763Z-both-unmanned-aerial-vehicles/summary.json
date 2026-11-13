@@ -1,0 +1,32 @@
+{
+  "query": "unmanned aerial vehicles",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-44-24-763Z-both-unmanned-aerial-vehicles",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-44-24-763Z-both-unmanned-aerial-vehicles\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=unmanned+aerial+vehicles&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 1,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-44-24-763Z-both-unmanned-aerial-vehicles\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "unmanned aerial vehicles",
+    "springerCount": 20,
+    "elsevierCount": 1,
+    "mergedCount": 21,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-44-24-763Z-both-unmanned-aerial-vehicles\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-44-24-763Z-both-unmanned-aerial-vehicles\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-44-24-763Z-both-unmanned-aerial-vehicles\\journals-merged.json"
+    }
+  }
+}

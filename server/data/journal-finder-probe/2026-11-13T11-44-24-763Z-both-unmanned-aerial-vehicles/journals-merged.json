@@ -1,0 +1,544 @@
+[
+  {
+    "provider": "elsevier",
+    "rank": 1,
+    "title": "Information Processing in Agriculture",
+    "sourceUrl": "https://www.sciencedirect.com/journal/information-processing-in-agriculture/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/IPA",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/information-processing-in-agriculture/publish/guide-for-authors",
+    "acronym": "INPA",
+    "issn": "2214-3173",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 8.9,
+    "citeScore": 21.1,
+    "decisionDays": null,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Animal Science and Zoology",
+      "Agricultural and Biological Sciences (General)",
+      "Forestry"
+    ],
+    "articleTypes": [
+      "Full length article",
+      "Review article"
+    ],
+    "scope": "The Journal of the China Agricultural University Information Processing in Agriculture (IPA) was established in 2013 to encourage the development of science and technology related to information processing in agriculture, through the following aims: • Promote the use of knowledge and methods from information processing technologies in agriculture; • Report on experiences and publications of institutes, universities, and government, as well as profitable technologies for agriculture; • Provide a platform and opportunities for exchanging knowledge, strategies, and experiences among information processing researchers worldwide; • Promote and encourage interactions among agriculture scientists, meteorologists, biologists (pathologists/entomologists), information technology professionals, and other stakeholders to develop and implement methods, techniques, and tools related to information processing technology in agriculture; • Create and promote expert groups for the development of agro-meteorological databases, crop and livestock modeling, and applications for the development of crop performance-based decision support systems. Topics of interest include, but are not limited to, the following aspects: • Smart sensors, biosensors and bioelectronics, material and molecular innovations for chemical and biological sensing, sensors, and automation and control systems for agriculture; • Wireless sensor networks, 4G, NB-IOT, and 5G applications in agriculture; • Remote sensing and discrete element modeling (DEM) applications in agriculture; • Simulation, optimization, modeling, and automated control; • Decision support systems, intelligent systems, and artificial intelligence; • Machine vision, computer vision, image processing and automation, and imaging technologies for high-throughput phenotyping • Advances in spectroscopy and hyperspectral properties of biological products; • Advanced computational approaches for solving agricultural and biological engineering problems; • Computational fluid dynamics (CFD) applications in agriculture; • Inspection and traceability for food quality; • Precision agriculture, intelligent instruments, robotics, and co-robotics for agriculture; • Internet of things, cloud computing, and precision farming; • Big data, data mining, and data analysis for agricultural applications; • Unmanned aerial vehicles (UAVs) for sensing, imaging, and agricultural aquacultural applications.",
+    "editorInChief": "Professor Daoliang Li",
+    "goldOpenAccessFee": 2000,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/22143173.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "springer",
+    "rank": 1,
+    "title": "Journal of Intelligent & Robotic Systems",
+    "sourceUrl": "https://link.springer.com/journal/10846?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10846/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10846/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.12025,
+    "impactFactorText": "3.1 (2025)",
+    "downloads": 441624,
+    "decisionDays": 12,
+    "decisionTimeText": "12 days",
+    "subjectAreas": [
+      "Control, Robotics, Automation",
+      "Electrical and Electronic Engineering",
+      "Artificial Intelligence",
+      "Mechanical Engineering"
+    ],
+    "scope": "Control, Robotics, Automation, Electrical and Electronic Engineering, Artificial Intelligence, Mechanical Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 2,
+    "title": "International Journal of Aeronautical and Space Sciences",
+    "sourceUrl": "https://link.springer.com/journal/42405?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42405/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42405/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.92025,
+    "impactFactorText": "1.9 (2025)",
+    "downloads": 218633,
+    "decisionDays": 17,
+    "decisionTimeText": "17 days",
+    "subjectAreas": [
+      "Aerospace Technology and Astronautics",
+      "Continuum Mechanics"
+    ],
+    "scope": "Aerospace Technology and Astronautics, Continuum Mechanics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 3,
+    "title": "Signal, Image and Video Processing",
+    "sourceUrl": "https://link.springer.com/journal/11760?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11760/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11760/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.72025,
+    "impactFactorText": "2.7 (2025)",
+    "downloads": 650198,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Computer Vision",
+      "Signal, Speech and Image Processing",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics",
+      "Multimedia Information Systems"
+    ],
+    "scope": "Computer Vision, Signal, Speech and Image Processing, Computer Imaging, Vision, Pattern Recognition and Graphics, Multimedia Information Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 4,
+    "title": "Aerospace Systems",
+    "sourceUrl": "https://link.springer.com/journal/42401?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42401/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42401/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 62943,
+    "decisionDays": 12,
+    "decisionTimeText": "12 days",
+    "subjectAreas": [
+      "Aerospace Technology and Astronautics",
+      "Space Physics"
+    ],
+    "scope": "Aerospace Technology and Astronautics, Space Physics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 5,
+    "title": "International Journal of Control, Automation, and Systems",
+    "sourceUrl": "https://link.springer.com/journal/12555?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/12555/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/12555/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.82025,
+    "impactFactorText": "2.8 (2025)",
+    "downloads": 202941,
+    "decisionDays": 25,
+    "decisionTimeText": "25 days",
+    "subjectAreas": [
+      "Control, Robotics, Automation"
+    ],
+    "scope": "Control, Robotics, Automation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 6,
+    "title": "Arabian Journal for Science and Engineering",
+    "sourceUrl": "https://link.springer.com/journal/13369?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/13369/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/13369/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.12025,
+    "impactFactorText": "3.1 (2025)",
+    "downloads": 1404933,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Technology and Engineering",
+      "Humanities and Social Sciences"
+    ],
+    "scope": "Technology and Engineering, Humanities and Social Sciences",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 7,
+    "title": "Cluster Computing",
+    "sourceUrl": "https://link.springer.com/journal/10586?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10586/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10586/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.52025,
+    "impactFactorText": "5.5 (2025)",
+    "downloads": 979293,
+    "decisionDays": 25,
+    "decisionTimeText": "25 days",
+    "subjectAreas": [
+      "Processor Architectures",
+      "Operating Systems",
+      "Computer Communication Networks"
+    ],
+    "scope": "Processor Architectures, Operating Systems, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 8,
+    "title": "Neural Computing and Applications",
+    "sourceUrl": "https://link.springer.com/journal/521?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/521/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/521/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 3095663,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Data Mining and Knowledge Discovery",
+      "Probability and Statistics in Computer Science",
+      "Computational Science and Engineering",
+      "Computer Vision",
+      "Computational and Systems Biology"
+    ],
+    "scope": "Artificial Intelligence, Data Mining and Knowledge Discovery, Probability and Statistics in Computer Science, Computational Science and Engineering, Computer Vision, Computational and Systems Biology",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 9,
+    "title": "Precision Agriculture",
+    "sourceUrl": "https://link.springer.com/journal/11119?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11119/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11119/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 7.62025,
+    "impactFactorText": "7.6 (2025)",
+    "downloads": 646088,
+    "decisionDays": 5,
+    "decisionTimeText": "5 days",
+    "subjectAreas": [
+      "Agriculture",
+      "Soil Science",
+      "Geographical Information System",
+      "Statistics in Engineering, Physics, Computer Science, Chemistry and Earth Sciences",
+      "Atmospheric Science"
+    ],
+    "scope": "Agriculture, Soil Science, Geographical Information System, Statistics in Engineering, Physics, Computer Science, Chemistry and Earth Sciences, Atmospheric Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 10,
+    "title": "SN Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/42979?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42979/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42979/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1696119,
+    "decisionDays": 96,
+    "decisionTimeText": "96 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Computer Engineering and Networks",
+      "Software Engineering",
+      "Data Structures and Information Theory",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics"
+    ],
+    "scope": "Computer Science, Computer Engineering and Networks, Software Engineering, Data Structures and Information Theory, Computer Imaging, Vision, Pattern Recognition and Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 11,
+    "title": "Wireless Personal Communications",
+    "sourceUrl": "https://link.springer.com/journal/11277?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11277/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11277/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.92025,
+    "impactFactorText": "1.9 (2025)",
+    "downloads": 667064,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Signal, Speech and Image Processing",
+      "Computer Communication Networks"
+    ],
+    "scope": "Communications Engineering, Networks, Signal, Speech and Image Processing, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 12,
+    "title": "Journal of Ambient Intelligence and Humanized Computing",
+    "sourceUrl": "https://link.springer.com/journal/12652?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/12652/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/12652/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 790156,
+    "decisionDays": 19,
+    "decisionTimeText": "19 days",
+    "subjectAreas": [
+      "Computational Intelligence",
+      "Artificial Intelligence",
+      "Control, Robotics, Automation",
+      "User Interfaces and Human Computer Interaction"
+    ],
+    "scope": "Computational Intelligence, Artificial Intelligence, Control, Robotics, Automation, User Interfaces and Human Computer Interaction",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 13,
+    "title": "International Journal of Intelligent Robotics and Applications",
+    "sourceUrl": "https://link.springer.com/journal/41315?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/41315/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/41315/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.02025,
+    "impactFactorText": "3.0 (2025)",
+    "downloads": 167627,
+    "decisionDays": 8,
+    "decisionTimeText": "8 days",
+    "subjectAreas": [
+      "Robotics",
+      "Control, Robotics, Automation",
+      "User Interfaces and Human Computer Interaction",
+      "Machines, Tools, Processes",
+      "Electronics and Microelectronics, Instrumentation"
+    ],
+    "scope": "Robotics, Control, Robotics, Automation, User Interfaces and Human Computer Interaction, Machines, Tools, Processes, Electronics and Microelectronics, Instrumentation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 14,
+    "title": "Discover Applied Sciences",
+    "sourceUrl": "https://link.springer.com/journal/42452?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42452/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42452/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.82025,
+    "impactFactorText": "3.8 (2025)",
+    "downloads": 7526953,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Life Sciences",
+      "Chemistry",
+      "Earth and Environmental Sciences",
+      "Technology and Engineering",
+      "Materials Science",
+      "Applied and Technical Physics"
+    ],
+    "scope": "Life Sciences, Chemistry, Earth and Environmental Sciences, Technology and Engineering, Materials Science, Applied and Technical Physics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 15,
+    "title": "Journal of Bionic Engineering",
+    "sourceUrl": "https://link.springer.com/journal/42235?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42235/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42235/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 4.42025,
+    "impactFactorText": "4.4 (2025)",
+    "downloads": 345415,
+    "decisionDays": 11,
+    "decisionTimeText": "11 days",
+    "subjectAreas": [
+      "Robotic Engineering",
+      "Biomaterials",
+      "Artificial Intelligence",
+      "Biomedical Engineering and Bioengineering",
+      "Technology and Engineering"
+    ],
+    "scope": "Robotic Engineering, Biomaterials, Artificial Intelligence, Biomedical Engineering and Bioengineering, Technology and Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 16,
+    "title": "Wireless Networks",
+    "sourceUrl": "https://link.springer.com/journal/11276?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11276/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11276/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.52025,
+    "impactFactorText": "2.5 (2025)",
+    "downloads": 355721,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Computer Communication Networks",
+      "Electrical and Electronic Engineering",
+      "IT in Business"
+    ],
+    "scope": "Communications Engineering, Networks, Computer Communication Networks, Electrical and Electronic Engineering, IT in Business",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 17,
+    "title": "CEAS Aeronautical Journal",
+    "sourceUrl": "https://link.springer.com/journal/13272?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/13272/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/13272/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.42025,
+    "impactFactorText": "2.4 (2025)",
+    "downloads": 453994,
+    "decisionDays": 19,
+    "decisionTimeText": "19 days",
+    "subjectAreas": [
+      "Aerospace Technology and Astronautics"
+    ],
+    "scope": "Aerospace Technology and Astronautics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 18,
+    "title": "Multimedia Tools and Applications",
+    "sourceUrl": "https://link.springer.com/journal/11042?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11042/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11042/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 3529016,
+    "decisionDays": 34,
+    "decisionTimeText": "34 days",
+    "subjectAreas": [
+      "Multimedia Information Systems",
+      "Computer Communication Networks",
+      "Data Structures and Information Theory",
+      "Special Purpose and Application-Based Systems"
+    ],
+    "scope": "Multimedia Information Systems, Computer Communication Networks, Data Structures and Information Theory, Special Purpose and Application-Based Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 19,
+    "title": "Journal of Electrical Engineering & Technology",
+    "sourceUrl": "https://link.springer.com/journal/42835?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42835/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42835/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.02025,
+    "impactFactorText": "2.0 (2025)",
+    "downloads": 280776,
+    "decisionDays": 34,
+    "decisionTimeText": "34 days",
+    "subjectAreas": [
+      "Electrical and Electronic Engineering",
+      "Electronics and Microelectronics, Instrumentation",
+      "Electrical Power Engineering"
+    ],
+    "scope": "Electrical and Electronic Engineering, Electronics and Microelectronics, Instrumentation, Electrical Power Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 20,
+    "title": "Intelligent Service Robotics",
+    "sourceUrl": "https://link.springer.com/journal/11370?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11370/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11370/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.92025,
+    "impactFactorText": "5.9 (2025)",
+    "downloads": 173049,
+    "decisionDays": 17,
+    "decisionTimeText": "17 days",
+    "subjectAreas": [
+      "Control, Robotics, Automation",
+      "Artificial Intelligence",
+      "User Interfaces and Human Computer Interaction",
+      "Multibody Systems and Mechanical Vibrations"
+    ],
+    "scope": "Control, Robotics, Automation, Artificial Intelligence, User Interfaces and Human Computer Interaction, Multibody Systems and Mechanical Vibrations",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  }
+]

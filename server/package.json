@@ -11,7 +11,8 @@
     "harvest:sources": "node scripts/sourceBreakdown.mjs",
     "smoke:assistant": "node scripts/assistantSmoke.mjs",
     "probe:journals": "node scripts/journalFinderProbe.mjs",
-    "build:journal-corpus": "node scripts/buildJournalCorpus.mjs"
+    "build:journal-corpus": "node scripts/buildJournalCorpus.mjs",
+    "enrich:journal-scopes": "node scripts/enrichJournalScopes.mjs"
   },
   "keywords": [
     "research",
@@ -22,6 +23,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@huggingface/transformers": "^4.3.2",
     "axios": "^1.6.2",
     "better-sqlite3": "^11.10.0",
     "cheerio": "^1.2.0",
@@ -30,6 +32,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "helmet": "^7.1.0",
+    "minisearch": "^7.2.0",
     "nodemailer": "^6.10.1",
     "xml2js": "^0.6.2"
   },

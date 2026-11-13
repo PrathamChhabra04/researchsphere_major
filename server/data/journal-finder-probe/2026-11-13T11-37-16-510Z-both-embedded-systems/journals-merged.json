@@ -1,0 +1,1236 @@
+[
+  {
+    "provider": "elsevier",
+    "rank": 1,
+    "title": "Computational Condensed Matter",
+    "sourceUrl": "https://www.sciencedirect.com/journal/computational-condensed-matter/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/COCOM",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/computational-condensed-matter/publish/guide-for-authors",
+    "acronym": "COCOM",
+    "issn": "2352-2143",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4,
+    "citeScore": 5.7,
+    "decisionDays": 1,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Materials Science (General)",
+      "Condensed Matter Physics"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Mini-review",
+      "Review Article"
+    ],
+    "scope": "The journal of Computational Condensed Matter publishes articles based on computational modeling of novel physical properties of materials , ranging from the synthesis, characterization and processing of materials, structures and devices to the numerical methodology of materials simulations. It publishes articles making any contributions on quantum, classical and statistical mechanical studies. The journal also publishes articles on the development or implementation of new methodologies and/or the improvement of existing computational methods or techniques. The journal publishes topics including: Structural and Mechanical properties and defects Disordered Systems Dynamics, lattice effects and supraconductivity Magnetism and Magnetic Materials Electronic Structure , Excited states, Electronic transport Surfaces, Interfaces, Hybrid materials, and Topological materials Nanosciences and Nanotechnologies Machine Learning and Big data applied to Condensed Matter The computed physics properties should be based on the application of modern computational methods, such as: • First principle calculations • Density functional theory • Excited states properties based on the so called GW method or any other many-body perturbation method • Atomic and molecular-scale simulations based on either Monte Carlo or Molecular Dynamics techniques • Semi-empirical simulations based either on tight-binding, or embedded-atom methods • Other modeling techniques using macroscopic input, such as FE-methods or multiscale modeling. • Developing next-generation Machine Learning (ML) force fields for high-accuracy molecular dynamics simulations of complex materials, enabling atomic-scale insights into phase transitions and non-equilibrium behavior. • Creating ML-parameterized Density Functional Theory (DFT) frameworks to accurately model strongly correlated materials, overcoming current limitations of traditional exchange-correlation functionals. The journal also publishes articles on the development or implementation of new methodologies and/or the improvement of existing computational methods or techniques. Research articles will be assessed based on originality and scientific meri t. The journal will not consider articles based solely on results obtained using available computer codes without producing significant new results that contribute to the improvement of computational condensed matter physics . The authors should motivate their study by giving a state of the art in their actual research area and state clearly the objective of their work .",
+    "editorInChief": "Hugues Dreyssé",
+    "goldOpenAccessFee": 3430,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/23522143.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 2,
+    "title": "Environmental Science & Policy",
+    "sourceUrl": "https://www.sciencedirect.com/journal/environmental-science-and-policy/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ENVSCI",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/environmental-science-and-policy/publish/guide-for-authors",
+    "acronym": "ENVSCI",
+    "issn": "1462-9011",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.5,
+    "citeScore": 11.1,
+    "decisionDays": 5,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Management, Monitoring, Policy and Law",
+      "Global and Planetary Change",
+      "Geography, Planning and Development",
+      "Renewable Energy, Sustainability and the Environment"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Invited Commentaries",
+      "Perspective",
+      "VSI: Climate Information Services- Research",
+      "VSI: Climate Information Services_ Review"
+    ],
+    "scope": "Environmental Science &amp; Policy advances research in the intersections between environmental science, policy and society . The journal invites scholarship within this broad thematic that fits with one or more of the following four focal areas: Studies of the relationship between the production and use of knowledge in decision making; Studies of the relation between science and other forms of environmental knowledge, including practical, local and indigenous knowledge; Analyses of decision making practices in government, civil society, and businesses and the ways that they engage environmental knowledge; or Studies that present actionable environmental research with a clear description of how it responds to specific policy directives and the pathways by which this research is informing (or could inform) decision-making. Research can address a wide number of environmental issues, such as climate change, food systems, biodiversity loss, human and ecological well-being, resource use- and extraction, land use change, and sustainability more generally. The journal aspires to achieve an appropriate balance between perspectives from the global North as well as the global South and welcomes discussions of (environmental) justice, equity and inclusion. The journal is particularly interested in cutting edge developments in inter- and transdisciplinary work on co-production; arts-based research; integrated nexus and landscape approaches; the trade-offs and synergies between environmental issues and policies; innovations in integrated assessment, monitoring and evaluation; and transitions and transformative change. Editorial Policy : Submitted articles can offer empirical analysis and can also advance new theory, conceptual frameworks or other innovations. To be considered for publication, articles should fit with the aims and scope of the journal. This means that they should address the relation between environmental science and knowledge, policy and society. To be considered, environmental research articles must go beyond simply stating potential societal and policy relevance. Submitted articles should be of international relevance and well embedded in relevant scholarly conversations and debates, and they should consider the scholarship that has been published in the journal. They should provide a compelling objective and specify how they advance the state of the knowledge beyond the current state of the art. In-depth case studies or local issues may be considered if articles clearly and sufficiently articulate their wider international significance. The journal will consider the following article types: research papers, reviews, perspectives, and letters to the editor. Authors are kindly requested not to contact the Editors-in-Chief for submission approval. Before submitting, please review the journal’s aims, scope, and author guidelines to confirm that your manuscript is appropriate. If it aligns, you are welcome to submit directly through the journal’s system. We regret that email queries seeking submission permission cannot be answered.",
+    "editorInChief": "Christopher Cvitanovic | Nicole Klenk",
+    "goldOpenAccessFee": 4070,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/14629011.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 3,
+    "title": "International Journal of Cognitive Computing in Engineering",
+    "sourceUrl": "https://www.keaipublishing.com/en/journals/international-journal-of-cognitive-computing-in-engineering/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/ijcce/Default.aspx",
+    "guideForAuthors": "https://www.keaipublishing.com/en/journals/international-journal-of-cognitive-computing-in-engineering/guide-for-authors",
+    "acronym": "IJCCE",
+    "issn": "2666-3074",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": null,
+    "citeScore": 18,
+    "decisionDays": 4,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Computer Science (General)",
+      "Artificial Intelligence",
+      "Information Systems"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review",
+      "Short Communication",
+      "SI: AI for Cognitive Computing",
+      "SI: GCCCEA",
+      "SI: IoT-5G",
+      "SI:CCIMP",
+      "SI:IDMSCEP"
+    ],
+    "scope": "Cognitive computing is the creation of self-learning systems that use data mining, pattern recognition and natural language processing (NLP) to solve complicated problems without constant human oversight. It is a field that is highly transdisciplinary in nature, combining ideas, principles and methods of psychology, computer and internet technologies, linguistics, philosophy, neuroscience, etc. The goal of the International Journal of Cognitive Computing in Engineering is to explore how these data science technologies and new cognitive methods can be integrated to address real world engineering problems and challenges. For example, the journal welcomes submissions that look at the opportunities offered by combining existing data technologies with the knowledge of experts in the field and artificial intelligence. One of the benefits of cognitive computing is that it offers new analytics opportunities: the journal also welcomes designs for cognitive embedded data technologies that can process and analyse the large amount of data generated and aid decision-making. Submissions on a variety of cognitive computing-related topics will be considered. Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 700,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/26663074.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 4,
+    "title": "Water Security",
+    "sourceUrl": "https://www.sciencedirect.com/journal/water-security/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/wasec/default.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/water-security/publish/guide-for-authors",
+    "acronym": "WASEC",
+    "issn": "2468-3124",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.8,
+    "citeScore": 11,
+    "decisionDays": 15,
+    "acceptanceDays": 13,
+    "subjectAreas": [
+      "Development",
+      "Water Science and Technology",
+      "Earth-Surface Processes",
+      "Management, Monitoring, Policy and Law"
+    ],
+    "articleTypes": [
+      "Full length article",
+      "Synthesis paper",
+      "Review Article"
+    ],
+    "scope": "Water Security aims to publish papers that contribute to a better understanding of the societal, technological, and ecological forces and risks shaping water security worldwide. This includes cross-cutting themes highlighting the intersection between climate and water, energy, and food security, as well as biodiversity and ecosystem functions. At the same time the journal intends to stimulate empirically informed and theoretically contextualized debate across all disciplines related to water security. The goal is to publish concise and timely reviews, synthesis articles, and original research articles that go beyond conventional case studies to identify and fill key gaps in current understanding with novel insights. Special issues of the journal are thematically or regionally focused. The journal addresses the following as key drivers or limitations in processes that shape water security: • Water Shortage and Drought Articles should reflect on the rapidly changing mosaic of water shortage, including variations in availability, climate-induced drought, the mismatch between availability, access, and demand for water, as well as competition, conflict, and collaboration. Analyses of the risks of compound hazards, including drought and water contamination or episodic drought and flood and downstream ecological impacts, are welcome. Reviews and original research articles may scrutinize concepts, models, sets of data, etc. that have been used to address challenges posed by drought and shortage to municipal, agricultural, industrial or ecological needs, and what water security results have been achieved. Synthesis articles should identify missing understanding and discuss approaches to address shortage-induced challenges to water security. • Flooding and Rapid-onset Hazards Articles should address different types of flooding, such as coastal floods, river floods, flash floods, glacier lake outburst floods, or compound floods resulting from combinations of these, and encompass the causes, development and impacts of flood events. Reviews and original research articles may scrutinize the understanding and quantification of flood hazard, exposure and vulnerability, the interactions and feedbacks among them, the dynamic spatio-temporal nature of flood risk, and uncertainty and validation of risk assessments given the scarcity of observations of rapid-onset hazards. Synthesis articles are welcome on risk reduction and precautionary measures, forecasting and early warning, emergency measures and reconstruction, and how these measures are embedded in the political, cultural and economic context. • Governance and Policy Articles should consider how water security is conditioned by institutions, policy, markets and finance, or regulation from local to global levels, and may address transboundary waters. Reviews and original research articles may address human dimensions of water security in relation to the journal’s other themes (Water Shortage, Flooding, etc.). Synthesis articles may address politics, economics and finance, access, social equity, ethics, risk, adaptation, ecosystem services, and related drivers and opportunities for water security. Because water, energy, food, ecosystems, and climate security are inextricably linked, articles addressing nexus challenges are welcome. • Water, Sanitation and Hygiene Articles should explore linkages between population health and the quality, quantity, and reliability of water supplies, as well as the health impacts of excreta and wastewater management and reuse. Reviews and original research articles may address water supply and sanitation programs and practices with a view toward identifying and discussing water security challenges and opportunities. Synthesis articles may take a broad global perspective on health and WASH implications of programs to pursue water security. Articles addressing health and human wellbeing impacts of slow- or rapid-onset hazards (under the Water Shortage and Flooding themes) are welcome. Broad transdisciplinary framing of these issues are welcome, with emphasis on the socio-economic, political and cultural factors affecting WASH and health. • Ecosystems and E-Flows Articles should address ecological dimensions of water security at multiple spatio-temporal scales. This covers both ecohydrology (impact of ecosystems on the water cycle) and hydroecology (impact of water cycle on biodiversity and ecosystems). Reviews and original research articles may analyze the role of natural and managed terrestrial and aquatic ecosystems in the water cycle and water resources as well as the impact of water resource management (quantity and quality) on downstream aquatic biodiversity and fisheries underpinned by ecological flow regimes as well as on ecosystem services from headwaters to deltas and estuaries. Synthesis articles are encouraged that address the biophysical, biodiversity, socio-economic, health and livelihood dimensions of sharing water between humans and nature. • Water Systems and Infrastructure Articles should assess how water and wastewater infrastructure and its management – particularly decentralized, distributed, or centralized water storage and treatment – serve key roles in addressing water security. Analyses are welcome on the intersection of compound hazards including natural and human-caused crises and critical infrastructure systems. Reviews and original research articles are welcome on infrastructure for water supply and quality, flood control, WASH, ecological flows, interlinked water-energy-food systems including pumped storage hydropower, as well as water security implications of emerging infrastructure like data centers. Synthesis articles are encouraged on aging infrastructure contrasted with inadequate infrastructure in many emerging economies as well as current challenges and future directions for water security linked to the infrastructure gap or to emerging infrastructure.",
+    "editorInChief": "Professor Upmanu Lall",
+    "goldOpenAccessFee": 3280,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/24683124.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 5,
+    "title": "JACC: Advances",
+    "sourceUrl": "https://www.sciencedirect.com/journal/jacc-advances/publish/guide-for-authors",
+    "submissionLink": "https://www.jaccsubmit-advances.org/",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/jacc-advances/publish/guide-for-authors",
+    "acronym": "JACADV",
+    "issn": "2772-963X",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 5.5,
+    "citeScore": 4,
+    "decisionDays": null,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Cardiology and Cardiovascular Medicine"
+    ],
+    "articleTypes": [],
+    "scope": "Introduction JACC: Advances is an international, open-access journal of the American College of Cardiology dedicated to publishing high-quality clinical research, timely reviews, and innovative scholarship that advances cardiovascular medicine. By providing immediate, unrestricted access to its content, the journal helps accelerate the translation of scientific discovery into clinical practice. The journal welcomes a broad range of original research, including clinical investigations, epidemiologic studies, health services and outcomes research, health policy, methodology including clinical trial design, and other advances that improve the prevention, diagnosis, and treatment of cardiovascular and cerebrovascular disease. As part of the JACC journal family, JACC: Advances is committed to providing a rigorous, efficient, and author-focused publication experience while serving investigators across the full spectrum of the cardiovascular care team and at every stage of their careers. Areas of interest include, but are not limited to, arrhythmia and electrophysiology, cardio-obstetrics, cardiovascular surgery, congenital heart disease, coronary artery disease, critical care cardiology, digital health and health technology, genetics and genomics, geriatric cardiology, global cardiovascular health, health services and outcomes research, heart failure, cardiovascular imaging, interventional cardiology, molecular cardiology, neurocardiology, pediatric cardiology, preventive cardiology, sports cardiology, valvular heart disease, vascular medicine, and other emerging areas of cardiovascular medicine. All manuscripts must be submitted through the journal&#39;s online submission system at https://www.jaccsubmit-advances.org Your Paper Your Way (Optional) To simplify the submission process, JACC: Advances offers Elsevier&#39;s Your Paper Your Way option for initial submissions. Authors may submit their manuscript as a single Word or PDF file in any format or layout. Figures and tables may be embedded within the manuscript or uploaded as separate files. Detailed formatting requirements will only be requested if the manuscript is invited for revision. For an initial submission, please ensure that: The title page includes: Author names, academic degrees, and institutional affiliations Corresponding author information Relationships with Industry (disclosures) and any other required declarations The manuscript word count All figures, tables, supplementary material, and any Central Illustration cited in the manuscript are included with the submission. The manuscript generally aligns with the word limit for the selected article type (see Article Types below). While initial submissions may exceed the published word limit, accepted manuscripts must comply with the journal&#39;s requirements. Submit your manuscript at: http://www.jaccsubmit-advances.org/",
+    "editorInChief": "Dinesh K. Kalra",
+    "goldOpenAccessFee": 3024,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/2772963X.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 6,
+    "title": "Ecological Modelling",
+    "sourceUrl": "https://www.sciencedirect.com/journal/ecological-modelling/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ECOMOD",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/ecological-modelling/publish/guide-for-authors",
+    "acronym": "ECOMOD",
+    "issn": "0304-3800",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3.5,
+    "citeScore": 5.9,
+    "decisionDays": 2,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Ecological Modelling",
+      "Ecology, Evolution, Behavior and Systematics",
+      "Ecology"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Jorgensen Reviews",
+      "Review Paper",
+      "Short Communication",
+      "VSI: Digital Twins_Research Paper",
+      "VSI: EcoSummit 2024_Original research",
+      "VSI:Holoecology-Bernie Patten_Research article",
+      "VSI:Uncertainty in SES model_Research Paper",
+      "VSI: Digital Twins_Review paper",
+      "VSI: EcoSummit 2024_Review",
+      "VSI:Holoecology-Bernie Patten_Review article",
+      "VSI:Uncertainty in SES model_review Paper"
+    ],
+    "scope": "International Journal on Ecological Modelling and Systems Ecology Ecological Modelling publishes new mathematical models and systems analysis for describing ecological processes, and novel applications of models for environmental management. We welcome research on process-based models embedded in theory with explicit causative agents and innovative applications of existing models. And because applications can help refine models and propose new directions for research, the journal publishes both to help foster reproducibility and utility.Human activity and well-being are dependent on and integrated with the functioning of ecosystems and the services they provide. We aim to understand these basic ecosystem functions using mathematical and conceptual modelling, systems analysis, thermodynamics, computer simulations, and ecological theory, and look to a wide spectrum of applications ranging from basic ecology to human ecology to socio-ecological systems. The journal welcomes original research articles, review articles, viewpoint articles and short communications. The journal also supports the activities of the International Society of Ecological Modelling (ISEM) .",
+    "editorInChief": "Dr. Hsiao-Hsuan Wang | Dr. Juan Blanco",
+    "goldOpenAccessFee": 3290,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/03043800.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 7,
+    "title": "Smart Materials in Manufacturing",
+    "sourceUrl": "https://www.keaipublishing.com/en/journals/smart-materials-in-manufacturing/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/smmf/default1.aspx",
+    "guideForAuthors": "https://www.keaipublishing.com/en/journals/smart-materials-in-manufacturing/guide-for-authors",
+    "acronym": "SMMF",
+    "issn": "2772-8102",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": 13.3,
+    "citeScore": 15.5,
+    "decisionDays": 2,
+    "acceptanceDays": 16,
+    "subjectAreas": [
+      "Industrial and Manufacturing Engineering",
+      "Materials Science (General)",
+      "Engineering (General)",
+      "Materials Chemistry"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review",
+      "Short Communication",
+      "VSI: ASPEN:Research Paper",
+      "VSI: ICMDP:Research Paper",
+      "VSI: ASPEN:Review",
+      "VSI: ICMDP:Review Paper"
+    ],
+    "scope": "Smart Materials in Manufacturing is a peer-reviewed, multidisciplinary journal. We publish original research papers and authoritative reviews that drive innovation in the manufacturing and processing of advanced materials with embedded functionality. The focus is on existing and emerging manufacturing technologies that process novel materials and systems. Typically, these offer a variety of enhancements and capabilities, including, but not limited to, structural hierarchy, controlled phase formation, improved and bespoke properties for target applications, shape memory and morphing ability, stimuli responsiveness, sensing and actuation. We are interested in papers that characterise these constructs and assess their ability to achieve real-world functionality. The scope of the journal embraces the entire workflow underlying the manufacturing of active materials. Topics of interest sit at the crossroads of materials science and engineering and include: Metals and alloys Ceramics and glasses Polymers Composite materials and multi-material systems Natural and bio-based materials Shape memory and morphing materials Lattices and scaffolds We welcome submissions that explore all aspects of these materials and structures, including: Materials chemistry Design and process optimisation (Multi-)materials and (multi-)physics modelling Surfaces, coatings, and interfaces Characterisation of materials and components Interrogation of responses and signals emanating from the constructed materials Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 840,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/27728102.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 8,
+    "title": "Cleaner Energy Systems",
+    "sourceUrl": "https://www.sciencedirect.com/journal/cleaner-energy-systems/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/CLES",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/cleaner-energy-systems/publish/guide-for-authors",
+    "acronym": "CLES",
+    "issn": "2772-7831",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 5.9,
+    "citeScore": 10.7,
+    "decisionDays": 11,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Environmental Science (General)",
+      "Renewable Energy, Sustainability and the Environment"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review"
+    ],
+    "scope": "Cleaner Energy Systems - a platform to debate issues of delivering sufficient energy in a clean way. In this light, CLEANER energy is a significant issue as, for instance, renewable energy can be clean but can also contribute to the increased environmental footprints at various levels. Instead of focusing on a specific technology or the origin of the supplied energy, the proposed journal focuses on the issues of minimising the footprints of energy technologies over the entire life cycle - from sourcing to use and counteracting to the effects of released emissions. Cleaner Energy Systems An international, transdisciplinary journal focusing on cleaner ways of sourcing, transforming, transporting, delivering and using energy. Embedded in the scope is also the concept of Circular Economy - in terms of energy efficiency of systems with circular material flows as well as the energy recovery and reuse in industrial and processes within supply chains, urban and regional process networks. The Cleaner Energy Systems journal serves as a platform for addressing and discussing theoretical and practical issues concerning energy systems related to the reduction and elimination of negative impacts on the environment and human health, as well as the potential increase of natural and human capital. The scope includes (but is not limited to) the following topics, where the cleaner and sustainability dimensions are explicitly treated: Sustainable energy use and consumption Efficient and clean energy transportation and conversion Energy efficiency of industrial and business processes Nexuses of energy and other resources and their potential use as synergy mechanisms Integration of renewable energy sources into product and energy supply systems Energy storage enabling renewables and environmental footprint minimisation Reduction of environmental and health footprints of transportation, product or energy supply networks Energy-related metrics for sustainability performance and their relation to other sustainability indicators Sustainable practices and footprint minimisation in upstream operations and primary energy sourcing Energy- and footprint-aware regional development Cleaner energy systems promoting policies Promoting cleaner energy systems We encourage those interested in organizing a special issue or a virtual special issue within the scope of the journal to fill out this form and contact the editors-in-chief for more information.",
+    "editorInChief": "Professor Giorgio Besagni | Professor Panos Seferlis",
+    "goldOpenAccessFee": 1940,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/27727831.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 9,
+    "title": "Pervasive and Mobile Computing",
+    "sourceUrl": "https://www.sciencedirect.com/journal/pervasive-and-mobile-computing/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/PMC",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/pervasive-and-mobile-computing/publish/guide-for-authors",
+    "acronym": "PMCJ",
+    "issn": "1574-1192",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3.9,
+    "citeScore": 8.8,
+    "decisionDays": 4,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Hardware and Architecture",
+      "Computer Networks and Communications",
+      "Computer Science Applications"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "VSI: ICDCN26",
+      "VSI: PerCom 2026"
+    ],
+    "scope": "Special Issue Proposal Note PMCJ exclusively reviews Special Issue proposal forms submitted here through the designated submission system. Proposals submitted via any other means will not be considered for review. For more information on how to prepare and submit a SI proposal please check https://www.elsevier.com/physical-sciences-and-engineering/computer-science/journals/how-to-prepare-a-special-issue-proposal . Aims and Scope As envisioned by Mark Weiser as early as 1991, pervasive computing systems and services have truly become integral to our daily lives. Tremendous advancements in a multitude of technologies ranging from personalized and embedded smart devices (e.g., smartphones, sensors, wearables, IoT) to ubiquitous connectivity through wireless mobile communications and cognitive networking infrastructures, to advanced computing techniques (including mobile edge/fog/cloud, data analytics and machine learning) and user-friendly middleware services and platforms have significantly contributed to the unprecedented advances in pervasive and mobile computing. Such cutting-edge pervasive technologies and paradigms have led to the convergence of cyber-physical-human systems with applications to smart environments (e.g., smart homes and cities, smart grid, smart transportation, smart health, smart agriculture) with the goal to improve human experience and quality of life without explicit awareness of the underlying communications and computing technologies. Additionally, the huge amount of (real-time) data collected via pervasive devices coupled with advanced data analytic, machine learning and AI (Artificial Intelligence) techniques for reliable prediction and decision-making are making breakthrough research in pervasive computing and applications, such as self-driving cars, predictive maintenance in the industry 4.0 environments, mobile recommendation systems, etc. The Pervasive and Mobile Computing Journal (PMC) is a high-impact, peer-reviewed technical journal that publishes high-quality scientific articles spanning theory and practice, and covering all aspects of pervasive and mobile computing and systems. Topics include, but not limited to: Pervasive Computing and Communications Architectures and Protocols Pervasive, Mobile and Wearable Computing Systems and Services Cyber-Physical Systems and Cyber-Physical-Human Systems Smart Systems and Applications (smart homes, smart cities, smart manufacturing, smart transportation, smart grid, smart health, smart agriculture, etc.) Human-centric Intelligent Systems Cognitive Computing Trustworthy AI in Pervasive Systems Machine Learning and Deep Learning in Pervasive and Mobile Computing Federated, Distributed and Embedded learning, Learning at-the-edge in Pervasive Systems Learning on Streaming Data and Continual Learning in Pervasive and Mobile Systems Big Data and Data Analytics in Pervasive Computing Systems Internet of Things and Social Internet of Things Internet of People and Internet of Vehicles Edge, Fog, Mobile Cloud and Opportunistic Computing in Pervasive and Mobile Systems Enabling Pervasive Communication Technologies (e.g., wireless LANs, cellular, hybrid, ad hoc and cognitive networks) Wireless Sensors Networks and RFID Technologies Urban Sensing and Mobile Crowdsensing Participatory and Social Sensing Machine-to-Machine and Device-to-Device Communications Positioning, Localization and Tracking Technologies Activity Recognition and Tracking Context-aware Computing Location-based Services and Applications Pervasive Service Creation, Composition, Discovery, Management, and Delivery Human User Interfaces and Interaction Models Trust, Reliability, Security, and Privacy in Pervasive and Mobile Computing Systems Performance Evaluation of Pervasive and Mobile Computing Systems",
+    "editorInChief": "Sajal K. Das",
+    "goldOpenAccessFee": 2470,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15741192.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 10,
+    "title": "Sustainable Computing: Informatics and Systems",
+    "sourceUrl": "https://www.sciencedirect.com/journal/sustainable-computing-informatics-and-systems/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/SUSCOM",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/sustainable-computing-informatics-and-systems/publish/guide-for-authors",
+    "acronym": "SUSCOM",
+    "issn": "2210-5379",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 6.2,
+    "citeScore": 13.2,
+    "decisionDays": 1,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Renewable Energy, Sustainability and the Environment",
+      "Computer Science (General)"
+    ],
+    "articleTypes": [
+      "Regular Issue",
+      "VSI: SUSCOM_Energy-aware Artificial Intelligence",
+      "VSI:Carbon-Aware Optimization",
+      "VSI:SUSCOM_AI/ML-Driven Sustainable Power Grid",
+      "VSI:SUSCOM_Sustainable 5G",
+      "VSI:SUSCOM_Sustainable Quantum Computing"
+    ],
+    "scope": "Sustainable computing is a rapidly expanding research area spanning the fields of computer science and engineering, electrical engineering as well as other engineering disciplines. The aim of Sustainable Computing: Informatics and Systems (SUSCOM) is to publish the myriad research findings related to energy-aware and thermal-aware management of computing resource. Equally important is a spectrum of related research issues such as applications of computing that can have ecological and societal impacts . SUSCOM publishes original and timely research papers and survey articles in current areas of power, energy, temperature, and environment related research areas of current importance to readers. SUSCOM has an editorial board comprising prominent researchers from around the world and selects competitively evaluated peer-reviewed papers. Making computing sustainable - Software systems perspective: • Power-aware software • Code profiling and transformation for power management • Power-aware middleware • Multimedia systems • Scheduling and allocation Computing for sustainability - Use of computing to make the world a sustainable place: • Use of sensors for environmental monitoring • Smart control for eco-friendly buildings • Green Data Centers and Enterprise Computing Re-inventing algorithms and applications for sustainability: • Theoretical aspect of energy , power, and temperature • Power-aware applications • Resource management to optimize performance and power • Power implications for portable and mobile computing • Algorithms for reduced power, energy and heat for high-performance computing Modeling and evaluation of sustainable systems : • Reliability of Power-aware computers • Runtime systems that assist in power saving • Models for collective optimization of power and performance • Monitoring tools for power and performance of parallel and distributed systems Sustainable hardware platforms and devices - Hardware and architecture perspective: • Power aware networking • Real-time systems • Power-efficient architectures • Efficient circuit design for energy harvesting • Power management in memory, disk, storage and other peripheral devices • Configurable and renewable energy • Low power electronics • Embedded systems, ASICs and FPGSs • Power leakage and dissipation Please submit your article via https://www.editorialmanager.com/suscom/default.aspx .",
+    "editorInChief": "Ali R. Hurson",
+    "goldOpenAccessFee": 3460,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/22105379.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 11,
+    "title": "International Journal of Artificial Intelligence in Education",
+    "sourceUrl": "https://www.editorialmanager.com/ijaie/default2.aspx",
+    "submissionLink": "https://www.editorialmanager.com/ijaie/default2.aspx",
+    "guideForAuthors": null,
+    "acronym": "IJAIED",
+    "issn": "1560-4292",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 10.1,
+    "citeScore": 18.5,
+    "decisionDays": null,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Education"
+    ],
+    "articleTypes": [
+      "Research Article",
+      "Review Article",
+      "Short Communication"
+    ],
+    "scope": "The International Journal of Artificial Intelligence in Education (IJAIED) publishes papers concerned with the application of AI to education. It aims to help the development of principles for the design of computer-based learning systems. Its premise is that such principles involve the modeling and representation of relevant aspects of knowledge, before implementation or during execution, and hence require the application of AI techniques and concepts. Coverage extends to agent-based learning environments, architectures for AIED systems, bayesian and statistical methods, cognitive tools for learning, computer-assisted language learning, distributed learning environments, educational robotics, human factors and interface design, intelligent agents on the internet, natural language interfaces for instructional systems, real-world applications of AIED systems, tools for administration and curriculum integration, and more. The International Journal of Artificial Intelligence in Education is published in conjunction with the International Artificial Intelligence in Education Society (IAIED). IJAIED has a very broad notion of the scope of AI and of a &#39;computer-based learning system&#39;, as indicated by the following list of topics considered to be within the scope of IJAIED: adaptive and intelligent multimedia and hypermedia systems agent-based learning environments AIED and teacher education architectures for AIED systems assessment and testing of learning outcomes authoring systems and shells for AIED systems bayesian and statistical methods case-based systems cognitive development cognitive models of problem-solving cognitive tools for learning computer-assisted language learning computer-supported collaborative learning dialogue (argumentation, explanation, negotiation, etc.) discovery environments and microworlds distributed learning environments educational robotics embedded training systems empirical studies to inform the design of learning environments environments to support the learning of programming evaluation of AIED systems formal models of components of AIED systems help and advice systems human factors and interface design instructional design principles instructional planning intelligent agents on the internet intelligent courseware for computer-based training intelligent tutoring systems knowledge and skill acquisition knowledge representation for instruction modelling metacognitive skills modelling pedagogical interactions motivation natural language interfaces for instructional systems networked learning and teaching systems neural models applied to AIED systems performance support systems practical, real-world applications of AIED systems qualitative reasoning in simulations situated learning and cognitive apprenticeship social and cultural aspects of learning student modelling and cognitive diagnosis support for knowledge building communities support for networked communication theories of learning and conceptual change tools for administration and curriculum integration tools for the guided exploration of information resources",
+    "editorInChief": "Vincent Aleven | Cristina Conati | Marcus Specht",
+    "goldOpenAccessFee": 3680,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15604292.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 12,
+    "title": "Biomedical Signal Processing and Control",
+    "sourceUrl": "https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/BSPC",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/biomedical-signal-processing-and-control/publish/guide-for-authors",
+    "acronym": "BSPC",
+    "issn": "1746-8094",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.7,
+    "citeScore": 13,
+    "decisionDays": 10,
+    "acceptanceDays": 12,
+    "subjectAreas": [
+      "Biomedical Engineering",
+      "Signal Processing",
+      "Control and Systems Engineering"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "Technical Note"
+    ],
+    "scope": "The Journal of Biomedical Signal Processing and Control (BSPC), the Official Journal of the European Alliance of Medical and Biological Engineering and Science (EAMBES), publishes original, high-quality research that advances the theory, methodology, and application of signal and data processing techniques for understanding, modelling, and improving human health. The journal provides an interdisciplinary platform at the intersection of engineering, data science, and medicine, with a focus on extracting meaningful physiological, pathological, and behavioural information from biomedical signals, images, and related data. BSPC welcomes contributions that develop novel methods for signal and image acquisition, processing, analysis, modelling, and interpretation, as well as clinically validated applications. Emphasis is placed on approaches that address real-world challenges such as noise, non-stationarity, high dimensionality, multimodality, personalization, real-time operation, and interpretability, and that demonstrate clear translational relevance to healthcare, diagnostics, therapeutics, rehabilitation, and biomedical research. A defining characteristic of BSPC is its emphasis not only on the analysis of biomedical signals and medical images, but also on how these data are used to drive decisions, feedback mechanisms, and closed-loop control in medical devices, digital health technologies, and clinical systems. Scope of the Journal The scope includes—but is not limited to—the following topics: Processing and analysis of biomedical signals such as EEG, ECG, EMG, EOG, MEG, PPG, respiratory signals, blood pressure, neural recordings, and biosensor data Medical image processing and analysis, and integration of imaging with physiological signals Multimodal and multiscale signal processing and data fusion Machine learning, deep learning, and statistical methods for biomedical signal and image analysis Time–frequency, adaptive, nonlinear, and data-driven signal processing methods Brain–computer interfaces, neurotechnology, and neurophysiological systems Wearable, implantable, mobile, and remote health monitoring systems Physiological modelling, digital biomarkers, and data-driven health analytics Signal quality assessment, artifact detection, denoising, and robustness analysis Personalized and precision medicine enabled by signal and data analytics Real-time systems, embedded implementations, and clinical or translational validation Closed-loop and feedback-controlled biomedical systems, including therapeutic and assistive devices The journal encourages submissions ranging from theoretical advances and algorithmic innovations to experimental studies, clinical investigations, prototype systems, and benchmark or dataset papers. By fostering collaboration across disciplines, Biomedical Signal Processing and Control aims to accelerate the development of robust, interpretable, and clinically impactful signal- and data-driven solutions for modern healthcare.",
+    "editorInChief": "Panicos A. Kyriacou",
+    "goldOpenAccessFee": 3470,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/17468094.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 13,
+    "title": "Engineering Science and Technology, an International Journal",
+    "sourceUrl": "https://www.sciencedirect.com/journal/engineering-science-and-technology-an-international-journal/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/JESTCH",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/engineering-science-and-technology-an-international-journal/publish/guide-for-authors",
+    "acronym": "JESTCH",
+    "issn": "2215-0986",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 5.8,
+    "citeScore": 11.2,
+    "decisionDays": 9,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Engineering (General)",
+      "Computer Science (General)",
+      "Materials Science (General)"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "VSI: JESTCH_SDEWES 2026 - Original Research Article (FLA)",
+      "VSI: Manufacturing Processes and Machine Tools - Research Article",
+      "VSI: JESTCH_SDEWES 2026 - Review Article (REV)",
+      "VSI: Manufacturing Processes and Machine Tools - Review Article"
+    ],
+    "scope": "Peer Review under responsibility of Karabuk University Engineering Science and Technology, an International Journal (JESTECH) (formerly Technology), a peer-reviewed monthly engineering journal, publishes both theoretical and experimental high quality papers of permanent interest, not previously published in journals, in the field of engineering and applied science which aims to promote the theory and practice of technology and engineering. In addition to peer-reviewed original research papers, the Editorial Board welcomes original research reports, state-of-the-art reviews and communications in the broadly defined field of engineering science and technology. The scope of JESTECH includes a wide spectrum of subjects including Electrical/Electronics and Computer Engineering (Biomedical Engineering and Instrumentation; Coding, Cryptography, and Information Protection; Communications, Networks, Mobile Computing and Distributed Systems; Compilers and Operating Systems; Computer Architecture, Parallel Processing, and Dependability; Computer Vision and Robotics; Control Theory; Electromagnetic Waves, Microwave Techniques and Antennas; Embedded Systems; Integrated Circuits, VLSI Design, Testing, and CAD; Microelectromechanical Systems; Microelectronics, and Electronic Devices and Circuits; Power, Energy and Energy Conversion Systems; Signal, Image, and Speech Processing) Mechanical and Civil Engineering (Automotive Technologies; Biomechanics; Construction Materials; Design and Manufacturing; Dynamics and Control; Energy Generation, Utilization, Conversion, and Storage; Fluid Mechanics and Hydraulics; Heat and Mass Transfer; Micro-Nano Sciences; Renewable and Sustainable Energy Technologies; Robotics and Mechatronics; Solid Mechanics and Structure; Thermal Sciences) Metallurgical and Materials Engineering (Advanced Materials Science; Biomaterials; Ceramic and Inorgnanic Materials; Electronic-Magnetic Materials; Energy and Environment; Materials Characterizastion; Metallurgy; Polymers and Nanocomposites)",
+    "editorInChief": "Prof. Dr. Ilker Turker",
+    "goldOpenAccessFee": 2400,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/22150986.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 14,
+    "title": "Computer Standards & Interfaces",
+    "sourceUrl": "https://www.sciencedirect.com/journal/computer-standards-and-interfaces/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/CSI",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/computer-standards-and-interfaces/publish/guide-for-authors",
+    "acronym": "CSI",
+    "issn": "0920-5489",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4.6,
+    "citeScore": 12.1,
+    "decisionDays": 2,
+    "acceptanceDays": 8,
+    "subjectAreas": [
+      "Software",
+      "Computer Science Applications",
+      "Computer Networks and Communications",
+      "Information Systems and Management"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "VSI: STMAIoT",
+      "VSI: Secure AI Agents in CI",
+      "VSI:SW Meas. Std._Research Paper",
+      "VSI:SW Meas. Std._Review Article"
+    ],
+    "scope": "Researchers interested in submitting a special issue proposal should adhere to the Special Content Submission Guidelines . The International Journal on the Development and Application of Standards for Computers, Software Quality, Data Communications, Interfaces and Measurement The quality of software, well-defined interfaces (hardware and software), the process of digitalisation, and accepted standards in these fields are essential for building and exploiting complex computing, communication, multimedia and measuring systems. Standards can simplify the design and construction of individual hardware and software components and help to ensure satisfactory interworking. Computer Standards &amp; Interfaces is an international journal dealing specifically with these topics. The journal • Provides information about activities and progress on the definition of computer standards , software quality , interfaces and methods, at national, European and international levels • Publishes critical comments on standards and standards activities • Disseminates user&#39;s experiences and case studies in the application and exploitation of established or emerging standards, interfaces and methods • Offers a forum for discussion on actual projects, standards, interfaces and methods by recognised experts • Stimulates relevant research by providing a specialised refereed medium. Computer Standards &amp; Interfaces is concerned with the specification, development and application of standards and with high-level publications of developments and methods in the following areas: • Standards , Information Management , Formal Methods - Computers, Processors, Storage, Operating systems, Languages, Databases, Graphics, User interface, Multimedia, Information security, Office automation, Development of standards and instruments, Applications • Software Quality , Software Process - Languages, Operating systems, Programming, Requirements specification, Design &amp; implementation, Inspection &amp; test, Maintenance, Product and process evaluation, Performance, Tools, Metrics, Embedded systems, Software in measurement and technical systems including real-time aspects, Development of International Standards in Software Engineering • Distributed Systems , Open Systems , E-Topics - Digital interfaces, System and device buses, Fieldbuses, Data communication, Distributed computing, Protocols, Open systems interconnection, Local and wide area networks, Internet, Worldwide Web, Network security, Cryptology, E-services, E-business, E-commerce • Data Acquisition - Analog-to-digital conversion, Specification, Modelling, Industrial electronics, Real-time systems, Laboratory automation, Automatic measurement, Process control, Electromagnetic compatibility • Digital Instruments Standardisation - Forum of EUPAS, European Project for ADC-based devices, Standardisation (IMEKO TC-4 Working Group on A/D and D/A Converter Metrology), IEEE TC-10, IEC TC-42-WG8, IEC TC-85-WG16; Standardi-sation of specifications, modelling, testing, and analog and digital processing for digital instruments The last issue of a volume includes an author index and a subject index. CS&amp;I also covers general topics concerning the standardisation process, such as technical, political and commercial aspects of standards, their impact on the marketplace, cost/benefit analyses, legislative issues, and relationships among national and international standards bodies.",
+    "editorInChief": "Ricardo Colomo-Palacios",
+    "goldOpenAccessFee": 2990,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/09205489.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 15,
+    "title": "Nonlinear Analysis: Hybrid Systems",
+    "sourceUrl": "https://www.sciencedirect.com/journal/nonlinear-analysis-hybrid-systems/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/NAHS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/nonlinear-analysis-hybrid-systems/publish/guide-for-authors",
+    "acronym": "NAHS",
+    "issn": "1751-570X",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3.2,
+    "citeScore": 7.9,
+    "decisionDays": 11,
+    "acceptanceDays": 15,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Control and Optimization",
+      "Computational Mathematics",
+      "Applied Mathematics",
+      "Analysis"
+    ],
+    "articleTypes": [
+      "Research Paper"
+    ],
+    "scope": "A journal of IFAC, the International Federation of Automatic Control Nonlinear Analysis: Hybrid Systems (NAHS) welcomes all original research papers on mathematical concepts, tools, and techniques from control theory, computer science, and applied mathematics for the modelling, analysis and design of hybrid dynamical systems , i.e., systems involving the interplay between discrete and continuous dynamic behaviors. Hybrid systems are ubiquitous in many branches of engineering and science as they can model broad ranges of dynamical systems. In particular, in cyber-physical systems , which integrate sensing, computation, control and communication (cyber) parts into physical objects and infrastructures, hybrid systems play an instrumental role. The description of the behavior of the cyber parts often calls for discrete models (automata, finite-state machines, switching logic, etc.), while the physical (thermal, mechanical, electrical, physical, biological) parts are well captured by continuous modelling formalisms (e.g., differential equations), thereby naturally resulting in hybrid system models such as (stochastic) hybrid automata, timed automata, switched systems, impulsive systems, jump-flow models, piecewise affine systems, non-smooth systems, etc. Also, many physical phenomena can often be well described by non-smooth or hybrid models, including mechanical systems with impacts and friction (walking robots), switched power converters and biological systems (e.g., firing neuron models). Hybrid systems can exhibit very rich dynamics and their analysis calls for new and strong theorical foundations to guarantee their stability, safety, functionality, and performance. The development of systematic methods for efficient and reliable design of hybrid systems is therefore a key challenge on the crossroads of control theory and computer science. It is currently of high interest to control engineers, computer scientists and mathematicians in research institutions as well as in many industrial sectors. Contributions to Nonlinear Analysis: Hybrid Systems are invited in all areas pertaining to hybrid dynamical systems including: Modeling, modeling languages and specification; Analysis, computability and complexity; Stochastic hybrid systems; Impulsive systems; Formal verification and abstraction; Optimization and controller synthesis; Control over communication networks including self- and event-triggered control; Network Science and multi-agent systems; Fault diagnosis and fault-tolerant control; Simulation, implementation and tools; Safety, security, privacy, and resilience for cyber-physical systems; Planning and integrated control in dynamical systems. Contributions on applications of hybrid dynamical systems methods are also encouraged. Fields of interest include: process and manufacturing industries, automotive and mobility systems, avionics, communication networks and networked control systems, energy and power systems, transportation networks, cyber-physical and embedded systems, (synthetic) biology and biomedical applications, life sciences, safety-critical systems, mobile and autonomous robotics, and other related areas.",
+    "editorInChief": "Maurice Heemels",
+    "goldOpenAccessFee": 3430,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/1751570X.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 16,
+    "title": "Performance Evaluation",
+    "sourceUrl": "https://www.sciencedirect.com/journal/performance-evaluation/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/peva/default.aspx?pg=mainpage.html",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/performance-evaluation/publish/guide-for-authors",
+    "acronym": "PEVA",
+    "issn": "0166-5316",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 1.5,
+    "citeScore": 2.4,
+    "decisionDays": 4,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Statistics and Probability",
+      "Computer Networks and Communications",
+      "Management Science and Operations Research",
+      "Hardware and Architecture",
+      "Software",
+      "Modelling and Simulation"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "VSI:NetGCoOp 2026",
+      "VSI:Performance in the Edge-to-Cloud Continuum"
+    ],
+    "scope": "Performance Evaluation is a leading journal in the area of modeling, measurement, and evaluation of performance aspects of computing and communication systems. As such, it aims to present a balanced and complete view of the entire field of performance evaluation. The journal audience encompasses academics, industrial researchers, and professional figures such as performance engineers, network managers, and computer system designers. The journal solicits from its audience papers that focus on one or more of the following dimensions: Define new performance evaluation tools, including measurement and monitoring tools as well as modeling and analytic techniques Provide new insights into the performance of computing and communication systems Present novel control and learning methods for performance management Introduce new application areas where performance evaluation tools and methods can play an important role Contributions to the journal often focus on theoretical, methodological, or applied aspects of: Resource allocation (e.g., routing and flow control, bandwidth allocation, load-balancing, deployment,... System tuning, sizing and optimal configuration System reliability and dependability Energy efficiency and energy harvesting System architecture design and implementation Application areas of interest include, but are not limited to, the following: Computer and communication networks (e.g., software-defined, wireless, cognitive radio, ad-hoc, quantum,... Data centers Cloud, IoT, edge, and cyber-physical systems Social networks, social media, metaverse AI-based services Big data and storage systems Blockchain and distributed ledgers Autonomous and self-organizing systems Embedded systems Commonly featured performance evaluation methods and techniques include: Stochastic models (e.g., queueing theory, mean-field models, stochastic geometry,... Data-driven methods (e.g., AI/machine learning, inference, statistical analysis, ...) Scheduling and load balancing theory Simulation methods Game theory and pricing Measurement techniques (e.g. software and hardware monitors) and workload characterization Note that the above lists are not all inclusive or restrictive and submissions with creative applications of performance evaluation tools outside of those above and/or applications outside of those above are also welcome. A variety of types of submissions are possible, primarily original work, tutorials &amp; surveys. All submissions are expected to position their contributions against relevant prior work in the field, including articles published in recent years by the journal. A complete list of PEVA articles may be found here .",
+    "editorInChief": "Meo",
+    "goldOpenAccessFee": 2430,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01665316.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 17,
+    "title": "Simulation Modelling Practice and Theory",
+    "sourceUrl": "https://www.sciencedirect.com/journal/simulation-modelling-practice-and-theory/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/SIMPAT/default.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/simulation-modelling-practice-and-theory/publish/guide-for-authors",
+    "acronym": "SIMPAT",
+    "issn": "1569-190X",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4.6,
+    "citeScore": 9.9,
+    "decisionDays": 19,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Control and Optimization",
+      "Information Systems and Management",
+      "Applied Mathematics",
+      "Modelling and Simulation",
+      "Computer Science (General)"
+    ],
+    "articleTypes": [
+      "Regular Article",
+      "Review Article",
+      "Addendum",
+      "VSI:Blockchain-IoT-Cloud"
+    ],
+    "scope": "The journal Simulation Modelling Practice and Theory provides a forum for original, high-quality papers dealing with any aspect of systems simulation and modelling . The journal aims at being a reference and a powerful tool to all those professionally active and/or interested in the methods and applications of simulation. Submitted papers will be peer reviewed and must significantly contribute to modelling and simulation in general or use modelling and simulation in application areas. Paper submission is solicited on: • theoretical aspects of modelling and simulation including formal modelling, model-checking, random number generators, sensitivity analysis, variance reduction techniques, experimental design, meta-modelling, methods and algorithms for validation and verification, selection and comparison procedures etc.; • methodology and application of modelling and simulation in any area, including computer systems, networks, real-time and embedded systems, mobile and intelligent agents, manufacturing and transportation systems, management, engineering, biomedical engineering, blockchains, artificial intelligence (AI), internet of things (IoT), education, transaction handling, etc.; • simulation languages and environments including those, specific to distributed computing, cloud, fog and edge computing, high performance computers or computer networks, etc.; • distributed and real-time simulation, simulation interoperability; • tools for high performance computing simulation, including dedicated architectures and parallel computing. Papers covering applications should be presented in such a way that the separate steps in the process, such as model development, computer implementation of the derived model, mathematical and scalability problems encountered and validation/verification with real data become transparent to all readers. Theory may play an important role in a paper, but it should be presented in the context of its applicability to the work being described. For application-oriented readers it is essential that theoretical papers should cover the following aspects: why the theory is relevant and how it can be applied, what is the novelty of the approach and what are the benefits and objectives of a new theory, method or algorithm; what experience has been obtained in applying the approach and what innovations did result. (Variations from these prototypes, such as comprehensive surveys of active research areas, critical reviews of existing work, and book reviews, will be considered provided they make a clear contribution to the field.) Special issues on specific topics will be published from time to time; proposals for such issues are invited.",
+    "editorInChief": "Angelo Furfaro",
+    "goldOpenAccessFee": 2970,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/1569190X.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 18,
+    "title": "Journal of Safety Science and Resilience",
+    "sourceUrl": "https://www.keaipublishing.com/en/journals/journal-of-safety-science-and-resilience/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/JNLSSR/default.aspx",
+    "guideForAuthors": "https://www.keaipublishing.com/en/journals/journal-of-safety-science-and-resilience/guide-for-authors",
+    "acronym": "JNLSSR",
+    "issn": "2666-4496",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": 6.3,
+    "citeScore": 8.1,
+    "decisionDays": 6,
+    "acceptanceDays": 57,
+    "subjectAreas": [
+      "Safety Research",
+      "Safety, Risk, Reliability and Quality",
+      "Management Science and Operations Research"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review",
+      "Short Communication",
+      "Technical Note",
+      "Case Report",
+      "VSI: AI for Safety and Urban Emergency Resilience",
+      "VSI: AI-driven Chemical engineering safety and personnel protection",
+      "VSI: Agent for Safety and Security",
+      "VSI: Resilience of structures and infrastructures to natural hazards"
+    ],
+    "scope": "The Journal of Safety Science and Resilience (JSSR) is a scholarly journal that publishes scientific research on the practice of safety science and resilience as well as latest improvements in the field. This area emphasizes science and technology in natural disasters and man-made and environmental hazards, including 1) monitoring based on sensor networks, video technology, and information and communication systems; 2) early warning based on experiments, modeling, and simulation; 3) resilience analysis to improve the resilience of critical infrastructure systems and communities; 4) data analysis and the evaluation of emergent events in social networks; and 5) optimization analysis of responses to accidents and disasters. The journal focuses primarily on original research papers, but also welcomes state-of-the-art review papers and first-hand case histories on accidents and disasters that are of special significance. The journal also aims to be a reference and a powerful tool for all those who are professionally active and/or interested in the methods and applications of safety science and resilience. Submitted papers will be peer-reviewed and must significantly contribute to safety and resilience in general or to specific application areas. Topics of interest include, but are not limited to the following: Emergency-related theory, methodology, science and technology Experimental and engineering practice for safety science Experiments and simulations for safety science and resilience Information and communication technology systems including computer systems, networks, real-time and embedded systems, and mobile and intelligent agents AI for emergency management Data mining, crowd sensing, event detection, opinion mining and sentiment analysis for safety and resilience Prediction and decision for safety science and resilience Emergency resource planning and scheduling Emergency preparedness and emergency recovery Community and urban resilience Emergency management for public health Video surveillance and security science Human psychology, emotion, cognition, behavior and decision-making for emergency management Safety management in work place Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 1200,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/26664496.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 19,
+    "title": "Integration",
+    "sourceUrl": "https://www.sciencedirect.com/journal/integration/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/VLSIJ",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/integration/publish/guide-for-authors",
+    "acronym": "VLSI",
+    "issn": "0167-9260",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.6,
+    "citeScore": 5.1,
+    "decisionDays": 17,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Hardware and Architecture",
+      "Software",
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "VSI: EDIESCA 2026"
+    ],
+    "scope": "Integration, the VLSI Journal Integration &#39;s aim is to cover every aspects of the VLSI (very large-scale integration) area, with an emphasis on the design, verification, test, and design automation technologies of integrated circuits and complex systems , as well as closely related topics in process and device technologies, etc. Individual issues will feature peer-reviewed technical articles as well as reviews of recent publications. The intended coverage of the journal can be assessed by examining the following (non-exclusive) list of topics: Specification methods and languages; Analog/Digital Integrated Circuits and Systems; VLSI architectures; Algorithms, methods and tools for modeling, simulation, synthesis and verification of integrated circuits and systems of any complexity; Embedded systems; High-level synthesis for VLSI systems; Logic synthesis and finite automata; Testing, design-for-test and test generation algorithms; Physical design; Formal verification; Algorithms implemented in VLSI systems; Heterogeneous and reconfigurable systems; Emerging device and interconnect technologies; Emerging architectures, systems and models of computation; EDA for quantum computing systems.",
+    "editorInChief": "Wenjian Yu",
+    "goldOpenAccessFee": 2800,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01679260.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 20,
+    "title": "Journal of Systems Architecture",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-systems-architecture/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/JSA",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-systems-architecture/publish/guide-for-authors",
+    "acronym": "SYSARC",
+    "issn": "1383-7621",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.3,
+    "citeScore": 9.1,
+    "decisionDays": 1,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Computer Networks and Communications",
+      "Hardware and Architecture",
+      "Computer Science Applications",
+      "Control and Systems Engineering",
+      "Software"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "Short Communication",
+      "VSI: LLMEI [EGE:Meikang Qiu]",
+      "VSI:AEiC2027"
+    ],
+    "scope": "The Journal of Systems Architecture: Embedded Software Design (JSA) is a journal covering all design and architectural aspects related to embedded systems and software . It ranges from the microarchitecture level via the system software level up to the application-specific architecture level. Aspects such as real-time systems, operating systems, programming languages, communications (limited to analysis and the software stack), mobile systems, parallel and distributed architectures as well as additional subjects in the computer and system architecture area will fall within the scope of this journal. Technology will not be a main focus, but its use and relevance to particular designs will be. Case studies are welcome but must contribute more than just a design for a particular piece of software. Design automation of such systems including methodologies, techniques and tools for their design as well as novel designs of software components fall within the scope of this journal. Novel applications that use embedded systems are also central in this journal. While JSA does not focus on hardware design, hardware/software co-design techniques with an emphasis on software are also relevant here. We invite you to convert your open source software into an additional journal publication in Software Impacts , a multi-disciplinary open access journal. Software Impacts provides a scholarly reference to software that has been used to address a research challenge. The journal disseminates impactful and re-usable scientific software through Original Software Publications (OSP) which describe the application of the software to research and the published outputs.",
+    "editorInChief": "Zonghua Gu",
+    "goldOpenAccessFee": 2260,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/13837621.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 21,
+    "title": "Microprocessors and Microsystems",
+    "sourceUrl": "https://www.sciencedirect.com/journal/microprocessors-and-microsystems/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/MICPRO",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/microprocessors-and-microsystems/publish/guide-for-authors",
+    "acronym": "MICPRO",
+    "issn": "0141-9331",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.5,
+    "citeScore": 9.6,
+    "decisionDays": 9,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Hardware and Architecture",
+      "Control and Systems Engineering",
+      "Electrical and Electronic Engineering",
+      "Software",
+      "Computer Networks and Communications"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Short communication"
+    ],
+    "scope": "Embedded Hardware Design Affiliated with Euromicro Microprocessors and Microsystems: Embedded Hardware Design (MICPRO) is a journal covering all design and architectural aspects related to embedded systems hardware . This includes different embedded system hardware platforms ranging from custom hardware via reconfigurable systems and application specific processors to general purpose embedded processors. Special emphasis is put on novel complex embedded architectures , such as systems on chip ( SoC ), systems on a programmable/reconfigurable chip (SoPC) and multi-processor systems on a chip ( MPSoC ), as well as, their memory and communication methods and structures, such as network-on-chip ( NoC ). Design automation of such systems including methodologies, techniques, flows and tools for their design, as well as, novel designs of hardware components fall within the scope of this journal. Novel cyber-physical applications that use embedded systems are also central in this journal. While software is not in the main focus of this journal, methods of hardware/software co-design, as well as, application restructuring and mapping to embedded hardware platforms, that consider interplay between software and hardware components with emphasis on hardware, are also in the journal scope.",
+    "editorInChief": "Eugenio Villar",
+    "goldOpenAccessFee": 2840,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01419331.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "springer",
+    "rank": 1,
+    "title": "Natural Computing",
+    "sourceUrl": "https://link.springer.com/journal/11047?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11047/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11047/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.92025,
+    "impactFactorText": "1.9 (2025)",
+    "downloads": 163769,
+    "decisionDays": 28,
+    "decisionTimeText": "28 days",
+    "subjectAreas": [
+      "Theory of Computation",
+      "Evolutionary Biology",
+      "Processor Architectures",
+      "Artificial Intelligence",
+      "Complex Systems"
+    ],
+    "scope": "Theory of Computation, Evolutionary Biology, Processor Architectures, Artificial Intelligence, Complex Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 2,
+    "title": "Journal of Membrane Computing",
+    "sourceUrl": "https://link.springer.com/journal/41965?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/41965/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/41965/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.42025,
+    "impactFactorText": "2.4 (2025)",
+    "downloads": 45315,
+    "decisionDays": 13,
+    "decisionTimeText": "13 days",
+    "subjectAreas": [
+      "Theory of Computation",
+      "Artificial Intelligence",
+      "Optimization",
+      "Computational and Systems Biology"
+    ],
+    "scope": "Theory of Computation, Artificial Intelligence, Optimization, Computational and Systems Biology",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 3,
+    "title": "International Journal on Software Tools for Technology Transfer",
+    "sourceUrl": "https://link.springer.com/journal/10009?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10009/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10009/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.72025,
+    "impactFactorText": "1.7 (2025)",
+    "downloads": 129351,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Software Engineering",
+      "Theory of Computation"
+    ],
+    "scope": "Software Engineering, Theory of Computation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 4,
+    "title": "Software and Systems Modeling",
+    "sourceUrl": "https://link.springer.com/journal/10270?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10270/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10270/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.02025,
+    "impactFactorText": "3.0 (2025)",
+    "downloads": 523749,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Software Engineering",
+      "Programming Techniques",
+      "Compilers and Interpreters",
+      "Computer and Information Systems Applications",
+      "IT in Business"
+    ],
+    "scope": "Software Engineering, Programming Techniques, Compilers and Interpreters, Computer and Information Systems Applications, IT in Business",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 5,
+    "title": "Cybernetics and Systems Analysis",
+    "sourceUrl": "https://link.springer.com/journal/10559?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10559/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10559/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 0.72025,
+    "impactFactorText": "0.7 (2025)",
+    "downloads": 22273,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Systems Theory, Control",
+      "Artificial Intelligence",
+      "Processor Architectures",
+      "Software Engineering"
+    ],
+    "scope": "Systems Theory, Control, Artificial Intelligence, Processor Architectures, Software Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 6,
+    "title": "The Journal of Supercomputing",
+    "sourceUrl": "https://link.springer.com/journal/11227?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11227/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11227/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.52025,
+    "impactFactorText": "3.5 (2025)",
+    "downloads": 1311828,
+    "decisionDays": 38,
+    "decisionTimeText": "38 days",
+    "subjectAreas": [
+      "Compilers and Interpreters",
+      "Processor Architectures",
+      "Computer Science"
+    ],
+    "scope": "Compilers and Interpreters, Processor Architectures, Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 7,
+    "title": "Formal Methods in System Design",
+    "sourceUrl": "https://link.springer.com/journal/10703?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10703/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10703/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.02025,
+    "impactFactorText": "1.0 (2025)",
+    "downloads": 95478,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Electronic Circuits and Systems",
+      "Electrical and Electronic Engineering",
+      "Computer-Aided Engineering (CAD, CAE) and Design",
+      "Software Engineering"
+    ],
+    "scope": "Electronic Circuits and Systems, Electrical and Electronic Engineering, Computer-Aided Engineering (CAD, CAE) and Design, Software Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 8,
+    "title": "Journal of Automated Reasoning",
+    "sourceUrl": "https://link.springer.com/journal/10817?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10817/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10817/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 0.72025,
+    "impactFactorText": "0.7 (2025)",
+    "downloads": 141193,
+    "decisionDays": 7,
+    "decisionTimeText": "7 days",
+    "subjectAreas": [
+      "Formal Languages and Automata Theory",
+      "Artificial Intelligence",
+      "Mathematical Logic and Foundations",
+      "Symbolic and Algebraic Manipulation"
+    ],
+    "scope": "Formal Languages and Automata Theory, Artificial Intelligence, Mathematical Logic and Foundations, Symbolic and Algebraic Manipulation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 9,
+    "title": "Acta Informatica",
+    "sourceUrl": "https://link.springer.com/journal/236?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/236/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/236/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.22025,
+    "impactFactorText": "1.2 (2025)",
+    "downloads": 89895,
+    "decisionDays": 11,
+    "decisionTimeText": "11 days",
+    "subjectAreas": [
+      "Computer Science Logic and Foundations of Programming",
+      "Computer Engineering and Networks",
+      "Software Engineering",
+      "Data Structures and Information Theory",
+      "Theory of Computation"
+    ],
+    "scope": "Computer Science Logic and Foundations of Programming, Computer Engineering and Networks, Software Engineering, Data Structures and Information Theory, Theory of Computation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 10,
+    "title": "Innovations in Systems and Software Engineering",
+    "sourceUrl": "https://link.springer.com/journal/11334?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11334/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11334/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.42025,
+    "impactFactorText": "1.4 (2025)",
+    "downloads": 80945,
+    "decisionDays": 42,
+    "decisionTimeText": "42 days",
+    "subjectAreas": [
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Computer and Information Systems Applications"
+    ],
+    "scope": "Software Engineering, Artificial Intelligence, Computer and Information Systems Applications",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 11,
+    "title": "Mathematics in Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/11786?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11786/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11786/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.92025,
+    "impactFactorText": "1.9 (2025)",
+    "downloads": 56826,
+    "decisionDays": 9,
+    "decisionTimeText": "9 days",
+    "subjectAreas": [
+      "Mathematics",
+      "Computer Science"
+    ],
+    "scope": "Mathematics, Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 12,
+    "title": "Journal of Computer Science and Technology",
+    "sourceUrl": "https://link.springer.com/journal/11390?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11390/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11390/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.82025,
+    "impactFactorText": "1.8 (2025)",
+    "downloads": 81625,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Computer Science",
+      "Software Engineering",
+      "Theory of Computation",
+      "Data Structures and Information Theory",
+      "Artificial Intelligence",
+      "Computer and Information Systems Applications"
+    ],
+    "scope": "Computer Science, Software Engineering, Theory of Computation, Data Structures and Information Theory, Artificial Intelligence, Computer and Information Systems Applications",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 13,
+    "title": "SN Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/42979?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42979/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42979/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1696119,
+    "decisionDays": 96,
+    "decisionTimeText": "96 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Computer Engineering and Networks",
+      "Software Engineering",
+      "Data Structures and Information Theory",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics"
+    ],
+    "scope": "Computer Science, Computer Engineering and Networks, Software Engineering, Data Structures and Information Theory, Computer Imaging, Vision, Pattern Recognition and Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 14,
+    "title": "Discrete Event Dynamic Systems",
+    "sourceUrl": "https://link.springer.com/journal/10626?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10626/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10626/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.02025,
+    "impactFactorText": "1.0 (2025)",
+    "downloads": 50122,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Systems Theory, Control",
+      "Operations Research and Decision Theory",
+      "Convex and Discrete Geometry",
+      "Electrical and Electronic Engineering",
+      "Machines, Tools, Processes"
+    ],
+    "scope": "Systems Theory, Control, Operations Research and Decision Theory, Convex and Discrete Geometry, Electrical and Electronic Engineering, Machines, Tools, Processes",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 15,
+    "title": "Annals of Mathematics and Artificial Intelligence",
+    "sourceUrl": "https://link.springer.com/journal/10472?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10472/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10472/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.62025,
+    "impactFactorText": "1.6 (2025)",
+    "downloads": 74930,
+    "decisionDays": 7,
+    "decisionTimeText": "7 days",
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Mathematics",
+      "Computer Science",
+      "Complex Systems"
+    ],
+    "scope": "Artificial Intelligence, Mathematics, Computer Science, Complex Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 16,
+    "title": "Theory of Computing Systems",
+    "sourceUrl": "https://link.springer.com/journal/224?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/224/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/224/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 0.62025,
+    "impactFactorText": "0.6 (2025)",
+    "downloads": 156980,
+    "decisionDays": 5,
+    "decisionTimeText": "5 days",
+    "subjectAreas": [
+      "Theory of Computation"
+    ],
+    "scope": "Theory of Computation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 17,
+    "title": "Software Quality Journal",
+    "sourceUrl": "https://link.springer.com/journal/11219?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11219/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11219/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.42025,
+    "impactFactorText": "2.4 (2025)",
+    "downloads": 176684,
+    "decisionDays": 12,
+    "decisionTimeText": "12 days",
+    "subjectAreas": [
+      "Software Engineering",
+      "Compilers and Interpreters",
+      "Data Structures and Information Theory",
+      "Operating Systems"
+    ],
+    "scope": "Software Engineering, Compilers and Interpreters, Data Structures and Information Theory, Operating Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 18,
+    "title": "International Journal of Information Technology",
+    "sourceUrl": "https://link.springer.com/journal/41870?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/41870/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/41870/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 424642,
+    "decisionDays": 21,
+    "decisionTimeText": "21 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Vision",
+      "Software Engineering",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics"
+    ],
+    "scope": "Computer Science, Artificial Intelligence, Machine Learning, Computer Vision, Software Engineering, Computer Imaging, Vision, Pattern Recognition and Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 19,
+    "title": "Soft Computing",
+    "sourceUrl": "https://link.springer.com/journal/500?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/500/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/500/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1150135,
+    "decisionDays": 275,
+    "decisionTimeText": "275 days",
+    "subjectAreas": [
+      "Computational Intelligence",
+      "Artificial Intelligence",
+      "Mathematical Logic and Foundations",
+      "Control, Robotics, Automation"
+    ],
+    "scope": "Computational Intelligence, Artificial Intelligence, Mathematical Logic and Foundations, Control, Robotics, Automation",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 20,
+    "title": "Frontiers of Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/11704?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11704/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11704/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 7.32025,
+    "impactFactorText": "7.3 (2025)",
+    "downloads": 213247,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Computer Science"
+    ],
+    "scope": "Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  }
+]

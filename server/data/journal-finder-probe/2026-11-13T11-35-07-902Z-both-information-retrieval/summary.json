@@ -1,0 +1,32 @@
+{
+  "query": "information retrieval",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-07-902Z-both-information-retrieval",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-07-902Z-both-information-retrieval\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=information+retrieval&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 16,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-07-902Z-both-information-retrieval\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "information retrieval",
+    "springerCount": 20,
+    "elsevierCount": 16,
+    "mergedCount": 36,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-07-902Z-both-information-retrieval\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-07-902Z-both-information-retrieval\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-35-07-902Z-both-information-retrieval\\journals-merged.json"
+    }
+  }
+}

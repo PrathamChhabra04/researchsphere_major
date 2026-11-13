@@ -1,0 +1,32 @@
+{
+  "query": "human-computer interaction",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-32-49-034Z-both-human-computer-interaction",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-32-49-034Z-both-human-computer-interaction\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=human-computer+interaction&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 27,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-32-49-034Z-both-human-computer-interaction\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "human-computer interaction",
+    "springerCount": 20,
+    "elsevierCount": 27,
+    "mergedCount": 47,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-32-49-034Z-both-human-computer-interaction\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-32-49-034Z-both-human-computer-interaction\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-32-49-034Z-both-human-computer-interaction\\journals-merged.json"
+    }
+  }
+}

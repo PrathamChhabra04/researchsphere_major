@@ -1,0 +1,32 @@
+{
+  "query": "wireless networks",
+  "provider": "both",
+  "runDir": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-33-29-196Z-both-wireless-networks",
+  "results": [
+    {
+      "provider": "springer",
+      "finalUrl": "https://link.springer.com/journals/journal-finder",
+      "recommendationCount": 20,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-33-29-196Z-both-wireless-networks\\springer-journals.json"
+    },
+    {
+      "provider": "elsevier",
+      "finalUrl": "https://journalfinder.elsevier.com/results?goldOpenAccess=true&subscription=true&sortBy=default&sortOrder=desc&query=wireless+networks&mode=search&ecrId=&agreementsFilter=all-journals",
+      "recommendationCount": 22,
+      "networkCaptureCount": 0,
+      "outputFile": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-33-29-196Z-both-wireless-networks\\elsevier-journals.json"
+    }
+  ],
+  "normalized": {
+    "query": "wireless networks",
+    "springerCount": 20,
+    "elsevierCount": 22,
+    "mergedCount": 42,
+    "files": {
+      "springer": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-33-29-196Z-both-wireless-networks\\springer-journals.json",
+      "elsevier": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-33-29-196Z-both-wireless-networks\\elsevier-journals.json",
+      "merged": "D:\\ResearchSpheregg-main\\ResearchSpheregg-main\\server\\data\\journal-finder-probe\\2026-11-13T11-33-29-196Z-both-wireless-networks\\journals-merged.json"
+    }
+  }
+}

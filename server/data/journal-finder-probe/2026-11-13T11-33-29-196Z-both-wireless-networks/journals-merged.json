@@ -1,0 +1,1269 @@
+[
+  {
+    "provider": "elsevier",
+    "rank": 1,
+    "title": "Telematics and Informatics",
+    "sourceUrl": "https://www.sciencedirect.com/journal/telematics-and-informatics/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/TELE",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/telematics-and-informatics/publish/guide-for-authors",
+    "acronym": "TELE",
+    "issn": "0736-5853",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 9.9,
+    "citeScore": 17.3,
+    "decisionDays": 4,
+    "acceptanceDays": 3,
+    "subjectAreas": [
+      "Sociology and Political Science",
+      "Computer Science Applications",
+      "Media Technology",
+      "Computer Networks and Communications"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article"
+    ],
+    "scope": "An Interdisciplinary Journal on the Social Impacts of New Technologies Telematics and Informatics is an interdisciplinary journal publishing innovative theoretical and methodological research on the social, economic, geographic, political, and cultural impacts of digital technologies . Application areas include smart cities, sensors and information fusion, the digital society and digital platforms, internet of things (IoT), cyber-physical technologies, privacy, knowledge management, distributed work, emergency response and hazards, mobile and wireless communications, health informatics, psychosocial effects of social media, ICT for sustainable development, blockchain, e-commerce, and e-government. The journal favors research papers (8,000 words), but will consider contributions offering systematic review and meta-analysis (10,000 words), as well as research notes (4,000 words) that seek to advance new ideas, theoretical perspectives or methodological approaches. Telematics and Informatics serves as an international outlet for information scientists, data scientists, computer scientists, social informaticists, geographic information scientists, urban and regional planners, policy analysts, regional scientists, disaster scientists, and network scientists.",
+    "editorInChief": "Grubesic",
+    "goldOpenAccessFee": 4510,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/07365853.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 2,
+    "title": "e-Prime – Nexus of Electrical, Electronic, and Intelligent Engineering",
+    "sourceUrl": "https://submit.elsevier.com/EPRIME/",
+    "submissionLink": "https://submit.elsevier.com/EPRIME/",
+    "guideForAuthors": null,
+    "acronym": "EPRIME",
+    "issn": "3117-5112",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": null,
+    "citeScore": 4.2,
+    "decisionDays": 3,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Full Length Article"
+    ],
+    "scope": "e-Prime serves as a premier multidisciplinary platform and a distinctive, in-depth publication venue for engineers, scientists, and practitioners across academia and industry. It facilitates the dissemination of cutting-edge research and documents the innovation and disruptive transformation driven by electrical, electronic, and intelligent engineering systems. We welcome original research articles, reviews, and perspectives that make significant contributions to the development, integration, and optimization of smart technologies. A meaningful and valuable advancement of the current state of knowledge is essential, and it is crucial that papers are presented in a manner that appeals to both academic researchers and industry professionals. Submissions must demonstrate a clear and proven advancement in scientific or technological knowledge. Papers that focus solely on theoretical analysis or modeling, without demonstrating practical technological impact, are less likely to be accepted, as our emphasis is on impactful, real-world engineering contributions. The journal covers a broad spectrum of topics including, but not limited to: Electrical &amp; Power Systems Electric Power Systems: Generation, transmission, distribution, and control. Smart Grids &amp; Applications: Intelligent electricity management, demand response, and smart infrastructure. Electric Infrastructure &amp; Applications: Electric transportation, charging systems, and industrial electrification, and electrical machines and drives. Electricity Storage &amp; Energy Conversion: Advanced storage technologies, renewables integration, and energy harvesting. Green Power Markets &amp; Policy: Economic, policy, and market mechanisms for sustainable electricity, including decarbonization and renewable energy integration. Electronic &amp; Communication Systems Circuits and Systems: Design, analysis, and implementation of integrated circuits, electronic systems, power electronics, and nanotechnology and materials for electronic engineering. Core 5G/6G &amp; Next-Gen Wireless: Advanced wireless communication, emerging concepts, and specific communication scenarios. IoT Applications &amp; Services: Design, deployment, and management of Internet of Things solutions. Sensing, Imaging &amp; Measurement: Development and application of sensors, imaging techniques, and measurement systems. Signal Processing: Theory, algorithms, and applications for communication, sensing, and data analysis. Computing, AI &amp; Automation Core AI &amp; Machine Learning: Foundational AI research and applications in specific domains. Big Data &amp; Data Analytics: Methodologies for processing, analyzing, and extracting insights from large datasets. Software &amp; Networking Systems: Operating systems, middleware, network software, and distributed applications. Robotics, Automation &amp; Control: Theory and application of robotics, autonomous systems, digital twins, mechatronics, manufacturing automation and advanced control.",
+    "editorInChief": "Abdelkhalick Mohammad",
+    "goldOpenAccessFee": 1520,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/31175112.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 3,
+    "title": "Nano Communication Networks",
+    "sourceUrl": "https://www.sciencedirect.com/journal/nano-communication-networks/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/NANOCOMNET",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/nano-communication-networks/publish/guide-for-authors",
+    "acronym": "NANCOM",
+    "issn": "1878-7789",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.6,
+    "citeScore": 7.7,
+    "decisionDays": 2,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Computer Networks and Communications",
+      "Nanotechnology",
+      "Electrical and Electronic Engineering",
+      "Hardware and Architecture"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review Article"
+    ],
+    "scope": "The Nano Communication Networks Journal is an international, archival and multi-disciplinary journal providing a publication vehicle for complete coverage of all topics of interest to those involved in all aspects of nanoscale communication and networking. Theoretical research contributions presenting new techniques, concepts or analyses; applied contributions reporting on experiences and experiments; and tutorial and survey manuscripts are published. Nano Communication Networks is a part of the COMNET (Computer Networks) family of journals within Elsevier. The family of journals covers all aspects of networking except nanonetworking , which is the scope of this journal. Created in 2010, NANOCOMNET has four planned issues per year. In early 2016, the journal has been accepted by Thompson Reuters to have SCIE/ISI status, matching the status of the rest of the COMNET family. Topics of interest include but are not limited to: Molecular Communication • Passive Molecular Communication systems, including short-range molecular diffusion, guided molecular diffusion (e.g. circulatory systems communications, microfluidic communications), ion signaling, and pheromone communications. • Active Molecular Communication systems, such as molecular motors, bacteria-based nanonetworks. • Brain networks, neural circuits and nervous systems communications. • Synthetic biology for Molecular Communication development. Electromagnetic Nanoscale Communication • Plasmonic and nanophotonic devices for THz and optical communication based on nanomaterials (e.g., graphene) and metamaterials, including compact signal sources, modulators/demodulators, detectors and antennas and antenna arrays. • Ultra-broadband and Terahertz communications, with applications at the nano-, micro- and macro-scales. • Nanophotonic wired and wireless communications at infra-red, visible and ultra-violet spectrum ranges. Other nanoscale communication paradigms • Nano Communication for bio-therapeutic devices. • Quantum communications. • Ultrasonic communications. Nano communication engineering and networking • Architectures and systems for Nano Communications. • Propagation and channel modeling for Nano Communications. • Information Theory of Nano Communications. • Communication protocols for Nano networks. • Security in Nano Communications. • Energy models for Nano Communications. • Software-Defined Nanonetworks. Nano Communication experimental and simulation platforms • Tools for modeling and simulating Nano Communication Networks. • Wet lab experimental platforms for Molecular Communications. • New fabrication and assembly techniques for Electromagnetic nanoscale devices. • Synthetic Biology toolsets for engineering Molecular Communications (e.g. Openwetware, CRISPR). Applications of Nano Communications and networks • Internet of Nano Things and the Internet of Bio-Nano Things. • Network on Chip including RF and optical interconnects, as well as network architectures and topologies. • Nano-Sensor and Nano-Actuator Networks. • Nanomedicine applications: disease localization, targeted drug delivery, tissue engineering.",
+    "editorInChief": "Pierobon",
+    "goldOpenAccessFee": 3220,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/18787789.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 4,
+    "title": "Telematics and Informatics Reports",
+    "sourceUrl": "https://www.sciencedirect.com/journal/telematics-and-informatics-reports/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/TELER",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/telematics-and-informatics-reports/publish/guide-for-authors",
+    "acronym": "TELER",
+    "issn": "2772-5030",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 5.9,
+    "citeScore": 10.7,
+    "decisionDays": 8,
+    "acceptanceDays": 2,
+    "subjectAreas": [
+      "Electrical and Electronic Engineering",
+      "Computer Networks and Communications",
+      "Human-Computer Interaction",
+      "Computer Science Applications"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review",
+      "Short Communication",
+      "VSI: Cultural Heritage & AI",
+      "VSI:Intelligent Systems and Paradigms",
+      "VSI:Public opinion and AI"
+    ],
+    "scope": "Elsevier has reached open access agreements with the following institutions . You may be eligible for a discounted article processing charge if affiliated with an eligible institution. Telematics and Informatics Reports is a gold open access interdisciplinary journal dedicated to the global and cultural impact of digital technologies in today&#39;s world. As a companion journal to Telematics and Informatics, Telematics and Informatics Reports is a forum for theoretical, methodological, and practical innovative research - including use intention - on the health, economic, social, and political scale. While Telematics and Informatics Reports is broad in scope and crosses multiple disciplines, the journal&#39;s primary research areas are subject to (but not limited to): Health informatics Information security and privacy (mobile banking, online shopping, etc.) Blockchain Mobile and wireless communications and applications Digital media culture communication Psychosocial effects of social media Network public opinion Digital platforms Smart cities and society E-governance Knowledge management The Journal favors original research papers and short communications but will also take into consideration reviews on previous studies, software, and more. Telematics and Informatics Reports serves as an international outlet for information and data scientists but welcomes those from other disciplines as well that can contribute to the rapidly growing research that surrounds today&#39;s digital technologies and their impacts. Special Issue Proposals To submit a proposal for a special issue please submit your proposal here. Please visit the special issue guidelines page first to review the proposal guidelines and to download the proposal template required when submitting a proposal.",
+    "editorInChief": "Ke Xue",
+    "goldOpenAccessFee": 2480,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/27725030.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 5,
+    "title": "Green Technologies and Sustainability",
+    "sourceUrl": "https://www.keaipublishing.com/en/journals/green-technologies-and-sustainability/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/grets/default1.aspx",
+    "guideForAuthors": "https://www.keaipublishing.com/en/journals/green-technologies-and-sustainability/guide-for-authors",
+    "acronym": "GRETS",
+    "issn": "2949-7361",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": 12.2,
+    "citeScore": 14.2,
+    "decisionDays": 3,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Environmental Science (General)",
+      "Control and Systems Engineering",
+      "Renewable Energy, Sustainability and the Environment",
+      "Environmental Engineering"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review",
+      "Short Length Article"
+    ],
+    "scope": "&quot;Green technologies&quot; (greentech) is a term used to describe highly interdisciplinary, environmentally friendly and sustainable approaches and systems. As such, it&#39;s a field that greatly benefits from a multi-disciplinary research approach. Green Technologies and Sustainability encourages and promotes interdisciplinary research and development to important technological and theoretical developments in greentech and sustainability issues. The journal explores the field&#39;s relevance to multiple disciplines, including environmental science, environmental engineering, civil engineering, electrical and computer engineering, green chemistry, green energy, sustainable infrastructure, and so on. We also consider greentech&#39;s importance for monitoring, modelling and conserving the natural environment and resources, reducing carbon emissions and energy consumption, mitigating air, water and soil pollution and reducing waste, recover energy and resources, and supporting environmental and socioeconomic sustainability. Greentech include technologies and systems that use less energy and resources, draw on renewable resources, produce clean energy and help reduce and repair environmental harm. Despite the fact that many topics in green technologies are still in their infancy, they have attracted many research interests as people become more aware of the effects of climate change and the degradation of the environments. Topics covered by the journal include but not limited to: Concept, theory, fundamental, metric, analysis: Green and sustainable systems analysis Green metrics Green and sustainable environments Novel green and sustainability concepts Carbon neutrality Energy efficiency and resource efficiency Mathematical models for green and sustainable technologies Life cycle analysis, assessment, and approaches Green and sustainable engineering Modeling and theory for green and sustainable management Circular economy Green and sustainable complex, dynamic environmental/economic/social systems Issues for sustainable development goals Architecture, designs, algorithms, approaches Green and sustainable architecture, strategies, algorithms, protocols, scheduling, and/or designs Measurement and profiling of green issues Low cost and energy-efficient designs Performance characterization, evaluation, optimization and design Trade-Offs Use of cognitive principles to achieve green objectives Relevant experimental test-beds and results Relevant standardization, policy, and regulation Pollution control technologies Recycling and reuse Strategic management for sustainability Approaches to achieve sustainable development goals Domain technologies Environmental engineering Air and water pollution and control, including sustainable wastewater treatment Green and sustainable waste generation, separation, processing, and disposal Sustainable waste management technologies promoting the reuse and recycling of waste Green and sustainable manufacturing Green and sustainable chemical engineering Sustainable transportation and logistics Environmental management and decision making for sustainability Carbon neutralization technologies Noise pollution detection, assessment, and control Ocean and coastal pollution and mitigation Green and sustainable supply chain management Green electronics, devices, and systems Environmental science Green chemistry Soil, land pollution and remediation Environmental modelling Life cycle impact assessment and sustainability assessment Green and sustainable water processing Green energy technologies Renewable and sustainable energy, including solar, wind, hydropower, geothermal, biomass and ocean energy, and renewable hydrogen and energy systems Green and sustainable energy for transportation, including biofuels, electric vehicles and hydrogen-powered vehicles solution Green, clean, and sustainable power generation and transmission Energy storage and battery technologies High-performance sustainable energy systems Smart grids and smart grid networks Advanced metering infrastructure and smart meter technologies Energy harvesting, recycling, and wireless power transfer Green digital and information technologies Environmental monitoring Environmental informatics Green and sustainable communications, computing, and systems Big data and artificial intelligence meet green challenges Artificial intelligence aided environmental image or data analysis and decision making Information and communications technologies for sustainable development goals Electromagnetic pollution mitigation Sustainable security and privacy Security and privacy Issues for green and sustainable technologies Green and sustainable intelligent transportation systems Green data centers and cloud computing Green finance and economics Green and sustainable materials Green and sustainable civil engineering and building Green and sustainable cities Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 700,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/29497361.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 6,
+    "title": "Performance Evaluation",
+    "sourceUrl": "https://www.sciencedirect.com/journal/performance-evaluation/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/peva/default.aspx?pg=mainpage.html",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/performance-evaluation/publish/guide-for-authors",
+    "acronym": "PEVA",
+    "issn": "0166-5316",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 1.5,
+    "citeScore": 2.4,
+    "decisionDays": 4,
+    "acceptanceDays": 11,
+    "subjectAreas": [
+      "Statistics and Probability",
+      "Computer Networks and Communications",
+      "Management Science and Operations Research",
+      "Hardware and Architecture",
+      "Software",
+      "Modelling and Simulation"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "VSI:NetGCoOp 2026",
+      "VSI:Performance in the Edge-to-Cloud Continuum"
+    ],
+    "scope": "Performance Evaluation is a leading journal in the area of modeling, measurement, and evaluation of performance aspects of computing and communication systems. As such, it aims to present a balanced and complete view of the entire field of performance evaluation. The journal audience encompasses academics, industrial researchers, and professional figures such as performance engineers, network managers, and computer system designers. The journal solicits from its audience papers that focus on one or more of the following dimensions: Define new performance evaluation tools, including measurement and monitoring tools as well as modeling and analytic techniques Provide new insights into the performance of computing and communication systems Present novel control and learning methods for performance management Introduce new application areas where performance evaluation tools and methods can play an important role Contributions to the journal often focus on theoretical, methodological, or applied aspects of: Resource allocation (e.g., routing and flow control, bandwidth allocation, load-balancing, deployment,... System tuning, sizing and optimal configuration System reliability and dependability Energy efficiency and energy harvesting System architecture design and implementation Application areas of interest include, but are not limited to, the following: Computer and communication networks (e.g., software-defined, wireless, cognitive radio, ad-hoc, quantum,... Data centers Cloud, IoT, edge, and cyber-physical systems Social networks, social media, metaverse AI-based services Big data and storage systems Blockchain and distributed ledgers Autonomous and self-organizing systems Embedded systems Commonly featured performance evaluation methods and techniques include: Stochastic models (e.g., queueing theory, mean-field models, stochastic geometry,... Data-driven methods (e.g., AI/machine learning, inference, statistical analysis, ...) Scheduling and load balancing theory Simulation methods Game theory and pricing Measurement techniques (e.g. software and hardware monitors) and workload characterization Note that the above lists are not all inclusive or restrictive and submissions with creative applications of performance evaluation tools outside of those above and/or applications outside of those above are also welcome. A variety of types of submissions are possible, primarily original work, tutorials &amp; surveys. All submissions are expected to position their contributions against relevant prior work in the field, including articles published in recent years by the journal. A complete list of PEVA articles may be found here .",
+    "editorInChief": "Meo",
+    "goldOpenAccessFee": 2430,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/01665316.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 7,
+    "title": "Information Fusion",
+    "sourceUrl": "https://www.sciencedirect.com/journal/information-fusion/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/INFFUS",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/information-fusion/publish/guide-for-authors",
+    "acronym": "INFFUS",
+    "issn": "1566-2535",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 17.4,
+    "citeScore": 26.7,
+    "decisionDays": null,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Engineering (General)",
+      "Computer Vision and Pattern Recognition",
+      "Signal Processing",
+      "Information Systems"
+    ],
+    "articleTypes": [
+      "Editors own manuscript",
+      "Opinion paper",
+      "Research paper",
+      "Survey",
+      "VSI: Low-quality Data: Foundation Models",
+      "VSI: Towards Dynamic",
+      "VSI: Trustworthy Multimodal Information Fusion"
+    ],
+    "scope": "An International Journal on Multi-Sensor, Multi-Source Information Fusion The journal is intended to present within a single forum all of the developments in the field of multi-sensor , multi-source , multi-process information fusion and thereby promote the synergism among the many disciplines that are contributing to its growth. The journal is the premier vehicle for disseminating information on all aspects of research and development in the field of information fusion. Articles are expected to emphasize one or more of the three facets: architectures , algorithms , and applications . Papers dealing with fundamental theoretical analyses as well as those demonstrating their application to real-world problems will be welcome. The journal publishes original papers, letters to the Editors and from time to time invited review articles, in all areas related to the information fusion arena including, but not limited to, the following suggested topics: Data/Image, Feature, Decision, and Multilevel Fusion Multi-classifier/Decision Systems Multi-Look Temporal Fusion Multi-Sensor, Multi-Source Fusion System Architectures Distributed and Wireless Sensor Networks Higher Level Fusion Topics Including Situation Awareness And Management Multi-Sensor Management and Real-Time Applications Adaptive And Self-Improving Fusion System Architectures Active, Passive, And Mixed Sensor Suites Multi-Sensor And Distributed Sensor System Design Fusion Learning In Imperfect, Imprecise And Incomplete Environments Intelligent Techniques For Fusion Processing Fusion System Design And Algorithmic Issues Fusion System Computational Resources and Demands Optimization Special Purpose Hardware Dedicated To Fusion Applications Mining Remotely Sensed Multi-Spectral/Hyper-Spectral Image Data Bases Information Fusion Applications in Intrusion Detection, Network Security, Information Security and Assurance arena Applications such as Robotics, Space, Bio-medical, Transportation, Economics, and Financial Information Systems Real-World Issues such as Computational Demands, Real-Time Constraints in the context of Fusion systems.",
+    "editorInChief": "Salvador García-Lopez | Jiayi Ma",
+    "goldOpenAccessFee": 4130,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15662535.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 8,
+    "title": "Sustainable Energy, Grids and Networks",
+    "sourceUrl": "https://www.sciencedirect.com/journal/sustainable-energy-grids-and-networks/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/SEGAN",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/sustainable-energy-grids-and-networks/publish/guide-for-authors",
+    "acronym": "SEGAN",
+    "issn": "2352-4677",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.7,
+    "citeScore": 9.1,
+    "decisionDays": 6,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Electrical and Electronic Engineering",
+      "Applied Mathematics",
+      "Energy Engineering and Power Technology",
+      "Computer Science Applications",
+      "Control and Optimization",
+      "Renewable Energy, Sustainability and the Environment"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Invited review article",
+      "Review Article",
+      "VSI: SEST 2026"
+    ],
+    "scope": "Sustainable Energy, Grids and Networks (SEGAN) is an international peer-reviewed publication for theoretical and applied research dealing with energy, information grids and power networks, including smart grids from super to micro grid scales. SEGAN welcomes papers describing fundamental advances in mathematical, statistical or computational methods with application to power and energy systems, as well as papers on applications, computation and modeling in the areas of electrical and energy systems with coupled information and communication technologies. SEGAN is an interdisciplinary journal that aims to bring together researchers from academia and industry from across Energy, Engineering, Computer Science, Mathematics and Energy Policy/Regulation. SEGAN publishes original articles and short communications, as well as selected review articles by invitation and/or approval of the Editor-in-Chief. Proposals for review articles and special issues should be submitted to the Editor-in-Chief for consideration. SEGAN particularly welcomes papers on the following topics: Theoretical developments in planning and operation of electrical and energy systems – Definition and application of computational methods for stochastic optimization – Applied optimization and mathematical programming Data analysis and computation for power and energy systems – Data-driven modelling techniques for power and energy systems – Machine learning, statistics and computational intelligence – Big Data analytics Integrated operation of information and communication technologies (ICT) in electrical and energy systems – ICT integration in electrical and energy systems for monitoring and control – Modeling of cyber-physical energy and communication systems – Demand-side management and demand response: definition of control schemes and protocols – Advanced metering infrastructures Modeling and analysis of modern and future electrical and energy systems – Integrated electrical and thermal grids – Active distribution networks and virtual power plants – Massive integration of volatile renewable energy resources in smart grids – Integrated control of electrical transmission and distribution networks – Electrical systems security and reliability in systems with large-scale volatile resources – New dynamics and stability issues in power systems – Control and planning of centralized and distributed energy storage New components for future electrical and energy systems – Coupled AC/DC supergrids – Coupling of energy conversion systems with electrical and energy grids Sustainability assessment of electrical and energy systems – Policy, regulation and economics of modern electrical and thermal networks – Development of the Smart City concept towards the integration of energy, transportation (e.g. electric vehicles) and ICT networks. Out-of-scope topics The following topics are generally outside the main scopes of the journal: Testing of classical, new or hybrid metaheuristic methods or variants and comparisons with other algorithms Power electronic converter structures, control, simulation and experimental analysis Design, structure and internal control of virtual synchronous generators Materials and technologies Design of integrated energy systems General research on energy transformation or energy policy Hydrogen production and use Carbon capture and storage Emission trading schemes Nuclear energy Power quality Transient stability and related controllers Internet of Things Wireless sensor networks ICT applications not primarily referring to the electrical grid Case study applications without methodological insights This journal welcomes contributions that support and advance the UN&#39;s sustainable development goals , in particular SDG 7 (Affordable and clean energy) and SDG 11 (Sustainable cities and communities)",
+    "editorInChief": "Gianfranco Chicco",
+    "goldOpenAccessFee": 2780,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/23524677.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 9,
+    "title": "Information Processing in Agriculture",
+    "sourceUrl": "https://www.sciencedirect.com/journal/information-processing-in-agriculture/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/IPA",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/information-processing-in-agriculture/publish/guide-for-authors",
+    "acronym": "INPA",
+    "issn": "2214-3173",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": 8.9,
+    "citeScore": 21.1,
+    "decisionDays": null,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Animal Science and Zoology",
+      "Agricultural and Biological Sciences (General)",
+      "Forestry"
+    ],
+    "articleTypes": [
+      "Full length article",
+      "Review article"
+    ],
+    "scope": "The Journal of the China Agricultural University Information Processing in Agriculture (IPA) was established in 2013 to encourage the development of science and technology related to information processing in agriculture, through the following aims: • Promote the use of knowledge and methods from information processing technologies in agriculture; • Report on experiences and publications of institutes, universities, and government, as well as profitable technologies for agriculture; • Provide a platform and opportunities for exchanging knowledge, strategies, and experiences among information processing researchers worldwide; • Promote and encourage interactions among agriculture scientists, meteorologists, biologists (pathologists/entomologists), information technology professionals, and other stakeholders to develop and implement methods, techniques, and tools related to information processing technology in agriculture; • Create and promote expert groups for the development of agro-meteorological databases, crop and livestock modeling, and applications for the development of crop performance-based decision support systems. Topics of interest include, but are not limited to, the following aspects: • Smart sensors, biosensors and bioelectronics, material and molecular innovations for chemical and biological sensing, sensors, and automation and control systems for agriculture; • Wireless sensor networks, 4G, NB-IOT, and 5G applications in agriculture; • Remote sensing and discrete element modeling (DEM) applications in agriculture; • Simulation, optimization, modeling, and automated control; • Decision support systems, intelligent systems, and artificial intelligence; • Machine vision, computer vision, image processing and automation, and imaging technologies for high-throughput phenotyping • Advances in spectroscopy and hyperspectral properties of biological products; • Advanced computational approaches for solving agricultural and biological engineering problems; • Computational fluid dynamics (CFD) applications in agriculture; • Inspection and traceability for food quality; • Precision agriculture, intelligent instruments, robotics, and co-robotics for agriculture; • Internet of things, cloud computing, and precision farming; • Big data, data mining, and data analysis for agricultural applications; • Unmanned aerial vehicles (UAVs) for sensing, imaging, and agricultural aquacultural applications.",
+    "editorInChief": "Professor Daoliang Li",
+    "goldOpenAccessFee": 2000,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/22143173.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 10,
+    "title": "Signal Processing: Image Communication",
+    "sourceUrl": "https://www.sciencedirect.com/journal/signal-processing-image-communication/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/IMAGE",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/signal-processing-image-communication/publish/guide-for-authors",
+    "acronym": "IMAGE",
+    "issn": "0923-5965",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 2.1,
+    "citeScore": 7.3,
+    "decisionDays": 15,
+    "acceptanceDays": 8,
+    "subjectAreas": [
+      "Computer Vision and Pattern Recognition",
+      "Electrical and Electronic Engineering",
+      "Signal Processing"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Short Communication",
+      "Perspective article",
+      "VSI: Extreme Super-Resolution"
+    ],
+    "scope": "Theory, Techniques &amp; Applications A publication of the European Association for Signal Processing (EURASIP) Signal Processing: Image Communication is an international journal for the development of the theory and practice of image communication . Its primary objectives are the following: To present a forum for the advancement of theory and practice of image communication. To stimulate cross-fertilization between areas similar in nature which have traditionally been separated, for example, various aspects of visual communications and information systems . To contribute to a rapid information exchange between the industrial and academic environments. The editorial policy and the technical content of the journal are the responsibility of the Editor-in-Chief, the Area Editors and the Advisory Editors. The Journal is self-supporting from subscription income and contains a minimum amount of advertisements. Advertisements are subject to the prior approval of the Editor-in-Chief. The journal welcomes contributions from every country in the world. Signal Processing: Image Communication publishes articles relating to aspects of the design, implementation and use of image communication systems . The journal features original research work, tutorial and review articles, and accounts of practical developments. Subjects of interest include: Multimedia coding, 3D and multi-view compression for human and machine consumption 3D and multi-view representations, multimedia pre/post processing, video restoration and super-resolution, video synthesis Peer-to-peer video networking, wireless video broadcasting and communication, visual surveillance, video processing for automation and remote operation, architectures for image/video processing and communication Interactive visual communication, Virtual Reality (VR), Augmented Reality (AR) and eXtended Reality (XR) systems, point cloud processing and compression, light field capture and rendering, immersive media technologies, real-time 3D environment reconstruction Multimedia quality assessment and measures, models for QoS and QoE Multi-camera video analysis, motion analysis, content-based media indexing and retrieval, semantics, face and gesture processing",
+    "editorInChief": "Federica Battisti",
+    "goldOpenAccessFee": 2830,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/09235965.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 11,
+    "title": "Vehicular Communications",
+    "sourceUrl": "https://www.sciencedirect.com/journal/vehicular-communications/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/VEHCOM",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/vehicular-communications/publish/guide-for-authors",
+    "acronym": "VEHCOM",
+    "issn": "2214-2096",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.7,
+    "citeScore": 14.4,
+    "decisionDays": 6,
+    "acceptanceDays": 4,
+    "subjectAreas": [
+      "Automotive Engineering",
+      "Computer Networks and Communications",
+      "Information Systems",
+      "Transportation"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review Article"
+    ],
+    "scope": "Vehicular communications is a growing area of communications between vehicles and including roadside communication infrastructure . Advances in wireless communications are making possible sharing of information through real time communications between vehicles and infrastructure. This has led to applications to increase safety of vehicles and communication between passengers and the Internet. Standardization efforts on vehicular communication are also underway to make vehicular transportation safer, greener and easier. The aim of the journal is to publish high quality peer–reviewed papers in the area of vehicular communications . The scope encompasses all types of communications involving vehicles, including vehicle–to–vehicle and vehicle–to–infrastructure . The scope includes (but not limited to) the following topics related to vehicular communications : Vehicle to vehicle and vehicle to infrastructure communications Channel modelling, modulating and coding Congestion Control and scalability issues Protocol design, testing and verification Routing in vehicular networks Security issues and countermeasures Deployment and field testing Reducing energy consumption and enhancing safety of vehicles Wireless in–car networks Data collection and dissemination methods Mobility and handover issues Safety and driver assistance applications UAV Underwater communications Autonomous cooperative driving Social networks Internet of vehicles Standardization of protocols",
+    "editorInChief": "Mohammed Atiquzzaman",
+    "goldOpenAccessFee": 2810,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/22142096.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 12,
+    "title": "Smart Health",
+    "sourceUrl": "https://www.sciencedirect.com/journal/smart-health/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/SMHL",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/smart-health/publish/guide-for-authors",
+    "acronym": "SMHL",
+    "issn": "2352-6483",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3.4,
+    "citeScore": 7.7,
+    "decisionDays": 7,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Computer Networks and Communications",
+      "Computer Science Applications",
+      "Health Informatics",
+      "Hardware and Architecture"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Invited research article",
+      "Research into practice",
+      "Research paper",
+      "Review Article",
+      "VSI: SCH",
+      "VSI:Smart Health at 10 - Full Length Article",
+      "VSI:Smart Health at 10 - Review Article"
+    ],
+    "scope": "This journal focuses on research topics pertaining to devices, sensing, computing and communication technologies, software/hardware modeling and system architectures towards Personalized, Pervasive, Participatory, Predictive, Preventive, Programmable and Perpetual (P7) Healthcare. This will be an interdisciplinary journal which would publish high-quality papers from researchers of various disciplines including medicine, computer science and engineering and bio and electrical engineering. Papers covering all aspects of P7 Healthcare including innovative technology, clinical studies of efficacy of existing technology, and analytical studies are in this journal. P7 Healthcare Models: E-healthcare M-healthcare Telehealth, Telemedicine Cybermedicine Mobile/Wireless/Pervasive/Proactive/Personalized Healthcare P7 Platforms and Technologies: Home Health Platforms Cell-phone based monitoring systems Remote/ Non-invasive Biomonitoring Wireless Medicine Wearable health system Body area networks (BANs)/Body Sensor Networks (BSNs) Nano medicine Smart medical Devices P7 Methods Non-invasive physiological monitoring Reliable Biosensing HCI , Intuitive Interfaces for Children and the Elderly Privacy/Security/Access Control Protocols Wireless communication P7 IT/Software-Hardware: Formal Methods for ensuring safety, security of medical devices Interoperable Security Model Based Engineering Metrics, Performance Analysis methods and tools Powering, Energy Management/Scavenging, Sustainability Modeling techniques: cyber-physical, hybrid models System Software, Middelware, OS, Networking Medical device control system design, verification of control algorithms P7 Patient Care Outcomes: Health Data Privacy Improving Access and Quality Cost-effectiveness Reducing Medical Errors P7 Applications: Assisted Living Disaster Preparedness Entertainment, Games for Improving Health Diabetes Care Obesity Management Drug Use Prevention Sports and Leisure",
+    "editorInChief": "Dr. Weisong Shi",
+    "goldOpenAccessFee": 2190,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/23526483.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 13,
+    "title": "Journal of Network and Computer Applications",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-network-and-computer-applications/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/JNCA",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-network-and-computer-applications/publish/guide-for-authors",
+    "acronym": "YJNCA",
+    "issn": "1084-8045",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 7.7,
+    "citeScore": 16.6,
+    "decisionDays": 11,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Electrical and Electronic Engineering",
+      "Computer Networks and Communications"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article"
+    ],
+    "scope": "The Journal of Network and Computer Applications welcomes research contributions, surveys and notes in all areas relating to computer networks and applications thereof. The following list of sample-topics is by no means to be understood as restricting contributions to the topics mentioned: new design techniques, interesting or novel applications, components or standards computer networks with tools such as WWW emerging standards for internet protocols Wireless networks Mobile Computing computing models such as cloud computing, grid computing network protocols such as sensor networks, delay tolerant networks, Internet of things applications of networked systems for remote collaboration and telemedicine applications of an educational, transactional and cooperational nature applications of security in computer and networks",
+    "editorInChief": "Mohammed Atiquzzaman",
+    "goldOpenAccessFee": 3080,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/10848045.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 14,
+    "title": "Signal Processing Open",
+    "sourceUrl": "https://www.editorialmanager.com/sigop/default.aspx",
+    "submissionLink": "https://www.editorialmanager.com/sigop/default.aspx",
+    "guideForAuthors": null,
+    "acronym": "SIGOP",
+    "issn": "3117-9355",
+    "publishingModel": "FULL",
+    "openAccessType": "FULL",
+    "impactFactor": null,
+    "citeScore": null,
+    "decisionDays": null,
+    "acceptanceDays": null,
+    "subjectAreas": [
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Research Article",
+      "Review Article",
+      "Short Communication",
+      "Case Report",
+      "VSI: Energy-Efficient SP_Research Article",
+      "VSI: Multimodal Intelligence_Research Article",
+      "VSI: RF Sensing in SREs_Research Article",
+      "VSI: Energy-Efficient SP_Review Article",
+      "VSI: Multimodal Intelligence_Review Article",
+      "VSI: RF Sensing in SREs_Review Article"
+    ],
+    "scope": "An International Journal, A publication of the European Association for Signal Processing (EURASIP) Signal Processing Open is a new open access journal covering the full breadth of signal processing research and applications, including: · Theory, methods, and algorithms in signal processing · Processing, analysis, and modeling of audio signals with emphasis on speech communication and music information processing · Theory and applications of wireless communications and networking technologies · Biomedical signal processing and related applications · Image, video, and multimedia signal processing and related applications · Machine learning, artificial intelligence, and data-driven approaches for signal processing · Graph, network, and high-dimensional signal processing · Emerging interdisciplinary applications Signal Processing Open serves as a unified open-access outlet for researchers and practitioners across all areas of signal processing, encompassing both foundational theory and cutting-edge applications. The journal welcomes original contributions that advance the state of the art in methodologies, algorithms, systems, and applications of signal processing. Its scope includes, but is not limited to: · Fundamental theoretical developments in signal processing and related mathematical tools · Innovative techniques and architectures for audio, speech, and music processing · Advances in wireless communications, networking, and integrated sensing and communication systems · Image, video, and multimedia processing, including analysis, compression, and understanding · Emerging interdisciplinary applications of signal processing, such as machine learning, biomedical engineering, and data-driven systems, graph signal processing. Signal Processing Open is a multi-disciplinary journal open to original, high-quality contributions from all intersecting fields.",
+    "editorInChief": "Richard Hendriks",
+    "goldOpenAccessFee": 2300,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/31179355.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 15,
+    "title": "Journal of Information and Intelligence",
+    "sourceUrl": "https://www.sciencedirect.com/journal/journal-of-information-and-intelligence/publish/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/intecom/default1.aspx",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/journal-of-information-and-intelligence/publish/guide-for-authors",
+    "acronym": "JIIXD",
+    "issn": "2949-7159",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": null,
+    "citeScore": null,
+    "decisionDays": 10,
+    "acceptanceDays": 13,
+    "subjectAreas": [
+      "Computer Networks and Communications",
+      "Control and Systems Engineering",
+      "Information Systems",
+      "Artificial Intelligence",
+      "Computer Vision and Pattern Recognition",
+      "Signal Processing",
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review",
+      "Short Communication",
+      "Short Survey",
+      "VSI: AI-RAN",
+      "VSI: AI-generated Content",
+      "VSI: CAIN",
+      "VSI: FA for 6G",
+      "VSI: I-CSC (Special Issue - Full Length Article)",
+      "VSI: Physical AI",
+      "VSI: RIC for NTN",
+      "VSI: S&PinAI (Special Issue - Full Length Article)",
+      "VSI: SAGIN",
+      "VSI: I-CSC (Special Issue - Review)"
+    ],
+    "scope": "The Journal of Information and Intelligence is committed to publishing rigorously peer-reviewed, high-quality original research papers, review articles, and perspective articles in the fields of information and intelligence. The journal welcomes contributions on both fundamental and applied research, and particularly encourages interdisciplinary work that bridges the two aspects. It aims to provide a unique platform that promotes scholarly development and academic exchange, serving researchers across academia, industry, and government worldwide. Topics of interest encompass all areas of information and intelligence, including but not limited to: Artificial Intelligence Big Data Technologies and Applications Coding and Information Theory Collaborative Intelligent Systems and Agent Models Communications and Networking Computer Networks Computer Vision, Image Processing, Object Detection, and Pattern Recognition Computing Paradigms and Systems Cryptography, Security, Trust, Privacy, and Blockchain Digital Twin and Cyber-Physical Systems Hardware and Integrated Circuits Human-Computer Interaction Information Graph Theory Information Metasurfaces and Reconfigurable Intelligent Surfaces Information in Social Networks Information Sensing and Signal Processing Integration of Communication, Sensing, and Computing Internet of Things Machine Learning Theories, Technologies, and Applications Mobile Data Analytics and Data Mining Neural Networks and Large AI Models Quantum Communications, Computing, and Networking Semantic Communications Specific Applications of Information and Intelligence System such as in Healthcare, Logistics, Transportation, Industrial 4.0, and Education Wireless and Mobile Networks, Wireless Technologies Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 1000,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/29497159.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 16,
+    "title": "Computer Networks",
+    "sourceUrl": "https://www.sciencedirect.com/journal/computer-networks/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/COMNET",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/computer-networks/publish/guide-for-authors",
+    "acronym": "COMPNW",
+    "issn": "1389-1286",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 4.7,
+    "citeScore": 8.9,
+    "decisionDays": 5,
+    "acceptanceDays": 10,
+    "subjectAreas": [
+      "Computer Networks and Communications",
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Network Security Article",
+      "Research Paper",
+      "Review article",
+      "Survey Paper",
+      "Dataset Article",
+      "Open-Source Software Article",
+      "VSI: AI-Native Federated Testbeds and Datasets_Research Paper",
+      "VSI: GenXSec",
+      "VSI:COMPNW_AgenNet",
+      "VSI:COMPNW_new horizons",
+      "VSI: AI-Native Federated Testbeds and Datasets_Review Article"
+    ],
+    "scope": "The International Journal of Computer and Telecommunications Networking Computer Networks is an international, archival journal providing a publication vehicle for complete coverage of all topics of interest to those involved in the computer communications networking area. The audience includes researchers, managers and operators of networks as well as designers and implementors. The Editorial Board will consider any material for publication that is of interest to those groups. SUBJECT COVERAGE The topics covered by the journal but not limited to these are: 1. Communication Network Architectures : New design contributions on Local Area Networks (LANs), Metropolitan Area Networks (MANs), Wide Area Networks (WANs) including Wired, Wireless, Mobile, Cellular, Sensor, Optical, IP, ATM, and other related network technologies, as well as new switching technologies and the integration of various networking paradigms. 2. Communication Network Protocols : New design contributions on all protocol layers except the Physical Layer, considering all types of networks mentioned above and their performance evaluation; novel protocols, methods and algorithms related to, e.g., medium access control, error control, routing, resource discovery, multicasting, congestion and flow control, scheduling, multimedia quality of service, as well as protocol specification, testing and verification. 3. Network Services and Applications : Web, Web caching, Web performance, Middleware and operating system support for all types of networking, electronic commerce, quality of service, new adaptive applications, and multimedia services. 4. Network Security and Privacy : Security protocols, authentication, denial of service, anonymity, smartcards, intrusion detection, key management, viruses and other malicious codes, information flow, data integrity, mobile code and agent security. 5. Network Operation and Management : Including network pricing, network system software, quality of service, signaling protocols, mobility management, power management and power control algorithms, network planning, network dimensioning, network reliability, network performance measurements, network modeling and analysis, and overall system management. 6. Discrete Algorithms and Discrete Modeling Algorithmic and discrete aspects in the context of computer networking as well as mobile and wireless computing and communications. Fostering cooperation among practitioners and theoreticians in this field.TYPES OF CONTRIBUTIONS CONSIDERED The primary purpose of the journal is to publish original and complete papers covering a specific topic or project in the above mentioned areas in sufficient detail and depth to be of practical use to interested readers. The readers should benefit from the novel solutions and analyses presented in the papers. Enhanced, extended versions of quality papers presented at conferences or workshops can be submitted to our journal for review. Note that papers which were already published with the same contents or simultaneous submission of the same paper to other journals or conferences will not be considered for publication in our journal and will be immediately rejected. Dataset Articles. Computer Networks also publishes micro-articles that describe open datasets available in a redacted and organized way. The purpose is for researchers to easily share and reuse each other&#39;s datasets by publishing data articles that: (i) Describe collected data in detail, facilitating reproducibility of experiments and improvements over proposed techniques, thus promoting rigorous experimentation and data analysis. (ii) Describe tools developed to collect, analyze, and visualize data. Open-Source Software Articles. Computer Networks additionally publishes micro-articles that describe open source software that has been used to obtain scholarly results in the area of computer networks. This may include articles describing discrete-event or other simulators, emulation tools, software implementations of networking and communication functionalities and protocols, standard implementations, monitoring tools, among others.",
+    "editorInChief": "Tommaso Melodia | Antonio Iera",
+    "goldOpenAccessFee": 2330,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/13891286.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 17,
+    "title": "International Journal of Intelligent Networks",
+    "sourceUrl": "https://www.keaipublishing.com/en/journals/international-journal-of-intelligent-networks/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/IJIN/default.aspx",
+    "guideForAuthors": "https://www.keaipublishing.com/en/journals/international-journal-of-intelligent-networks/guide-for-authors",
+    "acronym": "IJIN",
+    "issn": "2666-6030",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": null,
+    "citeScore": 26.3,
+    "decisionDays": 9,
+    "acceptanceDays": 5,
+    "subjectAreas": [
+      "Artificial Intelligence",
+      "Computer Networks and Communications",
+      "Computer Science (General)",
+      "Signal Processing"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Review",
+      "Short Communication",
+      "Technical Note",
+      "VSI: BSVCS",
+      "VSI: Smart Sensors",
+      "VSI:Computing for Metaverse",
+      "VSI:Pervasive Multiparty Computing Technologies",
+      "VSI:Smart Grids and Energy Management Systems"
+    ],
+    "scope": "International Journal of Intelligent Networks (IJIN) presents the most recent challenges and developments in computer networks with the objective of promoting awareness and best practices for the real-world problems. It aims to present new directions for further research and technology improvements in this important area. International Journal of Intelligent Networks (IJIN) presents research findings related to intelligent network of computing resources. It therefore invites original and timely research articles in the field of intelligent communication, technology, sustainability and social communication related research areas of current importance. IJIN will publish original papers, review papers, technical reports, case studies and book reviews. Topics of interest to the journal include, but are not limited to: Signal processing architectures, algorithms and applications Image computing and data science technology Smart sensor and agent networks Green technologies in information, computing and communication systems Intelligent computing for sustainable energy Communication network architectures and security Bioinformatics and network computation Wireless communication and network protocols Network operation and management Intelligent and information systems Smart vehicular communication and technology Future Advancements Distributed storage and training security Artificial Intelligence for networking Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 700,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/26666030.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 18,
+    "title": "Pervasive and Mobile Computing",
+    "sourceUrl": "https://www.sciencedirect.com/journal/pervasive-and-mobile-computing/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/PMC",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/pervasive-and-mobile-computing/publish/guide-for-authors",
+    "acronym": "PMCJ",
+    "issn": "1574-1192",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 3.9,
+    "citeScore": 8.8,
+    "decisionDays": 4,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Hardware and Architecture",
+      "Computer Networks and Communications",
+      "Computer Science Applications"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article",
+      "VSI: ICDCN26",
+      "VSI: PerCom 2026"
+    ],
+    "scope": "Special Issue Proposal Note PMCJ exclusively reviews Special Issue proposal forms submitted here through the designated submission system. Proposals submitted via any other means will not be considered for review. For more information on how to prepare and submit a SI proposal please check https://www.elsevier.com/physical-sciences-and-engineering/computer-science/journals/how-to-prepare-a-special-issue-proposal . Aims and Scope As envisioned by Mark Weiser as early as 1991, pervasive computing systems and services have truly become integral to our daily lives. Tremendous advancements in a multitude of technologies ranging from personalized and embedded smart devices (e.g., smartphones, sensors, wearables, IoT) to ubiquitous connectivity through wireless mobile communications and cognitive networking infrastructures, to advanced computing techniques (including mobile edge/fog/cloud, data analytics and machine learning) and user-friendly middleware services and platforms have significantly contributed to the unprecedented advances in pervasive and mobile computing. Such cutting-edge pervasive technologies and paradigms have led to the convergence of cyber-physical-human systems with applications to smart environments (e.g., smart homes and cities, smart grid, smart transportation, smart health, smart agriculture) with the goal to improve human experience and quality of life without explicit awareness of the underlying communications and computing technologies. Additionally, the huge amount of (real-time) data collected via pervasive devices coupled with advanced data analytic, machine learning and AI (Artificial Intelligence) techniques for reliable prediction and decision-making are making breakthrough research in pervasive computing and applications, such as self-driving cars, predictive maintenance in the industry 4.0 environments, mobile recommendation systems, etc. The Pervasive and Mobile Computing Journal (PMC) is a high-impact, peer-reviewed technical journal that publishes high-quality scientific articles spanning theory and practice, and covering all aspects of pervasive and mobile computing and systems. Topics include, but not limited to: Pervasive Computing and Communications Architectures and Protocols Pervasive, Mobile and Wearable Computing Systems and Services Cyber-Physical Systems and Cyber-Physical-Human Systems Smart Systems and Applications (smart homes, smart cities, smart manufacturing, smart transportation, smart grid, smart health, smart agriculture, etc.) Human-centric Intelligent Systems Cognitive Computing Trustworthy AI in Pervasive Systems Machine Learning and Deep Learning in Pervasive and Mobile Computing Federated, Distributed and Embedded learning, Learning at-the-edge in Pervasive Systems Learning on Streaming Data and Continual Learning in Pervasive and Mobile Systems Big Data and Data Analytics in Pervasive Computing Systems Internet of Things and Social Internet of Things Internet of People and Internet of Vehicles Edge, Fog, Mobile Cloud and Opportunistic Computing in Pervasive and Mobile Systems Enabling Pervasive Communication Technologies (e.g., wireless LANs, cellular, hybrid, ad hoc and cognitive networks) Wireless Sensors Networks and RFID Technologies Urban Sensing and Mobile Crowdsensing Participatory and Social Sensing Machine-to-Machine and Device-to-Device Communications Positioning, Localization and Tracking Technologies Activity Recognition and Tracking Context-aware Computing Location-based Services and Applications Pervasive Service Creation, Composition, Discovery, Management, and Delivery Human User Interfaces and Interaction Models Trust, Reliability, Security, and Privacy in Pervasive and Mobile Computing Systems Performance Evaluation of Pervasive and Mobile Computing Systems",
+    "editorInChief": "Sajal K. Das",
+    "goldOpenAccessFee": 2470,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15741192.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 19,
+    "title": "Physical Communication",
+    "sourceUrl": "https://www.sciencedirect.com/journal/physical-communication/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/PHYCOM",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/physical-communication/publish/guide-for-authors",
+    "acronym": "PHYCOM",
+    "issn": "1874-4907",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 1.9,
+    "citeScore": 4.7,
+    "decisionDays": 1,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Hardware and Architecture",
+      "Computer Networks and Communications",
+      "Computer Science Applications",
+      "Computer Science (General)"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Survey",
+      "Review Article"
+    ],
+    "scope": "PHYCOM: Physical Communication is an international and archival journal providing complete coverage of all topics of interest to those involved in all aspects of physical layer communications . Theoretical research contributions presenting new techniques, concepts or analyses, applied contributions reporting on experiences and experiments, and tutorials are published. Topics of interest include but are not limited to: Physical layer issues of Wireless Local Area Networks, WiMAX, Wireless Mesh Networks, Sensor and Ad Hoc Networks, PCS Systems; Radio access protocols and algorithms for the physical layer; Spread Spectrum Communications; Channel Modeling; Detection and Estimation; Modulation and Coding; Multiplexing and Carrier Techniques; Broadband Wireless Communications; Wireless Personal Communications; Multi-user Detection; Signal Separation and Interference rejection: Multimedia Communications over Wireless; DSP Applications to Wireless Systems; Experimental and Prototype Results; Multiple Access Techniques; Space-time Processing; Synchronization Techniques; Error Control Techniques; Cryptography; Software Radios; Tracking; Resource Allocation and Inference Management; Multi-rate and Multi-carrier Communications; Cross layer Design and Optimization; Propagation and Channel Characterization; OFDM Systems; MIMO Systems; Ultra-Wideband Communications; Cognitive Radio System Architectures; Platforms and Hardware Implementations for the Support of Cognitive, Radio Systems; Cognitive Radio Resource Management and Dynamic Spectrum Sharing.",
+    "editorInChief": "Michalis Matthaiou",
+    "goldOpenAccessFee": 2490,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/18744907.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 20,
+    "title": "Digital Communications and Networks",
+    "sourceUrl": "https://www.keaipublishing.com/en/journals/digital-communications-and-networks/guide-for-authors",
+    "submissionLink": "https://www.editorialmanager.com/dcan/default.aspx",
+    "guideForAuthors": "https://www.keaipublishing.com/en/journals/digital-communications-and-networks/guide-for-authors",
+    "acronym": "DCAN",
+    "issn": "2352-8648",
+    "publishingModel": "SUBSIDISED",
+    "openAccessType": "SUBSIDISED",
+    "impactFactor": 6.3,
+    "citeScore": 14.6,
+    "decisionDays": 4,
+    "acceptanceDays": 6,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Full Length Article",
+      "Proposal",
+      "Review Article",
+      "Short Communication",
+      "VSI: Advancing Comms AI",
+      "VSI: Semantic Comm. for 6G & Beyond"
+    ],
+    "scope": "Digital Communications and Networks publishes rigorously peer-reviewed, high quality original articles and authoritative reviews that focus on communication systems and networks. All articles are published fully Open Access on ScienceDirect. The journal is indexed by Science Citation Index Expanded (SCIE) and Scopus. Conference papers may be accepted if they have been substantially extended. Special issues of the journal that focus on a particular aspect of the field are also occasionally published. Special areas of interest include but are not limited to: AI-Driven Communications and Networks Big Data Networking and Applications Blockchain and Distributed Ledger Technologies Cellular Communications and Networks Coding and Information Theory Communications and Networking Standards Consumer Communications and Networking Cyber-Physical Systems Edge, Fog, and Cloud Computing and Networks Future Internet Architecture, Protocols, and Applications Green Communications Industrial Internet and Industry 4.0 Internet of Things Intelligent Communications and Networking Systems Network, Service, and Applications Management Optical Communications and Networking Pervasive Computing and Networking Quantum Computing, Communications, and Information Satellite Communications and Networking in Space Trust, Security, and Privacy Protocols Unified Communications, Computing, and Control Vehicular Communications and Networks Wireless Communications and Networking Wireless Sensor Networks Editorial Board",
+    "editorInChief": null,
+    "goldOpenAccessFee": 800,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/23528648.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 21,
+    "title": "Ad Hoc Networks",
+    "sourceUrl": "https://www.sciencedirect.com/journal/ad-hoc-networks/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/ADHOC",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/ad-hoc-networks/publish/guide-for-authors",
+    "acronym": "ADHOC",
+    "issn": "1570-8705",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.4,
+    "citeScore": 9.9,
+    "decisionDays": 3,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Control and Systems Engineering",
+      "Computer Networks and Communications"
+    ],
+    "articleTypes": [
+      "Research paper",
+      "Survey Paper",
+      "VSI: Intelligent and Resilient Networking",
+      "VSI: Trustworthy and Resilient Edge AI Systems",
+      "VSI:AI for MANETs"
+    ],
+    "scope": "The Ad Hoc Networks is an international and archival journal providing a publication vehicle for complete coverage of all topics of interest to those involved in ad hoc and sensor networking areas. The Ad Hoc Networks considers original, high quality and unpublished contributions addressing all aspects of ad hoc and sensor networks. Specific areas of interest include, but are not limited to: Mobile and Wireless Ad Hoc Networks Sensor Networks Wireless Local and Personal Area Networks Home Networks Ad Hoc Networks of Autonomous Intelligent Systems Novel Architectures for Ad Hoc and Sensor Networks Self-organizing Network Architectures and Protocols Transport Layer Protocols Routing protocols (unicast, multicast, geocast, etc.) Media Access Control Techniques Error Control Schemes Power-Aware, Low-Power and Energy-Efficient Designs Synchronization and Scheduling Issues Mobility Management Mobility-Tolerant Communication Protocols Location Tracking and Location-based Services Resource and Information Management Security and Fault-Tolerance Issues Hardware and Software Platforms, Systems, and Testbeds Experimental and Prototype Results Quality-of-Service Issues Cross-Layer Interactions Scalability Issues Performance Analysis and Simulation of Protocols",
+    "editorInChief": "Salil Kanhere",
+    "goldOpenAccessFee": 2600,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15708705.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "elsevier",
+    "rank": 22,
+    "title": "Optical Switching and Networking",
+    "sourceUrl": "https://www.sciencedirect.com/journal/optical-switching-and-networking/publish/guide-for-authors",
+    "submissionLink": "https://submit.elsevier.com/OSN",
+    "guideForAuthors": "https://www.sciencedirect.com/journal/optical-switching-and-networking/publish/guide-for-authors",
+    "acronym": "OSN",
+    "issn": "1573-4277",
+    "publishingModel": "HYBRID",
+    "openAccessType": "HYBRID",
+    "impactFactor": 5.5,
+    "citeScore": 7.6,
+    "decisionDays": 5,
+    "acceptanceDays": 9,
+    "subjectAreas": [
+      "Computer Networks and Communications",
+      "Control and Systems Engineering",
+      "Electrical and Electronic Engineering"
+    ],
+    "articleTypes": [
+      "Research Paper",
+      "Review Article"
+    ],
+    "scope": "A Computer Networks Journal Optical Switching and Networking (OSN) is an archival journal aiming to provide complete coverage of all topics of interest to those involved in the optical and high-speed opto-electronic networking areas. The editorial board is committed to providing detailed, constructive feedback to submitted papers, as well as a fast turn-around time. Optical Switching and Networking considers high-quality, original, and unpublished contributions addressing all aspects of optical and opto-electronic networks. Specific areas of interest include, but are not limited to: • Optical and Opto-Electronic Backbone, Metropolitan and Local Area Networks • Optical Data Center Networks • Elastic optical networks • Green Optical Networks • Software Defined Optical Networks • Novel Multi-layer Architectures and Protocols (Ethernet, Internet, Physical Layer) • Optical Networks for Internet of Things (IOT) • Home Networks, In-Vehicle Networks, and Other Short-Reach Networks • Optical Access Networks • Optical Data Center Interconnection Systems • Optical OFDM and coherent optical network systems • Free Space Optics (FSO) networks • Hybrid Fiber - Wireless Networks • Optical Satellite Networks • Visible Light Communication Networks • Optical Storage Networks • Optical Network Security • Optical Network Resiliance and Reliability • Control Plane Issues and Signaling Protocols • Optical Quality of Service (OQoS) and Impairment Monitoring • Optical Layer Anycast, Broadcast and Multicast • Optical Network Applications, Testbeds and Experimental Networks • Optical Network for Science and High Performance Computing Networks Please note that the topics “Wireless Sensor Networks” and “Ad Hoc Networks” are outside the scope of OSN, unless the manuscript involves optical switching and networking in the context of these traditionally wireless networks. Also, please note that manuscripts on generic “Neural Network” topics are outside the scope of OSN, unless the neural network specifically addresses optical switching and networking. Generally, the scope of OSN encompasses the link layer (Layer 2) and higher layers in the network protocol stack. Manuscripts focused on the physical (photonics, Layer 1) should please be submitted to Optical Fiber Technology or Optics Communications.",
+    "editorInChief": "Admela Jukan | Martin Reisslein",
+    "goldOpenAccessFee": 2620,
+    "goldOpenAccessCurrency": "USD",
+    "coverImage": "http://secure-ecsd.elsevier.com/covers/80/Tango2/large/15734277.jpg",
+    "hasAgreements": false
+  },
+  {
+    "provider": "springer",
+    "rank": 1,
+    "title": "Wireless Networks",
+    "sourceUrl": "https://link.springer.com/journal/11276?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11276/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11276/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.52025,
+    "impactFactorText": "2.5 (2025)",
+    "downloads": 355721,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Computer Communication Networks",
+      "Electrical and Electronic Engineering",
+      "IT in Business"
+    ],
+    "scope": "Communications Engineering, Networks, Computer Communication Networks, Electrical and Electronic Engineering, IT in Business",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 2,
+    "title": "Wireless Personal Communications",
+    "sourceUrl": "https://link.springer.com/journal/11277?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11277/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11277/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.92025,
+    "impactFactorText": "1.9 (2025)",
+    "downloads": 667064,
+    "decisionDays": 14,
+    "decisionTimeText": "14 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Signal, Speech and Image Processing",
+      "Computer Communication Networks"
+    ],
+    "scope": "Communications Engineering, Networks, Signal, Speech and Image Processing, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 3,
+    "title": "Telecommunication Systems",
+    "sourceUrl": "https://link.springer.com/journal/11235?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11235/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11235/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.22025,
+    "impactFactorText": "2.2 (2025)",
+    "downloads": 191163,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "IT in Business",
+      "Computer Communication Networks",
+      "Artificial Intelligence",
+      "Probability Theory"
+    ],
+    "scope": "IT in Business, Computer Communication Networks, Artificial Intelligence, Probability Theory",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 4,
+    "title": "Cluster Computing",
+    "sourceUrl": "https://link.springer.com/journal/10586?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10586/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10586/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 5.52025,
+    "impactFactorText": "5.5 (2025)",
+    "downloads": 979293,
+    "decisionDays": 25,
+    "decisionTimeText": "25 days",
+    "subjectAreas": [
+      "Processor Architectures",
+      "Operating Systems",
+      "Computer Communication Networks"
+    ],
+    "scope": "Processor Architectures, Operating Systems, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 5,
+    "title": "Journal of Ambient Intelligence and Humanized Computing",
+    "sourceUrl": "https://link.springer.com/journal/12652?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/12652/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/12652/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 790156,
+    "decisionDays": 19,
+    "decisionTimeText": "19 days",
+    "subjectAreas": [
+      "Computational Intelligence",
+      "Artificial Intelligence",
+      "Control, Robotics, Automation",
+      "User Interfaces and Human Computer Interaction"
+    ],
+    "scope": "Computational Intelligence, Artificial Intelligence, Control, Robotics, Automation, User Interfaces and Human Computer Interaction",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 6,
+    "title": "Mobile Networks and Applications",
+    "sourceUrl": "https://link.springer.com/journal/11036?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11036/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11036/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.72025,
+    "impactFactorText": "1.7 (2025)",
+    "downloads": 309048,
+    "decisionDays": 17,
+    "decisionTimeText": "17 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Computer Communication Networks",
+      "Electrical and Electronic Engineering",
+      "IT in Business"
+    ],
+    "scope": "Communications Engineering, Networks, Computer Communication Networks, Electrical and Electronic Engineering, IT in Business",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 7,
+    "title": "Annals of Telecommunications",
+    "sourceUrl": "https://link.springer.com/journal/12243?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/12243/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/12243/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 2.22025,
+    "impactFactorText": "2.2 (2025)",
+    "downloads": 163067,
+    "decisionDays": 16,
+    "decisionTimeText": "16 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Computer Engineering and Networks",
+      "Signal, Speech and Image Processing",
+      "Computer Communication Networks",
+      "Mathematical Applications in Computer Science",
+      "Economic Development, Innovation and Growth"
+    ],
+    "scope": "Communications Engineering, Networks, Computer Engineering and Networks, Signal, Speech and Image Processing, Computer Communication Networks, Mathematical Applications in Computer Science, Economic Development, Innovation and Growth",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 8,
+    "title": "Peer-to-Peer Networking and Applications",
+    "sourceUrl": "https://link.springer.com/journal/12083?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/12083/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/12083/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.22025,
+    "impactFactorText": "3.2 (2025)",
+    "downloads": 245549,
+    "decisionDays": 121,
+    "decisionTimeText": "121 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks",
+      "Computer Engineering and Networks",
+      "Computer Communication Networks",
+      "Signal, Speech and Image Processing"
+    ],
+    "scope": "Communications Engineering, Networks, Computer Engineering and Networks, Computer Communication Networks, Signal, Speech and Image Processing",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 9,
+    "title": "SN Computer Science",
+    "sourceUrl": "https://link.springer.com/journal/42979?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/42979/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/42979/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1696119,
+    "decisionDays": 96,
+    "decisionTimeText": "96 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Computer Engineering and Networks",
+      "Software Engineering",
+      "Data Structures and Information Theory",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics"
+    ],
+    "scope": "Computer Science, Computer Engineering and Networks, Software Engineering, Data Structures and Information Theory, Computer Imaging, Vision, Pattern Recognition and Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 10,
+    "title": "International Journal of Information Technology",
+    "sourceUrl": "https://link.springer.com/journal/41870?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/41870/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/41870/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 424642,
+    "decisionDays": 21,
+    "decisionTimeText": "21 days",
+    "subjectAreas": [
+      "Computer Science",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Vision",
+      "Software Engineering",
+      "Computer Imaging, Vision, Pattern Recognition and Graphics"
+    ],
+    "scope": "Computer Science, Artificial Intelligence, Machine Learning, Computer Vision, Software Engineering, Computer Imaging, Vision, Pattern Recognition and Graphics",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 11,
+    "title": "International Journal of Wireless Information Networks",
+    "sourceUrl": "https://link.springer.com/journal/10776?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10776/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10776/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.72025,
+    "impactFactorText": "1.7 (2025)",
+    "downloads": 48560,
+    "decisionDays": 170,
+    "decisionTimeText": "170 days",
+    "subjectAreas": [
+      "Electrical and Electronic Engineering"
+    ],
+    "scope": "Electrical and Electronic Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 12,
+    "title": "The Journal of Supercomputing",
+    "sourceUrl": "https://link.springer.com/journal/11227?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11227/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11227/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.52025,
+    "impactFactorText": "3.5 (2025)",
+    "downloads": 1311828,
+    "decisionDays": 38,
+    "decisionTimeText": "38 days",
+    "subjectAreas": [
+      "Compilers and Interpreters",
+      "Processor Architectures",
+      "Computer Science"
+    ],
+    "scope": "Compilers and Interpreters, Processor Architectures, Computer Science",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 13,
+    "title": "Journal of Network and Systems Management",
+    "sourceUrl": "https://link.springer.com/journal/10922?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/10922/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/10922/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.62025,
+    "impactFactorText": "3.6 (2025)",
+    "downloads": 205992,
+    "decisionDays": 31,
+    "decisionTimeText": "31 days",
+    "subjectAreas": [
+      "Computer Communication Networks",
+      "Computer Engineering and Networks",
+      "Communications Engineering, Networks",
+      "Operations Research and Decision Theory"
+    ],
+    "scope": "Computer Communication Networks, Computer Engineering and Networks, Communications Engineering, Networks, Operations Research and Decision Theory",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 14,
+    "title": "Multimedia Tools and Applications",
+    "sourceUrl": "https://link.springer.com/journal/11042?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11042/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11042/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 3529016,
+    "decisionDays": 34,
+    "decisionTimeText": "34 days",
+    "subjectAreas": [
+      "Multimedia Information Systems",
+      "Computer Communication Networks",
+      "Data Structures and Information Theory",
+      "Special Purpose and Application-Based Systems"
+    ],
+    "scope": "Multimedia Information Systems, Computer Communication Networks, Data Structures and Information Theory, Special Purpose and Application-Based Systems",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 15,
+    "title": "Science China Information Sciences",
+    "sourceUrl": "https://link.springer.com/journal/11432?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11432/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11432/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 8.12025,
+    "impactFactorText": "8.1 (2025)",
+    "downloads": 425276,
+    "decisionDays": null,
+    "decisionTimeText": "Not available",
+    "subjectAreas": [
+      "Computer Engineering and Networks"
+    ],
+    "scope": "Computer Engineering and Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 16,
+    "title": "Microsystem Technologies",
+    "sourceUrl": "https://link.springer.com/journal/542?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/542/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/542/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.92025,
+    "impactFactorText": "1.9 (2025)",
+    "downloads": 412997,
+    "decisionDays": 13,
+    "decisionTimeText": "13 days",
+    "subjectAreas": [
+      "Electronics and Microelectronics, Instrumentation",
+      "Nanotechnology",
+      "Mechanical Engineering"
+    ],
+    "scope": "Electronics and Microelectronics, Instrumentation, Nanotechnology, Mechanical Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 17,
+    "title": "Optical and Quantum Electronics",
+    "sourceUrl": "https://link.springer.com/journal/11082?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/11082/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/11082/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 1009479,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Laser",
+      "Electrical and Electronic Engineering",
+      "Characterization and Analytical Technique",
+      "Computer Communication Networks"
+    ],
+    "scope": "Laser, Electrical and Electronic Engineering, Characterization and Analytical Technique, Computer Communication Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 18,
+    "title": "Iranian Journal of Science and Technology, Transactions of Electrical Engineering",
+    "sourceUrl": "https://link.springer.com/journal/40998?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/40998/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/40998/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 1.62025,
+    "impactFactorText": "1.6 (2025)",
+    "downloads": 67707,
+    "decisionDays": 5,
+    "decisionTimeText": "5 days",
+    "subjectAreas": [
+      "Electrical and Electronic Engineering"
+    ],
+    "scope": "Electrical and Electronic Engineering",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 19,
+    "title": "Arabian Journal for Science and Engineering",
+    "sourceUrl": "https://link.springer.com/journal/13369?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/13369/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/13369/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": 3.12025,
+    "impactFactorText": "3.1 (2025)",
+    "downloads": 1404933,
+    "decisionDays": 4,
+    "decisionTimeText": "4 days",
+    "subjectAreas": [
+      "Technology and Engineering",
+      "Humanities and Social Sciences"
+    ],
+    "scope": "Technology and Engineering, Humanities and Social Sciences",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  },
+  {
+    "provider": "springer",
+    "rank": 20,
+    "title": "Journal of The Institution of Engineers (India): Series B",
+    "sourceUrl": "https://link.springer.com/journal/40031?utm_source=slink&utm_medium=journal_finder",
+    "submissionLink": "https://www.springer.com/journal/40031/submission-guidelines",
+    "guideForAuthors": "https://www.springer.com/journal/40031/submission-guidelines",
+    "publishingModel": null,
+    "openAccessType": null,
+    "impactFactor": null,
+    "impactFactorText": null,
+    "downloads": 114209,
+    "decisionDays": 76,
+    "decisionTimeText": "76 days",
+    "subjectAreas": [
+      "Communications Engineering, Networks"
+    ],
+    "scope": "Communications Engineering, Networks",
+    "fundingNotes": [
+      "For open access publishing costs and funding options select your institution",
+      "Subscription publishing is also available"
+    ]
+  }
+]

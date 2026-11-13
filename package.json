@@ -10,6 +10,8 @@
     "dev:server": "npm --prefix server run dev",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:journal-index": "node scripts/buildJournalIndex.js",
+    "test:journal-match": "node scripts/testMatching.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
