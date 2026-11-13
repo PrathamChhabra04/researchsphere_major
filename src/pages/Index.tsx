@@ -1,16 +1,12 @@
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Search,
   ArrowRight,
-  ArrowDown,
   ArrowUpRight,
   Bookmark,
   Bell,
-  BrainCircuit,
-  Cpu,
-  Presentation,
-  Timer,
   X,
+  Check,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -196,8 +192,148 @@ const buildInterestMatchers = (interests: string[]): string[] => {
   return [...matchers];
 };
 
+const ROTATING_EXAMPLES = [
+  "NeurIPS 2026",
+  "LLM postdoc",
+  "funded PhD in Europe",
+  "IEEE journals on cybersecurity",
+];
+
+const HERO_FILTER_CHIPS = [
+  {
+    id: "all",
+    label: "All",
+    defaultPath: "/general-finder",
+    kindHint: "",
+  },
+  {
+    id: "conferences",
+    label: "Conferences",
+    defaultPath: "/conferences",
+    kindHint: "conference",
+  },
+  {
+    id: "journals",
+    label: "Journals",
+    defaultPath: "/journals",
+    kindHint: "journal",
+  },
+  {
+    id: "calls",
+    label: "Calls for papers",
+    defaultPath: "/book-chapters",
+    kindHint: "cfp",
+  },
+  {
+    id: "roles",
+    label: "Research roles",
+    defaultPath: "/research-jobs",
+    kindHint: "opportunity",
+  },
+];
+
+const StatCount = ({ value }: { value: number | undefined }) => {
+  const [displayCount, setDisplayCount] = useState(0);
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const animatedRef = useRef(false);
+
+  useEffect(() => {
+    if (typeof value !== "number" || animatedRef.current) return;
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setDisplayCount(value);
+      animatedRef.current = true;
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !animatedRef.current) {
+          animatedRef.current = true;
+          let startTimestamp: number | null = null;
+          const duration = 800;
+
+          const step = (timestamp: number) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            setDisplayCount(Math.round(easeOut * value));
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              setDisplayCount(value);
+            }
+          };
+
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [value]);
+
+  if (typeof value !== "number") {
+    return <span>—</span>;
+  }
+
+  return (
+    <span ref={elementRef} className="font-semibold text-hero-text">
+      {displayCount.toLocaleString()}
+    </span>
+  );
+};
+
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [exampleIndex, setExampleIndex] = useState(0);
+  const [exampleVisible, setExampleVisible] = useState(true);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === "/" &&
+        document.activeElement?.tagName !== "INPUT" &&
+        document.activeElement?.tagName !== "TEXTAREA"
+      ) {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    return () => window.removeEventListener("keydown", handleGlobalKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) return;
+
+    if (isSearchFocused || searchQuery.trim().length > 0) return;
+
+    const interval = setInterval(() => {
+      setExampleVisible(false);
+      setTimeout(() => {
+        setExampleIndex((prev) => (prev + 1) % ROTATING_EXAMPLES.length);
+        setExampleVisible(true);
+      }, 250);
+    }, 3600);
+
+    return () => clearInterval(interval);
+  }, [isSearchFocused, searchQuery]);
   const [quickPanelOpen, setQuickPanelOpen] = useState(false);
   const [quickPanelType, setQuickPanelType] = useState<
     "watchlist" | "reminders"
@@ -256,21 +392,6 @@ const Index = () => {
     staleTime: 1000 * 60 * 10,
   });
   const liveCounts: Record<string, number> = harvestStatus?.liveCounts ?? {};
-  const sourceCount = harvestStatus?.sourcesConfigured ?? 140;
-
-  const { data: soonestDeadline } = useQuery({
-    queryKey: ["home-soonest-deadline"],
-    queryFn: async () =>
-      (
-        await searchHarvestedData({
-          kind: "opportunity",
-          status: "closing-soon,open",
-          sort: "deadline",
-          limit: 1,
-        })
-      )[0] ?? null,
-    staleTime: 1000 * 60 * 10,
-  });
 
   const { data: featuredJournals = [], isLoading: journalsLoading } = useQuery({
     queryKey: ["home-featured-journals", "machine-learning", "keyword"],
@@ -531,10 +652,29 @@ const Index = () => {
 
   const handleSearch = () => {
     const normalized = searchQuery.trim();
-    if (normalized) {
-      trackSearchInteraction(normalized);
-      navigate(`/general-finder?q=${encodeURIComponent(normalized)}`);
+    const activeChip =
+      HERO_FILTER_CHIPS.find((c) => c.id === selectedCategory) ||
+      HERO_FILTER_CHIPS[0];
+
+    if (activeChip.id === "all") {
+      if (normalized) {
+        trackSearchInteraction(normalized);
+        navigate(`/general-finder?q=${encodeURIComponent(normalized)}`);
+      } else {
+        navigate("/general-finder");
+      }
+      return;
     }
+
+    if (!normalized) {
+      navigate(`/general-finder?type=${activeChip.id}`);
+      return;
+    }
+
+    trackSearchInteraction(normalized, activeChip.kindHint);
+    navigate(
+      `/general-finder?q=${encodeURIComponent(normalized)}&type=${activeChip.id}`,
+    );
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -557,115 +697,186 @@ const Index = () => {
 
       <div className="flex-1">
         {/* Hero */}
-        <section className="hero-glow relative overflow-hidden">
-          <div className="container relative mx-auto flex min-h-[calc(100svh-72px)] flex-col px-4 pb-8 pt-10 md:pt-14">
-            <div className="relative flex flex-1 items-center justify-center">
-              {/* Floating live tiles (desktop) */}
-              <Link
-                to="/conferences"
-                style={{ "--tilt": "-4deg" } as CSSProperties}
-                className="float-slow tile-lime absolute left-0 top-[4%] hidden w-44 rounded-2xl p-4 shadow-2xl xl:block xl:left-[2%] 2xl:left-[5%]"
-              >
-                <Presentation className="h-5 w-5" />
-                <p className="mt-6 font-display text-4xl font-semibold tracking-tight">
-                  {liveCounts.conference ?? "—"}
-                </p>
-                <p className="text-xs font-medium opacity-75">upcoming conferences</p>
-              </Link>
+        <section className="hero-pattern relative bg-hero-bg pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16">
+          <div className="container mx-auto px-4">
+            <div className="hero-fade-in mx-auto flex max-w-[1200px] flex-col items-center text-center">
+              {/* 1. Small eyebrow line */}
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-hero-border bg-hero-surface px-4 py-1.5 text-[13px] sm:text-sm font-medium text-hero-text-muted shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-lime opacity-50 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-lime border border-black/15 dark:border-white/20" />
+                </span>
+                <span>Live from 20+ sources</span>
+              </div>
 
-              <Link
-                to="/journals"
-                style={{ "--tilt": "3deg" } as CSSProperties}
-                className="float-slower tile-circuit absolute right-0 top-0 hidden w-48 rounded-2xl p-4 text-white shadow-2xl xl:block xl:right-[2%] 2xl:right-[6%]"
-              >
-                <Cpu className="h-5 w-5 text-lime" />
-                <p className="mt-6 font-display text-4xl font-semibold tracking-tight">
-                  {liveCounts.journal ?? "—"}
-                </p>
-                <p className="text-xs opacity-75">papers &amp; articles indexed</p>
-              </Link>
+              {/* 2. H1 */}
+              <h1 className="mt-4 sm:mt-5 text-hero-h1 font-semibold tracking-normal text-hero-text text-balance">
+                Every research opportunity,<br className="hidden sm:inline" />{" "}
+                <span className="relative inline-block rounded-md bg-lime/35 dark:bg-lime/25 px-2.5 py-0.5 text-hero-text [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+                  in one place.
+                </span>
+              </h1>
 
-              {soonestDeadline && (
-                <a
-                  href={soonestDeadline.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ "--tilt": "2deg" } as CSSProperties}
-                  className="float-slower absolute bottom-[6%] left-[3%] hidden w-64 rounded-2xl border border-border bg-card/90 p-4 shadow-2xl backdrop-blur xl:block xl:left-[3%] 2xl:left-[9%]"
+              {/* 3. Subheading */}
+              <p className="mt-4 max-w-[720px] text-hero-sub text-hero-text-muted/95 leading-[1.6]">
+                Conferences, journals, calls for papers and research roles are
+                scattered across hundreds of sites and mailing lists, so deadlines
+                get missed. ResearchSphere gathers them into one searchable,
+                always-updated hub with deadline alerts.
+              </p>
+
+              {/* 4. Prominent search bar & quick-filter chips */}
+              <div className="mt-7 sm:mt-8 w-full max-w-[760px]">
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSearch();
+                  }}
+                  className="relative flex h-[58px] sm:h-[64px] items-center gap-2.5 rounded-xl border border-hero-border bg-hero-surface p-1.5 sm:p-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.25)] transition-all duration-200 focus-within:border-lime/90 focus-within:ring-2 focus-within:ring-lime/40 focus-within:shadow-[0_0_20px_hsl(var(--lime)/0.25)]"
                 >
-                  <p className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-wider text-primary">
-                    <Timer className="h-3.5 w-3.5" /> Closing next
-                  </p>
-                  <p className="mt-2 line-clamp-2 text-sm font-medium text-foreground">{soonestDeadline.title}</p>
-                  <div className="mt-3">
-                    <DeadlineStatusBadge item={soonestDeadline} />
+                  <label htmlFor="hero-search-input" className="sr-only">
+                    Search research opportunities
+                  </label>
+                  <div className="relative flex flex-1 items-center gap-3 pl-3">
+                    <Search
+                      className="h-5 w-5 shrink-0 text-hero-text-muted"
+                      aria-hidden="true"
+                    />
+
+                    {/* Rotating placeholder overlay with soft fade */}
+                    {!searchQuery && !isSearchFocused && (
+                      <span
+                        className={`pointer-events-none absolute left-11 top-1/2 -translate-y-1/2 text-base sm:text-[17px] text-hero-text-muted select-none truncate pr-16 transition-opacity duration-300 ease-in-out ${
+                          exampleVisible ? "opacity-100" : "opacity-0"
+                        }`}
+                        aria-hidden="true"
+                      >
+                        {selectedCategory && selectedCategory !== "all"
+                          ? `Search ${HERO_FILTER_CHIPS.find((c) => c.id === selectedCategory)?.label.toLowerCase()}...`
+                          : `Search "${ROTATING_EXAMPLES[exampleIndex]}"...`}
+                      </span>
+                    )}
+
+                    <input
+                      ref={searchInputRef}
+                      id="hero-search-input"
+                      type="text"
+                      value={searchQuery}
+                      onFocus={() => setIsSearchFocused(true)}
+                      onBlur={() => setIsSearchFocused(false)}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={handleKeyPress}
+                      placeholder={
+                        isSearchFocused
+                          ? selectedCategory && selectedCategory !== "all"
+                            ? `Search ${HERO_FILTER_CHIPS.find((c) => c.id === selectedCategory)?.label.toLowerCase()}...`
+                            : "Search NeurIPS, LLM postdoc, funded PhD..."
+                          : ""
+                      }
+                      className="hero-search-input w-full bg-transparent text-base sm:text-[17px] text-hero-text placeholder:text-hero-text-muted border-0 outline-none ring-0 shadow-none focus:border-0 focus:outline-none focus:ring-0 focus:shadow-none focus-visible:outline-none focus-visible:ring-0"
+                    />
+
+                    {searchQuery && (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery("")}
+                        className="rounded p-1 text-hero-text-muted hover:text-hero-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+                        aria-label="Clear search input"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    )}
+
+                    <kbd
+                      className="hidden md:inline-flex h-6 min-w-6 items-center justify-center rounded border border-hero-border bg-muted/60 px-1.5 font-mono text-[11px] font-medium text-hero-text-muted select-none"
+                      title="Press / to search"
+                    >
+                      /
+                    </kbd>
                   </div>
-                </a>
-              )}
 
-              <Link
-                to="/research-jobs"
-                style={{ "--tilt": "-3deg" } as CSSProperties}
-                className="float-slow tile-fiber absolute bottom-0 right-[4%] hidden h-48 w-40 overflow-hidden rounded-2xl p-4 text-white shadow-2xl xl:block xl:right-[4%] 2xl:right-[14%]"
-              >
-                <BrainCircuit className="h-5 w-5" />
-                <p className="mt-14 font-display text-4xl font-semibold tracking-tight">
-                  {liveCounts.research ?? "—"}
-                </p>
-                <p className="text-xs opacity-80">research &amp; industry-lab roles</p>
-              </Link>
+                  <Button
+                    type="submit"
+                    className="h-full px-5 sm:px-6 rounded-lg bg-lime hover:bg-lime/90 text-lime-foreground font-semibold text-sm sm:text-base shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+                  >
+                    Search
+                  </Button>
+                </form>
 
-              <div className="relative z-10 text-center">
-                <p className="eyebrow mb-6 inline-flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                {/* Quick-filter chips labeled 'Search in:' with 'All' default */}
+                <div className="mt-3.5 flex flex-wrap items-center justify-center gap-2">
+                  <span className="text-xs sm:text-sm font-medium text-hero-text-muted">
+                    Search in:
                   </span>
-                  Live from {sourceCount}+ sources
-                </p>
-                <h1 className="display-xl text-[2.7rem] sm:text-6xl md:text-7xl lg:text-[6.6rem]">
-                  Every open call
-                  <br />
-                  in{" "}
-                  <Link to="/general-finder" className="lime-chip mx-1 text-[0.82em] transition-transform hover:scale-[1.03]">
-                    frontier tech
-                  </Link>
-                  <br />
-                  research, live
-                </h1>
-                <p className="mx-auto mt-7 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-                  Conferences, journals, funding calls, PhDs, postdocs, internships and industry-lab
-                  research roles across AI, cloud, Web3, security and beyond — harvested automatically, with deadlines you can act on.
-                </p>
-                <div className="mt-8 flex flex-wrap justify-center gap-3">
-                  <Link to="/phd-programs" className="pill-lime">
-                    Find opportunities <ArrowUpRight className="h-4 w-4" />
-                  </Link>
-                  <Link to="/journals" className="pill">
-                    Match a journal
-                  </Link>
+                  {HERO_FILTER_CHIPS.map((chip) => {
+                    const isSelected = selectedCategory === chip.id;
+                    return (
+                      <button
+                        key={chip.id}
+                        type="button"
+                        onClick={() => setSelectedCategory(chip.id)}
+                        aria-pressed={isSelected}
+                        className={`rounded-lg border px-3.5 py-1.5 text-[13px] font-medium shadow-sm transition-all inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime ${
+                          isSelected
+                            ? "border-lime bg-lime text-lime-foreground font-semibold shadow-sm"
+                            : "border-hero-border bg-hero-surface text-hero-text-muted hover:border-hero-border-hover hover:text-hero-text"
+                        }`}
+                      >
+                        {isSelected && (
+                          <Check className="h-3.5 w-3.5 stroke-[2.5]" aria-hidden="true" />
+                        )}
+                        <span>{chip.label}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
-            </div>
 
-            {/* Bottom bar: search + scroll cue */}
-            <div className="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-              <label className="flex w-full max-w-md items-center gap-3 border-b border-border pb-2 focus-within:border-primary">
-                <Search className="h-4 w-4 text-muted-foreground" />
-                <input
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={handleKeyPress}
-                  placeholder="Type to search — NeurIPS, LLM postdoc, funded PhD…"
-                  className="w-full bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
-                />
-                <button type="button" onClick={handleSearch} className="whitespace-nowrap text-xs font-medium text-primary">
-                  Enter ↵
-                </button>
-              </label>
-              <a href="#explore" className="hidden items-center gap-2 text-sm text-muted-foreground hover:text-foreground sm:inline-flex">
-                <ArrowDown className="h-4 w-4 animate-bounce" /> Keep scrolling
-              </a>
+              {/* 5. Buttons */}
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  to="/conferences"
+                  className="h-[48px] px-6 inline-flex items-center justify-center gap-2 rounded-lg bg-lime hover:bg-lime/90 text-lime-foreground font-semibold text-[15px] sm:text-base border border-lime shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2"
+                >
+                  Browse conferences
+                </Link>
+                <Link
+                  to="/journals"
+                  className="h-[48px] px-6 inline-flex items-center justify-center gap-2 rounded-lg border border-hero-border bg-hero-surface hover:bg-muted/50 hover:border-hero-border-hover text-hero-text font-semibold text-[15px] sm:text-base shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2"
+                >
+                  Find journals
+                </Link>
+              </div>
+
+              {/* 6. Three-column stats row */}
+              <div className="mt-8 sm:mt-10 w-full max-w-[760px] border-t border-hero-border/60 pt-6 sm:pt-7">
+                <div className="grid grid-cols-3 divide-x divide-hero-border/80 text-center">
+                  <div className="px-2 sm:px-6">
+                    <div className="text-2xl sm:text-[32px] font-bold tracking-tight text-hero-text leading-none">
+                      <StatCount value={liveCounts.conference} />
+                    </div>
+                    <p className="mt-2 text-xs sm:text-sm font-medium text-hero-text-muted">
+                      Conferences
+                    </p>
+                  </div>
+                  <div className="px-2 sm:px-6">
+                    <div className="text-2xl sm:text-[32px] font-bold tracking-tight text-hero-text leading-none">
+                      <StatCount value={liveCounts.journal} />
+                    </div>
+                    <p className="mt-2 text-xs sm:text-sm font-medium text-hero-text-muted">
+                      Papers indexed
+                    </p>
+                  </div>
+                  <div className="px-2 sm:px-6">
+                    <div className="text-2xl sm:text-[32px] font-bold tracking-tight text-hero-text leading-none">
+                      <StatCount value={liveCounts.research} />
+                    </div>
+                    <p className="mt-2 text-xs sm:text-sm font-medium text-hero-text-muted">
+                      Research roles
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

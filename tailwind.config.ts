@@ -52,8 +52,21 @@ export default {
           foreground: "hsl(var(--lime-foreground))",
         },
         hero: {
-          DEFAULT: "hsl(var(--hero))",
-          foreground: "hsl(var(--hero-foreground))",
+          DEFAULT: "hsl(var(--hero-bg))",
+          bg: "hsl(var(--hero-bg))",
+          surface: "hsl(var(--hero-surface))",
+          border: "hsl(var(--hero-border))",
+          "border-hover": "hsl(var(--hero-border-hover))",
+          text: "hsl(var(--hero-text))",
+          "text-muted": "hsl(var(--hero-text-muted))",
+          accent: {
+            DEFAULT: "hsl(var(--hero-accent))",
+            foreground: "hsl(var(--hero-accent-foreground))",
+            hover: "hsl(var(--hero-accent-hover))",
+            subtle: "hsl(var(--hero-accent-subtle))",
+            "subtle-border": "hsl(var(--hero-accent-subtle-border))",
+            text: "hsl(var(--hero-accent-text))",
+          },
         },
         badge: {
           blue: "hsl(var(--badge-blue))",
@@ -71,6 +84,23 @@ export default {
         display: ['"Inter Tight"', 'Inter', 'sans-serif'],
         serif: ['"Instrument Serif"', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+      },
+      fontSize: {
+        "hero-h1": [
+          "clamp(2.35rem, 5vw, 4rem)",
+          {
+            lineHeight: "1.1",
+            letterSpacing: "0",
+            fontWeight: "600",
+          },
+        ],
+        "hero-sub": [
+          "clamp(1.0625rem, 1.3vw, 1.125rem)",
+          {
+            lineHeight: "1.6",
+            letterSpacing: "0",
+          },
+        ],
       },
       borderRadius: {
         lg: "var(--radius)",

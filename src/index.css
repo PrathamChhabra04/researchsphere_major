@@ -54,6 +54,20 @@ All colors MUST be HSL.
     --success: 72 72% 34%;
     --warning: 38 92% 45%;
     --info: 214 95% 52%;
+
+    /* Hero section tokens - reusing brand lime and dark olive for AA contrast */
+    --hero-bg: 220 14% 98%;
+    --hero-surface: 0 0% 100%;
+    --hero-border: 220 13% 90%;
+    --hero-border-hover: 220 13% 76%;
+    --hero-text: 220 20% 12%;
+    --hero-text-muted: 220 9% 42%;
+    --hero-accent: 68 88% 62%;
+    --hero-accent-foreground: 0 0% 4%;
+    --hero-accent-hover: 68 85% 54%;
+    --hero-accent-subtle: 68 88% 62% / 0.32;
+    --hero-accent-subtle-border: 68 70% 65%;
+    --hero-accent-text: 72 72% 34%;
   }
 
   /* Dark: pure black canvas, charcoal cards, electric-lime signal, fiber-optic blue */
@@ -100,6 +114,20 @@ All colors MUST be HSL.
     --success: 68 88% 64%;
     --warning: 38 92% 58%;
     --info: 228 96% 66%;
+
+    /* Hero section tokens (dark mode) */
+    --hero-bg: 220 18% 7%;
+    --hero-surface: 220 16% 11%;
+    --hero-border: 220 13% 19%;
+    --hero-border-hover: 220 13% 28%;
+    --hero-text: 220 14% 96%;
+    --hero-text-muted: 220 10% 64%;
+    --hero-accent: 68 88% 64%;
+    --hero-accent-foreground: 0 0% 4%;
+    --hero-accent-hover: 68 88% 70%;
+    --hero-accent-subtle: 68 88% 64% / 0.22;
+    --hero-accent-subtle-border: 68 88% 64% / 0.4;
+    --hero-accent-text: 68 88% 64%;
   }
 }
 
@@ -242,6 +270,62 @@ All colors MUST be HSL.
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Hero light fade-in on load only, honoring prefers-reduced-motion */
+  .hero-fade-in {
+    animation: heroFadeIn 0.4s ease-out forwards;
+  }
+
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-fade-in {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Subtle dotted-grid pattern behind the hero section with radial fade-out toward edges */
+  .hero-pattern {
+    position: relative;
+    background-color: hsl(var(--hero-bg));
+  }
+
+  .hero-pattern::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(hsl(var(--hero-text) / 0.08) 1.25px, transparent 1.25px);
+    background-size: 24px 24px;
+    background-position: center center;
+    mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, black 40%, transparent 95%);
+    -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, black 40%, transparent 95%);
+  }
+
+  .dark .hero-pattern::before {
+    background-image: radial-gradient(hsl(var(--hero-text) / 0.1) 1.25px, transparent 1.25px);
+  }
+
+  /* Reset inner input outlines/borders to prevent browser default focus rings */
+  .hero-search-input,
+  .hero-search-input:focus,
+  .hero-search-input:focus-visible {
+    outline: none !important;
+    outline-offset: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
   }
 
   /* Pulse animation for badges */

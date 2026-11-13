@@ -111,7 +111,7 @@ const Navigation = () => {
   };
 
   const linkClass = (active: boolean) =>
-    `relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-2.5 text-[clamp(17px,1.35vw,21px)] font-medium tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background 2xl:px-3 ${
+    `relative inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-2.5 text-[clamp(15px,1.2vw,19px)] font-medium tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background 2xl:px-3 ${
       active
         ? "bg-primary/10 text-primary"
         : "text-foreground/80 hover:bg-muted hover:text-foreground"

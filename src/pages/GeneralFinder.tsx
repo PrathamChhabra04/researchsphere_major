@@ -154,8 +154,21 @@ const GeneralFinder = () => {
 
   useEffect(() => {
     const q = searchParams.get("q") || "";
+    const type = searchParams.get("type") || "";
     setSearchQuery(q);
     setDebouncedQuery(q);
+
+    const typeToTab: Record<string, "all" | "conference" | "journal" | "opportunity"> = {
+      conferences: "conference",
+      conference: "conference",
+      journals: "journal",
+      journal: "journal",
+      calls: "opportunity",
+      cfp: "opportunity",
+      roles: "opportunity",
+      opportunity: "opportunity",
+    };
+    setActiveTab(typeToTab[type] || "all");
   }, [searchParams]);
 
   useEffect(() => {
