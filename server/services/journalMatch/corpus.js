@@ -35,6 +35,41 @@ export const journalKey = (journal) =>
     ? `${journal.provider}:${journal.issn}`
     : `${journal.provider}:${normalizeKey(journal.title)}`;
 
+/**
+ * The Springer probe scrapes the impact factor as a string like "4.9 (2025)".
+ * Older captures ran the whole string through a digits-only parser, producing
+ * "4.92025". Recover the real factor and the vintage year from either the raw
+ * text or the contaminated number, so stored runs do not need re-scraping.
+ */
+export const normalizeImpactFactor = (value, text) => {
+  const textString = normalizeWhitespace(text);
+  const textNumber = /^\s*(\d+(?:\.\d+)?)/.exec(textString);
+  const textYear = /(?:19|20)\d{2}/.exec(textString);
+  let year = textYear ? Number.parseInt(textYear[0], 10) : null;
+
+  let factor = textNumber ? Number.parseFloat(textNumber[1]) : null;
+
+  if (factor == null && typeof value === "number" && Number.isFinite(value)) {
+    // "4.92025" -> 4.9 + 2025; plain values (e.g. 8, 3.5) pass through.
+    const split = /^(\d+(?:\.\d+)?)((?:19|20)\d{2})$/.exec(String(value));
+    if (split) {
+      factor = Number.parseFloat(split[1]);
+      year = year ?? Number.parseInt(split[2], 10);
+    } else {
+      factor = value;
+    }
+  }
+
+  if (!Number.isFinite(factor) || factor <= 0 || factor >= 100) {
+    return { impactFactor: null, impactFactorYear: year };
+  }
+
+  return {
+    impactFactor: Math.round(factor * 100) / 100,
+    impactFactorYear: year,
+  };
+};
+
 export const toCorpusJournal = (item, topicSeed, sourceRun) => ({
   provider: item.provider,
   title: toAbsoluteField(item.title),
@@ -45,7 +80,7 @@ export const toCorpusJournal = (item, topicSeed, sourceRun) => ({
   issn: item.issn || null,
   publishingModel: item.publishingModel || null,
   openAccessType: item.openAccessType || null,
-  impactFactor: item.impactFactor ?? null,
+  ...normalizeImpactFactor(item.impactFactor, item.impactFactorText),
   citeScore: item.citeScore ?? null,
   decisionDays: item.decisionDays ?? null,
   acceptanceDays: item.acceptanceDays ?? null,
@@ -73,6 +108,8 @@ const mergeJournalRecords = (current, incoming, topicSeed) => ({
   publishingModel: current.publishingModel || incoming.publishingModel || null,
   openAccessType: current.openAccessType || incoming.openAccessType || null,
   impactFactor: pickBetterNumber(current.impactFactor, incoming.impactFactor),
+  impactFactorYear:
+    current.impactFactorYear ?? incoming.impactFactorYear ?? null,
   citeScore: pickBetterNumber(current.citeScore, incoming.citeScore),
   decisionDays: pickLowerNumber(current.decisionDays, incoming.decisionDays),
   acceptanceDays: pickLowerNumber(

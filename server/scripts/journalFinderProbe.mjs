@@ -89,6 +89,21 @@ const parseInteger = (value) => {
   return parsed == null ? null : Math.round(parsed);
 };
 
+/** First number in a string: "4.9 (2025)" -> 4.9 (avoids appending the year). */
+const parseLeadingNumber = (value) => {
+  if (value == null) return null;
+  const match = /-?\d+(?:\.\d+)?/.exec(String(value));
+  if (!match) return null;
+  const parsed = Number.parseFloat(match[0]);
+  return Number.isFinite(parsed) ? parsed : null;
+};
+
+/** Publication year of a metric: "4.9 (2025)" -> 2025. */
+const parseYear = (value) => {
+  const match = /(?:19|20)\d{2}/.exec(String(value ?? ""));
+  return match ? Number.parseInt(match[0], 10) : null;
+};
+
 const stripHtml = (value) =>
   normalizeWhitespace(
     String(value ?? "")
@@ -327,8 +342,9 @@ const extractSpringerJournals = async (page) => {
         guideForAuthors: buildSpringerSubmissionUrl(journalUrl),
         publishingModel: normalizeWhitespace(journal.publishingModel) || null,
         openAccessType: normalizeWhitespace(journal.publishingModel) || null,
-        impactFactor: parseNumber(journal.impactFactorText),
+        impactFactor: parseLeadingNumber(journal.impactFactorText),
         impactFactorText: normalizeWhitespace(journal.impactFactorText) || null,
+        impactFactorYear: parseYear(journal.impactFactorText),
         downloads: parseInteger(journal.downloadsText),
         decisionDays: parseInteger(journal.decisionTimeText),
         decisionTimeText: normalizeWhitespace(journal.decisionTimeText) || null,

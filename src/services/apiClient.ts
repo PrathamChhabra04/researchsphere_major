@@ -113,6 +113,7 @@ export interface JournalMatchItem {
   publishingModel?: string | null;
   openAccessType?: string | null;
   impactFactor?: number | null;
+  impactFactorYear?: number | null;
   citeScore?: number | null;
   decisionDays?: number | null;
   acceptanceDays?: number | null;

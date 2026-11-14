@@ -2,8 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import { BookOpenText as BookOpenText } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
-  Award,
-  CheckCircle2,
+  Bookmark,
   ExternalLink,
   Search,
   Sparkles,
@@ -24,6 +23,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { matchJournals, type JournalMatchItem } from "@/services/apiClient";
+import { cn } from "@/lib/utils";
 import { trackSearchInteraction } from "@/lib/personalization";
 
 const DEFAULT_KEYWORD_QUERY = "";
@@ -31,6 +31,144 @@ const DEFAULT_MIXED_QUERY = "computer science";
 const DEFAULT_ABSTRACT_QUERY =
   "We propose a federated learning framework for edge-cloud environments that reduces communication cost while preserving model accuracy for distributed computer vision workloads.";
 const ALWAYS_VISIBLE_POPULAR_TOPIC = "machine learning";
+const SAVED_JOURNALS_STORAGE_KEY = "researchsphere:saved-journals";
+const STOP_WORDS = new Set(["a", "an", "and", "&", "for", "in", "of", "on", "the"]);
+
+const PROVIDER_LABELS: Record<string, string> = {
+  elsevier: "Elsevier",
+  springer: "Springer",
+};
+
+const providerLabel = (provider?: string | null) => {
+  if (!provider) return "Publisher";
+  return PROVIDER_LABELS[String(provider).toLowerCase()] || String(provider);
+};
+
+const journalCardKey = (journal: JournalMatchItem) =>
+  `${journal.provider}-${journal.issn || journal.title}`;
+
+const journalInitials = (title?: string | null) => {
+  const words = String(title || "")
+    .split(/\s+/)
+    .filter((word) => word && !STOP_WORDS.has(word.toLowerCase()));
+  const source = words.length
+    ? words
+    : String(title || "").split(/\s+/).filter(Boolean);
+
+  return (
+    source
+      .slice(0, 2)
+      .map((word) => word[0]?.toUpperCase() ?? "")
+      .join("") || "J"
+  );
+};
+
+const formatMetric = (value?: number | null) => {
+  if (value == null || !Number.isFinite(Number(value))) return null;
+  const numeric = Number(value);
+  return Number.isInteger(numeric) ? String(numeric) : numeric.toFixed(1);
+};
+
+const formatFee = (amount?: number | null, currency?: string | null) => {
+  if (amount == null || !Number.isFinite(Number(amount))) return null;
+  const numeric = Number(amount);
+  const code = String(currency || "USD").toUpperCase();
+  try {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: code,
+      maximumFractionDigits: 0,
+    }).format(numeric);
+  } catch {
+    return `${code} ${numeric.toLocaleString("en-US")}`;
+  }
+};
+
+const accessCategory = (journal: JournalMatchItem) => {
+  const raw = `${journal.openAccessType || ""} ${journal.publishingModel || ""}`
+    .trim()
+    .toLowerCase();
+  const tokens = raw.split(/\s+/).filter(Boolean);
+  if (!tokens.length || tokens.every((token) => token === "none")) return null;
+
+  // Elsevier reports "FULL" for fully open access and "SUBSIDISED" for
+  // discounted APCs; both are open-access models.
+  if (tokens.some((token) => token.startsWith("subscri"))) {
+    return { label: "Subscription", open: false };
+  }
+  if (tokens.some((token) => token.startsWith("hybrid"))) {
+    return { label: "Hybrid", open: false };
+  }
+  if (
+    tokens.some(
+      (token) =>
+        token.startsWith("open") ||
+        token.startsWith("subsid") ||
+        token === "full",
+    )
+  ) {
+    return { label: "Open access", open: true };
+  }
+
+  const label = journal.openAccessType || journal.publishingModel;
+  return label ? { label: String(label), open: false } : null;
+};
+
+const journalUrlFor = (journal: JournalMatchItem) =>
+  journal.sourceUrl || journal.guideForAuthors || journal.submissionLink || null;
+
+const submitUrlFor = (journal: JournalMatchItem) => {
+  const submit = journal.submissionLink || journal.guideForAuthors || null;
+  return submit && submit !== journalUrlFor(journal) ? submit : null;
+};
+
+type JournalMetricItem = {
+  label: string;
+  value: string;
+  suffix?: string | null;
+};
+
+const JournalMetric = ({ label, value, suffix }: JournalMetricItem) => (
+  <div className="min-w-0">
+    <p className="text-sm leading-snug text-muted-foreground">{label}</p>
+    <p className="mt-1.5 flex items-baseline gap-1.5">
+      <span className="text-xl font-bold tabular-nums text-foreground">
+        {value}
+      </span>
+      {suffix && (
+        <span className="text-sm font-normal text-muted-foreground">
+          {suffix}
+        </span>
+      )}
+    </p>
+  </div>
+);
+
+const compactJournalMetrics = (items: Array<JournalMetricItem | null>) =>
+  items.filter((item): item is JournalMetricItem => item != null);
+
+const readSavedJournals = () => {
+  try {
+    const raw = window.localStorage.getItem(SAVED_JOURNALS_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed)
+      ? parsed.filter((value): value is string => typeof value === "string")
+      : [];
+  } catch {
+    return [];
+  }
+};
+
+const writeSavedJournals = (keys: string[]) => {
+  try {
+    window.localStorage.setItem(
+      SAVED_JOURNALS_STORAGE_KEY,
+      JSON.stringify(keys),
+    );
+  } catch {
+    // Storage may be unavailable (private mode); saving stays session-only.
+  }
+};
 
 const Journals = () => {
   const [searchMode, setSearchMode] = useState<"keyword" | "abstract">(
@@ -44,7 +182,18 @@ const Journals = () => {
   >("all");
   const [sortBy, setSortBy] = useState("score");
   const [currentPage, setCurrentPage] = useState(1);
+  const [savedJournals, setSavedJournals] = useState<string[]>(readSavedJournals);
   const itemsPerPage = 10;
+
+  const toggleSavedJournal = (key: string) => {
+    setSavedJournals((current) => {
+      const next = current.includes(key)
+        ? current.filter((value) => value !== key)
+        : [...current, key];
+      writeSavedJournals(next);
+      return next;
+    });
+  };
 
   const activeQuery = searchMode === "abstract" ? abstractQuery : keywordQuery;
   const dynamicMatchLimit = useMemo(() => {
@@ -136,18 +285,6 @@ const Journals = () => {
   const openLink = (url?: string | null) => {
     if (!url) return;
     window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const buildPrimaryLink = (journal: JournalMatchItem) =>
-    journal.submissionLink ||
-    journal.guideForAuthors ||
-    journal.sourceUrl ||
-    null;
-
-  const buildSecondaryLink = (journal: JournalMatchItem) => {
-    const primary = buildPrimaryLink(journal);
-    const secondary = journal.sourceUrl || journal.guideForAuthors || null;
-    return secondary && secondary !== primary ? secondary : null;
   };
 
   return (
@@ -371,148 +508,227 @@ const Journals = () => {
             <>
               <div className="space-y-5">
                 {currentJournals.map((journal: JournalMatchItem) => {
-                  const primaryLink = buildPrimaryLink(journal);
-                  const secondaryLink = buildSecondaryLink(journal);
+                  const cardKey = journalCardKey(journal);
+                  const isSaved = savedJournals.includes(cardKey);
+                  const journalUrl = journalUrlFor(journal);
+                  const submitUrl = submitUrlFor(journal);
+                  const access = accessCategory(journal);
                   const subjectAreas = journal.subjectAreas || [];
+                  const apc = formatFee(
+                    journal.goldOpenAccessFee,
+                    journal.goldOpenAccessCurrency,
+                  );
+                  const impactFactor = formatMetric(journal.impactFactor);
+                  const citeScore = formatMetric(journal.citeScore);
+                  const metrics = compactJournalMetrics([
+                    impactFactor
+                      ? {
+                          label: "Impact factor",
+                          value: impactFactor,
+                          suffix: journal.impactFactorYear
+                            ? `(${journal.impactFactorYear})`
+                            : null,
+                        }
+                      : null,
+                    citeScore
+                      ? { label: "CiteScore", value: citeScore }
+                      : null,
+                    journal.decisionDays != null
+                      ? {
+                          label: "First decision",
+                          value: `${journal.decisionDays} days`,
+                        }
+                      : null,
+                  ]);
 
                   return (
                     <Card
-                      key={`${journal.provider}-${journal.issn || journal.title}`}
-                      className="overflow-hidden rounded-2xl border border-border/80 bg-card shadow-sm"
+                      key={cardKey}
+                      className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-colors duration-200 hover:border-foreground/20"
                     >
-                      <CardContent className="p-6 md:p-7">
-                        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_320px] gap-6">
+                      <CardContent className="p-7 md:p-8">
+                        <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-8">
                           <div className="min-w-0">
-                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                              <div className="min-w-0">
-                                <h3 className="text-[1.45rem] leading-tight font-semibold tracking-tight text-foreground">
-                                  {journal.title}
-                                </h3>
-                                <div className="flex flex-wrap items-center gap-2 mt-3">
-                                  <Badge
-                                    variant="secondary"
-                                    className="capitalize text-xs"
+                            <div className="flex gap-5 sm:gap-6">
+                              <div className="h-24 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-muted sm:h-36 sm:w-28">
+                                {journal.coverImage ? (
+                                  <img
+                                    src={journal.coverImage}
+                                    alt={`Cover of ${journal.title}`}
+                                    loading="lazy"
+                                    className="h-full w-full object-cover"
+                                  />
+                                ) : (
+                                  <div
+                                    aria-hidden="true"
+                                    className="flex h-full w-full items-center justify-center bg-muted text-xl font-semibold text-muted-foreground"
                                   >
-                                    {journal.provider}
-                                  </Badge>
-                                  {journal.openAccessType && (
-                                    <Badge
-                                      variant="outline"
-                                      className="text-xs"
-                                    >
-                                      {journal.openAccessType}
-                                    </Badge>
-                                  )}
-                                  {journal.issn && (
-                                    <span className="text-sm text-muted-foreground">
-                                      ISSN {journal.issn}
-                                    </span>
-                                  )}
+                                    {journalInitials(journal.title)}
+                                  </div>
+                                )}
+                              </div>
+
+                              <div className="min-w-0 flex-1">
+                                <div className="flex items-start justify-between gap-3">
+                                  <div className="min-w-0">
+                                    <p className="text-sm font-medium text-muted-foreground">
+                                      {providerLabel(journal.provider)}
+                                    </p>
+                                    <h3 className="mt-1 text-balance text-2xl font-semibold leading-snug text-foreground sm:text-3xl sm:leading-tight">
+                                      {journal.title}
+                                    </h3>
+                                  </div>
+
+                                  <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="icon"
+                                    aria-pressed={isSaved}
+                                    aria-label={
+                                      isSaved
+                                        ? `Remove ${journal.title} from saved journals`
+                                        : `Save ${journal.title}`
+                                    }
+                                    title={
+                                      isSaved ? "Saved to your list" : "Save journal"
+                                    }
+                                    onClick={() => toggleSavedJournal(cardKey)}
+                                    className="mt-0.5 h-11 w-11 shrink-0 rounded-full text-muted-foreground hover:bg-muted hover:text-foreground [&_svg]:size-5"
+                                  >
+                                    <Bookmark
+                                      className={cn(
+                                        isSaved && "fill-primary text-primary",
+                                      )}
+                                    />
+                                  </Button>
                                 </div>
+
+                                {(journal.acronym || journal.issn) && (
+                                  <p className="mt-2 text-sm text-muted-foreground">
+                                    {[
+                                      journal.acronym,
+                                      journal.issn
+                                        ? `ISSN ${journal.issn}`
+                                        : null,
+                                    ]
+                                      .filter(Boolean)
+                                      .join(" · ")}
+                                  </p>
+                                )}
                               </div>
                             </div>
 
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
-                              <div className="rounded-xl border border-border/70 px-4 py-4">
-                                <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                                  Publishing model
-                                </div>
-                                <div className="mt-2 text-sm font-medium text-foreground">
-                                  {journal.openAccessType ||
-                                    journal.publishingModel ||
-                                    "N/A"}
-                                </div>
+                            {metrics.length > 0 && (
+                              <div className="mt-7 flex items-stretch">
+                                {metrics.map((metric, index) => (
+                                  <div
+                                    key={metric.label}
+                                    className={cn(
+                                      "min-w-0 flex-1 px-4 first:pl-0 last:pr-0 sm:px-6",
+                                      index > 0 && "border-l border-border",
+                                    )}
+                                  >
+                                    <JournalMetric {...metric} />
+                                  </div>
+                                ))}
                               </div>
-                              <div className="rounded-xl border border-border/70 px-4 py-4">
-                                <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                                  Impact factor
-                                </div>
-                                <div className="mt-2 text-sm font-medium text-foreground">
-                                  {journal.impactFactor ?? "N/A"}
-                                </div>
-                              </div>
-                              <div className="rounded-xl border border-border/70 px-4 py-4">
-                                <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                                  CiteScore
-                                </div>
-                                <div className="mt-2 text-sm font-medium text-foreground">
-                                  {journal.citeScore ?? "N/A"}
-                                </div>
-                              </div>
-                              <div className="rounded-xl border border-border/70 px-4 py-4">
-                                <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                                  First decision
-                                </div>
-                                <div className="mt-2 text-sm font-medium text-foreground">
-                                  {journal.decisionDays != null
-                                    ? `${journal.decisionDays} days`
-                                    : "N/A"}
-                                </div>
-                              </div>
-                            </div>
+                            )}
 
                             {subjectAreas.length > 0 && (
-                              <div className="mt-5">
-                                <div className="flex flex-wrap gap-2">
-                                  {subjectAreas.slice(0, 6).map((subject) => (
-                                    <Badge
-                                      key={subject}
-                                      variant="outline"
-                                      className="rounded-md border-border px-3 py-1.5 text-xs"
-                                    >
-                                      {subject}
-                                    </Badge>
-                                  ))}
-                                  {subjectAreas.length > 6 && (
-                                    <Badge
-                                      variant="outline"
-                                      className="rounded-md border-border px-3 py-1.5 text-xs"
-                                    >
-                                      +{subjectAreas.length - 6} more
-                                    </Badge>
-                                  )}
-                                </div>
+                              <div className="mt-6 flex flex-wrap gap-2">
+                                {subjectAreas.slice(0, 4).map((subject) => (
+                                  <span
+                                    key={subject}
+                                    className="rounded-md border border-border/70 px-2.5 py-1 text-sm text-muted-foreground"
+                                  >
+                                    {subject}
+                                  </span>
+                                ))}
+                                {subjectAreas.length > 4 && (
+                                  <span className="rounded-md border border-transparent px-2.5 py-1 text-sm text-muted-foreground">
+                                    +{subjectAreas.length - 4} more
+                                  </span>
+                                )}
                               </div>
                             )}
                           </div>
 
-                          <div className="rounded-2xl bg-muted/90 border border-border p-6 flex flex-col justify-between">
-                            <div>
-                              <div className="flex items-start gap-3">
-                                <div className="mt-0.5 rounded-xl bg-card p-2 border border-border">
-                                  <CheckCircle2 className="h-5 w-5 text-foreground/85" />
-                                </div>
+                          <div className="flex flex-col gap-6 border-t border-border pt-6 lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
+                            <div className="space-y-4">
+                              {access && (
                                 <div>
-                                  <p className="text-sm md:text-[15px] leading-7 text-foreground/85">
-                                    Review journal details and submission
-                                    guidance before moving forward with your
-                                    manuscript.
+                                  <p className="text-sm text-muted-foreground">
+                                    Access
+                                  </p>
+                                  <div className="mt-2">
+                                    <span
+                                      className={cn(
+                                        "inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm font-medium text-foreground",
+                                        access.open
+                                          ? "border-lime/50 bg-lime/20"
+                                          : "border-border bg-muted/40",
+                                      )}
+                                    >
+                                      <span
+                                        aria-hidden="true"
+                                        className={cn(
+                                          "h-2 w-2 rounded-full",
+                                          access.open
+                                            ? "bg-primary"
+                                            : "bg-muted-foreground",
+                                        )}
+                                      />
+                                      {access.label}
+                                    </span>
+                                  </div>
+                                </div>
+                              )}
+
+                              {apc && (
+                                <div>
+                                  <p className="text-sm text-muted-foreground">
+                                    APC
+                                  </p>
+                                  <p className="mt-1 text-base font-semibold tabular-nums text-foreground">
+                                    {apc}
                                   </p>
                                 </div>
-                              </div>
+                              )}
+
+                              {journal.acceptanceDays != null && (
+                                <div>
+                                  <p className="text-sm text-muted-foreground">
+                                    Time to acceptance
+                                  </p>
+                                  <p className="mt-1 text-base font-semibold text-foreground">
+                                    {journal.acceptanceDays} days
+                                  </p>
+                                </div>
+                              )}
                             </div>
 
-                            <div className="mt-6 space-y-3">
-                              {primaryLink && (
+                            <div className="mt-auto space-y-3">
+                              {journalUrl && (
                                 <Button
-                                  variant="default"
+                                  type="button"
                                   size="lg"
-                                  onClick={() => openLink(primaryLink)}
-                                  className="w-full rounded-xl"
+                                  onClick={() => openLink(journalUrl)}
+                                  className="h-12 w-full rounded-xl bg-lime text-base font-semibold text-lime-foreground hover:bg-lime/90"
                                 >
                                   View journal
                                   <ExternalLink className="h-4 w-4" />
                                 </Button>
                               )}
 
-                              {secondaryLink && (
+                              {submitUrl && (
                                 <Button
+                                  type="button"
                                   variant="outline"
                                   size="lg"
-                                  onClick={() => openLink(secondaryLink)}
-                                  className="w-full rounded-xl"
+                                  onClick={() => openLink(submitUrl)}
+                                  className="h-12 w-full rounded-xl text-base hover:bg-muted hover:text-foreground"
                                 >
-                                  Submission details
+                                  Submit paper
                                   <ExternalLink className="h-4 w-4" />
                                 </Button>
                               )}
