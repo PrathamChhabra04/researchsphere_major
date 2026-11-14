@@ -29,7 +29,7 @@ const Footer = () => {
 
   return (
     <footer className="mt-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-[1380px] px-5 md:px-6">
         {/* Lime call-to-action band */}
         <div className="tile-lime flex flex-col gap-5 rounded-[28px] px-6 py-7 md:flex-row md:items-center md:justify-between md:px-10">
           <div>
@@ -55,7 +55,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-16 border-t border-border/60">
-        <div className="container mx-auto grid gap-10 px-4 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+        <div className="container mx-auto grid max-w-[1380px] gap-10 px-5 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)] md:px-6">
           <div className="space-y-4">
             <BrandMark />
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -87,7 +87,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="container mx-auto flex flex-col gap-3 border-t border-border/60 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="container mx-auto flex max-w-[1380px] flex-col gap-3 border-t border-border/60 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between md:px-6">
           <span>© {new Date().getFullYear()} ResearchSphere. Listings belong to their original publishers.</span>
           {visits > 0 && (
             <span className="inline-flex items-center gap-2">
