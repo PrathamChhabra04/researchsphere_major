@@ -32,7 +32,6 @@ const DEFAULT_ABSTRACT_QUERY =
   "We propose a federated learning framework for edge-cloud environments that reduces communication cost while preserving model accuracy for distributed computer vision workloads.";
 const ALWAYS_VISIBLE_POPULAR_TOPIC = "machine learning";
 const SAVED_JOURNALS_STORAGE_KEY = "researchsphere:saved-journals";
-const STOP_WORDS = new Set(["a", "an", "and", "&", "for", "in", "of", "on", "the"]);
 
 const PROVIDER_LABELS: Record<string, string> = {
   elsevier: "Elsevier",
@@ -47,21 +46,10 @@ const providerLabel = (provider?: string | null) => {
 const journalCardKey = (journal: JournalMatchItem) =>
   `${journal.provider}-${journal.issn || journal.title}`;
 
-const journalInitials = (title?: string | null) => {
-  const words = String(title || "")
-    .split(/\s+/)
-    .filter((word) => word && !STOP_WORDS.has(word.toLowerCase()));
-  const source = words.length
-    ? words
-    : String(title || "").split(/\s+/).filter(Boolean);
+/** "1 day", "5 days" — avoids the "1 days" bug. */
+const formatDays = (value: number) =>
+  `${value} ${value === 1 ? "day" : "days"}`;
 
-  return (
-    source
-      .slice(0, 2)
-      .map((word) => word[0]?.toUpperCase() ?? "")
-      .join("") || "J"
-  );
-};
 
 const formatMetric = (value?: number | null) => {
   if (value == null || !Number.isFinite(Number(value))) return null;
@@ -85,14 +73,19 @@ const formatFee = (amount?: number | null, currency?: string | null) => {
 };
 
 const accessCategory = (journal: JournalMatchItem) => {
-  const raw = `${journal.openAccessType || ""} ${journal.publishingModel || ""}`
-    .trim()
-    .toLowerCase();
-  const tokens = raw.split(/\s+/).filter(Boolean);
+  const tokens = [
+    journal.openAccessType,
+    journal.publishingModel,
+  ]
+    .filter(Boolean)
+    .flatMap((value) => String(value).toLowerCase().split(/[\s_-]+/))
+    .filter(Boolean);
+
   if (!tokens.length || tokens.every((token) => token === "none")) return null;
 
-  // Elsevier reports "FULL" for fully open access and "SUBSIDISED" for
-  // discounted APCs; both are open-access models.
+  // Publishers report the same model in different vocabularies: Elsevier uses
+  // FULL/SUBSIDISED, Springer uses "Open access"/Hybrid. Normalise to the three
+  // sentence-case labels the card shows.
   if (tokens.some((token) => token.startsWith("subscri"))) {
     return { label: "Subscription", open: false };
   }
@@ -104,14 +97,16 @@ const accessCategory = (journal: JournalMatchItem) => {
       (token) =>
         token.startsWith("open") ||
         token.startsWith("subsid") ||
-        token === "full",
+        token === "gold" ||
+        token === "full" ||
+        token === "oa" ||
+        token === "free",
     )
   ) {
     return { label: "Open access", open: true };
   }
 
-  const label = journal.openAccessType || journal.publishingModel;
-  return label ? { label: String(label), open: false } : null;
+  return null;
 };
 
 const journalUrlFor = (journal: JournalMatchItem) =>
@@ -125,27 +120,79 @@ const submitUrlFor = (journal: JournalMatchItem) => {
 type JournalMetricItem = {
   label: string;
   value: string;
-  suffix?: string | null;
 };
 
-const JournalMetric = ({ label, value, suffix }: JournalMetricItem) => (
+const JournalMetric = ({ label, value }: JournalMetricItem) => (
   <div className="min-w-0">
     <p className="text-sm leading-snug text-muted-foreground">{label}</p>
-    <p className="mt-1.5 flex items-baseline gap-1.5">
-      <span className="text-xl font-bold tabular-nums text-foreground">
-        {value}
-      </span>
-      {suffix && (
-        <span className="text-sm font-normal text-muted-foreground">
-          {suffix}
-        </span>
-      )}
+    <p className="mt-1.5 text-xl font-bold tabular-nums text-foreground">
+      {value}
     </p>
   </div>
 );
 
 const compactJournalMetrics = (items: Array<JournalMetricItem | null>) =>
   items.filter((item): item is JournalMetricItem => item != null);
+
+/**
+ * Deterministic generated cover used when a journal has no artwork.
+ * Muted, print-like tones including one lime option; the pattern is pure CSS
+ * so it renders identically in light and dark mode.
+ */
+const COVER_THEMES = [
+  { bg: "#2e3a4b", fg: "#eef2f7", line: "rgba(232, 239, 248, 0.16)", accent: "#b9c9dd" },
+  { bg: "#1f3f3a", fg: "#e9f4f0", line: "rgba(226, 244, 238, 0.15)", accent: "#9dc9bb" },
+  { bg: "#432b32", fg: "#f6ebee", line: "rgba(246, 233, 237, 0.14)", accent: "#d3a8b5" },
+  { bg: "#3d3227", fg: "#f4eee6", line: "rgba(244, 236, 224, 0.15)", accent: "#cdb697" },
+  { bg: "#25332c", fg: "#ecf2ee", line: "rgba(232, 242, 236, 0.15)", accent: "#a9c4b1" },
+  { bg: "#c8d84a", fg: "#191f03", line: "rgba(25, 31, 3, 0.16)", accent: "#39420c" },
+  { bg: "#262c4a", fg: "#eceef8", line: "rgba(234, 237, 249, 0.15)", accent: "#b2bade" },
+  { bg: "#33404a", fg: "#edf2f5", line: "rgba(235, 242, 246, 0.14)", accent: "#adc2cd" },
+];
+
+const hashString = (value?: string | null) => {
+  const text = String(value || "");
+  let hash = 0;
+  for (let index = 0; index < text.length; index += 1) {
+    hash = (hash * 31 + text.charCodeAt(index)) | 0;
+  }
+  return Math.abs(hash);
+};
+
+const GeneratedCover = ({
+  title,
+  publisher,
+}: {
+  title: string;
+  publisher: string;
+}) => {
+  const theme = COVER_THEMES[hashString(title) % COVER_THEMES.length];
+
+  return (
+    <div
+      aria-hidden="true"
+      className="flex h-full w-full flex-col justify-between overflow-hidden p-2 sm:p-2.5"
+      style={{
+        backgroundColor: theme.bg,
+        color: theme.fg,
+        backgroundImage: `radial-gradient(120% 90% at 16% 6%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 55%), repeating-linear-gradient(135deg, ${theme.line} 0px, ${theme.line} 1px, transparent 1px, transparent 9px)`,
+      }}
+    >
+      <span className="text-[0.5rem] font-semibold uppercase leading-tight tracking-[0.14em] opacity-85 sm:text-[0.5625rem]">
+        {publisher}
+      </span>
+      <div className="min-w-0">
+        <span
+          className="mb-1.5 block h-px w-6"
+          style={{ backgroundColor: theme.accent }}
+        />
+        <span className="line-clamp-4 block font-serif text-[0.625rem] leading-[1.2] sm:text-xs">
+          {title}
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const readSavedJournals = () => {
   try {
@@ -424,7 +471,7 @@ const Journals = () => {
                       className="h-12 rounded-xl px-7"
                     >
                       <Sparkles className="h-4 w-4" />
-                      Update results
+                      Find journals
                     </Button>
                   </div>
 
@@ -522,13 +569,7 @@ const Journals = () => {
                   const citeScore = formatMetric(journal.citeScore);
                   const metrics = compactJournalMetrics([
                     impactFactor
-                      ? {
-                          label: "Impact factor",
-                          value: impactFactor,
-                          suffix: journal.impactFactorYear
-                            ? `(${journal.impactFactorYear})`
-                            : null,
-                        }
+                      ? { label: "Impact factor", value: impactFactor }
                       : null,
                     citeScore
                       ? { label: "CiteScore", value: citeScore }
@@ -536,48 +577,54 @@ const Journals = () => {
                     journal.decisionDays != null
                       ? {
                           label: "First decision",
-                          value: `${journal.decisionDays} days`,
+                          value: formatDays(journal.decisionDays),
                         }
                       : null,
                   ]);
+                  const metaParts = [
+                    journal.acronym,
+                    journal.issn ? `ISSN ${journal.issn}` : null,
+                  ].filter(Boolean);
+                  const panelDetailCount =
+                    (access ? 1 : 0) +
+                    (apc ? 1 : 0) +
+                    (journal.acceptanceDays != null ? 1 : 0);
 
                   return (
                     <Card
                       key={cardKey}
-                      className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-colors duration-200 hover:border-foreground/20"
+                      className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-colors duration-200 hover:border-foreground/20 lg:min-h-[20rem]"
                     >
                       <CardContent className="p-7 md:p-8">
                         <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-8">
                           <div className="min-w-0">
                             <div className="flex gap-5 sm:gap-6">
-                              <div className="h-24 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-muted sm:h-36 sm:w-28">
-                                {journal.coverImage ? (
+                              <div className="relative h-24 w-16 shrink-0 overflow-hidden rounded-lg border border-border sm:h-36 sm:w-28">
+                                <GeneratedCover
+                                  title={journal.title}
+                                  publisher={providerLabel(journal.provider)}
+                                />
+                                {journal.coverImage && (
                                   <img
                                     src={journal.coverImage}
                                     alt={`Cover of ${journal.title}`}
                                     loading="lazy"
-                                    className="h-full w-full object-cover"
+                                    className="absolute inset-0 h-full w-full object-cover"
+                                    onError={(event) => {
+                                      event.currentTarget.style.display = "none";
+                                    }}
                                   />
-                                ) : (
-                                  <div
-                                    aria-hidden="true"
-                                    className="flex h-full w-full items-center justify-center bg-muted text-xl font-semibold text-muted-foreground"
-                                  >
-                                    {journalInitials(journal.title)}
-                                  </div>
                                 )}
                               </div>
 
                               <div className="min-w-0 flex-1">
-                                <div className="flex items-start justify-between gap-3">
-                                  <div className="min-w-0">
-                                    <p className="text-sm font-medium text-muted-foreground">
-                                      {providerLabel(journal.provider)}
-                                    </p>
-                                    <h3 className="mt-1 text-balance text-2xl font-semibold leading-snug text-foreground sm:text-3xl sm:leading-tight">
-                                      {journal.title}
-                                    </h3>
-                                  </div>
+                                <p className="text-sm font-medium text-muted-foreground">
+                                  {providerLabel(journal.provider)}
+                                </p>
+                                <div className="mt-1 flex items-start gap-2">
+                                  <h3 className="min-w-0 flex-1 text-balance text-2xl font-semibold leading-snug text-foreground sm:text-3xl sm:leading-tight">
+                                    {journal.title}
+                                  </h3>
 
                                   <Button
                                     type="button"
@@ -590,10 +637,12 @@ const Journals = () => {
                                         : `Save ${journal.title}`
                                     }
                                     title={
-                                      isSaved ? "Saved to your list" : "Save journal"
+                                      isSaved
+                                        ? "Saved to your list"
+                                        : "Save journal"
                                     }
                                     onClick={() => toggleSavedJournal(cardKey)}
-                                    className="mt-0.5 h-11 w-11 shrink-0 rounded-full text-muted-foreground hover:bg-muted hover:text-foreground [&_svg]:size-5"
+                                    className="-mr-2 -mt-1 h-10 w-10 shrink-0 rounded-full text-muted-foreground hover:bg-muted hover:text-foreground [&_svg]:size-5"
                                   >
                                     <Bookmark
                                       className={cn(
@@ -603,16 +652,9 @@ const Journals = () => {
                                   </Button>
                                 </div>
 
-                                {(journal.acronym || journal.issn) && (
+                                {metaParts.length > 0 && (
                                   <p className="mt-2 text-sm text-muted-foreground">
-                                    {[
-                                      journal.acronym,
-                                      journal.issn
-                                        ? `ISSN ${journal.issn}`
-                                        : null,
-                                    ]
-                                      .filter(Boolean)
-                                      .join(" · ")}
+                                    {metaParts.join(" · ")}
                                   </p>
                                 )}
                               </div>
@@ -701,13 +743,18 @@ const Journals = () => {
                                     Time to acceptance
                                   </p>
                                   <p className="mt-1 text-base font-semibold text-foreground">
-                                    {journal.acceptanceDays} days
+                                    {formatDays(journal.acceptanceDays)}
                                   </p>
                                 </div>
                               )}
                             </div>
 
-                            <div className="mt-auto space-y-3">
+                            <div
+                              className={cn(
+                                "space-y-3",
+                                panelDetailCount >= 3 && "mt-auto",
+                              )}
+                            >
                               {journalUrl && (
                                 <Button
                                   type="button"
