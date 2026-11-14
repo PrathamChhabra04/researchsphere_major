@@ -697,7 +697,7 @@ const Index = () => {
 
       <div className="flex-1">
         {/* Hero */}
-        <section className="hero-pattern relative bg-hero-bg pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16">
+        <section className="hero-pattern relative pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16">
           <div className="container mx-auto px-4">
             <div className="hero-fade-in mx-auto flex max-w-[1200px] flex-col items-center text-center">
               {/* 1. Small eyebrow line */}
@@ -718,7 +718,7 @@ const Index = () => {
               </h1>
 
               {/* 3. Subheading */}
-              <p className="mt-4 max-w-[720px] text-hero-sub text-hero-text-muted/95 leading-[1.6]">
+              <p className="mt-4 max-w-[720px] text-hero-sub text-hero-text-body leading-[1.6]">
                 Conferences, journals, calls for papers and research roles are
                 scattered across hundreds of sites and mailing lists, so deadlines
                 get missed. ResearchSphere gathers them into one searchable,
@@ -833,7 +833,7 @@ const Index = () => {
               </div>
 
               {/* 5. Buttons */}
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <div className="mt-8 sm:mt-9 flex flex-wrap items-center justify-center gap-3">
                 <Link
                   to="/conferences"
                   className="h-[48px] px-6 inline-flex items-center justify-center gap-2 rounded-lg bg-lime hover:bg-lime/90 text-lime-foreground font-semibold text-[15px] sm:text-base border border-lime shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2"
@@ -849,8 +849,8 @@ const Index = () => {
               </div>
 
               {/* 6. Three-column stats row */}
-              <div className="mt-8 sm:mt-10 w-full max-w-[760px] border-t border-hero-border/60 pt-6 sm:pt-7">
-                <div className="grid grid-cols-3 divide-x divide-hero-border/80 text-center">
+              <div className="mt-10 sm:mt-12 w-full max-w-[760px] border-t border-hero-border-hover/70 pt-8 sm:pt-9">
+                <div className="grid grid-cols-3 divide-x divide-hero-border-hover/70 text-center">
                   <div className="px-2 sm:px-6">
                     <div className="text-2xl sm:text-[32px] font-bold tracking-tight text-hero-text leading-none">
                       <StatCount value={liveCounts.conference} />

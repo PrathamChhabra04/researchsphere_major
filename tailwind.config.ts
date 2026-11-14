@@ -58,6 +58,7 @@ export default {
           border: "hsl(var(--hero-border))",
           "border-hover": "hsl(var(--hero-border-hover))",
           text: "hsl(var(--hero-text))",
+          "text-body": "hsl(var(--hero-text-body))",
           "text-muted": "hsl(var(--hero-text-muted))",
           accent: {
             DEFAULT: "hsl(var(--hero-accent))",
@@ -87,9 +88,9 @@ export default {
       },
       fontSize: {
         "hero-h1": [
-          "clamp(2.35rem, 5vw, 4rem)",
+          "clamp(2.5rem, 5.2vw, 4.25rem)",
           {
-            lineHeight: "1.1",
+            lineHeight: "1.18",
             letterSpacing: "0",
             fontWeight: "600",
           },
