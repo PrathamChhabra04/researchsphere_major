@@ -1,4 +1,5 @@
 import { MATCH_CONFIG } from "./config.js";
+import { ACRONYM_TOKENS } from "./acronyms.js";
 
 const NAMED_ENTITIES = {
   amp: "&",
@@ -97,7 +98,11 @@ export const STOP_WORDS = new Set([
   "demonstrates", "approach", "approaches", "contribution", "contributions",
 ]);
 
-const SHORT_ACRONYMS = new Set(["ai", "ml", "iot", "iiot", "vr", "ar", "5g", "6g", "llm", "qa"]);
+const SHORT_ACRONYMS = new Set([
+  ...ACRONYM_TOKENS,
+  "os",
+  "db",
+]);
 
 export const tokenize = (value) =>
   normalizeKey(value)

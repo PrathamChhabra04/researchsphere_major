@@ -49,6 +49,7 @@ pages fill in as soon as it finishes.
 |---|---|---|
 | root | `npm run dev` | Run API and web together |
 | root | `npm run build` / `npm run lint` | Production build / lint the frontend |
+| root | `npm run eval:journal-match` | Offline NDCG/Recall/MRR against harvested rankings |
 | server | `npm run harvest:refresh` | Harvest every source now and print counts and failures |
 | server | `npm run harvest:sources` | Per-source health report from the database (no network) |
 | server | `npm run smoke:assistant` | Exercise the assistant with sample queries |

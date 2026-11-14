@@ -76,12 +76,17 @@ The Journals page is served by a fully local matcher (no LLM, no external API at
   the model lazily on first search. Final score =
   `0.6 * semantic + 0.3 * bm25 + 0.1 * quality` (weights in `journalMatch/config.js`).
   Keyword queries are split on commas/`+`/`and`/newlines and combined with a geometric mean so
-  journals covering every topic outrank single-topic matches. If the index or model is missing,
-  the service degrades to BM25 + quality and the route keeps working.
+  journals covering every topic outrank single-topic matches. Acronyms are expanded with a
+  curated CS map (`acronyms.js`, on by default, `JOURNAL_MATCH_ACRONYMS=off` to disable). Chunk
+  scores are pooled as the mean of the best 3 passages (`semantic.chunkPooling`), which avoids
+  favouring journals that simply have longer scopes. If the index or model is missing, the
+  service degrades to BM25 + quality and the route keeps working.
 - **Excluded topics**: clauses around "will not be considered", "out of scope", "excluded",
   "moratorium" and "do not accept" are stored per journal; matching topics multiply the score
   by 0.4 and attach a warning.
-- Sanity check: `node scripts/testMatching.js`.
+- Sanity check: `node scripts/testMatching.js`. Offline evaluation against the harvested
+  finder rankings: `node scripts/evaluateMatching.js` (NDCG/Recall/MRR, deterministic
+  train/test split, `--tune` grid-searches the blend weights on train only).
 
 ## Frontend
 

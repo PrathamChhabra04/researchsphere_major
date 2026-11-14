@@ -1,4 +1,5 @@
 import { MATCH_CONFIG } from "./journalMatch/config.js";
+import { expandAcronyms } from "./journalMatch/acronyms.js";
 import { loadJournalCorpus } from "./journalMatch/corpus.js";
 import { embedTexts } from "./journalMatch/embedding.js";
 import { loadJournalIndex } from "./journalMatch/indexStore.js";
@@ -19,13 +20,15 @@ import {
  * Journal matching service.
  *
  * Pipeline (all local, no network at request time):
- *   1. Semantic similarity against a pre-built MiniLM chunk index.
- *   2. BM25 (MiniSearch) over title / subjectAreas (x3) / scope.
- *   3. Quality prior (impact factor, CiteScore, editorial speed).
+ *   1. Acronym expansion + query parsing (topics split on commas/+ /and).
+ *   2. Semantic similarity against a pre-built MiniLM chunk index, mean of
+ *      the best 3 chunk similarities per topic.
+ *   3. BM25 (MiniSearch) over title / subjectAreas (x3) / scope.
+ *   4. Quality prior (impact factor, CiteScore, editorial speed).
  *   Final = 0.6 semantic + 0.3 bm25 + 0.1 quality, then excluded-topic penalty.
  */
 
-const { weights, fallbackWeights, semantic, bm25, quality } = MATCH_CONFIG;
+const { semantic, bm25, quality } = MATCH_CONFIG;
 
 let apiBm25Cache = null;
 let embeddingFailureLogged = false;
@@ -210,6 +213,20 @@ const geometricMean = (values, floor) => {
   return Math.exp(logSum / safe.length);
 };
 
+/**
+ * Pool a topic's chunk similarities. "max" is the classic maxP choice;
+ * "meanTopK" averages the best k chunks so journals with very long scopes
+ * cannot outrank focused ones just by having more passages to match.
+ */
+const poolChunkScores = (topScores) => {
+  if (!topScores.length) return 0;
+  if (MATCH_CONFIG.semantic.chunkPooling !== "meanTopK") return topScores[0];
+  const k = Math.min(MATCH_CONFIG.semantic.chunkPoolK, topScores.length);
+  let sum = 0;
+  for (let index = 0; index < k; index += 1) sum += topScores[index];
+  return sum / k;
+};
+
 /* ------------------------------------------------------------------ */
 /* Semantic scoring                                                    */
 /* ------------------------------------------------------------------ */
@@ -275,6 +292,12 @@ const computeSemanticScores = async ({ mode, query, topics, index }) => {
     for (const queryVector of queryVectors) {
       let maxScore = 0;
       let maxChunk = -1;
+      const topScores = [];
+      const poolSize =
+        MATCH_CONFIG.semantic.chunkPooling === "meanTopK"
+          ? Math.max(1, MATCH_CONFIG.semantic.chunkPoolK)
+          : 1;
+
       for (let chunk = 0; chunk < range.count; chunk += 1) {
         const chunkIndex = range.start + chunk;
         const similarity = clamp(
@@ -282,12 +305,26 @@ const computeSemanticScores = async ({ mode, query, topics, index }) => {
           0,
           1,
         );
+
         if (similarity > maxScore) {
           maxScore = similarity;
           maxChunk = chunkIndex;
         }
+
+        if (topScores.length < poolSize) {
+          let position = topScores.length;
+          while (position > 0 && topScores[position - 1] < similarity) position -= 1;
+          topScores.splice(position, 0, similarity);
+        } else if (similarity > topScores[topScores.length - 1]) {
+          let position = topScores.length - 1;
+          while (position > 0 && topScores[position - 1] < similarity) position -= 1;
+          topScores.splice(position, 0, similarity);
+          topScores.pop();
+        }
       }
-      topicScores.push(maxScore);
+
+      const pooled = poolChunkScores(topScores);
+      topicScores.push(pooled);
       if (maxScore > bestScore) {
         bestScore = maxScore;
         bestChunkIndex = maxChunk;
@@ -487,6 +524,7 @@ const scoreJournal = ({
   journal,
   mode,
   topics,
+  displayTopics,
   queryTokens,
   bm25Scores,
   semanticScores,
@@ -497,7 +535,9 @@ const scoreJournal = ({
   const bm25Score = bm25Scores.get(journal.id) ?? 0;
   const qualityValue = qualityScore(journal);
 
-  const activeWeights = semanticScores ? weights : fallbackWeights;
+  const activeWeights = semanticScores
+    ? MATCH_CONFIG.weights
+    : MATCH_CONFIG.fallbackWeights;
   const blended =
     activeWeights.semantic * semanticScore +
     activeWeights.bm25 * bm25Score +
@@ -522,7 +562,7 @@ const scoreJournal = ({
   const whyMatched = buildWhyMatched({
     journal,
     mode,
-    topics,
+    topics: displayTopics,
     queryTokens,
     semanticEntry,
     index,
@@ -538,7 +578,7 @@ const scoreJournal = ({
     scopeSnippet: snippet(journal.scope),
     matchReasons: buildReasons(journal, matchedSubjectAreas, excludedWarnings),
     matchedSubjectAreas,
-    matchedTopics: topics,
+    matchedTopics: displayTopics,
     whyMatched,
     warnings: excludedWarnings,
   };
@@ -599,10 +639,14 @@ export const searchJournalCorpus = async ({
 
   const corpus = await loadJournalCorpus();
   const normalizedMode = mode === "abstract" ? "abstract" : "keyword";
-  const topics =
+  const displayTopics =
     normalizedMode === "abstract"
       ? topAbstractTerms(normalizedQuery)
       : splitTopics(normalizedQuery);
+  const topics =
+    normalizedMode === "abstract" || !MATCH_CONFIG.acronyms.enabled
+      ? displayTopics
+      : displayTopics.map(expandAcronyms);
 
   const filtered =
     provider === "all"
@@ -614,7 +658,7 @@ export const searchJournalCorpus = async ({
   const bm25Query =
     normalizedMode === "abstract"
       ? topAbstractTerms(normalizedQuery, bm25.abstractTerms).join(" ")
-      : normalizedQuery;
+      : topics.join(" ");
   const bm25Scores = searchBm25({
     bm25Cache,
     query: bm25Query,
@@ -642,6 +686,7 @@ export const searchJournalCorpus = async ({
         journal,
         mode: normalizedMode,
         topics,
+        displayTopics,
         queryTokens,
         bm25Scores,
         semanticScores,

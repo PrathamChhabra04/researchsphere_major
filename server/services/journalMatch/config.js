@@ -35,6 +35,15 @@ export const MATCH_CONFIG = {
     maxTopics: 8,
     /** Keyword mode: floor used inside the per-topic geometric mean. */
     topicFloor: 0.01,
+    /**
+     * How a topic's chunk similarities are pooled per journal.
+     * "max" lets long scopes win by having more chunks; "meanTopK" averages
+     * the best k chunks instead. Override for offline tuning with
+     * JOURNAL_MATCH_POOLING=max|meanTopK and JOURNAL_MATCH_POOL_K=<n>.
+     */
+    chunkPooling: process.env.JOURNAL_MATCH_POOLING || "meanTopK",
+    chunkPoolK:
+      Number.parseInt(process.env.JOURNAL_MATCH_POOL_K || "", 10) || 3,
   },
 
   chunks: {
@@ -75,6 +84,14 @@ export const MATCH_CONFIG = {
 
   /** Multiplier applied when a query topic hits a journal's excluded topics. */
   excludedTopicPenalty: 0.4,
+
+  /**
+   * Expand unambiguous CS acronyms (NLP, IoT, HCI, ...) before embedding/BM25.
+   * Disable for offline A/B checks with JOURNAL_MATCH_ACRONYMS=off.
+   */
+  acronyms: {
+    enabled: process.env.JOURNAL_MATCH_ACRONYMS !== "off",
+  },
 
   /** Results below this blended score are dropped. */
   minimumScore: 0.08,
