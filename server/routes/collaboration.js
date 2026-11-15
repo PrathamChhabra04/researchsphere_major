@@ -33,8 +33,14 @@ router.post("/submit", async (req, res) => {
 
     const transporter = createTransporter();
 
-    const { name, email, institution, researchAreas, projectDetails } =
-      req.body;
+    const {
+      collaborationType,
+      name,
+      email,
+      institution,
+      researchAreas,
+      projectDetails,
+    } = req.body;
 
     // Validate required fields
     if (!name || !email || !institution || !researchAreas) {
@@ -48,6 +54,7 @@ router.post("/submit", async (req, res) => {
       subject: `New Collaboration Request from ${name}`,
       html: `
         <h2>New Collaboration Request</h2>
+        <p><strong>Collaboration Type:</strong> ${collaborationType || "Not specified"}</p>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Institution:</strong> ${institution}</p>

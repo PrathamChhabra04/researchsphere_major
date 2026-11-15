@@ -95,6 +95,7 @@ export interface AssistantContext {
 }
 
 export interface CollaborationRequestPayload {
+  collaborationType?: string;
   name: string;
   email: string;
   institution: string;
