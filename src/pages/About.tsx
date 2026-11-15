@@ -1,4 +1,4 @@
-import { Mail, RefreshCw, Users } from "lucide-react";
+import { Users } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -26,28 +26,23 @@ const PURPOSE_POINTS = [
 const DATA_SOURCES = [
   {
     name: "WikiCFP",
-    description:
-      "Conference and call-for-paper listings across 50 computer-science topic feeds.",
+    description: "Conference and CFP listings across 50 CS topic feeds.",
   },
   {
     name: "arXiv",
-    description:
-      "Preprints from 17 categories, including ML, NLP, systems and quantum.",
+    description: "Preprints from 17 categories, including ML, NLP and quantum.",
   },
   {
     name: "Call4Paper",
-    description:
-      "Computer-science events and journal calls with submission deadlines.",
+    description: "Computer-science events and journal calls with deadlines.",
   },
   {
     name: "Jobs.ac.uk",
-    description:
-      "PhD, postdoc, internship and research-staff roles searched by topic.",
+    description: "PhD, postdoc, internship and research-staff roles.",
   },
   {
     name: "Science Careers",
-    description:
-      "Job feeds for computer-science roles, postdocs, PhDs and fellowships.",
+    description: "Job feeds for postdocs, PhDs and research fellowships.",
   },
   {
     name: "AcademicJobsOnline",
@@ -55,40 +50,34 @@ const DATA_SOURCES = [
   },
   {
     name: "Funding bodies & agencies",
-    description:
-      "Calls and announcements from NSF, UKRI, DST, ANRF, ICSSR, MeitY, CSIR, ISRO, DRDO, NIRF and AICTE.",
+    description: "NSF, UKRI, DST, ANRF and other funding calls.",
   },
   {
     name: "University programmes",
-    description:
-      "Admissions and internships from the IITs, IISc, NITs, ETH Zurich, CERN, KAUST and ISTA.",
+    description: "Admissions and internships at IITs, IISc, NITs and more.",
   },
   {
     name: "Book chapter publishers",
-    description:
-      "Chapter calls from INFORMS Connect, IntechOpen, KY Publications and IGI Global.",
+    description: "Chapter calls from INFORMS, IntechOpen, KY and IGI Global.",
   },
   {
     name: "Industry research labs",
-    description:
-      "Research-track roles from OpenAI, Anthropic, Cohere, Perplexity and other AI labs.",
+    description: "Research roles at OpenAI, Anthropic, Cohere and other labs.",
   },
   {
     name: "Opportunity boards",
     description:
-      "Scholarships, fellowships and internships from Opportunity Desk, Scholars4Dev, Mladiinfo and Opportunities Corners.",
+      "Scholarships and fellowships from Opportunity Desk, Scholars4Dev and more.",
   },
   {
     name: "Springer & Elsevier",
-    description:
-      "Journal records and submission details used by the journal finder.",
+    description: "Journal records and submission details for the journal finder.",
   },
 ];
 
 const TEAM_MEMBERS = [
   { name: "Ayush Gupta", initials: "AG" },
   { name: "Bhuvan Kumar", initials: "BK" },
-  { name: "Devansh", initials: "D" },
   { name: "Pratham Chhabra", initials: "PC" },
 ];
 
@@ -98,8 +87,8 @@ const About = () => {
       <Navigation />
 
       <div className="flex-1">
-        <div className="container mx-auto max-w-[1380px] px-5 py-8 md:px-6 md:py-10">
-          <header className="pb-12 md:pb-16">
+        <div className="container mx-auto max-w-[1380px] px-5 pt-8 pb-8 md:px-6 md:pt-10 md:pb-0">
+          <header className="pb-16 md:pb-24">
             <div className="flex items-center gap-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-card text-primary">
                 <Users className="h-4 w-4" />
@@ -118,16 +107,16 @@ const About = () => {
           <div className="space-y-16 md:space-y-24">
             <section aria-labelledby="purpose-heading">
               <p className="eyebrow">Purpose</p>
-              <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-14">
+              <div className="mt-4 grid gap-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
                 <div>
                   <h2
                     id="purpose-heading"
-                    className="max-w-2xl font-display text-3xl font-medium leading-[1.1] tracking-[-0.02em] text-foreground md:text-4xl"
+                    className="font-display text-3xl font-medium leading-[1.1] tracking-[-0.02em] text-foreground md:text-4xl"
                   >
                     Research discovery should feel direct, structured, and
                     reliable.
                   </h2>
-                  <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">
+                  <p className="mt-5 text-base leading-7 text-muted-foreground lg:text-lg lg:leading-8">
                     Finding the right venue or opportunity often means checking
                     many disconnected portals every week. ResearchSphere unifies
                     those flows with consistent search, clean filters, and
@@ -135,7 +124,7 @@ const About = () => {
                   </p>
                 </div>
 
-                <ul className="space-y-5 lg:pt-1">
+                <ul className="space-y-6">
                   {PURPOSE_POINTS.map(({ title, detail }) => (
                     <li key={title} className="flex items-start gap-3">
                       <span
@@ -143,10 +132,10 @@ const About = () => {
                         className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
                       />
                       <div>
-                        <p className="text-base font-medium text-foreground">
+                        <p className="text-lg font-medium text-foreground">
                           {title}
                         </p>
-                        <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                        <p className="mt-1 text-base leading-7 text-muted-foreground">
                           {detail}
                         </p>
                       </div>
@@ -157,21 +146,13 @@ const About = () => {
             </section>
 
             <section aria-labelledby="sources-heading">
-              <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div>
-                  <p className="eyebrow">Data sources</p>
-                  <h2
-                    id="sources-heading"
-                    className="mt-4 max-w-2xl font-display text-2xl font-medium leading-tight tracking-[-0.02em] text-foreground md:text-[2rem]"
-                  >
-                    Where the platform data comes from
-                  </h2>
-                </div>
-                <p className="inline-flex items-center gap-2 text-sm text-muted-foreground lg:pb-1">
-                  <RefreshCw className="h-4 w-4 text-primary" />
-                  Refreshed every six hours by default
-                </p>
-              </div>
+              <p className="eyebrow">Data sources</p>
+              <h2
+                id="sources-heading"
+                className="mt-4 max-w-2xl font-display text-2xl font-medium leading-tight tracking-[-0.02em] text-foreground md:text-[2rem]"
+              >
+                Where the platform data comes from
+              </h2>
 
               <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">
                 ResearchSphere aggregates from curated academic registries,
@@ -184,9 +165,9 @@ const About = () => {
                 {DATA_SOURCES.map(({ name, description }) => (
                   <div
                     key={name}
-                    className="rounded-lg border border-border bg-card p-5"
+                    className="h-full rounded-lg border border-border bg-card p-5"
                   >
-                    <p className="text-base font-medium text-foreground">
+                    <p className="text-base font-semibold text-foreground">
                       {name}
                     </p>
                     <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
@@ -206,65 +187,56 @@ const About = () => {
                 The people behind ResearchSphere
               </h2>
 
-              <div className="mt-8 space-y-3">
-                <div className="flex flex-col gap-4 rounded-lg border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-center gap-4">
+              <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <article className="flex h-full flex-col items-start rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/25">
+                  <span
+                    aria-hidden="true"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime/35 text-sm font-semibold text-foreground"
+                  >
+                    MK
+                  </span>
+                  <div className="mt-4">
+                    <p className="text-xs font-medium tracking-wide text-muted-foreground">
+                      Mentor
+                    </p>
+                    <p className="mt-1 text-base font-medium text-foreground">
+                      Dr. Mohit Kumar
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                      Assistant Professor, Department of Information Technology
+                    </p>
+                  </div>
+                </article>
+
+                {TEAM_MEMBERS.map(({ name, initials }) => (
+                  <article
+                    key={name}
+                    className="flex h-full flex-col items-start rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/25"
+                  >
                     <span
                       aria-hidden="true"
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime/35 text-base font-semibold text-foreground"
+                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground"
                     >
-                      MK
+                      {initials}
                     </span>
-                    <div>
-                      <p className="text-base font-medium text-foreground">
-                        Dr. Mohit Kumar
-                      </p>
-                      <p className="mt-0.5 text-sm leading-6 text-muted-foreground">
-                        Assistant Professor, Department of Information
-                        Technology
-                      </p>
-                    </div>
-                  </div>
-                  <span className="w-fit rounded-full border border-border px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground">
-                    Mentor
-                  </span>
-                </div>
-
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {TEAM_MEMBERS.map(({ name, initials }) => (
-                    <div
-                      key={name}
-                      className="flex items-center gap-3 rounded-lg border border-border bg-card p-4 md:p-5"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground"
-                      >
-                        {initials}
-                      </span>
+                    <div className="mt-4">
                       <p className="text-base font-medium text-foreground">
                         {name}
                       </p>
+                      <p className="mt-1 text-xs font-medium tracking-wide text-muted-foreground">
+                        Student
+                      </p>
                     </div>
-                  ))}
-                </div>
+                  </article>
+                ))}
               </div>
 
-              <div className="mt-8 max-w-3xl space-y-3">
+              <div className="mt-8 max-w-3xl">
                 <p className="text-base leading-7 text-muted-foreground">
                   We are grateful for Dr. Mohit Kumar's guidance and support
                   throughout the development of ResearchSphere, helping
                   transform an idea into a platform that serves the research
                   community.
-                </p>
-                <p className="inline-flex items-center gap-2 text-base text-muted-foreground">
-                  <Mail className="h-4 w-4 text-primary" />
-                  <a
-                    href="mailto:researchsphere.team@gmail.com"
-                    className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
-                  >
-                    researchsphere.team@gmail.com
-                  </a>
                 </p>
               </div>
             </section>
