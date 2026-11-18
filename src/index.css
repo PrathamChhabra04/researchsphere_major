@@ -17,45 +17,45 @@ All colors MUST be HSL.
     --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 7%;
-    --primary: 72 72% 34%;
+    --primary: 214 51% 47%;
     --primary-foreground: 0 0% 100%;
-    --lime: 68 88% 62%;
-    --lime-foreground: 0 0% 4%;
+    --lime: 214 51% 47%;
+    --lime-foreground: 0 0% 100%;
     --secondary: 60 6% 91%;
     --secondary-foreground: 0 0% 9%;
     --muted: 60 6% 92%;
     --muted-foreground: 0 0% 38%;
-    --accent: 214 95% 52%;
+    --accent: 214 51% 47%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     --border: 60 5% 84%;
     --input: 60 5% 84%;
-    --ring: 72 72% 34%;
+    --ring: 214 51% 47%;
     --radius: 1rem;
 
     --hero-gradient-from: 60 9% 96%;
     --hero-gradient-via: 60 9% 94%;
     --hero-gradient-to: 60 9% 96%;
     --grid-line: 0 0% 7%;
-    --glow: 68 88% 55%;
+    --glow: 214 51% 47%;
     --display-from: 0 0% 4%;
     --display-to: 0 0% 42%;
 
     --badge-blue: 214 95% 94%;
     --badge-blue-foreground: 214 80% 38%;
-    --badge-green: 72 72% 34%;
+    --badge-green: 214 51% 47%;
     --badge-green-foreground: 0 0% 100%;
     --badge-purple: 260 70% 55%;
     --badge-purple-foreground: 0 0% 100%;
     --badge-orange: 32 95% 44%;
     --badge-orange-foreground: 0 0% 100%;
 
-    --success: 72 72% 34%;
+    --success: 142 71% 45%;
     --warning: 38 92% 45%;
-    --info: 214 95% 52%;
+    --info: 214 51% 47%;
 
-    /* Hero section tokens - reusing brand lime and dark olive for AA contrast */
+    /* Hero section tokens - blue palette */
     --hero-bg: 220 14% 98%;
     --hero-surface: 0 0% 100%;
     --hero-border: 220 13% 90%;
@@ -63,12 +63,12 @@ All colors MUST be HSL.
     --hero-text: 220 20% 12%;
     --hero-text-body: 220 12% 33%;
     --hero-text-muted: 220 9% 42%;
-    --hero-accent: 68 88% 62%;
-    --hero-accent-foreground: 0 0% 4%;
-    --hero-accent-hover: 68 85% 54%;
-    --hero-accent-subtle: 68 88% 62% / 0.32;
-    --hero-accent-subtle-border: 68 70% 65%;
-    --hero-accent-text: 72 72% 34%;
+    --hero-accent: 214 51% 47%;
+    --hero-accent-foreground: 0 0% 100%;
+    --hero-accent-hover: 214 51% 40%;
+    --hero-accent-subtle: 214 65% 95%;
+    --hero-accent-subtle-border: 214 62% 90%;
+    --hero-accent-text: 215 54% 40%;
   }
 
   /* Dark: pure black canvas, charcoal cards, electric-lime signal, fiber-optic blue */
@@ -79,42 +79,42 @@ All colors MUST be HSL.
     --card-foreground: 0 0% 96%;
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 96%;
-    --primary: 68 88% 64%;
-    --primary-foreground: 0 0% 4%;
-    --lime: 68 88% 64%;
-    --lime-foreground: 0 0% 4%;
+    --primary: 215 55% 68%;
+    --primary-foreground: 220 20% 8%;
+    --lime: 215 55% 68%;
+    --lime-foreground: 220 20% 8%;
     --secondary: 0 0% 16%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 62%;
-    --accent: 228 96% 62%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 215 55% 68%;
+    --accent-foreground: 220 20% 8%;
     --destructive: 0 70% 56%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 19%;
     --input: 0 0% 19%;
-    --ring: 68 88% 64%;
+    --ring: 215 55% 68%;
 
     --hero-gradient-from: 0 0% 0%;
     --hero-gradient-via: 0 0% 4%;
     --hero-gradient-to: 0 0% 0%;
     --grid-line: 0 0% 100%;
-    --glow: 68 88% 64%;
+    --glow: 215 55% 68%;
     --display-from: 0 0% 100%;
     --display-to: 0 0% 58%;
 
-    --badge-blue: 228 60% 18%;
-    --badge-blue-foreground: 228 96% 76%;
-    --badge-green: 68 88% 64%;
-    --badge-green-foreground: 0 0% 4%;
+    --badge-blue: 215 39% 22%;
+    --badge-blue-foreground: 215 55% 76%;
+    --badge-green: 215 55% 68%;
+    --badge-green-foreground: 220 20% 8%;
     --badge-purple: 260 70% 62%;
     --badge-purple-foreground: 0 0% 100%;
     --badge-orange: 32 90% 52%;
     --badge-orange-foreground: 0 0% 4%;
 
-    --success: 68 88% 64%;
+    --success: 142 71% 55%;
     --warning: 38 92% 58%;
-    --info: 228 96% 66%;
+    --info: 215 55% 68%;
 
     /* Hero section tokens (dark mode) */
     --hero-bg: 220 18% 7%;
@@ -124,12 +124,12 @@ All colors MUST be HSL.
     --hero-text: 220 14% 96%;
     --hero-text-body: 220 12% 74%;
     --hero-text-muted: 220 10% 64%;
-    --hero-accent: 68 88% 64%;
-    --hero-accent-foreground: 0 0% 4%;
-    --hero-accent-hover: 68 88% 70%;
-    --hero-accent-subtle: 68 88% 64% / 0.22;
-    --hero-accent-subtle-border: 68 88% 64% / 0.4;
-    --hero-accent-text: 68 88% 64%;
+    --hero-accent: 215 55% 68%;
+    --hero-accent-foreground: 220 20% 8%;
+    --hero-accent-hover: 215 55% 76%;
+    --hero-accent-subtle: 215 39% 22%;
+    --hero-accent-subtle-border: 215 39% 30%;
+    --hero-accent-text: 215 55% 76%;
   }
 }
 
@@ -315,11 +315,11 @@ All colors MUST be HSL.
     background-size: 24px 24px;
     background-position: center center;
     mask-image:
-      linear-gradient(to bottom, black 0%, black 65%, transparent 100%),
-      radial-gradient(ellipse 75% 70% at 50% 45%, black 40%, transparent 95%);
+      linear-gradient(to bottom, transparent 0%, black 15%, black 50%, transparent 95%),
+      radial-gradient(ellipse 70% 55% at 50% 42%, black 25%, transparent 85%);
     -webkit-mask-image:
-      linear-gradient(to bottom, black 0%, black 65%, transparent 100%),
-      radial-gradient(ellipse 75% 70% at 50% 45%, black 40%, transparent 95%);
+      linear-gradient(to bottom, transparent 0%, black 15%, black 50%, transparent 95%),
+      radial-gradient(ellipse 70% 55% at 50% 42%, black 25%, transparent 85%);
     mask-composite: intersect;
     -webkit-mask-composite: source-in;
   }
@@ -435,10 +435,16 @@ All colors MUST be HSL.
     text-transform: none;
     letter-spacing: -0.01em;
     line-height: 1.05;
-    background: hsl(var(--lime));
-    color: hsl(var(--lime-foreground));
-    -webkit-text-fill-color: hsl(var(--lime-foreground));
-    box-shadow: 0 0 40px -6px hsl(var(--lime) / 0.55);
+    background: #E9F0FA;
+    color: #2F5D9E;
+    -webkit-text-fill-color: #2F5D9E;
+    box-shadow: 0 0 30px -6px rgba(59, 111, 182, 0.4);
+  }
+  .dark .lime-chip {
+    background: #22344D;
+    color: #9DBBE6;
+    -webkit-text-fill-color: #9DBBE6;
+    box-shadow: 0 0 30px -6px rgba(127, 166, 219, 0.4);
   }
 
   /* Outlined pill buttons ("View services", "Be a partner") */
@@ -453,12 +459,21 @@ All colors MUST be HSL.
   }
   .pill-lime {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200;
-    background: hsl(var(--lime));
-    color: hsl(var(--lime-foreground));
+    background: #3B6FB6;
+    color: #FFFFFF;
   }
   .pill-lime:hover {
     filter: brightness(1.06);
-    box-shadow: 0 0 32px -6px hsl(var(--lime) / 0.6);
+    background: #335F9C;
+    box-shadow: 0 0 28px -6px rgba(59, 111, 182, 0.5);
+  }
+  .dark .pill-lime {
+    background: #7FA6DB;
+    color: #0B1320;
+  }
+  .dark .pill-lime:hover {
+    background: #9DBBE6;
+    box-shadow: 0 0 28px -6px rgba(127, 166, 219, 0.5);
   }
 
   /* Small rounded tag chips ("Ai", "robot") */
@@ -512,8 +527,12 @@ All colors MUST be HSL.
     background-size: 22px 22px, 22px 22px, 44px 44px;
   }
   .tile-lime {
-    background: radial-gradient(120% 120% at 0% 0%, hsl(var(--lime)), hsl(68 70% 40%));
-    color: hsl(var(--lime-foreground));
+    background: radial-gradient(120% 120% at 0% 0%, #3B6FB6, #2F5D9E);
+    color: #FFFFFF;
+  }
+  .dark .tile-lime {
+    background: radial-gradient(120% 120% at 0% 0%, #4F7FBF, #2A4E86);
+    color: #FFFFFF;
   }
 
   .hero-glow {

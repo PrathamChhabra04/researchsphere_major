@@ -191,7 +191,7 @@ const About = () => {
                 <article className="flex h-full flex-col items-start rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/25">
                   <span
                     aria-hidden="true"
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lime/35 text-sm font-semibold text-foreground"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E9F0FA] dark:bg-[#22344D] text-[#2F5D9E] dark:text-[#9DBBE6] text-sm font-semibold"
                   >
                     MK
                   </span>

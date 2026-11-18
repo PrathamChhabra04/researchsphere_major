@@ -9,6 +9,12 @@ const dataFile = path.resolve(__dirname, "..", "data", "special-issues.json");
 const DEFAULT_SUBJECT_AREA = "Computer Science";
 const CLOSING_SOON_DAYS = 30;
 const DAY_MS = 24 * 60 * 60 * 1000;
+const DEADLINE_WINDOWS = {
+  "30d": 30,
+  "3m": 90,
+  "6m": 180,
+};
+const SORT_KEYS = new Set(["deadline", "impactFactor", "citeScore"]);
 
 let cache = {
   mtimeMs: -1,
@@ -198,16 +204,40 @@ const compareByDeadline = (left, right) => {
   return left.title.localeCompare(right.title);
 };
 
+const compareByMetric = (left, right, key) => {
+  const leftValue = left[key];
+  const rightValue = right[key];
+
+  if (leftValue == null && rightValue == null) return compareByDeadline(left, right);
+  if (leftValue == null) return 1;
+  if (rightValue == null) return -1;
+  if (rightValue !== leftValue) return rightValue - leftValue;
+  return compareByDeadline(left, right);
+};
+
+const coerceMinimum = (value) => {
+  if (value == null || value === "") return null;
+  const parsed = Number(String(value).replace(/[^0-9.]/g, ""));
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
+};
+
+const normalizeSort = (value) =>
+  SORT_KEYS.has(value) ? value : "deadline";
+
 /**
  * Read the manually collected ScienceDirect special-issues dataset.
  *
  * Filtering happens here rather than in the page so every client sees the
- * same deadline handling: expired calls are removed, the nearest deadline is
- * first, and keyword matching covers title, editors and journal.
+ * same deadline handling: expired calls are removed, keyword matching covers
+ * title, editors and journal, and the requested sort is applied consistently.
  */
 export const searchSpecialIssues = async ({
   query = "",
   secondarySubject = "",
+  deadline = "",
+  minImpactFactor = "",
+  minCiteScore = "",
+  sort = "",
 } = {}) => {
   const payload = await readPayload();
 
@@ -221,6 +251,10 @@ export const searchSpecialIssues = async ({
     .filter(Boolean);
 
   const secondaryFilter = normalizeWhitespace(secondarySubject).toLowerCase();
+  const deadlineWindow = DEADLINE_WINDOWS[deadline] ?? null;
+  const impactFloor = coerceMinimum(minImpactFactor);
+  const citeScoreFloor = coerceMinimum(minCiteScore);
+  const sortKey = normalizeSort(sort);
 
   const filtered = upcoming
     .filter((item) => matchesQuery(item, tokens))
@@ -230,7 +264,33 @@ export const searchSpecialIssues = async ({
         (subject) => subject.toLowerCase() === secondaryFilter,
       );
     })
-    .sort(compareByDeadline);
+    .filter((item) => {
+      if (!deadlineWindow) return true;
+      return (
+        item.daysUntilDeadline != null &&
+        item.daysUntilDeadline >= 0 &&
+        item.daysUntilDeadline <= deadlineWindow
+      );
+    })
+    .filter(
+      (item) =>
+        impactFloor == null ||
+        (item.impactFactor != null && item.impactFactor >= impactFloor),
+    )
+    .filter(
+      (item) =>
+        citeScoreFloor == null ||
+        (item.citeScore != null && item.citeScore >= citeScoreFloor),
+    )
+    .sort((left, right) => {
+      if (sortKey === "impactFactor") {
+        return compareByMetric(left, right, "impactFactor");
+      }
+      if (sortKey === "citeScore") {
+        return compareByMetric(left, right, "citeScore");
+      }
+      return compareByDeadline(left, right);
+    });
 
   const secondarySubjectAreas = [
     ...new Set([
@@ -249,6 +309,7 @@ export const searchSpecialIssues = async ({
       subjectSlug: payload.subjectSlug,
       secondarySubjectAreas,
       closingSoonDays: CLOSING_SOON_DAYS,
+      sort: sortKey,
     },
   };
 };

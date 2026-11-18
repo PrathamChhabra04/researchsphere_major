@@ -41,9 +41,15 @@ Manually collected ScienceDirect calls for special issues (Computer Science only
 |---|---|
 | `query` | Free-text match over title, guest editors, journal and secondary subject |
 | `secondarySubject` | Exact secondary subject area, e.g. `Artificial Intelligence` |
+| `deadline` | Closing window: `30d`, `3m` (90 days) or `6m` (180 days) |
+| `minImpactFactor` | Minimum journal impact factor, e.g. `5` |
+| `minCiteScore` | Minimum journal CiteScore, e.g. `10` |
+| `sort` | `deadline` (default), `impactFactor` or `citeScore` |
 
-Expired calls are removed at read time and the nearest deadline is returned first.
-Response: `{ success, data, count, meta: { total, filtered, scrapedAt, subjectArea, subjectSlug, secondarySubjectAreas, closingSoonDays } }`.
+Expired calls are removed at read time. Deadline, impact-factor and CiteScore filters
+combine with the keyword search, and calls missing a metric are excluded only while that
+metric filter is active.
+Response: `{ success, data, count, meta: { total, filtered, scrapedAt, subjectArea, subjectSlug, secondarySubjectAreas, closingSoonDays, sort } }`.
 
 The dataset is refreshed manually, not by the harvest scheduler:
 

@@ -137,7 +137,7 @@ const compactJournalMetrics = (items: Array<JournalMetricItem | null>) =>
 
 /**
  * Deterministic generated cover used when a journal has no artwork.
- * Muted, print-like tones including one lime option; the pattern is pure CSS
+ * Muted, print-like tones; the pattern is pure CSS
  * so it renders identically in light and dark mode.
  */
 const COVER_THEMES = [
@@ -146,7 +146,7 @@ const COVER_THEMES = [
   { bg: "#432b32", fg: "#f6ebee", line: "rgba(246, 233, 237, 0.14)", accent: "#d3a8b5" },
   { bg: "#3d3227", fg: "#f4eee6", line: "rgba(244, 236, 224, 0.15)", accent: "#cdb697" },
   { bg: "#25332c", fg: "#ecf2ee", line: "rgba(232, 242, 236, 0.15)", accent: "#a9c4b1" },
-  { bg: "#c8d84a", fg: "#191f03", line: "rgba(25, 31, 3, 0.16)", accent: "#39420c" },
+  { bg: "#3B6FB6", fg: "#ffffff", line: "rgba(255, 255, 255, 0.2)", accent: "#E9F0FA" },
   { bg: "#262c4a", fg: "#eceef8", line: "rgba(234, 237, 249, 0.15)", accent: "#b2bade" },
   { bg: "#33404a", fg: "#edf2f5", line: "rgba(235, 242, 246, 0.14)", accent: "#adc2cd" },
 ];
@@ -714,7 +714,7 @@ const Journals = () => {
                                       className={cn(
                                         "inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm font-medium text-foreground",
                                         access.open
-                                          ? "border-lime/50 bg-lime/20"
+                                          ? "border-primary/40 bg-[#E9F0FA] dark:bg-[#22344D] text-[#2F5D9E] dark:text-[#9DBBE6]"
                                           : "border-border bg-muted/40",
                                       )}
                                     >
@@ -767,7 +767,7 @@ const Journals = () => {
                                   type="button"
                                   size="lg"
                                   onClick={() => openLink(journalUrl)}
-                                  className="h-12 w-full rounded-xl bg-lime text-base font-semibold text-lime-foreground hover:bg-lime/90"
+                                  className="h-12 w-full rounded-xl bg-[#3B6FB6] hover:bg-[#335F9C] text-white dark:bg-[#7FA6DB] dark:hover:bg-[#9DBBE6] dark:text-[#0B1320] text-base font-semibold"
                                 >
                                   View journal
                                   <ExternalLink className="h-4 w-4" />

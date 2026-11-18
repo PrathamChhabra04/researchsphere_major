@@ -99,7 +99,7 @@ export interface CollaborationRequestPayload {
   name: string;
   email: string;
   institution: string;
-  researchAreas: string;
+  subject?: string;
   projectDetails?: string;
 }
 
@@ -154,6 +154,10 @@ export interface JournalMatchResponse {
   count: number;
 }
 
+export type SpecialIssueSort = "deadline" | "impactFactor" | "citeScore";
+
+export type SpecialIssueDeadlineWindow = "" | "30d" | "3m" | "6m";
+
 export interface SpecialIssueItem {
   id: string;
   title: string;
@@ -182,6 +186,7 @@ export interface SpecialIssuesResponse {
     subjectSlug: string;
     secondarySubjectAreas: string[];
     closingSoonDays: number;
+    sort?: SpecialIssueSort;
   };
 }
 
@@ -297,15 +302,31 @@ export const matchJournals = async ({
 export const getSpecialIssues = async ({
   query = "",
   secondarySubject = "",
+  deadline = "",
+  minImpactFactor,
+  minCiteScore,
+  sort = "deadline",
 }: {
   query?: string;
   secondarySubject?: string;
+  deadline?: SpecialIssueDeadlineWindow;
+  minImpactFactor?: number | null;
+  minCiteScore?: number | null;
+  sort?: SpecialIssueSort;
 } = {}): Promise<SpecialIssuesResponse> => {
   const params = new URLSearchParams();
   if (query.trim()) params.set("query", query.trim());
   if (secondarySubject.trim()) {
     params.set("secondarySubject", secondarySubject.trim());
   }
+  if (deadline) params.set("deadline", deadline);
+  if (minImpactFactor != null) {
+    params.set("minImpactFactor", String(minImpactFactor));
+  }
+  if (minCiteScore != null) {
+    params.set("minCiteScore", String(minCiteScore));
+  }
+  if (sort !== "deadline") params.set("sort", sort);
 
   const response = await fetch(
     `${API_BASE_URL}/special-issues${params.toString() ? `?${params.toString()}` : ""}`,

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-/** Line-art sphere mark (meridians + orbit) drawn in currentColor, with a lime node. */
+/** Line-art sphere mark (meridians + orbit) drawn in currentColor, with an accent blue node. */
 export const SphereIcon = ({ className = "h-6 w-6" }: { className?: string }) => (
   <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
     <circle cx="16" cy="16" r="11" stroke="currentColor" strokeWidth="1.5" />
@@ -16,7 +16,7 @@ export const SphereIcon = ({ className = "h-6 w-6" }: { className?: string }) =>
       strokeOpacity="0.45"
       strokeWidth="1.2"
     />
-    <circle cx="28.4" cy="9.6" r="2.4" className="fill-lime" />
+    <circle cx="28.4" cy="9.6" r="2.4" className="fill-primary" />
   </svg>
 );
 

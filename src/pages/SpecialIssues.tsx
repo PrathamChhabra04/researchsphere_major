@@ -1,9 +1,9 @@
 import PageHeader from "@/components/PageHeader";
 import {
-  ArrowUpRight,
+  ArrowDownAZ,
+  ArrowUpAZ,
   Bookmark,
   BookOpenText,
-  Calendar,
   ExternalLink,
   Search,
   Sparkles,
@@ -14,7 +14,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { getSpecialIssues, type SpecialIssueItem } from "@/services/apiClient";
+import {
+  getSpecialIssues,
+  type SpecialIssueItem,
+  type SpecialIssueSort,
+} from "@/services/apiClient";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,6 +37,15 @@ const SAVED_SPECIAL_ISSUES_STORAGE_KEY =
   "researchsphere:saved-special-issues";
 const ALL_SECONDARY_SUBJECTS = "all";
 const ITEMS_PER_PAGE = 10;
+
+const SORT_OPTIONS = [
+  { value: "deadline", label: "Deadline" },
+  { value: "impactFactor", label: "Impact Factor" },
+  { value: "citeScore", label: "CiteScore" },
+];
+
+const CONTROL_CLASS =
+  "h-[60px] rounded-2xl border-border bg-card px-4 text-sm shadow-sm focus:ring-2 focus:ring-primary/40 focus:ring-offset-0 data-[state=open]:border-primary/70 data-[state=open]:ring-2 data-[state=open]:ring-primary/40";
 
 const readSavedSpecialIssues = () => {
   try {
@@ -96,10 +109,9 @@ const formatMetric = (value?: number | null) => {
 };
 
 const deadlineNote = (item: SpecialIssueItem) => {
-  if (item.status !== "closing-soon" || item.daysUntilDeadline == null) {
-    return null;
-  }
-  if (item.daysUntilDeadline <= 0) return "Closes today";
+  if (item.daysUntilDeadline == null) return null;
+  if (item.daysUntilDeadline < 0) return "Deadline passed";
+  if (item.daysUntilDeadline === 0) return "Closes today";
   if (item.daysUntilDeadline === 1) return "Closes tomorrow";
   return `Closes in ${item.daysUntilDeadline} days`;
 };
@@ -113,6 +125,8 @@ const SpecialIssues = () => {
   const [secondarySubject, setSecondarySubject] = useState(
     ALL_SECONDARY_SUBJECTS,
   );
+  const [sortBy, setSortBy] = useState<SpecialIssueSort>("deadline");
+  const [sortAsc, setSortAsc] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [savedIssues, setSavedIssues] = useState<string[]>(
     readSavedSpecialIssues,
@@ -128,21 +142,38 @@ const SpecialIssues = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [debouncedQuery, secondarySubject]);
+  }, [
+    debouncedQuery,
+    secondarySubject,
+    sortBy,
+    sortAsc,
+  ]);
 
   const { data, isLoading, isError, isFetching } = useQuery({
-    queryKey: ["special-issues", debouncedQuery, secondarySubject],
+    queryKey: [
+      "special-issues",
+      debouncedQuery,
+      secondarySubject,
+      sortBy,
+    ],
     queryFn: () =>
       getSpecialIssues({
         query: debouncedQuery,
         secondarySubject:
           secondarySubject === ALL_SECONDARY_SUBJECTS ? "" : secondarySubject,
+        deadline: "",
+        minImpactFactor: null,
+        minCiteScore: null,
+        sort: sortBy,
       }),
     staleTime: 1000 * 60 * 5,
     placeholderData: (previousData) => previousData,
   });
 
-  const issues = data?.data ?? [];
+  const issues = useMemo(() => {
+    const raw = data?.data ?? [];
+    return sortAsc ? [...raw].reverse() : raw;
+  }, [data?.data, sortAsc]);
   const meta = data?.meta;
   const secondaryOptions = meta?.secondarySubjectAreas ?? [];
 
@@ -158,6 +189,8 @@ const SpecialIssues = () => {
     setSearchQuery("");
     setDebouncedQuery("");
     setSecondarySubject(ALL_SECONDARY_SUBJECTS);
+    setSortBy("deadline");
+    setSortAsc(false);
     setCurrentPage(1);
   };
 
@@ -190,76 +223,97 @@ const SpecialIssues = () => {
             icon={Sparkles}
             eyebrow="Call for special issues"
             title="Calls for special issues"
-            accent={meta?.total ? `${meta.total} live` : undefined}
-            description="Guest-edited special issues in computer science, collected from ScienceDirect journals with guest editors, metrics and submission deadlines."
+            description="Browse open guest-edited volumes across ScienceDirect journals — each listing includes submission deadlines, impact factor, CiteScore, and guest editor details."
           />
 
-          <section className="overflow-hidden rounded-[28px] bg-card/60">
-            <div className="p-6 md:p-8">
-              <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
-                <div className="space-y-4">
-                  <div className="relative">
-                    <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                    <Input
-                      placeholder="Try federated learning, edge computing, cybersecurity..."
-                      value={searchQuery}
-                      onChange={(event) => setSearchQuery(event.target.value)}
-                      className="h-14 rounded-xl pl-12 text-[15px] md:text-base"
-                      aria-label="Search special issues"
-                    />
-                  </div>
+          <section className="space-y-3">
+            <div className="relative flex h-[60px] items-center rounded-2xl border border-border bg-card shadow-sm transition-all focus-within:border-primary/70 focus-within:ring-2 focus-within:ring-primary/40">
+              <Search className="ml-5 h-5 w-5 shrink-0 text-muted-foreground" />
+              <Input
+                placeholder="Try federated learning, edge computing, cybersecurity..."
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                className="h-full flex-1 rounded-2xl border-0 bg-transparent px-4 text-base shadow-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                aria-label="Search special issues"
+              />
+            </div>
 
-                  <div className="grid grid-cols-1 gap-3 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
-                    <Select
-                      value={secondarySubject}
-                      onValueChange={setSecondarySubject}
-                    >
-                      <SelectTrigger
-                        className="h-12 rounded-xl"
-                        aria-label="Secondary subject area"
-                      >
-                        <SelectValue placeholder="All secondary subject areas" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value={ALL_SECONDARY_SUBJECTS}>
-                          All secondary subject areas
-                        </SelectItem>
-                        {secondaryOptions.map((subject) => (
-                          <SelectItem key={subject} value={subject}>
-                            {subject}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+            <div className="flex flex-wrap items-center gap-3">
+              <Select
+                value={secondarySubject}
+                onValueChange={setSecondarySubject}
+              >
+                <SelectTrigger
+                  className={cn(CONTROL_CLASS, "min-w-[210px] flex-[1.6]")}
+                  aria-label="Secondary subject area"
+                >
+                  <SelectValue placeholder="All secondary subject areas" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value={ALL_SECONDARY_SUBJECTS}>
+                    All secondary subject areas
+                  </SelectItem>
+                  {secondaryOptions.map((subject) => (
+                    <SelectItem key={subject} value={subject}>
+                      {subject}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
-                    <div className="flex h-12 items-center gap-2 rounded-xl border border-border px-4 text-sm text-muted-foreground">
-                      <Sparkles className="h-4 w-4 text-primary" />
-                      Primary subject:{" "}
-                      <span className="font-medium text-foreground">
-                        {meta?.subjectArea || "Computer Science"}
-                      </span>
-                    </div>
-                  </div>
+              {/* Sort dropdown + direction toggle */}
+              <div className="flex items-center gap-2">
+                <Select
+                  value={sortBy}
+                  onValueChange={(value) => setSortBy(value as SpecialIssueSort)}
+                >
+                  <SelectTrigger
+                    className={cn(CONTROL_CLASS, "min-w-[180px] flex-1")}
+                    aria-label="Sort by"
+                  >
+                    <SelectValue placeholder="Sort by deadline" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {SORT_OPTIONS.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
 
-                  {hasActiveFilters && (
-                    <div className="flex justify-end">
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        size="sm"
-                        onClick={clearFilters}
-                        className="rounded-full text-muted-foreground hover:text-foreground"
-                      >
-                        Clear filters
-                      </Button>
-                    </div>
+                <button
+                  type="button"
+                  onClick={() => setSortAsc((prev) => !prev)}
+                  aria-label={sortAsc ? "Sort ascending" : "Sort descending"}
+                  title={sortAsc ? "Ascending" : "Descending"}
+                  className={cn(
+                    "flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-2xl border border-border bg-card shadow-sm transition-colors",
+                    "hover:border-primary/60 hover:bg-muted",
+                    sortAsc && "border-primary/60 bg-[#E9F0FA] dark:bg-[#22344D] text-[#2F5D9E] dark:text-[#9DBBE6]",
                   )}
-                </div>
+                >
+                  {sortAsc ? (
+                    <ArrowUpAZ className="h-5 w-5" />
+                  ) : (
+                    <ArrowDownAZ className="h-5 w-5" />
+                  )}
+                </button>
               </div>
+
+              {hasActiveFilters && (
+                <button
+                  type="button"
+                  onClick={clearFilters}
+                  className="ml-1 shrink-0 whitespace-nowrap text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                >
+                  Clear filters
+                </button>
+              )}
             </div>
           </section>
 
-          <div className="mt-8 mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
+          <div className="mt-10 mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
             <div className="text-2xl font-semibold tracking-tight text-foreground">
               {resultsLabel}
               {isFetching && !isLoading && (
@@ -284,14 +338,20 @@ const SpecialIssues = () => {
                   className="rounded-[24px] border border-border shadow-sm"
                 >
                   <CardContent className="p-6 md:p-7">
-                    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+                    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
                       <div className="space-y-4">
-                        <Skeleton className="h-6 w-1/3" />
+                        <Skeleton className="h-5 w-1/4" />
                         <Skeleton className="h-9 w-4/5" />
                         <Skeleton className="h-5 w-2/3" />
                         <Skeleton className="h-5 w-1/2" />
+                        <Skeleton className="h-14 w-40" />
                       </div>
-                      <Skeleton className="h-44 rounded-3xl" />
+                      <div className="space-y-3 border-l border-border pl-6">
+                        <Skeleton className="h-4 w-32" />
+                        <Skeleton className="h-8 w-40" />
+                        <Skeleton className="h-4 w-24" />
+                        <Skeleton className="h-11 w-full rounded-xl" />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -311,7 +371,7 @@ const SpecialIssues = () => {
               <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-muted-foreground">
                 {meta?.total === 0
                   ? "The ScienceDirect dataset is refreshed manually, so it may not have been collected yet. Check back soon."
-                  : "Try a broader keyword or choose a different secondary subject area."}
+                  : "Try a broader keyword or loosen one of the filters."}
               </p>
               {hasActiveFilters && (
                 <Button
@@ -331,52 +391,45 @@ const SpecialIssues = () => {
                 const impactFactor = formatMetric(issue.impactFactor);
                 const citeScore = formatMetric(issue.citeScore);
                 const note = deadlineNote(issue);
+                const isClosingSoon = issue.status === "closing-soon";
                 const secondaryAreas = issue.secondarySubjectAreas ?? [];
 
                 return (
                   <Card
                     key={issue.id}
-                    className="rounded-[24px] border border-border shadow-sm transition-shadow duration-200 hover:shadow-md"
+                    className="rounded-[24px] border border-border shadow-sm transition-colors hover:border-primary/50"
                   >
                     <CardContent className="p-6 md:p-7">
-                      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+                      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
                         <div className="min-w-0 space-y-4">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <Badge
-                              variant="secondary"
-                              className="rounded-full px-3 py-1 text-xs font-medium"
-                            >
-                              {issue.subjectArea}
-                            </Badge>
-                            {issue.status === "closing-soon" && (
-                              <Badge
-                                variant="secondary"
-                                className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-600 dark:text-amber-400"
-                              >
-                                Closing soon
-                              </Badge>
-                            )}
-                            {secondaryAreas.slice(0, 2).map((subject) => (
-                              <Badge
-                                key={subject}
-                                variant="outline"
-                                className="rounded-full px-3 py-1 text-xs font-medium"
-                              >
-                                {subject}
-                              </Badge>
-                            ))}
-                          </div>
+                          {secondaryAreas.length > 0 && (
+                            <div className="flex flex-wrap items-center gap-2">
+                              {secondaryAreas.slice(0, 3).map((subject) => (
+                                <Badge
+                                  key={subject}
+                                  variant="outline"
+                                  className="rounded-full border-border/70 px-2.5 py-0.5 text-[11px] font-normal text-muted-foreground"
+                                >
+                                  {subject}
+                                </Badge>
+                              ))}
+                              {secondaryAreas.length > 3 && (
+                                <span className="text-[11px] text-muted-foreground">
+                                  +{secondaryAreas.length - 3} more
+                                </span>
+                              )}
+                            </div>
+                          )}
 
-                          <div className="flex items-start gap-3">
-                            <h2 className="min-w-0 flex-1 text-[1.45rem] font-semibold leading-snug tracking-tight text-foreground">
+                          <div className="flex items-start gap-4">
+                            <h2 className="min-w-0 flex-1 text-[1.4rem] font-semibold leading-[1.4] tracking-normal text-foreground">
                               <a
                                 href={issue.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group inline-flex items-start gap-2 transition-colors hover:text-primary"
+                                className="underline-offset-4 transition-colors hover:text-primary hover:underline"
                               >
-                                <span>{issue.title}</span>
-                                <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+                                {issue.title}
                               </a>
                             </h2>
 
@@ -406,7 +459,7 @@ const SpecialIssues = () => {
                             </Button>
                           </div>
 
-                          <div className="space-y-2 text-sm leading-6 text-muted-foreground">
+                          <div className="space-y-2 text-[15px] leading-6 text-muted-foreground">
                             <div className="flex items-start gap-2">
                               <Users className="mt-1 h-4 w-4 shrink-0" />
                               <span>
@@ -446,64 +499,76 @@ const SpecialIssues = () => {
                           </div>
 
                           {(impactFactor || citeScore) && (
-                            <div className="flex flex-wrap items-center gap-2">
+                            <div className="flex items-stretch gap-6 pt-1">
                               {impactFactor && (
-                                <span className="rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground">
-                                  Impact factor{" "}
-                                  <span className="font-semibold text-foreground">
+                                <div>
+                                  <div className="text-[13px] text-muted-foreground">
+                                    Impact factor
+                                  </div>
+                                  <div className="mt-1 text-lg font-semibold text-foreground">
                                     {impactFactor}
-                                  </span>
-                                </span>
+                                  </div>
+                                </div>
                               )}
-                              {citeScore && (
-                                <span className="rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-muted-foreground">
-                                  CiteScore{" "}
-                                  <span className="font-semibold text-foreground">
-                                    {citeScore}
-                                  </span>
-                                </span>
-                              )}
-                            </div>
-                          )}
 
-                          {secondaryAreas.length > 2 && (
-                            <div className="flex flex-wrap gap-2">
-                              {secondaryAreas.slice(2, 6).map((subject) => (
-                                <span
-                                  key={subject}
-                                  className="rounded-md border border-border/70 px-2.5 py-1 text-xs text-muted-foreground"
-                                >
-                                  {subject}
-                                </span>
-                              ))}
-                              {secondaryAreas.length > 6 && (
-                                <span className="rounded-md border border-transparent px-2.5 py-1 text-xs text-muted-foreground">
-                                  +{secondaryAreas.length - 6} more
-                                </span>
+                              {impactFactor && citeScore && (
+                                <div className="w-px bg-border" />
+                              )}
+
+                              {citeScore && (
+                                <div>
+                                  <div className="text-[13px] text-muted-foreground">
+                                    CiteScore
+                                  </div>
+                                  <div className="mt-1 text-lg font-semibold text-foreground">
+                                    {citeScore}
+                                  </div>
+                                </div>
                               )}
                             </div>
                           )}
                         </div>
 
-                        <div className="flex flex-col justify-between gap-5 rounded-[28px] border border-border bg-muted/50 px-5 py-5">
+                        <div className="flex flex-col gap-4 border-l border-border pl-6">
                           <div>
-                            <div className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+                            <div className="text-sm text-muted-foreground">
                               Submission deadline
                             </div>
-                            <div className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-foreground">
-                              <Calendar className="h-4 w-4 text-muted-foreground" />
+                            <div className="mt-1 text-2xl font-semibold tracking-tight text-foreground">
                               {formatDate(issue.submissionDeadline)}
                             </div>
+
                             {note && (
-                              <p className="mt-2 text-sm font-medium text-amber-600 dark:text-amber-400">
-                                {note}
-                              </p>
+                              <div
+                                className={cn(
+                                  "mt-2 flex flex-wrap items-center gap-2 text-sm",
+                                  isClosingSoon
+                                    ? "text-amber-600 dark:text-amber-400"
+                                    : "text-muted-foreground",
+                                )}
+                              >
+                                <span
+                                  className={
+                                    isClosingSoon ? "font-medium" : undefined
+                                  }
+                                >
+                                  {note}
+                                </span>
+                                {isClosingSoon && (
+                                  <Badge
+                                    variant="secondary"
+                                    className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400"
+                                  >
+                                    Closing soon
+                                  </Badge>
+                                )}
+                              </div>
                             )}
                           </div>
 
                           <Button
                             asChild
-                            className="h-11 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90"
+                            className="h-11 w-full rounded-xl bg-[#3B6FB6] hover:bg-[#335F9C] text-white dark:bg-[#7FA6DB] dark:hover:bg-[#9DBBE6] dark:text-[#0B1320]"
                           >
                             <a
                               href={issue.url}

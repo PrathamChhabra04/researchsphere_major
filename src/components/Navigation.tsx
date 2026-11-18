@@ -230,7 +230,7 @@ const Navigation = () => {
             <button
               type="button"
               onClick={() => setProfileOpen(true)}
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-lime to-lime/40 text-lime-foreground ring-2 ring-background transition-transform hover:scale-105"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#6C98D6] to-[#2F5D9E] dark:from-[#4F7FBF] dark:to-[#2A4E86] text-white ring-2 ring-background transition-transform hover:scale-105"
               title="Your research preferences"
             >
               {profile.name ? (

@@ -147,18 +147,18 @@ const INTEREST_ALIAS_OVERRIDES: Record<string, string[]> = {
 };
 
 const normalizeTopicText = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/[-_/]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  value.toLowerCase().replace(/[-_/]/g, " ").replace(/\s+/g, " ").trim();
 
 const extractTopicMatches = (value: string): string[] => {
   const normalized = ` ${normalizeTopicText(value)} `;
   const matches: string[] = [];
 
   Object.entries(TOPIC_ALIASES).forEach(([topic, aliases]) => {
-    if (aliases.some((alias) => normalized.includes(` ${normalizeTopicText(alias)} `))) {
+    if (
+      aliases.some((alias) =>
+        normalized.includes(` ${normalizeTopicText(alias)} `),
+      )
+    ) {
       matches.push(topic);
     }
   });
@@ -213,6 +213,12 @@ const HERO_FILTER_CHIPS = [
     kindHint: "journal",
   },
   {
+    id: "special-issues",
+    label: "Call for special issues",
+    defaultPath: "/special-issues",
+    kindHint: "special-issue",
+  },
+  {
     id: "calls",
     label: "Calls for papers",
     defaultPath: "/book-chapters",
@@ -253,7 +259,10 @@ const StatCount = ({ value }: { value: number | undefined }) => {
 
           const step = (timestamp: number) => {
             if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const progress = Math.min(
+              (timestamp - startTimestamp) / duration,
+              1,
+            );
             const easeOut = 1 - Math.pow(1 - progress, 3);
             setDisplayCount(Math.round(easeOut * value));
 
@@ -290,7 +299,8 @@ const StatCount = ({ value }: { value: number | undefined }) => {
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("conferences");
+  const [selectedCategory, setSelectedCategory] =
+    useState<string>("conferences");
   const [exampleIndex, setExampleIndex] = useState(0);
   const [exampleVisible, setExampleVisible] = useState(true);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -454,7 +464,11 @@ const Index = () => {
     };
 
     interactionEvents.forEach((event) => {
-      const signalText = [event.query || "", event.title || "", ...(event.tags || [])]
+      const signalText = [
+        event.query || "",
+        event.title || "",
+        ...(event.tags || []),
+      ]
         .join(" ")
         .trim();
 
@@ -525,7 +539,9 @@ const Index = () => {
             const haystack = normalizeTopicText(
               [item.title, item.summary || "", ...(item.tags || [])].join(" "),
             );
-            return interestMatchers.some((matcher) => haystack.includes(matcher));
+            return interestMatchers.some((matcher) =>
+              haystack.includes(matcher),
+            );
           })
         : homepageItems;
 
@@ -668,7 +684,10 @@ const Index = () => {
   };
 
   const getJournalLink = (journal: JournalMatchItem) =>
-    journal.submissionLink || journal.guideForAuthors || journal.sourceUrl || "/journals";
+    journal.submissionLink ||
+    journal.guideForAuthors ||
+    journal.sourceUrl ||
+    "/journals";
 
   const getJournalSource = (journal: JournalMatchItem) => {
     if (!journal.provider) return "Journal";
@@ -681,42 +700,43 @@ const Index = () => {
 
       <div className="flex-1">
         {/* Hero */}
-        <section className="hero-pattern relative pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16">
+        <section className="hero-pattern relative pt-12 pb-10">
           <div className="container mx-auto px-4">
             <div className="hero-fade-in mx-auto flex max-w-[1200px] flex-col items-center text-center">
               {/* 1. Small eyebrow line */}
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-hero-border bg-hero-surface px-4 py-1.5 text-[13px] sm:text-sm font-medium text-hero-text-muted shadow-sm">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-hero-border bg-[#E9F0FA] dark:bg-[#1e2f47] dark:border-[#2d4466] px-4 py-1.5 text-[13px] sm:text-sm font-medium text-[#2F5D9E] dark:text-[#9DBBE6] shadow-sm">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-lime opacity-50 animate-ping" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-lime border border-black/15 dark:border-white/20" />
+                  <span className="absolute inline-flex h-full w-full rounded-full opacity-60 animate-ping bg-[#3B6FB6] dark:bg-[#7FA6DB]" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full border border-black/15 dark:border-white/20 bg-[#3B6FB6] dark:bg-[#7FA6DB]" />
                 </span>
                 <span>Live from 20+ sources</span>
               </div>
 
               {/* 2. H1 */}
-              <h1 className="mt-4 sm:mt-5 text-hero-h1 font-semibold tracking-normal text-hero-text text-balance">
-                Every research opportunity,<br className="hidden sm:inline" />{" "}
-                <span className="relative inline-block rounded-md bg-lime/35 dark:bg-lime/25 px-2.5 py-0.5 text-hero-text [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+              <h1 className="mt-4 sm:mt-5 text-[clamp(2.5rem,4.4vw,3.75rem)] leading-[1.25] md:leading-[1.22] font-bold tracking-normal text-hero-text lg:whitespace-nowrap">
+                Every research opportunity,{" "}
+                <span className="relative inline-block rounded-lg px-2.5 py-0.5 text-hero-text bg-[#E9F0FA] dark:bg-[#1e2f47] dark:text-[#e4edf9] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
                   in one place.
                 </span>
               </h1>
 
               {/* 3. Subheading */}
-              <p className="mt-4 max-w-[720px] text-hero-sub text-hero-text-body leading-[1.6]">
-                Conferences, journals, calls for papers and research roles are
-                scattered across hundreds of sites and mailing lists, so deadlines
-                get missed. ResearchSphere gathers them into one searchable,
-                always-updated hub with deadline alerts.
+              <p
+                className="mt-6 max-w-[620px] text-hero-sub text-hero-text-body leading-[1.6]"
+                style={{ textWrap: "balance" }}
+              >
+                Conferences, journals, calls for papers and research roles,
+                gathered in one searchable hub with deadline alerts.
               </p>
 
               {/* 4. Prominent search bar & quick-filter chips */}
-              <div className="mt-7 sm:mt-8 w-full max-w-[760px]">
+              <div className="mt-8 sm:mt-8 w-full max-w-[900px]">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
                     handleSearch();
                   }}
-                  className="relative flex h-[58px] sm:h-[64px] items-center gap-2.5 rounded-xl border border-hero-border bg-hero-surface p-1.5 sm:p-2 shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-[0_2px_8px_rgba(0,0,0,0.25)] transition-all duration-200 focus-within:border-lime/90 focus-within:ring-2 focus-within:ring-lime/40 focus-within:shadow-[0_0_20px_hsl(var(--lime)/0.25)]"
+                  className="relative flex h-[58px] sm:h-[64px] items-center gap-2.5 rounded-xl border border-hero-border-hover/80 bg-hero-surface p-1.5 sm:p-2 shadow-[0_4px_16px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_16px_rgba(0,0,0,0.35)] transition-all duration-200 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/35 focus-within:ring-offset-0 focus-within:shadow-[0_0_24px_rgba(59,111,182,0.15)] dark:focus-within:shadow-[0_0_24px_rgba(127,166,219,0.15)]"
                 >
                   <label htmlFor="hero-search-input" className="sr-only">
                     Search research opportunities
@@ -760,7 +780,7 @@ const Index = () => {
                       <button
                         type="button"
                         onClick={() => setSearchQuery("")}
-                        className="rounded p-1 text-hero-text-muted hover:text-hero-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+                        className="rounded p-1 text-hero-text-muted hover:text-hero-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                         aria-label="Clear search input"
                       >
                         <X className="h-4 w-4" />
@@ -768,7 +788,7 @@ const Index = () => {
                     )}
 
                     <kbd
-                      className="hidden md:inline-flex h-6 min-w-6 items-center justify-center rounded border border-hero-border bg-muted/60 px-1.5 font-mono text-[11px] font-medium text-hero-text-muted select-none"
+                      className="hidden md:inline-flex h-5 min-w-5 items-center justify-center rounded border border-hero-border bg-muted/40 px-1 font-mono text-[10px] font-normal text-hero-text-muted/70 select-none"
                       title="Press / to search"
                     >
                       /
@@ -777,14 +797,14 @@ const Index = () => {
 
                   <Button
                     type="submit"
-                    className="h-full px-5 sm:px-6 rounded-lg bg-lime hover:bg-lime/90 text-lime-foreground font-semibold text-sm sm:text-base shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+                    className="h-full px-5 sm:px-6 rounded-lg bg-[#3B6FB6] hover:bg-[#335F9C] text-white dark:bg-[#7FA6DB] dark:hover:bg-[#9DBBE6] dark:text-[#0B1320] font-semibold text-sm sm:text-base shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   >
                     Search
                   </Button>
                 </form>
 
                 {/* Quick-filter chips labelled 'Search in:'; each chip opens its own section page */}
-                <div className="mt-3.5 flex flex-wrap items-center justify-center gap-2">
+                <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
                   <span className="text-xs sm:text-sm font-medium text-hero-text-muted">
                     Search in:
                   </span>
@@ -796,14 +816,17 @@ const Index = () => {
                         type="button"
                         onClick={() => setSelectedCategory(chip.id)}
                         aria-pressed={isSelected}
-                        className={`rounded-lg border px-3.5 py-1.5 text-[13px] font-medium shadow-sm transition-all inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime ${
+                        className={`rounded-lg border px-3.5 py-1.5 text-[13px] font-medium shadow-sm transition-all inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                           isSelected
-                            ? "border-lime bg-lime text-lime-foreground font-semibold shadow-sm"
+                            ? "bg-[#E9F0FA] border-[#3B6FB6] text-[#2F5D9E] dark:bg-[#1e2f47] dark:border-[#7FA6DB] dark:text-[#9DBBE6] font-semibold shadow-sm"
                             : "border-hero-border bg-hero-surface text-hero-text-muted hover:border-hero-border-hover hover:text-hero-text"
                         }`}
                       >
                         {isSelected && (
-                          <Check className="h-3.5 w-3.5 stroke-[2.5]" aria-hidden="true" />
+                          <Check
+                            className="h-3.5 w-3.5 stroke-[2.5]"
+                            aria-hidden="true"
+                          />
                         )}
                         <span>{chip.label}</span>
                       </button>
@@ -813,64 +836,75 @@ const Index = () => {
               </div>
 
               {/* 5. Buttons */}
-              <div className="mt-8 sm:mt-9 flex flex-wrap items-center justify-center gap-3">
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                 <Link
                   to="/conferences"
-                  className="h-[48px] px-6 inline-flex items-center justify-center gap-2 rounded-lg bg-lime hover:bg-lime/90 text-lime-foreground font-semibold text-[15px] sm:text-base border border-lime shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2"
+                  className="h-[48px] px-6 inline-flex items-center justify-center gap-2 rounded-xl border border-hero-border bg-hero-surface hover:bg-muted/30 hover:border-primary text-hero-text font-semibold text-[15px] sm:text-base shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 >
                   Browse conferences
                 </Link>
                 <Link
                   to="/journals"
-                  className="h-[48px] px-6 inline-flex items-center justify-center gap-2 rounded-lg border border-hero-border bg-hero-surface hover:bg-muted/50 hover:border-hero-border-hover text-hero-text font-semibold text-[15px] sm:text-base shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2"
+                  className="h-[48px] px-6 inline-flex items-center justify-center gap-2 rounded-xl border border-hero-border bg-hero-surface hover:bg-muted/30 hover:border-primary text-hero-text font-semibold text-[15px] sm:text-base shadow-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 >
                   Find journals
                 </Link>
               </div>
 
-              {/* 6. Three-column stats row */}
-              <div className="mt-10 sm:mt-12 w-full max-w-[760px] border-t border-hero-border-hover/70 pt-8 sm:pt-9">
-                <div className="grid grid-cols-3 divide-x divide-hero-border-hover/70 text-center">
-                  <div className="px-2 sm:px-6">
-                    <div className="text-2xl sm:text-[32px] font-bold tracking-tight text-hero-text leading-none">
+              {/* 6. Stats Strip */}
+              <div className="mt-8 w-full max-w-[900px] rounded-xl border border-hero-border bg-hero-surface py-5 px-4 sm:px-8 shadow-sm">
+                <div className="grid grid-cols-3 divide-x divide-hero-border/60 text-center">
+                  <div className="w-full px-2 sm:px-6">
+                    <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-hero-text leading-none">
                       <StatCount value={liveCounts.conference} />
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium text-hero-text-muted">
+                    <p className="mt-1.5 text-xs sm:text-sm font-medium text-hero-text-muted">
                       Conferences
                     </p>
                   </div>
-                  <div className="px-2 sm:px-6">
-                    <div className="text-2xl sm:text-[32px] font-bold tracking-tight text-hero-text leading-none">
+                  <div className="w-full px-2 sm:px-6">
+                    <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-hero-text leading-none">
                       <StatCount value={liveCounts.journal} />
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium text-hero-text-muted">
+                    <p className="mt-1.5 text-xs sm:text-sm font-medium text-hero-text-muted">
                       Papers indexed
                     </p>
                   </div>
-                  <div className="px-2 sm:px-6">
-                    <div className="text-2xl sm:text-[32px] font-bold tracking-tight text-hero-text leading-none">
+                  <div className="w-full px-2 sm:px-6">
+                    <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-hero-text leading-none">
                       <StatCount value={liveCounts.research} />
                     </div>
-                    <p className="mt-2 text-xs sm:text-sm font-medium text-hero-text-muted">
+                    <p className="mt-1.5 text-xs sm:text-sm font-medium text-hero-text-muted">
                       Research roles
                     </p>
                   </div>
                 </div>
               </div>
+
+              {/* 7. Quiet sources attribution line */}
+              <p className="mt-4 text-xs text-hero-text-muted/75">
+                Sources include arXiv, CrossRef, DBLP, WikiCFP, IEEE and
+                Springer
+              </p>
             </div>
           </div>
         </section>
 
         {/* Explore: one card per section with live counts */}
-        <section id="explore" className="container mx-auto scroll-mt-24 px-4 py-20 md:py-28">
+        <section
+          id="explore"
+          className="container mx-auto scroll-mt-24 px-4 pt-12 pb-20 md:pt-14 md:pb-28"
+        >
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="flex flex-col justify-between gap-10 lg:pr-8">
               <p className="eyebrow">What we track</p>
               <div className="space-y-6">
                 <p className="text-[15px] leading-relaxed text-muted-foreground">
-                  <span className="font-semibold text-foreground">Harvested, not hand-typed.</span>{" "}
-                  Every few hours we read feeds, job boards and lab APIs, parse their deadlines,
-                  and quietly retire listings once they close.
+                  <span className="font-semibold text-foreground">
+                    Harvested, not hand-typed.
+                  </span>{" "}
+                  Every few hours we read feeds, job boards and lab APIs, parse
+                  their deadlines, and quietly retire listings once they close.
                 </p>
                 <Link to="/conferences" className="pill">
                   Browse conferences
@@ -887,35 +921,48 @@ const Index = () => {
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {SECTIONS.filter((section) => section.showInHomeGrid !== false).map((section, index) => {
-              const Icon = section.icon;
-              const count = liveCounts[section.countKey];
-              const numberAtTop = index % 2 === 1;
-              return (
-                <Link key={section.path} to={section.path} className="service-card group flex min-h-[260px] flex-col">
-                  <span
-                    className={`ghost-number right-3 ${numberAtTop ? "-top-4" : "-bottom-6"}`}
+            {SECTIONS.filter((section) => section.showInHomeGrid !== false).map(
+              (section, index) => {
+                const Icon = section.icon;
+                const count = liveCounts[section.countKey];
+                const numberAtTop = index % 2 === 1;
+                return (
+                  <Link
+                    key={section.path}
+                    to={section.path}
+                    className="service-card group flex min-h-[260px] flex-col"
                   >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="relative flex items-center gap-4">
-                    <span className="icon-orb">
-                      <Icon className="h-6 w-6" strokeWidth={1.5} />
+                    <span
+                      className={`ghost-number right-3 ${numberAtTop ? "-top-4" : "-bottom-6"}`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-xl font-normal tracking-tight text-foreground">{section.title}</h3>
-                    <ArrowUpRight className="ml-auto h-5 w-5 text-primary opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
-                  </div>
-                  <p className={`relative text-sm leading-relaxed text-muted-foreground ${numberAtTop ? "mt-auto" : "mt-5"}`}>
-                    {section.description}
-                  </p>
-                  {typeof count === "number" && (
-                    <span className={`tag-chip relative w-fit ${numberAtTop ? "mt-4" : "mt-auto"}`}>
-                      <span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-primary" /> {count} live
-                    </span>
-                  )}
-                </Link>
-              );
-            })}
+                    <div className="relative flex items-center gap-4">
+                      <span className="icon-orb">
+                        <Icon className="h-6 w-6" strokeWidth={1.5} />
+                      </span>
+                      <h3 className="text-xl font-normal tracking-tight text-foreground">
+                        {section.title}
+                      </h3>
+                      <ArrowUpRight className="ml-auto h-5 w-5 text-primary opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
+                    </div>
+                    <p
+                      className={`relative text-sm leading-relaxed text-muted-foreground ${numberAtTop ? "mt-auto" : "mt-5"}`}
+                    >
+                      {section.description}
+                    </p>
+                    {typeof count === "number" && (
+                      <span
+                        className={`tag-chip relative w-fit ${numberAtTop ? "mt-4" : "mt-auto"}`}
+                      >
+                        <span className="mr-1.5 h-1.5 w-1.5 rounded-full bg-primary" />{" "}
+                        {count} live
+                      </span>
+                    )}
+                  </Link>
+                );
+              },
+            )}
           </div>
         </section>
 
@@ -936,8 +983,8 @@ const Index = () => {
               </div>
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between lg:flex-col xl:flex-row">
                 <p className="max-w-sm text-[15px] leading-relaxed text-muted-foreground">
-                  Sorted by event date, with submission status from each call for papers. Expired
-                  events disappear on their own.
+                  Sorted by event date, with submission status from each call
+                  for papers. Expired events disappear on their own.
                 </p>
                 <Link to="/conferences" className="pill shrink-0">
                   All conferences
@@ -949,17 +996,33 @@ const Index = () => {
           <div className="mt-12 flex snap-x gap-4 overflow-x-auto px-4 pb-4 custom-scrollbar md:px-[max(1rem,calc((100vw-1400px)/2+2rem))]">
             {conferencesLoading
               ? [...Array(4)].map((_, i) => (
-                  <div key={i} className="h-[360px] w-[300px] shrink-0 rounded-2xl bg-card shimmer" />
+                  <div
+                    key={i}
+                    className="h-[360px] w-[300px] shrink-0 rounded-2xl bg-card shimmer"
+                  />
                 ))
               : featuredConferences.map((item: HarvestItem, index: number) => {
-                  const tile = ["tile-fiber text-white", "bg-card", "tile-circuit text-white", "bg-card"][index % 4];
+                  const tile = [
+                    "tile-fiber text-white",
+                    "bg-card",
+                    "tile-circuit text-white",
+                    "bg-card",
+                  ][index % 4];
                   const startDate = item.startsAt
-                    ? new Date(item.startsAt).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })
+                    ? new Date(item.startsAt).toLocaleDateString(undefined, {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })
                     : item.eventDate;
                   // WikiCFP: "ACRONYM 2026 : Full name"; Call4Paper: "Full name (ACRONYM 2026)"
                   const [prefix, ...rest] = item.title.split(" : ");
-                  const parenthesised = item.title.match(/\(([A-Z][\w-]*(?: \d{4})?)\)\s*$/);
-                  const acronym = rest.length ? prefix : parenthesised?.[1] ?? "Conference";
+                  const parenthesised = item.title.match(
+                    /\(([A-Z][\w-]*(?: \d{4})?)\)\s*$/,
+                  );
+                  const acronym = rest.length
+                    ? prefix
+                    : (parenthesised?.[1] ?? "Conference");
                   const fullName = rest.length
                     ? rest.join(" : ")
                     : item.title.replace(/\s*\([^)]*\)\s*$/, "");
@@ -972,14 +1035,24 @@ const Index = () => {
                       className={`${tile} group relative flex h-[360px] w-[300px] shrink-0 snap-start flex-col overflow-hidden rounded-2xl p-6 transition-transform hover:-translate-y-1`}
                     >
                       <div className="flex items-start justify-between gap-3">
-                        <p className="font-display text-3xl font-semibold tracking-tight">{acronym}</p>
+                        <p className="font-display text-3xl font-semibold tracking-tight">
+                          {acronym}
+                        </p>
                         <ArrowUpRight className="h-5 w-5 opacity-60 transition-opacity group-hover:opacity-100" />
                       </div>
-                      <p className="mt-4 line-clamp-4 text-sm leading-relaxed opacity-80">{fullName}</p>
+                      <p className="mt-4 line-clamp-4 text-sm leading-relaxed opacity-80">
+                        {fullName}
+                      </p>
                       <div className="mt-auto flex flex-wrap items-center gap-2">
                         <DeadlineStatusBadge item={item} />
-                        {startDate && <span className="tag-chip">{startDate}</span>}
-                        {item.location && <span className="tag-chip max-w-full truncate">{item.location}</span>}
+                        {startDate && (
+                          <span className="tag-chip">{startDate}</span>
+                        )}
+                        {item.location && (
+                          <span className="tag-chip max-w-full truncate">
+                            {item.location}
+                          </span>
+                        )}
                       </div>
                     </a>
                   );
@@ -987,7 +1060,9 @@ const Index = () => {
           </div>
 
           <div className="container mx-auto mt-14 px-4">
-            <p className="mb-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">Harvested from</p>
+            <p className="mb-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Harvested from
+            </p>
             <SourceMarquee />
           </div>
         </section>
@@ -997,9 +1072,13 @@ const Index = () => {
           <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow mb-3">Trending now</p>
-              <h2 className="display-lg text-4xl md:text-5xl">Research areas</h2>
+              <h2 className="display-lg text-4xl md:text-5xl">
+                Research areas
+              </h2>
             </div>
-            <span className="text-sm text-muted-foreground">Based on recent activity</span>
+            <span className="text-sm text-muted-foreground">
+              Based on recent activity
+            </span>
           </div>
           <div className="flex flex-wrap gap-2">
             {(trendingTopics.length > 0
@@ -1138,27 +1217,32 @@ const Index = () => {
                         <div className="h-3 shimmer rounded w-1/3" />
                       </div>
                     ))
-                  : featuredJournals.map((item: JournalMatchItem, index: number) => (
-                      <a
-                        key={`${item.title}-${index}`}
-                        href={getJournalLink(item)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center justify-between gap-3 px-4 py-3.5 hover:bg-muted/40 transition-colors"
-                      >
-                        <div className="min-w-0">
-                          <p className="text-sm font-medium text-foreground line-clamp-1 group-hover:text-primary transition-colors">
-                            {item.title}
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-0.5">
-                            {getJournalSource(item)}
-                          </p>
-                        </div>
-                        <Badge variant="secondary" className="text-[11px] flex-shrink-0">
-                          journal
-                        </Badge>
-                      </a>
-                    ))}
+                  : featuredJournals.map(
+                      (item: JournalMatchItem, index: number) => (
+                        <a
+                          key={`${item.title}-${index}`}
+                          href={getJournalLink(item)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-between gap-3 px-4 py-3.5 hover:bg-muted/40 transition-colors"
+                        >
+                          <div className="min-w-0">
+                            <p className="text-sm font-medium text-foreground line-clamp-1 group-hover:text-primary transition-colors">
+                              {item.title}
+                            </p>
+                            <p className="text-xs text-muted-foreground mt-0.5">
+                              {getJournalSource(item)}
+                            </p>
+                          </div>
+                          <Badge
+                            variant="secondary"
+                            className="text-[11px] flex-shrink-0"
+                          >
+                            journal
+                          </Badge>
+                        </a>
+                      ),
+                    )}
               </div>
             </div>
 
@@ -1203,7 +1287,10 @@ const Index = () => {
                               "Research Opportunity"}
                           </p>
                         </div>
-                        <Badge variant="secondary" className="text-[11px] flex-shrink-0">
+                        <Badge
+                          variant="secondary"
+                          className="text-[11px] flex-shrink-0"
+                        >
                           {item.subtype || "opportunity"}
                         </Badge>
                       </a>
