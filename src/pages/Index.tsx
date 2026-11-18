@@ -699,8 +699,10 @@ const Index = () => {
       <Navigation />
 
       <div className="flex-1">
-        {/* Hero */}
-        <section className="hero-pattern relative pt-12 pb-10">
+        {/* Hero: fills the viewport so the next section stays below the fold */}
+        <section
+          className="hero-pattern relative pt-12 pb-10 min-h-[calc(100svh-84px)]"
+        >
           <div className="container mx-auto px-4">
             <div className="hero-fade-in mx-auto flex max-w-[1200px] flex-col items-center text-center">
               {/* 1. Small eyebrow line */}
