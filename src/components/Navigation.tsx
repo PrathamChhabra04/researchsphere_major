@@ -45,7 +45,7 @@ const Navigation = () => {
 
   const visibleSectionItems = [
     { name: "Find Journals", path: "/journals" },
-    { name: "Conferences", path: "/conferences" },
+    { name: "Find Conferences", path: "/conferences" },
   ];
 
   const callForItems = [
@@ -54,7 +54,7 @@ const Navigation = () => {
   ];
 
   const opportunityItems = [
-    { name: "PhD Programs", path: "/phd-programs" },
+    { name: "PhD Positions", path: "/phd-programs" },
     { name: "Postdoc Positions", path: "/postdoc-positions" },
     { name: "Internships", path: "/internships" },
     { name: "Research Jobs", path: "/research-jobs" },
@@ -62,7 +62,8 @@ const Navigation = () => {
 
   const mobileNavItems = [
     { name: "Home", path: "/" },
-    { name: "Search All", path: "/general-finder" },
+    // Removed: the all-in-one finder page.
+    // { name: "Search All", path: "/general-finder" },
     ...visibleSectionItems,
     ...callForItems,
     ...opportunityItems,
@@ -183,13 +184,16 @@ const Navigation = () => {
             >
               Home
             </Link>
-            <Link
-              to="/general-finder"
-              className={linkClass(isActive("/general-finder"))}
-              aria-current={isActive("/general-finder") ? "page" : undefined}
-            >
-              Search All
-            </Link>
+            {/*
+              Removed: the all-in-one finder page.
+              <Link
+                to="/general-finder"
+                className={linkClass(isActive("/general-finder"))}
+                aria-current={isActive("/general-finder") ? "page" : undefined}
+              >
+                Search All
+              </Link>
+            */}
             {visibleSectionItems.map((item) => (
               <Link
                 key={item.path}

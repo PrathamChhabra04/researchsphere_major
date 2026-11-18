@@ -29,6 +29,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { trackSearchInteraction } from "@/lib/personalization";
+import { useSearchParams } from "react-router-dom";
 
 const getCountryFromLocation = (location?: string | null) => {
   if (!location) return "Unknown";
@@ -42,8 +43,10 @@ const getCountryFromLocation = (location?: string | null) => {
 };
 
 const Conferences = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [debouncedQuery, setDebouncedQuery] = useState("");
+  const [searchParams] = useSearchParams();
+  const initialQuery = searchParams.get("q")?.trim() ?? "";
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
+  const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
   const [locationFilter, setLocationFilter] = useState("all");
   const [sortBy, setSortBy] = useState("upcoming");
   const [currentPage, setCurrentPage] = useState(1);

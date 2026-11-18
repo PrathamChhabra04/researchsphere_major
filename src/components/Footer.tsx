@@ -19,7 +19,8 @@ const Footer = () => {
     {
       title: "Platform",
       links: [
-        { path: "/general-finder", title: "Search everything" },
+        // Removed: the all-in-one finder page.
+        // { path: "/general-finder", title: "Search everything" },
         { path: "/user-hub", title: "User Hub" },
         { path: "/about", title: "About" },
         { path: "/research-collaboration", title: "Collaborate" },

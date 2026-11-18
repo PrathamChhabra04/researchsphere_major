@@ -8,6 +8,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -218,12 +219,18 @@ const writeSavedJournals = (keys: string[]) => {
 };
 
 const Journals = () => {
+  const [searchParams] = useSearchParams();
+  const initialQuery = searchParams.get("q")?.trim() ?? "";
   const [searchMode, setSearchMode] = useState<"keyword" | "abstract">(
     "keyword",
   );
-  const [keywordQuery, setKeywordQuery] = useState(DEFAULT_KEYWORD_QUERY);
+  const [keywordQuery, setKeywordQuery] = useState(
+    initialQuery || DEFAULT_KEYWORD_QUERY,
+  );
   const [abstractQuery, setAbstractQuery] = useState(DEFAULT_ABSTRACT_QUERY);
-  const [submittedQuery, setSubmittedQuery] = useState(DEFAULT_MIXED_QUERY);
+  const [submittedQuery, setSubmittedQuery] = useState(
+    initialQuery || DEFAULT_MIXED_QUERY,
+  );
   const [providerFilter, setProviderFilter] = useState<
     "all" | "springer" | "elsevier"
   >("all");

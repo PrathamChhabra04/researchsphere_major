@@ -9,7 +9,8 @@ import { initializeGoogleAnalytics } from "@/lib/analytics";
 import Index from "./pages/Index";
 import Conferences from "./pages/Conferences";
 import Journals from "./pages/Journals";
-import GeneralFinder from "./pages/GeneralFinder";
+// Removed: the all-in-one finder page is no longer linked from the site.
+// import GeneralFinder from "./pages/GeneralFinder";
 import BookChapters from "./pages/BookChapters";
 import ProjectCalls from "./pages/ProjectCalls";
 import PhDPrograms from "./pages/PhDPrograms";
@@ -44,7 +45,8 @@ const App = () => {
               <Route path="/" element={<Index />} />
               <Route path="/conferences" element={<Conferences />} />
               <Route path="/journals" element={<Journals />} />
-              <Route path="/general-finder" element={<GeneralFinder />} />
+              {/* Removed: search now lives inside each section page. */}
+              {/* <Route path="/general-finder" element={<GeneralFinder />} /> */}
               <Route path="/book-chapters" element={<BookChapters />} />
               <Route path="/project-calls" element={<ProjectCalls />} />
               <Route path="/phd-programs" element={<PhDPrograms />} />

@@ -201,12 +201,6 @@ const ROTATING_EXAMPLES = [
 
 const HERO_FILTER_CHIPS = [
   {
-    id: "all",
-    label: "All",
-    defaultPath: "/general-finder",
-    kindHint: "",
-  },
-  {
     id: "conferences",
     label: "Conferences",
     defaultPath: "/conferences",
@@ -296,7 +290,7 @@ const StatCount = ({ value }: { value: number | undefined }) => {
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedCategory, setSelectedCategory] = useState<string>("conferences");
   const [exampleIndex, setExampleIndex] = useState(0);
   const [exampleVisible, setExampleVisible] = useState(true);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
@@ -656,24 +650,14 @@ const Index = () => {
       HERO_FILTER_CHIPS.find((c) => c.id === selectedCategory) ||
       HERO_FILTER_CHIPS[0];
 
-    if (activeChip.id === "all") {
-      if (normalized) {
-        trackSearchInteraction(normalized);
-        navigate(`/general-finder?q=${encodeURIComponent(normalized)}`);
-      } else {
-        navigate("/general-finder");
-      }
-      return;
+    if (normalized) {
+      trackSearchInteraction(normalized, activeChip.kindHint);
     }
 
-    if (!normalized) {
-      navigate(`/general-finder?type=${activeChip.id}`);
-      return;
-    }
-
-    trackSearchInteraction(normalized, activeChip.kindHint);
     navigate(
-      `/general-finder?q=${encodeURIComponent(normalized)}&type=${activeChip.id}`,
+      normalized
+        ? `${activeChip.defaultPath}?q=${encodeURIComponent(normalized)}`
+        : activeChip.defaultPath,
     );
   };
 
@@ -751,9 +735,7 @@ const Index = () => {
                         }`}
                         aria-hidden="true"
                       >
-                        {selectedCategory && selectedCategory !== "all"
-                          ? `Search ${HERO_FILTER_CHIPS.find((c) => c.id === selectedCategory)?.label.toLowerCase()}...`
-                          : `Search "${ROTATING_EXAMPLES[exampleIndex]}"...`}
+                        {`Search "${ROTATING_EXAMPLES[exampleIndex]}"...`}
                       </span>
                     )}
 
@@ -768,9 +750,7 @@ const Index = () => {
                       onKeyDown={handleKeyPress}
                       placeholder={
                         isSearchFocused
-                          ? selectedCategory && selectedCategory !== "all"
-                            ? `Search ${HERO_FILTER_CHIPS.find((c) => c.id === selectedCategory)?.label.toLowerCase()}...`
-                            : "Search NeurIPS, LLM postdoc, funded PhD..."
+                          ? `Search ${HERO_FILTER_CHIPS.find((c) => c.id === selectedCategory)?.label.toLowerCase()}...`
                           : ""
                       }
                       className="hero-search-input w-full bg-transparent text-base sm:text-[17px] text-hero-text placeholder:text-hero-text-muted border-0 outline-none ring-0 shadow-none focus:border-0 focus:outline-none focus:ring-0 focus:shadow-none focus-visible:outline-none focus-visible:ring-0"
@@ -803,7 +783,7 @@ const Index = () => {
                   </Button>
                 </form>
 
-                {/* Quick-filter chips labeled 'Search in:' with 'All' default */}
+                {/* Quick-filter chips labelled 'Search in:'; each chip opens its own section page */}
                 <div className="mt-3.5 flex flex-wrap items-center justify-center gap-2">
                   <span className="text-xs sm:text-sm font-medium text-hero-text-muted">
                     Search in:
@@ -892,8 +872,8 @@ const Index = () => {
                   Every few hours we read feeds, job boards and lab APIs, parse their deadlines,
                   and quietly retire listings once they close.
                 </p>
-                <Link to="/general-finder" className="pill">
-                  Search everything
+                <Link to="/conferences" className="pill">
+                  Browse conferences
                 </Link>
               </div>
             </div>
@@ -1042,7 +1022,7 @@ const Index = () => {
                 type="button"
                 className="inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
                 onClick={() =>
-                  navigate(`/general-finder?q=${encodeURIComponent(topic)}`)
+                  navigate(`/conferences?q=${encodeURIComponent(topic)}`)
                 }
               >
                 <span className="text-[10px] font-mono text-muted-foreground">
@@ -1237,13 +1217,13 @@ const Index = () => {
         <section className="container mx-auto px-4 pt-16">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <h2 className="display-xl text-5xl sm:text-6xl lg:text-[5.5rem]">
-              One search.
+              Every source.
               <br />
-              <span className="lime-chip text-[0.8em]">Every</span> source.
+              <span className="lime-chip text-[0.8em]">One</span> place.
             </h2>
             <div className="flex flex-wrap gap-3 md:pb-3">
-              <Link to="/general-finder" className="pill-lime">
-                Search everything <ArrowRight className="h-4 w-4" />
+              <Link to="/conferences" className="pill-lime">
+                Find conferences <ArrowRight className="h-4 w-4" />
               </Link>
               <Link to="/research-jobs" className="pill">
                 Browse research jobs

@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useSearchParams } from "react-router-dom";
 import {
   Select,
   SelectContent,
@@ -83,8 +84,10 @@ const formatDate = (value?: string | null) => {
 };
 
 const BookChapters = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [debouncedQuery, setDebouncedQuery] = useState("");
+  const [searchParams] = useSearchParams();
+  const initialQuery = searchParams.get("q")?.trim() ?? "";
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
+  const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
   const [sourceFilter, setSourceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("deadline-soonest");
   const [currentPage, setCurrentPage] = useState(1);
