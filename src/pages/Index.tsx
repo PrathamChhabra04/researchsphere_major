@@ -887,7 +887,7 @@ const Index = () => {
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {SECTIONS.map((section, index) => {
+            {SECTIONS.filter((section) => section.showInHomeGrid !== false).map((section, index) => {
               const Icon = section.icon;
               const count = liveCounts[section.countKey];
               const numberAtTop = index % 2 === 1;

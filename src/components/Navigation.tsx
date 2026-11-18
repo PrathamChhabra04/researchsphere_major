@@ -50,6 +50,7 @@ const Navigation = () => {
 
   const callForItems = [
     { name: "Book Chapters", path: "/book-chapters" },
+    { name: "Special Issues", path: "/special-issues" },
     { name: "Project Calls", path: "/project-calls" },
   ];
 

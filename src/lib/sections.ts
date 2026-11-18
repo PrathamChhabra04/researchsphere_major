@@ -7,6 +7,7 @@ import {
   HandCoins,
   Presentation,
   Rocket,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,6 +20,8 @@ export interface SiteSection {
   /** Key in /harvest/status liveCounts */
   countKey: string;
   group: "publish" | "career";
+  /** Set false for sections that should stay out of the home "every corner" grid. */
+  showInHomeGrid?: boolean;
 }
 
 /** Single source of truth for the listing sections (navigation, home grid, footer). */
@@ -49,6 +52,18 @@ export const SECTIONS: SiteSection[] = [
     icon: BookMarked,
     countKey: "book-chapter",
     group: "publish",
+  },
+  {
+    path: "/special-issues",
+    title: "Special Issues",
+    short: "Guest-edited issues",
+    description:
+      "Computer science special issues from ScienceDirect journals, with guest editors and submission deadlines.",
+    icon: Sparkles,
+    countKey: "special-issue",
+    group: "publish",
+    // Kept out of the home grid so the eight existing cards stay in two rows.
+    showInHomeGrid: false,
   },
   {
     path: "/project-calls",

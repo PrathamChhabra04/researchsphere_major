@@ -12,6 +12,7 @@ import Journals from "./pages/Journals";
 // Removed: the all-in-one finder page is no longer linked from the site.
 // import GeneralFinder from "./pages/GeneralFinder";
 import BookChapters from "./pages/BookChapters";
+import SpecialIssues from "./pages/SpecialIssues";
 import ProjectCalls from "./pages/ProjectCalls";
 import PhDPrograms from "./pages/PhDPrograms";
 import PostdocPositions from "./pages/PostdocPositions";
@@ -48,6 +49,7 @@ const App = () => {
               {/* Removed: search now lives inside each section page. */}
               {/* <Route path="/general-finder" element={<GeneralFinder />} /> */}
               <Route path="/book-chapters" element={<BookChapters />} />
+              <Route path="/special-issues" element={<SpecialIssues />} />
               <Route path="/project-calls" element={<ProjectCalls />} />
               <Route path="/phd-programs" element={<PhDPrograms />} />
               <Route path="/postdoc-positions" element={<PostdocPositions />} />

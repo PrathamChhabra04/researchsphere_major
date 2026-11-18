@@ -154,6 +154,37 @@ export interface JournalMatchResponse {
   count: number;
 }
 
+export interface SpecialIssueItem {
+  id: string;
+  title: string;
+  guestEditors: string[];
+  journalName?: string | null;
+  journalUrl?: string | null;
+  impactFactor?: number | null;
+  citeScore?: number | null;
+  submissionDeadline?: string | null;
+  deadlineAt?: string | null;
+  daysUntilDeadline?: number | null;
+  status?: "open" | "closing-soon" | "expired" | "unknown" | string;
+  url: string;
+  subjectArea: string;
+  secondarySubjectAreas: string[];
+}
+
+export interface SpecialIssuesResponse {
+  data: SpecialIssueItem[];
+  count: number;
+  meta: {
+    total: number;
+    filtered: number;
+    scrapedAt: string | null;
+    subjectArea: string;
+    subjectSlug: string;
+    secondarySubjectAreas: string[];
+    closingSoonDays: number;
+  };
+}
+
 // Helper function for API calls
 const apiCall = async (endpoint, params = {}) => {
   try {
@@ -259,6 +290,32 @@ export const matchJournals = async ({
   }
 
   return (await response.json()) as JournalMatchResponse;
+};
+
+// ============= SPECIAL ISSUES =============
+
+export const getSpecialIssues = async ({
+  query = "",
+  secondarySubject = "",
+}: {
+  query?: string;
+  secondarySubject?: string;
+} = {}): Promise<SpecialIssuesResponse> => {
+  const params = new URLSearchParams();
+  if (query.trim()) params.set("query", query.trim());
+  if (secondarySubject.trim()) {
+    params.set("secondarySubject", secondarySubject.trim());
+  }
+
+  const response = await fetch(
+    `${API_BASE_URL}/special-issues${params.toString() ? `?${params.toString()}` : ""}`,
+  );
+
+  if (!response.ok) {
+    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+  }
+
+  return (await response.json()) as SpecialIssuesResponse;
 };
 
 // ============= CONFERENCES =============

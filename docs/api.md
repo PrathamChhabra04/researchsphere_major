@@ -31,6 +31,30 @@ status, and a report for every source (`ok` / `error`, item count, error message
 
 Run a harvest now. Without `force`, it is skipped while the data is still fresh.
 
+## Special issues
+
+### `GET /special-issues`
+
+Manually collected ScienceDirect calls for special issues (Computer Science only).
+
+| Param | Description |
+|---|---|
+| `query` | Free-text match over title, guest editors, journal and secondary subject |
+| `secondarySubject` | Exact secondary subject area, e.g. `Artificial Intelligence` |
+
+Expired calls are removed at read time and the nearest deadline is returned first.
+Response: `{ success, data, count, meta: { total, filtered, scrapedAt, subjectArea, subjectSlug, secondarySubjectAreas, closingSoonDays } }`.
+
+The dataset is refreshed manually, not by the harvest scheduler:
+
+```bash
+node scripts/scrapeSpecialIssues.js
+```
+
+ScienceDirect blocks automated listing requests, so the script also parses a
+manually saved capture; see
+[`server/data/raw/README.md`](../server/data/raw/README.md).
+
 ## Other endpoints
 
 ### `GET /journals/match`

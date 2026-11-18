@@ -22,6 +22,32 @@ Removed because they block automated access or no longer exist: FindAPhD,
 FindAPostdoc, AcademicPositions, conferenceindex.org, AllConferenceAlert, research.com,
 NoticeBard, ResearchTweet, PapersWithCode.
 
+## Special issues (manual)
+
+ScienceDirect's [calls for special issues](https://www.sciencedirect.com/browse/calls-for-papers?subject=computer-science)
+listing is not part of the harvest scheduler and is not scraped automatically:
+the site blocks automated requests (HTTP 400/403 or a bot challenge). The manual
+collector writes `server/data/special-issues.json`:
+
+```bash
+node scripts/scrapeSpecialIssues.js
+```
+
+If the live request is blocked, save the listing from a browser and parse the
+capture instead (JSON or HTML):
+
+```bash
+node scripts/scrapeSpecialIssues.js --input server/data/raw/special-issues.html
+```
+
+When the capture has no per-item secondary-subject labels, the script fills
+them from the journal corpus (`server/data/journal-finder-probe`) so the
+secondary-subject filter still works.
+
+The script never attempts to bypass the protection. Full save instructions and
+the accepted JSON/HTML fields are in
+[`server/data/raw/README.md`](../server/data/raw/README.md).
+
 ## Adding a source
 
 Add an entry to `SOURCE_REGISTRY`. The `type` selects the harvester:

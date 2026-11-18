@@ -3,6 +3,7 @@ import * as researchService from "../services/researchService.js";
 import * as journalMatcherService from "../services/journalMatcherService.js";
 import collaborationRoutes from "./collaboration.js";
 import harvestRoutes from "./harvest.js";
+import specialIssueRoutes from "./specialIssues.js";
 import { answerAssistantQuery } from "../services/assistantService.js";
 
 const router = express.Router();
@@ -10,6 +11,7 @@ const router = express.Router();
 // Collaboration routes
 router.use("/collaboration", collaborationRoutes);
 router.use("/harvest", harvestRoutes);
+router.use("/special-issues", specialIssueRoutes);
 
 // ============= PAPERS & PUBLICATIONS =============
 
