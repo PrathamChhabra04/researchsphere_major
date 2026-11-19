@@ -76,9 +76,9 @@ const DATA_SOURCES = [
 ];
 
 const TEAM_MEMBERS = [
-  { name: "Ayush Gupta", initials: "AG" },
-  { name: "Bhuvan Kumar", initials: "BK" },
-  { name: "Pratham Chhabra", initials: "PC" },
+  { name: "Ayush Gupta", initials: "AG", rollNumber: "23124022" },
+  { name: "Bhuvan Kumar", initials: "BK", rollNumber: "23124048" },
+  { name: "Pratham Chhabra", initials: "PC", rollNumber: "23124077" },
 ];
 
 const About = () => {
@@ -189,14 +189,14 @@ const About = () => {
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 <article className="flex h-full flex-col items-start rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/25">
-                  <span
-                    aria-hidden="true"
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#E9F0FA] dark:bg-[#22344D] text-[#2F5D9E] dark:text-[#9DBBE6] text-sm font-semibold"
-                  >
-                    MK
-                  </span>
+                  <img
+                    src="/mohit-sir.jpg"
+                    alt="Dr. Mohit Kumar"
+                    loading="lazy"
+                    className="h-14 w-14 shrink-0 rounded-full object-cover object-top ring-1 ring-border"
+                  />
                   <div className="mt-4">
-                    <p className="text-xs font-medium tracking-wide text-muted-foreground">
+                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
                       Mentor
                     </p>
                     <p className="mt-1 text-base font-medium text-foreground">
@@ -205,26 +205,35 @@ const About = () => {
                     <p className="mt-1 text-sm leading-6 text-muted-foreground">
                       Assistant Professor, Department of Information Technology
                     </p>
+                    <p className="text-sm leading-6 text-muted-foreground">
+                      NIT Jalandhar
+                    </p>
                   </div>
                 </article>
 
-                {TEAM_MEMBERS.map(({ name, initials }) => (
+                {TEAM_MEMBERS.map(({ name, initials, rollNumber }) => (
                   <article
                     key={name}
                     className="flex h-full flex-col items-start rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/25"
                   >
                     <span
                       aria-hidden="true"
-                      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-foreground"
+                      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold tracking-wide text-foreground ring-1 ring-border"
                     >
                       {initials}
                     </span>
                     <div className="mt-4">
-                      <p className="text-base font-medium text-foreground">
+                      <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                        Student
+                      </p>
+                      <p className="mt-1 text-base font-medium text-foreground">
                         {name}
                       </p>
-                      <p className="mt-1 text-xs font-medium tracking-wide text-muted-foreground">
-                        Student
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                        BTech IT, 4th Year
+                      </p>
+                      <p className="text-sm leading-6 tabular-nums text-muted-foreground">
+                        Roll No. {rollNumber}
                       </p>
                     </div>
                   </article>
