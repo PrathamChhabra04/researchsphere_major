@@ -52,7 +52,6 @@ const Conferences = () => {
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
   const [locationFilter, setLocationFilter] = useState("all");
   const [publisherFilter, setPublisherFilter] = useState("all");
-  const [sourceFilter, setSourceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("upcoming");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -70,19 +69,13 @@ const Conferences = () => {
     isFetching,
     error,
   } = useQuery({
-    queryKey: [
-      "conferences",
-      debouncedQuery,
-      publisherFilter,
-      sourceFilter,
-    ],
+    queryKey: ["conferences", debouncedQuery, publisherFilter],
     queryFn: () =>
       searchHarvestedDataWithMeta({
         kind: "conference",
         query: debouncedQuery,
         includePast: false,
         publisher: publisherFilter === "all" ? undefined : publisherFilter,
-        source: sourceFilter === "all" ? undefined : sourceFilter,
         limit: 500,
       }),
     staleTime: 1000 * 60 * 10,
@@ -94,14 +87,10 @@ const Conferences = () => {
     () => searchResult?.meta?.facets?.publishers ?? [],
     [searchResult],
   );
-  const sourceFacets = useMemo(
-    () => searchResult?.meta?.facets?.sources ?? [],
-    [searchResult],
-  );
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [debouncedQuery, locationFilter, publisherFilter, sourceFilter, sortBy]);
+  }, [debouncedQuery, locationFilter, publisherFilter, sortBy]);
 
   const publisherOptions = useMemo(
     () =>
@@ -216,7 +205,7 @@ const Conferences = () => {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     <Select value={sortBy} onValueChange={setSortBy}>
                       <SelectTrigger className="h-12 rounded-xl" aria-label="Sort conferences">
                         <SelectValue placeholder="Sort conferences" />
@@ -250,26 +239,6 @@ const Conferences = () => {
                       <SelectContent>
                         <SelectItem value="all">All publishers</SelectItem>
                         {publisherOptions.map((facet) => (
-                          <SelectItem key={facet.value} value={facet.value}>
-                            {facet.label} ({facet.count})
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-
-                    <Select
-                      value={sourceFilter}
-                      onValueChange={setSourceFilter}
-                    >
-                      <SelectTrigger
-                        className="h-12 rounded-xl"
-                        aria-label="Data source"
-                      >
-                        <SelectValue placeholder="All sources" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">All sources</SelectItem>
-                        {sourceFacets.map((facet) => (
                           <SelectItem key={facet.value} value={facet.value}>
                             {facet.label} ({facet.count})
                           </SelectItem>

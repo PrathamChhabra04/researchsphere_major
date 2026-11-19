@@ -10,7 +10,6 @@ import {
   buildHarvestFacets,
   getConferencePublisherIds,
   getConferencePublisherLabels,
-  getSourceGroup,
 } from "./facets.js";
 
 // Scraped navigation text that occasionally slips through as a "title".
@@ -424,7 +423,6 @@ export const searchHarvestData = async (filters = {}) => {
     subtype,
     sourceId,
     publisher,
-    source,
     location,
     year,
     fromYear,
@@ -455,7 +453,6 @@ export const searchHarvestData = async (filters = {}) => {
     : null;
   const now = Date.now();
   const publisherFilter = String(publisher || "").toLowerCase().trim();
-  const sourceFilter = String(source || "").toLowerCase().trim();
 
   const matchesBaseFilters = (item) => {
     if (!showExpired && item.status === "expired") return false;
@@ -485,8 +482,6 @@ export const searchHarvestData = async (filters = {}) => {
       item.summary,
       item.organization,
       item.location,
-      item.sourceName,
-      getSourceGroup(item).label,
       ...getConferencePublisherLabels(item),
       ...(item.tags || []),
     ].join(" ");
@@ -516,11 +511,6 @@ export const searchHarvestData = async (filters = {}) => {
       (item) =>
         !publisherFilter ||
         getConferencePublisherIds(item).includes(publisherFilter),
-    )
-    .filter(
-      (item) =>
-        !sourceFilter ||
-        getSourceGroup(item).id.toLowerCase() === sourceFilter,
     )
     .map((item) => toSearchResult(item, normalizedQuery, now))
     .sort(SORTERS[sort] || SORTERS.relevance);

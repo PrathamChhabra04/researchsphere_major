@@ -53,7 +53,6 @@ export interface HarvestSearchParams {
   subtype?: string;
   sourceId?: string;
   publisher?: string;
-  source?: string;
   location?: string;
   year?: number;
   fromYear?: number;
@@ -70,7 +69,6 @@ export interface HarvestFacetOption {
 
 export interface HarvestFacets {
   publishers: HarvestFacetOption[];
-  sources: HarvestFacetOption[];
 }
 
 export interface HarvestSearchResponse {

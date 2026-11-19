@@ -10,11 +10,10 @@ Base URL: `http://localhost:5001/api`. All responses are JSON.
 |---|---|
 | `kind` | `conference`, `journal` or `opportunity` |
 | `subtype` | e.g. `phd`, `postdoc`, `internship`, `research`, `project-call`, `book-chapter` |
-| `query` | Free-text search over title, summary, organisation, location, source and detected publisher |
+| `query` | Free-text search over title, summary, organisation, location, tags and detected publisher |
 | `location` | Substring match on location |
 | `sourceId` | Restrict to one harvest source |
 | `publisher` | Detected society/publisher: `ieee`, `acm`, `spie`, `springer`, `elsevier`, `cvf`, `aaai`, `ifip`, `iet`, `usenix`, `mdpi`, `world-scientific`, `iop`, `wiley` |
-| `source` | Source group: `wikicfp` or `call4paper` |
 | `status` | Comma-separated: `open,closing-soon,upcoming,submissions-closed,expired,unknown` |
 | `includeExpired` | `true` to include expired listings (hidden by default) |
 | `year` / `fromYear` | Exact year / minimum year of the event or posting |
@@ -23,11 +22,11 @@ Base URL: `http://localhost:5001/api`. All responses are JSON.
 
 Each result adds `status`, `daysUntilDeadline`, `deadlineAt`, `startsAt`, `endsAt`,
 `postedAt`, `firstSeenAt` and `publishers` (detected societies such as `IEEE`). The
-response is `{ success, data: [...], meta: { total, page, limit, facets: { publishers,
-sources }, updatedAt } }`.
+response is `{ success, data: [...], meta: { total, page, limit, facets: { publishers },
+updatedAt } }`.
 
 `facets` holds `{ value, label, count }` options derived from the current query (not
-narrowed by `publisher`/`source`), so dropdown counts match the unfiltered result set.
+narrowed by `publisher`), so dropdown counts match the unfiltered result set.
 Conference publishers are inferred from title, summary and organisation text because the
 harvest sources (WikiCFP topic feeds, Call4Paper) are not IEEE-specific.
 

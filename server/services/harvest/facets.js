@@ -1,4 +1,4 @@
-// Publisher/society and source facets for harvested conference records.
+// Publisher/society facets for harvested conference records.
 //
 // Conference listings are aggregated from WikiCFP topic feeds and Call4Paper,
 // so a venue's society (IEEE, ACM, ...) has to be inferred from its text rather
@@ -42,25 +42,10 @@ export const getConferencePublisherLabels = (item) =>
     (id) => publisherById.get(id)?.label || id,
   );
 
-export const getSourceGroup = (item) => {
-  const name = String(item?.sourceName || "");
-  const sourceId = String(item?.sourceId || "");
-
-  if (/^wikicfp/i.test(name) || sourceId.startsWith("wikicfp-")) {
-    return { id: "wikicfp", label: "WikiCFP" };
-  }
-  if (/^call4paper/i.test(name) || sourceId.startsWith("call4paper-")) {
-    return { id: "call4paper", label: "Call4Paper" };
-  }
-
-  return { id: sourceId || "other", label: name || "Other" };
-};
-
 const rankFacet = (a, b) => b.count - a.count || a.label.localeCompare(b.label);
 
 export const buildHarvestFacets = (items = []) => {
   const publishers = new Map();
-  const sources = new Map();
 
   for (const item of items) {
     for (const id of getConferencePublisherIds(item)) {
@@ -72,19 +57,9 @@ export const buildHarvestFacets = (items = []) => {
       facet.count += 1;
       publishers.set(id, facet);
     }
-
-    const group = getSourceGroup(item);
-    const sourceFacet = sources.get(group.id) || {
-      value: group.id,
-      label: group.label,
-      count: 0,
-    };
-    sourceFacet.count += 1;
-    sources.set(group.id, sourceFacet);
   }
 
   return {
     publishers: [...publishers.values()].sort(rankFacet),
-    sources: [...sources.values()].sort(rankFacet),
   };
 };
