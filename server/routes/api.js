@@ -8,6 +8,9 @@ import { answerAssistantQuery } from "../services/assistantService.js";
 
 const router = express.Router();
 
+/** Providers exposed by GET /journals/match. */
+const JOURNAL_PROVIDERS = new Set(["springer", "elsevier", "ieee"]);
+
 // Collaboration routes
 router.use("/collaboration", collaborationRoutes);
 router.use("/harvest", harvestRoutes);
@@ -141,7 +144,7 @@ router.get("/journals/match", async (req, res, next) => {
       query: String(query),
       mode: mode === "abstract" ? "abstract" : "keyword",
       limit: Number.parseInt(limit, 10) || 20,
-      provider: provider === "springer" || provider === "elsevier" ? provider : "all",
+      provider: JOURNAL_PROVIDERS.has(String(provider)) ? String(provider) : "all",
     });
 
     res.json({

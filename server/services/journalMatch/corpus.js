@@ -9,9 +9,9 @@ import {
 } from "./text.js";
 
 /**
- * Loads and merges the local journal-finder corpus.
- * This is the same data the Journals page has always used; only the
- * matching/scoring stage has changed.
+ * Loads and merges the local journal-finder corpus plus the imported IEEE
+ * Title List. This is the same data the Journals page has always used; only
+ * the matching/scoring stage has changed.
  */
 
 let corpusCache = null;
@@ -70,32 +70,48 @@ export const normalizeImpactFactor = (value, text) => {
   };
 };
 
-export const toCorpusJournal = (item, topicSeed, sourceRun) => ({
-  provider: item.provider,
-  title: toAbsoluteField(item.title),
-  sourceUrl: item.sourceUrl || null,
-  submissionLink: item.submissionLink || null,
-  guideForAuthors: item.guideForAuthors || null,
-  acronym: item.acronym || null,
-  issn: item.issn || null,
-  publishingModel: item.publishingModel || null,
-  openAccessType: item.openAccessType || null,
-  ...normalizeImpactFactor(item.impactFactor, item.impactFactorText),
-  citeScore: item.citeScore ?? null,
-  decisionDays: item.decisionDays ?? null,
-  acceptanceDays: item.acceptanceDays ?? null,
-  subjectAreas: Array.isArray(item.subjectAreas) ? item.subjectAreas : [],
-  articleTypes: Array.isArray(item.articleTypes) ? item.articleTypes : [],
-  scope: toAbsoluteField(item.scope),
-  editorInChief: item.editorInChief || null,
-  goldOpenAccessFee: item.goldOpenAccessFee ?? null,
-  goldOpenAccessCurrency: item.goldOpenAccessCurrency || null,
-  coverImage: item.coverImage || null,
-  hasAgreements: item.hasAgreements ?? null,
-  topicSeeds: unique([topicSeed]),
-  sourceRuns: unique([sourceRun]),
-  rank: item.rank ?? null,
-});
+export const toCorpusJournal = (item, topicSeed, sourceRun) => {
+  const impact = normalizeImpactFactor(item.impactFactor, item.impactFactorText);
+
+  return {
+    provider: item.provider,
+    title: toAbsoluteField(item.title),
+    sourceUrl: item.sourceUrl || null,
+    submissionLink: item.submissionLink || null,
+    guideForAuthors: item.guideForAuthors || null,
+    acronym: item.acronym || null,
+    issn: item.issn || null,
+    publishingModel: item.publishingModel || null,
+    openAccessType: item.openAccessType || null,
+    impactFactor: impact.impactFactor,
+    impactFactorYear: impact.impactFactorYear ?? item.impactFactorYear ?? null,
+    fiveYearImpactFactor: item.fiveYearImpactFactor ?? null,
+    quartile: item.quartile || null,
+    citeScore: item.citeScore ?? null,
+    index: item.index || null,
+    jci: item.jci ?? null,
+    eigenfactor: item.eigenfactor ?? null,
+    articleInfluenceScore: item.articleInfluenceScore ?? null,
+    decisionDays: item.decisionDays ?? null,
+    acceptanceDays: item.acceptanceDays ?? null,
+    subjectAreas: Array.isArray(item.subjectAreas) ? item.subjectAreas : [],
+    articleTypes: Array.isArray(item.articleTypes) ? item.articleTypes : [],
+    scope: toAbsoluteField(item.scope),
+    scopeSource: item.scopeSource || null,
+    editorInChief: item.editorInChief || null,
+    goldOpenAccessFee: item.goldOpenAccessFee ?? null,
+    goldOpenAccessCurrency: item.goldOpenAccessCurrency || null,
+    coverImage: item.coverImage || null,
+    hasAgreements: item.hasAgreements ?? null,
+    isNew: item.isNew ?? null,
+    comingSoon: item.comingSoon ?? null,
+    dataSource: item.dataSource || null,
+    importedAt: item.importedAt || null,
+    topicSeeds: unique([topicSeed]),
+    sourceRuns: unique([sourceRun]),
+    rank: item.rank ?? null,
+  };
+};
 
 const mergeJournalRecords = (current, incoming, topicSeed) => ({
   ...current,
@@ -110,7 +126,19 @@ const mergeJournalRecords = (current, incoming, topicSeed) => ({
   impactFactor: pickBetterNumber(current.impactFactor, incoming.impactFactor),
   impactFactorYear:
     current.impactFactorYear ?? incoming.impactFactorYear ?? null,
+  fiveYearImpactFactor: pickBetterNumber(
+    current.fiveYearImpactFactor,
+    incoming.fiveYearImpactFactor,
+  ),
+  quartile: current.quartile || incoming.quartile || null,
   citeScore: pickBetterNumber(current.citeScore, incoming.citeScore),
+  index: current.index || incoming.index || null,
+  jci: pickBetterNumber(current.jci, incoming.jci),
+  eigenfactor: pickBetterNumber(current.eigenfactor, incoming.eigenfactor),
+  articleInfluenceScore: pickBetterNumber(
+    current.articleInfluenceScore,
+    incoming.articleInfluenceScore,
+  ),
   decisionDays: pickLowerNumber(current.decisionDays, incoming.decisionDays),
   acceptanceDays: pickLowerNumber(
     current.acceptanceDays,
@@ -129,6 +157,7 @@ const mergeJournalRecords = (current, incoming, topicSeed) => ({
     normalizeWhitespace(incoming.scope).length
       ? current.scope
       : incoming.scope,
+  scopeSource: current.scopeSource || incoming.scopeSource || null,
   editorInChief: current.editorInChief || incoming.editorInChief || null,
   goldOpenAccessFee:
     current.goldOpenAccessFee ?? incoming.goldOpenAccessFee ?? null,
@@ -136,6 +165,10 @@ const mergeJournalRecords = (current, incoming, topicSeed) => ({
     current.goldOpenAccessCurrency || incoming.goldOpenAccessCurrency || null,
   coverImage: current.coverImage || incoming.coverImage || null,
   hasAgreements: current.hasAgreements ?? incoming.hasAgreements ?? null,
+  isNew: current.isNew ?? incoming.isNew ?? null,
+  comingSoon: current.comingSoon ?? incoming.comingSoon ?? null,
+  dataSource: current.dataSource || incoming.dataSource || null,
+  importedAt: current.importedAt || incoming.importedAt || null,
   topicSeeds: unique([...(current.topicSeeds || []), topicSeed]),
   sourceRuns: unique([
     ...(current.sourceRuns || []),
@@ -183,6 +216,20 @@ const readScopeEnrichment = async () => {
   }
 };
 
+/**
+ * Imported IEEE Title List entries (scripts/importIeee.js). Optional: the file
+ * is committed, but a missing/corrupt file must not break the corpus.
+ */
+const readIeeeJournals = async () => {
+  try {
+    const raw = await fs.readFile(MATCH_CONFIG.paths.ieeeJournalsFile, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed?.journals) ? parsed : null;
+  } catch {
+    return null;
+  }
+};
+
 const springerJournalId = (sourceUrl) => {
   const match = /\/journal\/(\d+)/.exec(String(sourceUrl || ""));
   return match ? match[1] : null;
@@ -224,9 +271,10 @@ const sanitizeDays = (value) =>
 const loadAndPrepareCorpus = async () => {
   if (corpusCache) return corpusCache;
 
-  const [runs, enrichment] = await Promise.all([
+  const [runs, enrichment, ieee] = await Promise.all([
     listCorpusRuns(),
     readScopeEnrichment(),
+    readIeeeJournals(),
   ]);
   const loadedRuns = await Promise.allSettled(runs.map(readRunSummary));
   const byKey = new Map();
@@ -250,6 +298,21 @@ const loadAndPrepareCorpus = async () => {
       } else {
         byKey.set(key, normalized);
       }
+    }
+  }
+
+  // IEEE Title List entries are keyed by provider + ISSN/title, so they never
+  // collide with the Elsevier/Springer probe runs. No topic seed on purpose:
+  // they must not show up as "popular searches" chips on the Journals page.
+  const ieeeSourceRun = "ieee-title-list";
+  for (const item of ieee?.journals || []) {
+    const normalized = toCorpusJournal(item, "", ieeeSourceRun);
+    const key = journalKey(normalized);
+
+    if (byKey.has(key)) {
+      byKey.set(key, mergeJournalRecords(byKey.get(key), normalized, ""));
+    } else {
+      byKey.set(key, normalized);
     }
   }
 

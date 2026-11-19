@@ -73,20 +73,22 @@ manually saved capture; see
 
 ### `GET /journals/match`
 
-Recommend journals from the local Springer/Elsevier corpus.
+Recommend journals from the local Springer/Elsevier/IEEE corpus.
 
 | Param | Description |
 |---|---|
 | `query` | Keywords, aims & scope text, or an abstract |
 | `mode` | `keyword` (default) or `abstract` |
-| `provider` | `all` (default), `springer` or `elsevier` |
+| `provider` | `all` (default), `springer`, `elsevier` or `ieee` |
 | `limit` | Max results (default 20) |
 
 Response: `{ success, data, meta: { topics, totalCorpus, mode, semanticAvailable, indexBuiltAt }, count }`.
 Each item keeps the journal fields (`title`, `provider`, `issn`, `subjectAreas`,
-`impactFactor`, `citeScore`, `decisionDays`, `scope`, links, …) and adds
-`score` (0–1), `matchPercent`, `semanticScore`, `bm25Score`, `qualityScore`,
-`matchedSubjectAreas`, `matchedTopics`, `whyMatched`, `warnings` and `matchReasons`.
+`impactFactor`, `fiveYearImpactFactor`, `quartile`, `citeScore`, `index`, `decisionDays`,
+`scope`, links, …) and adds `score` (0–1), `matchPercent`, `semanticScore`, `bm25Score`,
+`qualityScore`, `matchedSubjectAreas`, `matchedTopics`, `whyMatched`, `warnings` and
+`matchReasons`. IEEE entries also carry `scopeSource`, `dataSource`, `importedAt`,
+`isNew` and `comingSoon`; their links, decision times and APCs are null until filled in.
 
 The embedding index is built manually (`node scripts/buildJournalIndex.js`); without it the
 endpoint falls back to BM25 scoring.

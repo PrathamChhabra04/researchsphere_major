@@ -118,9 +118,10 @@ export interface CollaborationRequestPayload {
 }
 
 export interface JournalMatchItem {
-  provider: "springer" | "elsevier" | string;
+  provider: "springer" | "elsevier" | "ieee" | string;
   title: string;
   sourceUrl?: string | null;
+  journalUrl?: string | null;
   submissionLink?: string | null;
   guideForAuthors?: string | null;
   acronym?: string | null;
@@ -129,18 +130,29 @@ export interface JournalMatchItem {
   openAccessType?: string | null;
   impactFactor?: number | null;
   impactFactorYear?: number | null;
+  fiveYearImpactFactor?: number | null;
+  quartile?: string | null;
   citeScore?: number | null;
+  index?: string | null;
+  jci?: number | null;
+  eigenfactor?: number | null;
+  articleInfluenceScore?: number | null;
   decisionDays?: number | null;
   acceptanceDays?: number | null;
   subjectAreas?: string[];
   articleTypes?: string[];
   scope?: string | null;
   scopeSnippet?: string | null;
+  scopeSource?: string | null;
   editorInChief?: string | null;
   goldOpenAccessFee?: number | null;
   goldOpenAccessCurrency?: string | null;
   coverImage?: string | null;
   hasAgreements?: boolean | null;
+  isNew?: boolean | null;
+  comingSoon?: boolean | null;
+  dataSource?: string | null;
+  importedAt?: string | null;
   topicSeeds?: string[];
   score?: number;
   matchPercent?: number;
@@ -293,7 +305,7 @@ export const matchJournals = async ({
   query: string;
   mode?: "keyword" | "abstract";
   limit?: number;
-  provider?: "all" | "springer" | "elsevier";
+  provider?: "all" | "springer" | "elsevier" | "ieee";
 }): Promise<JournalMatchResponse> => {
   const response = await fetch(
     `${API_BASE_URL}/journals/match?${new URLSearchParams({

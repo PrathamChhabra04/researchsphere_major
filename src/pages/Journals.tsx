@@ -37,6 +37,7 @@ const SAVED_JOURNALS_STORAGE_KEY = "researchsphere:saved-journals";
 const PROVIDER_LABELS: Record<string, string> = {
   elsevier: "Elsevier",
   springer: "Springer",
+  ieee: "IEEE",
 };
 
 const providerLabel = (provider?: string | null) => {
@@ -111,7 +112,11 @@ const accessCategory = (journal: JournalMatchItem) => {
 };
 
 const journalUrlFor = (journal: JournalMatchItem) =>
-  journal.sourceUrl || journal.guideForAuthors || journal.submissionLink || null;
+  journal.journalUrl ||
+  journal.sourceUrl ||
+  journal.guideForAuthors ||
+  journal.submissionLink ||
+  null;
 
 const submitUrlFor = (journal: JournalMatchItem) => {
   const submit = journal.submissionLink || journal.guideForAuthors || null;
@@ -232,7 +237,7 @@ const Journals = () => {
     initialQuery || DEFAULT_MIXED_QUERY,
   );
   const [providerFilter, setProviderFilter] = useState<
-    "all" | "springer" | "elsevier"
+    "all" | "springer" | "elsevier" | "ieee"
   >("all");
   const [sortBy, setSortBy] = useState("score");
   const [currentPage, setCurrentPage] = useState(1);
@@ -352,7 +357,7 @@ const Journals = () => {
             eyebrow="Journal finder"
             title="Find your journal"
             accent={undefined}
-            description="Search by keyword, or paste an abstract to surface Springer and Elsevier journals with strong topical fit and submission-ready details."
+            description="Search by keyword, or paste an abstract to surface Springer, Elsevier and IEEE journals with strong topical fit and submission-ready details."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">
             <div className="p-6 md:p-8">
@@ -458,9 +463,9 @@ const Journals = () => {
 
                     <Select
                       value={providerFilter}
-                      onValueChange={(value: "all" | "springer" | "elsevier") =>
-                        setProviderFilter(value)
-                      }
+                      onValueChange={(
+                        value: "all" | "springer" | "elsevier" | "ieee",
+                      ) => setProviderFilter(value)}
                     >
                       <SelectTrigger className="h-12 rounded-xl">
                         <SelectValue placeholder="All publishers" />
@@ -469,6 +474,7 @@ const Journals = () => {
                         <SelectItem value="all">All publishers</SelectItem>
                         <SelectItem value="springer">Springer</SelectItem>
                         <SelectItem value="elsevier">Elsevier</SelectItem>
+                        <SelectItem value="ieee">IEEE</SelectItem>
                       </SelectContent>
                     </Select>
 

@@ -39,7 +39,7 @@ export const SECTIONS: SiteSection[] = [
     path: "/journals",
     title: "Journals",
     short: "Find the right venue",
-    description: "Match your abstract to Springer and Elsevier journals by scope and topic.",
+    description: "Match your abstract to Springer, Elsevier and IEEE journals by scope and topic.",
     icon: BookOpenText,
     countKey: "journal",
     group: "publish",

@@ -105,6 +105,8 @@ export const MATCH_CONFIG = {
       __dirname,
       "../../data/journal-scope-enrichment.json",
     ),
+    /** Imported IEEE Title List entries (scripts/importIeee.js). */
+    ieeeJournalsFile: path.resolve(__dirname, "../../data/ieee-journals.json"),
   },
 };
 

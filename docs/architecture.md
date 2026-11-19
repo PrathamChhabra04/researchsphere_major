@@ -66,6 +66,11 @@ The Journals page is served by a fully local matcher (no LLM, no external API at
   journal's public `link.springer.com/journal/<id>/aims-and-scope` page into
   `server/data/journal-scope-enrichment.json`; `corpus.js` merges it at load and prefers the
   longer scope. Invalid decision/acceptance times (>365 days) are nulled here.
+  `scripts/importIeee.js` (run manually) parses the IEEE Title List PDF in
+  `server/data/raw/` into `server/data/ieee-journals.json` (provider `ieee`, Transactions
+  only by default) and `corpus.js` merges it at load. IEEE entries have no links, decision
+  times or APCs; their subject areas come from title keywords and their one-line scope is
+  generated (`scopeSource: "generated"`) until real aims/scope text is added.
 - **Index**: `scripts/buildJournalIndex.js` (run manually) cleans HTML entities/boilerplate,
   builds one identity chunk per journal (title + subjectAreas + articleTypes) and 180-word
   scope chunks, then embeds them with `Xenova/all-MiniLM-L6-v2` (mean pooling, normalized).

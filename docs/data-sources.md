@@ -52,6 +52,28 @@ The script never attempts to bypass the protection. Full save instructions and
 the accepted JSON/HTML fields are in
 [`server/data/raw/README.md`](../server/data/raw/README.md).
 
+## Journal corpus (manual)
+
+The Journals page reads the Springer/Elsevier probe runs plus an imported IEEE list:
+
+```bash
+node scripts/importIeee.js                 # IEEE Transactions only (default)
+node scripts/importIeee.js --include-all   # every IEEE title in the PDF
+node scripts/importIeee.js --dry-run       # parse and report, write nothing
+```
+
+The script extracts text with `pdftotext -raw` (poppler; a cached
+`server/data/raw/ieee-title-list.txt` is used if it is unavailable) and writes
+`server/data/ieee-journals.json`. Titles, ISSNs and metrics come from the PDF;
+subject areas are derived from title keywords and the one-line scope is generated
+(`scopeSource: "generated"`). Links, decision times and APCs stay null until filled
+in. Re-running is idempotent and preserves hand-edited scope/link fields. After an
+import, rebuild the embedding index:
+
+```bash
+node scripts/buildJournalIndex.js
+```
+
 ## Adding a source
 
 Add an entry to `SOURCE_REGISTRY`. The `type` selects the harvester:
