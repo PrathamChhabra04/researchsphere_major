@@ -6,6 +6,12 @@ import {
   getWikiCfpEnrichmentStatus,
   runWikiCfpDetailEnrichment,
 } from "./wikicfpDetails.js";
+import {
+  buildHarvestFacets,
+  getConferencePublisherIds,
+  getConferencePublisherLabels,
+  getSourceGroup,
+} from "./facets.js";
 
 // Scraped navigation text that occasionally slips through as a "title".
 const JUNK_TITLE_PATTERN = /^(skip to (main )?content|home|read more|click here|login|menu|apply( now)?)$/i;
@@ -386,6 +392,7 @@ const toSearchResult = (item, normalizedQuery, now) => {
     daysUntilDeadline: Number.isNaN(deadlineTime)
       ? null
       : Math.ceil((deadlineTime - now) / (24 * 60 * 60 * 1000)),
+    publishers: getConferencePublisherLabels(item),
     score: scoreItem(item, normalizedQuery),
   };
 };
@@ -416,6 +423,8 @@ export const searchHarvestData = async (filters = {}) => {
     kind,
     subtype,
     sourceId,
+    publisher,
+    source,
     location,
     year,
     fromYear,
@@ -445,52 +454,74 @@ export const searchHarvestData = async (filters = {}) => {
     ? new Set(String(status).split(",").map((value) => value.trim()))
     : null;
   const now = Date.now();
+  const publisherFilter = String(publisher || "").toLowerCase().trim();
+  const sourceFilter = String(source || "").toLowerCase().trim();
 
-  const filtered = cache.items
+  const matchesBaseFilters = (item) => {
+    if (!showExpired && item.status === "expired") return false;
+    if (allowedStatuses && !allowedStatuses.has(item.status)) return false;
+    if (kind && item.kind !== kind) return false;
+    if (subtype && item.subtype !== subtype) return false;
+    if (sourceId && item.sourceId !== sourceId) return false;
+
+    if (requestedYear) {
+      const itemYear = extractYear(item);
+      if (!itemYear || itemYear !== requestedYear) return false;
+    }
+
+    if (minimumYear) {
+      const itemYear = extractYear(item);
+      if (itemYear && itemYear < minimumYear) return false;
+    }
+
+    if (normalizedLocation) {
+      const itemLocation = (item.location || "").toLowerCase();
+      if (!itemLocation.includes(normalizedLocation)) return false;
+    }
+
+    if (!normalizedQuery) return true;
+    const haystack = [
+      item.title,
+      item.summary,
+      item.organization,
+      item.location,
+      item.sourceName,
+      getSourceGroup(item).label,
+      ...getConferencePublisherLabels(item),
+      ...(item.tags || []),
+    ].join(" ");
+
+    const normalizedHaystack = normalizeSearchText(haystack);
+    if (normalizedHaystack.includes(normalizedQuery)) return true;
+
+    if (!queryTokens.length) return false;
+    const matchedTokenCount = queryTokens.filter((token) =>
+      normalizedHaystack.includes(token),
+    ).length;
+
+    if (matchedTokenCount === 0) return false;
+    if (queryTokens.length <= 2) return matchedTokenCount >= 1;
+    return matchedTokenCount >= 2;
+  };
+
+  const matched = cache.items
     .map((item) => ({ ...item, status: getItemStatus(item, now) }))
-    .filter((item) => {
-      if (!showExpired && item.status === "expired") return false;
-      if (allowedStatuses && !allowedStatuses.has(item.status)) return false;
-      if (kind && item.kind !== kind) return false;
-      if (subtype && item.subtype !== subtype) return false;
-      if (sourceId && item.sourceId !== sourceId) return false;
+    .filter(matchesBaseFilters);
 
-      if (requestedYear) {
-        const itemYear = extractYear(item);
-        if (!itemYear || itemYear !== requestedYear) return false;
-      }
+  // Facets are derived from the current query so counts match visible results.
+  const facets = buildHarvestFacets(matched);
 
-      if (minimumYear) {
-        const itemYear = extractYear(item);
-        if (itemYear && itemYear < minimumYear) return false;
-      }
-
-      if (normalizedLocation) {
-        const itemLocation = (item.location || "").toLowerCase();
-        if (!itemLocation.includes(normalizedLocation)) return false;
-      }
-
-      if (!normalizedQuery) return true;
-      const haystack = [
-        item.title,
-        item.summary,
-        item.organization,
-        item.location,
-        ...(item.tags || []),
-      ].join(" ");
-
-      const normalizedHaystack = normalizeSearchText(haystack);
-      if (normalizedHaystack.includes(normalizedQuery)) return true;
-
-      if (!queryTokens.length) return false;
-      const matchedTokenCount = queryTokens.filter((token) =>
-        normalizedHaystack.includes(token),
-      ).length;
-
-      if (matchedTokenCount === 0) return false;
-      if (queryTokens.length <= 2) return matchedTokenCount >= 1;
-      return matchedTokenCount >= 2;
-    })
+  const filtered = matched
+    .filter(
+      (item) =>
+        !publisherFilter ||
+        getConferencePublisherIds(item).includes(publisherFilter),
+    )
+    .filter(
+      (item) =>
+        !sourceFilter ||
+        getSourceGroup(item).id.toLowerCase() === sourceFilter,
+    )
     .map((item) => toSearchResult(item, normalizedQuery, now))
     .sort(SORTERS[sort] || SORTERS.relevance);
 
@@ -501,6 +532,7 @@ export const searchHarvestData = async (filters = {}) => {
     page: currentPage,
     limit: requestedLimit,
     results: paged,
+    facets,
     updatedAt: cache.updatedAt,
   };
 };

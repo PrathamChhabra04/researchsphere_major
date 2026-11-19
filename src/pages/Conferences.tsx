@@ -24,7 +24,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useQuery } from "@tanstack/react-query";
-import { searchHarvestedData, type HarvestItem } from "@/services/apiClient";
+import {
+  searchHarvestedDataWithMeta,
+  type HarvestItem,
+} from "@/services/apiClient";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -48,6 +51,8 @@ const Conferences = () => {
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const [debouncedQuery, setDebouncedQuery] = useState(initialQuery);
   const [locationFilter, setLocationFilter] = useState("all");
+  const [publisherFilter, setPublisherFilter] = useState("all");
+  const [sourceFilter, setSourceFilter] = useState("all");
   const [sortBy, setSortBy] = useState("upcoming");
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -60,24 +65,51 @@ const Conferences = () => {
   }, [searchQuery]);
 
   const {
-    data: conferences = [],
+    data: searchResult,
     isLoading,
+    isFetching,
     error,
   } = useQuery({
-    queryKey: ["conferences", debouncedQuery],
+    queryKey: [
+      "conferences",
+      debouncedQuery,
+      publisherFilter,
+      sourceFilter,
+    ],
     queryFn: () =>
-      searchHarvestedData({
+      searchHarvestedDataWithMeta({
         kind: "conference",
         query: debouncedQuery,
         includePast: false,
+        publisher: publisherFilter === "all" ? undefined : publisherFilter,
+        source: sourceFilter === "all" ? undefined : sourceFilter,
         limit: 500,
       }),
     staleTime: 1000 * 60 * 10,
+    placeholderData: (previousData) => previousData,
   });
+
+  const conferences = useMemo(() => searchResult?.data ?? [], [searchResult]);
+  const publisherFacets = useMemo(
+    () => searchResult?.meta?.facets?.publishers ?? [],
+    [searchResult],
+  );
+  const sourceFacets = useMemo(
+    () => searchResult?.meta?.facets?.sources ?? [],
+    [searchResult],
+  );
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [debouncedQuery, locationFilter, sortBy]);
+  }, [debouncedQuery, locationFilter, publisherFilter, sourceFilter, sortBy]);
+
+  const publisherOptions = useMemo(
+    () =>
+      publisherFacets.filter(
+        (facet) => facet.count >= 2 || facet.value === publisherFilter,
+      ),
+    [publisherFacets, publisherFilter],
+  );
 
   useEffect(() => {
     const query = debouncedQuery.trim();
@@ -107,6 +139,14 @@ const Conferences = () => {
 
     return finalCountries.slice(0, 12).map(([country]) => country);
   }, [conferences]);
+
+  const locationSelectOptions = useMemo(
+    () =>
+      locationFilter !== "all" && !locationOptions.includes(locationFilter)
+        ? [locationFilter, ...locationOptions]
+        : locationOptions,
+    [locationFilter, locationOptions],
+  );
 
   const processedConferences = useMemo(() => {
     const filtered = conferences.filter((item) => {
@@ -169,16 +209,16 @@ const Conferences = () => {
                   <div className="relative">
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <Input
-                      placeholder="Try CVPR, NeurIPS, ICML, computer vision, systems..."
+                      placeholder="Try CVPR, NeurIPS, ICML, IEEE, computer vision, systems..."
                       value={searchQuery}
                       onChange={(event) => setSearchQuery(event.target.value)}
                       className="h-14 rounded-xl pl-12 text-[15px] md:text-base"
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1.1fr] gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
                     <Select value={sortBy} onValueChange={setSortBy}>
-                      <SelectTrigger className="h-12 rounded-xl">
+                      <SelectTrigger className="h-12 rounded-xl" aria-label="Sort conferences">
                         <SelectValue placeholder="Sort conferences" />
                       </SelectTrigger>
                       <SelectContent>
@@ -198,15 +238,55 @@ const Conferences = () => {
                     </Select>
 
                     <Select
+                      value={publisherFilter}
+                      onValueChange={setPublisherFilter}
+                    >
+                      <SelectTrigger
+                        className="h-12 rounded-xl"
+                        aria-label="Publisher or society"
+                      >
+                        <SelectValue placeholder="All publishers" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All publishers</SelectItem>
+                        {publisherOptions.map((facet) => (
+                          <SelectItem key={facet.value} value={facet.value}>
+                            {facet.label} ({facet.count})
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+
+                    <Select
+                      value={sourceFilter}
+                      onValueChange={setSourceFilter}
+                    >
+                      <SelectTrigger
+                        className="h-12 rounded-xl"
+                        aria-label="Data source"
+                      >
+                        <SelectValue placeholder="All sources" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All sources</SelectItem>
+                        {sourceFacets.map((facet) => (
+                          <SelectItem key={facet.value} value={facet.value}>
+                            {facet.label} ({facet.count})
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+
+                    <Select
                       value={locationFilter}
                       onValueChange={setLocationFilter}
                     >
-                      <SelectTrigger className="h-12 rounded-xl">
+                      <SelectTrigger className="h-12 rounded-xl" aria-label="Location">
                         <SelectValue placeholder="All locations" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">All locations</SelectItem>
-                        {locationOptions.map((location) => (
+                        {locationSelectOptions.map((location) => (
                           <SelectItem key={location} value={location}>
                             {location}
                           </SelectItem>
@@ -223,10 +303,17 @@ const Conferences = () => {
             <div className="text-2xl font-semibold tracking-tight text-foreground">
               {isLoading
                 ? "Finding conferences..."
-                : `Showing ${startIndex + 1}-${Math.min(
-                    startIndex + currentConferences.length,
-                    processedConferences.length,
-                  )} of ${processedConferences.length} results`}
+                : processedConferences.length === 0
+                  ? "Showing 0 of 0 results"
+                  : `Showing ${startIndex + 1}-${Math.min(
+                      startIndex + currentConferences.length,
+                      processedConferences.length,
+                    )} of ${processedConferences.length} results`}
+              {isFetching && !isLoading && (
+                <span className="ml-3 text-sm font-normal text-muted-foreground">
+                  Updating...
+                </span>
+              )}
             </div>
           </div>
 
@@ -279,6 +366,15 @@ const Conferences = () => {
                                     : "CONFERENCE"}
                                 </Badge>
                                 <DeadlineStatusBadge item={conf} />
+                                {conf.publishers?.map((publisher) => (
+                                  <Badge
+                                    key={publisher}
+                                    variant="outline"
+                                    className="border-primary/40 bg-primary/5 text-xs text-primary"
+                                  >
+                                    {publisher}
+                                  </Badge>
+                                ))}
                                 {conf.location && (
                                   <Badge variant="outline" className="text-xs">
                                     {getCountryFromLocation(conf.location)}

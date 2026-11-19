@@ -35,6 +35,8 @@ export interface HarvestItem {
   firstSeenAt?: string | null;
   status?: "open" | "closing-soon" | "submissions-closed" | "upcoming" | "expired" | "unknown" | string;
   daysUntilDeadline?: number | null;
+  /** Societies/publishers detected on the listing (IEEE, ACM, SPIE, ...) */
+  publishers?: string[];
   /** CFP milestone dates (WikiCFP event pages) */
   milestones?: {
     abstract?: string;
@@ -50,6 +52,8 @@ export interface HarvestSearchParams {
   kind?: string;
   subtype?: string;
   sourceId?: string;
+  publisher?: string;
+  source?: string;
   location?: string;
   year?: number;
   fromYear?: number;
@@ -58,12 +62,24 @@ export interface HarvestSearchParams {
   page?: number;
 }
 
+export interface HarvestFacetOption {
+  value: string;
+  label: string;
+  count: number;
+}
+
+export interface HarvestFacets {
+  publishers: HarvestFacetOption[];
+  sources: HarvestFacetOption[];
+}
+
 export interface HarvestSearchResponse {
   data: HarvestItem[];
   meta: {
     total: number;
     page: number;
     limit: number;
+    facets?: HarvestFacets;
     updatedAt?: string;
   };
 }

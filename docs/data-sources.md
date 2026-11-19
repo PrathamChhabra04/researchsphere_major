@@ -18,6 +18,10 @@ are healthy, failing or currently empty.
 | Book chapters | INFORMS Connect, IntechOpen, KY Publications, IGI Global |
 | Evergreen programmes | Curated `static-opportunity` entries (IIT/IISc/NIT admissions, ETH SSRF, CERN openlab, Microsoft Research internships, …) |
 
+Conference listings are not split by publisher at crawl time; WikiCFP and Call4Paper are
+the only conference sources. The API detects societies (IEEE, ACM, SPIE, …) from each
+listing's title, summary and organisation so the Conferences page can filter on them.
+
 Removed because they block automated access or no longer exist: FindAPhD,
 FindAPostdoc, AcademicPositions, conferenceindex.org, AllConferenceAlert, research.com,
 NoticeBard, ResearchTweet, PapersWithCode.
