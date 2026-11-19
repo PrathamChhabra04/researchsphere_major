@@ -1,7 +1,5 @@
 import PageHeader from "@/components/PageHeader";
 import {
-  ArrowDownAZ,
-  ArrowUpAZ,
   Bookmark,
   BookOpenText,
   ExternalLink,
@@ -33,19 +31,26 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
-const SAVED_SPECIAL_ISSUES_STORAGE_KEY =
-  "researchsphere:saved-special-issues";
+const SAVED_SPECIAL_ISSUES_STORAGE_KEY = "researchsphere:saved-special-issues";
 const ALL_SECONDARY_SUBJECTS = "all";
 const ITEMS_PER_PAGE = 10;
+
+const POPULAR_SEARCHES = [
+  "Artificial Intelligence",
+  "Machine Learning",
+  "Computer Vision",
+  "Natural Language Processing",
+  "Cybersecurity",
+  "Data Mining",
+  "Cloud Computing",
+  "Human-Computer Interaction",
+];
 
 const SORT_OPTIONS = [
   { value: "deadline", label: "Deadline" },
   { value: "impactFactor", label: "Impact Factor" },
   { value: "citeScore", label: "CiteScore" },
 ];
-
-const CONTROL_CLASS =
-  "h-[60px] rounded-2xl border-border bg-card px-4 text-sm shadow-sm focus:ring-2 focus:ring-primary/40 focus:ring-offset-0 data-[state=open]:border-primary/70 data-[state=open]:ring-2 data-[state=open]:ring-primary/40";
 
 const readSavedSpecialIssues = () => {
   try {
@@ -73,8 +78,6 @@ const writeSavedSpecialIssues = (ids: string[]) => {
 const formatDate = (value?: string | null) => {
   if (!value) return "Not listed";
 
-  // Deadline values are calendar dates (YYYY-MM-DD). Build them in local time
-  // so a date-only string does not shift a day in negative UTC offsets.
   const dateOnly = value.match(/^(\d{4})-(\d{2})-(\d{2})/);
   const date = dateOnly
     ? new Date(
@@ -142,20 +145,10 @@ const SpecialIssues = () => {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [
-    debouncedQuery,
-    secondarySubject,
-    sortBy,
-    sortAsc,
-  ]);
+  }, [debouncedQuery, secondarySubject, sortBy, sortAsc]);
 
   const { data, isLoading, isError, isFetching } = useQuery({
-    queryKey: [
-      "special-issues",
-      debouncedQuery,
-      secondarySubject,
-      sortBy,
-    ],
+    queryKey: ["special-issues", debouncedQuery, secondarySubject, sortBy],
     queryFn: () =>
       getSpecialIssues({
         query: debouncedQuery,
@@ -222,95 +215,120 @@ const SpecialIssues = () => {
           <PageHeader
             icon={Sparkles}
             eyebrow="Call for special issues"
-            title="Calls for special issues"
+            title="special issues"
             description="Browse open guest-edited volumes across ScienceDirect journals — each listing includes submission deadlines, impact factor, CiteScore, and guest editor details."
           />
 
+          {/* Search panel styled like the journals page */}
           <section className="space-y-3">
-            <div className="relative flex h-[60px] items-center rounded-2xl border border-border bg-card shadow-sm transition-all focus-within:border-primary/70 focus-within:ring-2 focus-within:ring-primary/40">
-              <Search className="ml-5 h-5 w-5 shrink-0 text-muted-foreground" />
-              <Input
-                placeholder="Try federated learning, edge computing, cybersecurity..."
-                value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                className="h-full flex-1 rounded-2xl border-0 bg-transparent px-4 text-base shadow-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
-                aria-label="Search special issues"
-              />
+            <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-base font-medium text-foreground">
+                    Search by keywords, guest editors & journal titles
+                  </span>
+                </div>
+
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <Input
+                    placeholder="Try federated learning, edge computing, cybersecurity..."
+                    value={searchQuery}
+                    onChange={(event) => setSearchQuery(event.target.value)}
+                    className="h-14 rounded-xl pl-12 text-[15px] md:text-base shadow-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                    aria-label="Search special issues"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr_auto] gap-3">
+                  <Select
+                    value={sortBy}
+                    onValueChange={(value) =>
+                      setSortBy(value as SpecialIssueSort)
+                    }
+                  >
+                    <SelectTrigger
+                      className="h-12 rounded-xl min-w-[200px]"
+                      aria-label="Sort by"
+                    >
+                      <SelectValue placeholder="Sort by deadline" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {SORT_OPTIONS.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+
+                  <Select
+                    value={secondarySubject}
+                    onValueChange={setSecondarySubject}
+                  >
+                    <SelectTrigger
+                      className="h-12 rounded-xl min-w-[220px]"
+                      aria-label="Secondary subject area"
+                    >
+                      <SelectValue placeholder="All secondary subject areas" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value={ALL_SECONDARY_SUBJECTS}>
+                        All secondary subject areas
+                      </SelectItem>
+                      {secondaryOptions.map((subject) => (
+                        <SelectItem key={subject} value={subject}>
+                          {subject}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+
+                  <Button
+                    type="button"
+                    onClick={() => setCurrentPage(1)}
+                    className="h-12 rounded-xl px-7 bg-[#3B6FB6] hover:bg-[#335F9C] text-white dark:bg-[#7FA6DB] dark:hover:bg-[#9DBBE6] dark:text-[#0B1320] font-semibold text-sm sm:text-base shadow-sm"
+                  >
+                    <Sparkles className="h-4 w-4" />
+                    Find special issues
+                  </Button>
+                </div>
+
+                <div className="mt-4">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground mb-3">
+                    Popular searches
+                  </p>
+                  <div className="flex gap-2.5 overflow-x-auto whitespace-nowrap pb-1 pr-1 custom-scrollbar">
+                    {POPULAR_SEARCHES.map((topic) => (
+                      <Badge
+                        key={topic}
+                        variant="outline"
+                        className="cursor-pointer rounded-full px-3.5 py-2 text-xs shrink-0"
+                        onClick={() => {
+                          setSearchQuery(topic);
+                          setDebouncedQuery(topic);
+                          setCurrentPage(1);
+                        }}
+                      >
+                        {topic}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <Select
-                value={secondarySubject}
-                onValueChange={setSecondarySubject}
-              >
-                <SelectTrigger
-                  className={cn(CONTROL_CLASS, "min-w-[210px] flex-[1.6]")}
-                  aria-label="Secondary subject area"
-                >
-                  <SelectValue placeholder="All secondary subject areas" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={ALL_SECONDARY_SUBJECTS}>
-                    All secondary subject areas
-                  </SelectItem>
-                  {secondaryOptions.map((subject) => (
-                    <SelectItem key={subject} value={subject}>
-                      {subject}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              {/* Sort dropdown + direction toggle */}
-              <div className="flex items-center gap-2">
-                <Select
-                  value={sortBy}
-                  onValueChange={(value) => setSortBy(value as SpecialIssueSort)}
-                >
-                  <SelectTrigger
-                    className={cn(CONTROL_CLASS, "min-w-[180px] flex-1")}
-                    aria-label="Sort by"
-                  >
-                    <SelectValue placeholder="Sort by deadline" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {SORT_OPTIONS.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-
-                <button
-                  type="button"
-                  onClick={() => setSortAsc((prev) => !prev)}
-                  aria-label={sortAsc ? "Sort ascending" : "Sort descending"}
-                  title={sortAsc ? "Ascending" : "Descending"}
-                  className={cn(
-                    "flex h-[60px] w-[60px] shrink-0 items-center justify-center rounded-2xl border border-border bg-card shadow-sm transition-colors",
-                    "hover:border-primary/60 hover:bg-muted",
-                    sortAsc && "border-primary/60 bg-[#E9F0FA] dark:bg-[#22344D] text-[#2F5D9E] dark:text-[#9DBBE6]",
-                  )}
-                >
-                  {sortAsc ? (
-                    <ArrowUpAZ className="h-5 w-5" />
-                  ) : (
-                    <ArrowDownAZ className="h-5 w-5" />
-                  )}
-                </button>
-              </div>
-
-              {hasActiveFilters && (
+            {hasActiveFilters && (
+              <div className="flex justify-end">
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="ml-1 shrink-0 whitespace-nowrap text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                  className="shrink-0 whitespace-nowrap text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
                 >
                   Clear filters
                 </button>
-              )}
-            </div>
+              </div>
+            )}
           </section>
 
           <div className="mt-10 mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
