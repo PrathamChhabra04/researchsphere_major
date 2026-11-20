@@ -122,6 +122,7 @@ export interface JournalMatchItem {
   title: string;
   sourceUrl?: string | null;
   journalUrl?: string | null;
+  linkSource?: string | null;
   submissionLink?: string | null;
   guideForAuthors?: string | null;
   acronym?: string | null;

@@ -87,8 +87,10 @@ Each item keeps the journal fields (`title`, `provider`, `issn`, `subjectAreas`,
 `impactFactor`, `fiveYearImpactFactor`, `quartile`, `citeScore`, `index`, `decisionDays`,
 `scope`, links, …) and adds `score` (0–1), `matchPercent`, `semanticScore`, `bm25Score`,
 `qualityScore`, `matchedSubjectAreas`, `matchedTopics`, `whyMatched`, `warnings` and
-`matchReasons`. IEEE entries also carry `scopeSource`, `dataSource`, `importedAt`,
-`isNew` and `comingSoon`; their links, decision times and APCs are null until filled in.
+`matchReasons`. IEEE entries also carry `journalUrl`, `linkSource` (`openalex` or
+`search-fallback`), `scopeSource`, `dataSource`, `importedAt`, `isNew` and
+`comingSoon`; their submission links, decision times and APCs are null until filled
+in.
 
 The embedding index is built manually (`node scripts/buildJournalIndex.js`); without it the
 endpoint falls back to BM25 scoring.

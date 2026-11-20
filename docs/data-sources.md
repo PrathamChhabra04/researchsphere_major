@@ -67,8 +67,27 @@ The script extracts text with `pdftotext -raw` (poppler; a cached
 `server/data/ieee-journals.json`. Titles, ISSNs and metrics come from the PDF;
 subject areas are derived from title keywords and the one-line scope is generated
 (`scopeSource: "generated"`). Links, decision times and APCs stay null until filled
-in. Re-running is idempotent and preserves hand-edited scope/link fields. After an
-import, rebuild the embedding index:
+in. Re-running is idempotent and preserves hand-edited scope/link fields.
+
+Enrich the "View journal" links from OpenAlex (manual, idempotent, cached):
+
+```bash
+node scripts/enrichIeeeLinks.js            # use the disk cache
+node scripts/enrichIeeeLinks.js --refresh  # refetch from OpenAlex
+```
+
+It queries `https://api.openalex.org/sources/issn:<ISSN>` (print ISSN, then eISSN;
+`OPENALEX_MAILTO` overrides the contact address) and keeps `homepage_url` only when
+it is an http(s) page on `ieeexplore.ieee.org`/`ieee.org`. Otherwise it stores an
+IEEE Xplore title-search URL and marks `linkSource: "search-fallback"`. Responses
+are cached in `server/data/openalex-source-cache.json` (gitignored). IEEE Xplore is
+never scraped.
+
+Submission links are never generated. Add them manually to
+`server/data/ieee-submission-overrides.json`, a plain `{ "<ISSN>": "<URL>" }` map
+(see `server/data/README.md`); both scripts apply it and never rewrite the file.
+"Submit paper" stays hidden until an override exists. After changing journal data,
+rebuild the embedding index (links themselves are not indexed):
 
 ```bash
 node scripts/buildJournalIndex.js

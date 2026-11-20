@@ -44,3 +44,6 @@ server/data/journal-finder-probe/*/elsevier-journals.json
 # Generated local journal matching index + embedding model cache
 server/data/journal-match-index.json
 server/data/journal-match-model-cache/
+
+# OpenAlex source cache for IEEE link enrichment (rebuild: node scripts/enrichIeeeLinks.js)
+server/data/openalex-source-cache.json

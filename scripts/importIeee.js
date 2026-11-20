@@ -32,6 +32,10 @@ const TEXT_CACHE_PATH = path.join(
   "server/data/raw/ieee-title-list.txt",
 );
 const OUTPUT_PATH = path.join(projectRoot, "server/data/ieee-journals.json");
+const OVERRIDES_PATH = path.join(
+  projectRoot,
+  "server/data/ieee-submission-overrides.json",
+);
 
 const PROVIDER = "ieee";
 const DATA_SOURCE = "IEEE Title List, data as of 1 January 2026";
@@ -384,6 +388,7 @@ const toJournal = (row) => {
     scopeSource: "generated",
     sourceUrl: null,
     journalUrl: null,
+    linkSource: null,
     submissionLink: null,
     guideForAuthors: null,
     decisionDays: null,
@@ -415,6 +420,7 @@ const entryKey = (journal) =>
 const PRESERVED_FIELDS = [
   "sourceUrl",
   "journalUrl",
+  "linkSource",
   "submissionLink",
   "guideForAuthors",
   "decisionDays",
@@ -455,6 +461,43 @@ const applyManualOverrides = (incoming, existing) => {
   return merged;
 };
 
+/**
+ * Manual ISSN -> submission URL map. This file is read-only for the scripts:
+ * it is never created or rewritten here. Only http(s) values are applied.
+ */
+const readSubmissionOverrides = () => {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(OVERRIDES_PATH, "utf8"));
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+
+    const overrides = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      const issn = String(key).trim();
+      const link = typeof value === "string" ? value.trim() : "";
+      if (!issn || !link) continue;
+
+      try {
+        const url = new URL(link);
+        if (url.protocol === "http:" || url.protocol === "https:") {
+          overrides[issn] = link;
+        }
+      } catch {
+        // Ignore malformed entries.
+      }
+    }
+    return overrides;
+  } catch {
+    return {};
+  }
+};
+
+const applySubmissionOverride = (journal, overrides) => {
+  const issn = [journal.issn, journal.eissn].find(
+    (candidate) => candidate && overrides[candidate],
+  );
+  return issn ? { ...journal, submissionLink: overrides[issn] } : journal;
+};
+
 /** Stable serialisation so key order cannot fake a change. */
 const canonicalJson = (value) => {
   if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
@@ -493,6 +536,7 @@ const report = ({
   skipped,
   duplicateAcronyms,
   duplicateKeys,
+  overridesApplied,
 }) => {
   const lines = [];
   const push = (line = "") => lines.push(line);
@@ -556,6 +600,7 @@ const report = ({
       (journal) => journal.subjectAreas.length === 1 && journal.subjectAreas[0] === FALLBACK_SUBJECT_AREA,
     ).length}`,
   );
+  push(`  Submission overrides applied: ${overridesApplied}`);
   push("");
 
   push(`Output: ${rel(OUTPUT_PATH)}${dryRun ? " (dry run, not written)" : ""}`);
@@ -581,6 +626,7 @@ const main = () => {
   const skipped = rows.length - selected.length;
 
   const existing = readExisting();
+  const overrides = readSubmissionOverrides();
   const existingByKey = new Map(
     (existing?.journals || []).map((journal) => [entryKey(journal), journal]),
   );
@@ -611,9 +657,12 @@ const main = () => {
   // the first and let the report surface it instead of silently overwriting.
   const byKey = new Map();
   for (const row of selected) {
-    const incoming = applyManualOverrides(
-      toJournal(row),
-      existingByKey.get(entryKey(row)),
+    const incoming = applySubmissionOverride(
+      applyManualOverrides(
+        toJournal(row),
+        existingByKey.get(entryKey(row)),
+      ),
+      overrides,
     );
     const key = entryKey(incoming);
     if (byKey.has(key)) continue;
@@ -639,11 +688,20 @@ const main = () => {
     ? existing.importedAt || new Date().toISOString()
     : new Date().toISOString();
 
+  const overridesApplied = journals.filter((journal) =>
+    [journal.issn, journal.eissn].some(
+      (issn) => issn && overrides[issn],
+    ),
+  ).length;
+
   const payload = {
     provider: PROVIDER,
     dataSource: DATA_SOURCE,
     sourceFile: rel(PDF_PATH),
     importedAt,
+    ...(existing?.linksEnrichedAt
+      ? { linksEnrichedAt: existing.linksEnrichedAt }
+      : {}),
     count: journals.length,
     journals,
   };
@@ -661,6 +719,7 @@ const main = () => {
     skipped,
     duplicateAcronyms,
     duplicateKeys,
+    overridesApplied,
   });
 };
 
