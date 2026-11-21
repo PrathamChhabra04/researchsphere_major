@@ -194,7 +194,6 @@ const BookChapters = () => {
             icon={BookMarked}
             eyebrow="Call for chapters"
             title="Book chapters"
-            accent={bookChapterCalls.length > 0 ? `${bookChapterCalls.length} live` : undefined}
             description="Open calls for chapters in edited volumes on computing and intelligent systems. Open the original call for contributor guidance."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">

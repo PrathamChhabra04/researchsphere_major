@@ -157,7 +157,6 @@ const PhDPrograms = () => {
             icon={GraduationCap}
             eyebrow="Opportunities"
             title="PhD programs"
-            accent={phdPrograms.length > 0 ? `${phdPrograms.length} live` : undefined}
             description="Funded PhD studentships and doctoral admissions across computing and emerging tech, soonest deadline first."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">

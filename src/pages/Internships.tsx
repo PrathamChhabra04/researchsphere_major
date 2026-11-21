@@ -177,7 +177,6 @@ const Internships = () => {
             icon={Rocket}
             eyebrow="Opportunities"
             title="Internships"
-            accent={internships.length > 0 ? `${internships.length} live` : undefined}
             description="Research internships at industry labs, IITs, ETH, CERN and universities worldwide, soonest deadline first."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">

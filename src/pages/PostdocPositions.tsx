@@ -157,7 +157,6 @@ const PostdocPositions = () => {
             icon={FlaskConical}
             eyebrow="Opportunities"
             title="Postdocs"
-            accent={postdocPositions.length > 0 ? `${postdocPositions.length} live` : undefined}
             description="Postdoctoral and research fellow openings across labs, departments and research centres."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">

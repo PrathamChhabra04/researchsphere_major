@@ -221,7 +221,6 @@ const ProjectCalls = () => {
             icon={HandCoins}
             eyebrow="Funding"
             title="Project calls"
-            accent={projects.length > 0 ? `${projects.length} live` : undefined}
             description="Grants, fellowships and calls for proposals from NSF, UKRI and Indian agencies, with deadlines where the source publishes them."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">

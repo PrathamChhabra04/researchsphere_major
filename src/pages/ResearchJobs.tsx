@@ -158,7 +158,6 @@ const ResearchJobs = () => {
             icon={BrainCircuit}
             eyebrow="Opportunities"
             title="Research jobs"
-            accent={researchJobs.length > 0 ? `${researchJobs.length} live` : undefined}
             description="Research scientist, engineer, fellowship and faculty roles from universities and industry labs like OpenAI, Databricks and Scale AI."
           />
           <section className="overflow-hidden rounded-[28px] bg-card/60">
