@@ -12,7 +12,7 @@ interface PageHeaderProps {
   actions?: ReactNode;
 }
 
-/** Shared page header in the site's display style: lime eyebrow, giant headline, side copy. */
+/** Shared page header in the site's display style: blue eyebrow, giant headline, side copy. */
 const PageHeader = ({ eyebrow, title, accent, description, icon: Icon, actions }: PageHeaderProps) => (
   <header className="pb-8 pt-4 md:pb-12 md:pt-8">
     <div className="flex items-center gap-3">
@@ -27,7 +27,7 @@ const PageHeader = ({ eyebrow, title, accent, description, icon: Icon, actions }
       <h1 className="display-xl text-[2.6rem] sm:text-6xl lg:text-[5.2rem]">
         {title}
         {accent && (
-          <span className="serif-accent ml-3 align-baseline text-[0.55em] text-muted-foreground [-webkit-text-fill-color:currentColor]">
+          <span className="serif-accent ml-3 whitespace-nowrap align-baseline text-[0.55em] text-muted-foreground [-webkit-text-fill-color:currentColor]">
             {accent}
           </span>
         )}

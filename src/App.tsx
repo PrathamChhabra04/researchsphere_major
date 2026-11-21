@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { initializeGoogleAnalytics } from "@/lib/analytics";
 import Index from "./pages/Index";
@@ -26,6 +26,30 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const PAGE_TITLES: Record<string, string> = {
+  "/": "ResearchSphere — Every research opportunity, in one place",
+  "/conferences": "Conferences — ResearchSphere",
+  "/journals": "Find Journals — ResearchSphere",
+  "/book-chapters": "Book Chapters — ResearchSphere",
+  "/special-issues": "Special Issues — ResearchSphere",
+  "/project-calls": "Project Calls — ResearchSphere",
+  "/phd-programs": "PhD Programs — ResearchSphere",
+  "/postdoc-positions": "Postdoc Positions — ResearchSphere",
+  "/internships": "Internships — ResearchSphere",
+  "/research-jobs": "Research Jobs — ResearchSphere",
+  "/about": "About — ResearchSphere",
+  "/research-collaboration": "Collaborate — ResearchSphere",
+  "/user-hub": "User Hub — ResearchSphere",
+};
+
+const DocumentTitle = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    document.title = PAGE_TITLES[pathname] || "Page not found — ResearchSphere";
+  }, [pathname]);
+  return null;
+};
+
 const App = () => {
   useEffect(() => {
     // Initialize Google Analytics if measurement ID is provided
@@ -42,6 +66,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <DocumentTitle />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/conferences" element={<Conferences />} />

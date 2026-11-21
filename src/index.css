@@ -9,7 +9,7 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  /* Light: warm paper, ink text, olive-lime signal (darker lime keeps text contrast on white) */
+  /* Light: warm paper, ink text, blue signal (darker blue keeps text contrast on white) */
   :root {
     --background: 60 9% 96%;
     --foreground: 0 0% 7%;
@@ -71,7 +71,7 @@ All colors MUST be HSL.
     --hero-accent-text: 215 54% 40%;
   }
 
-  /* Dark: pure black canvas, charcoal cards, electric-lime signal, fiber-optic blue */
+  /* Dark: pure black canvas, charcoal cards, blue signal */
   .dark {
     --background: 0 0% 0%;
     --foreground: 0 0% 96%;
@@ -386,7 +386,7 @@ All colors MUST be HSL.
   }
 }
 
-/* ---------- ResearchSphere visual language (black / charcoal / lime) ---------- */
+/* ---------- ResearchSphere visual language (black / charcoal / blue) ---------- */
 @layer components {
   /* Giant uppercase headline with a white-to-grey sheen, as in the reference design */
   .display-xl {
@@ -413,7 +413,7 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
   }
 
-  /* Lime section label ("Our Services") */
+  /* Section label ("Our Services") */
   .eyebrow {
     @apply text-sm font-medium;
     color: hsl(var(--primary));
@@ -427,7 +427,7 @@ All colors MUST be HSL.
     text-transform: none;
   }
 
-  /* Lime pill dropped inline into headlines */
+  /* Accent pill dropped inline into headlines */
   .lime-chip {
     @apply inline-flex items-center rounded-full px-[0.45em] align-middle;
     font-family: "Instrument Serif", Georgia, serif;
@@ -519,11 +519,11 @@ All colors MUST be HSL.
       linear-gradient(160deg, hsl(230 60% 8%), hsl(230 70% 16%));
   }
   .tile-circuit {
-    background-color: hsl(150 45% 14%);
+    background-color: hsl(216 40% 12%);
     background-image:
-      linear-gradient(hsl(68 88% 64% / 0.18) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(68 88% 64% / 0.18) 1px, transparent 1px),
-      radial-gradient(circle, hsl(68 88% 64% / 0.6) 1.5px, transparent 2px);
+      linear-gradient(hsl(214 62% 70% / 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(214 62% 70% / 0.18) 1px, transparent 1px),
+      radial-gradient(circle, hsl(214 62% 70% / 0.6) 1.5px, transparent 2px);
     background-size: 22px 22px, 22px 22px, 44px 44px;
   }
   .tile-lime {

@@ -109,7 +109,7 @@ const Contact = () => {
         name:             form.name.trim(),
         email:            form.email.trim(),
         institution:      form.institution.trim(),
-        subject:          form.subject.trim(),
+        researchAreas:    form.subject.trim(),
         projectDetails:   form.message.trim(),
       });
       setSubmittedEmail(form.email.trim());

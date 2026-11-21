@@ -113,7 +113,7 @@ export interface CollaborationRequestPayload {
   name: string;
   email: string;
   institution: string;
-  subject?: string;
+  researchAreas?: string;
   projectDetails?: string;
 }
 

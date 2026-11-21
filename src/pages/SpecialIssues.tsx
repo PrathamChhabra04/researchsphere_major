@@ -200,7 +200,7 @@ const SpecialIssues = () => {
   const resultsLabel = useMemo(() => {
     if (isLoading) return "Finding special issues...";
     if (issues.length === 0) return "Showing 0 of 0 results";
-    return `Showing ${startIndex + 1}-${Math.min(
+    return `Showing ${startIndex + 1}–${Math.min(
       startIndex + currentIssues.length,
       issues.length,
     )} of ${issues.length} results`;

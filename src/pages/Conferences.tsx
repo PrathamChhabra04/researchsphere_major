@@ -274,7 +274,7 @@ const Conferences = () => {
                 ? "Finding conferences..."
                 : processedConferences.length === 0
                   ? "Showing 0 of 0 results"
-                  : `Showing ${startIndex + 1}-${Math.min(
+                  : `Showing ${startIndex + 1}–${Math.min(
                       startIndex + currentConferences.length,
                       processedConferences.length,
                     )} of ${processedConferences.length} results`}

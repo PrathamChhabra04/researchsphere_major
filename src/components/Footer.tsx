@@ -31,7 +31,7 @@ const Footer = () => {
   return (
     <footer className="mt-24">
       <div className="container mx-auto max-w-[1380px] px-5 md:px-6">
-        {/* Lime call-to-action band */}
+        {/* Blue call-to-action band */}
         <div className="tile-lime flex flex-col gap-5 rounded-[28px] px-6 py-7 md:flex-row md:items-center md:justify-between md:px-10">
           <div>
             <p className="font-display text-2xl font-medium uppercase tracking-tight md:text-3xl">
@@ -92,7 +92,7 @@ const Footer = () => {
           <span>© {new Date().getFullYear()} ResearchSphere. Listings belong to their original publishers.</span>
           {visits > 0 && (
             <span className="inline-flex items-center gap-2">
-              <Eye className="h-3.5 w-3.5" /> {visits.toLocaleString()} page views
+              <Eye className="h-3.5 w-3.5" /> {visits.toLocaleString()} page {visits === 1 ? "view" : "views"}
             </span>
           )}
         </div>

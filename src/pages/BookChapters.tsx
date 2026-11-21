@@ -248,7 +248,7 @@ const BookChapters = () => {
             <div className="text-2xl font-semibold tracking-tight text-foreground">
               {isLoading
                 ? "Finding chapter calls..."
-                : `Showing ${startIndex + 1}-${Math.min(
+                : `Showing ${startIndex + 1}–${Math.min(
                     startIndex + currentCalls.length,
                     processedCalls.length,
                   )} of ${processedCalls.length} results`}

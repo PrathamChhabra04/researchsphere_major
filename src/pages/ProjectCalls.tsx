@@ -284,7 +284,7 @@ const ProjectCalls = () => {
             <div className="text-2xl font-semibold tracking-tight text-foreground">
               {isLoading
                 ? "Finding project calls..."
-                : `Showing ${startIndex + 1}-${Math.min(
+                : `Showing ${startIndex + 1}–${Math.min(
                     startIndex + currentProjects.length,
                     processedProjects.length,
                   )} of ${processedProjects.length} results`}
