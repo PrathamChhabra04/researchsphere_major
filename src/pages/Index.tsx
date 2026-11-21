@@ -908,9 +908,6 @@ const Index = () => {
                   Every few hours we read feeds, job boards and lab APIs, parse
                   their deadlines, and quietly retire listings once they close.
                 </p>
-                <Link to="/conferences" className="pill">
-                  Browse conferences
-                </Link>
               </div>
             </div>
             <h2 className="display-lg text-4xl sm:text-5xl lg:col-span-2 lg:text-[3.6rem]">
