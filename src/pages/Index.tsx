@@ -711,7 +711,7 @@ const Index = () => {
                   <span className="absolute inline-flex h-full w-full rounded-full opacity-60 animate-ping bg-[#3B6FB6] dark:bg-[#7FA6DB]" />
                   <span className="relative inline-flex h-2 w-2 rounded-full border border-black/15 dark:border-white/20 bg-[#3B6FB6] dark:bg-[#7FA6DB]" />
                 </span>
-                <span>Live from 20+ sources</span>
+                <span>Live from 180+ sources</span>
               </div>
 
               {/* 2. H1 */}

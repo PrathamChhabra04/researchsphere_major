@@ -147,10 +147,10 @@ const compactJournalMetrics = (items: Array<JournalMetricItem | null>) =>
  */
 const COVER_THEMES = [
   { bg: "#2e3a4b", fg: "#eef2f7", line: "rgba(232, 239, 248, 0.16)", accent: "#b9c9dd" },
-  { bg: "#1f3b52", fg: "#e9f1f8", line: "rgba(226, 238, 248, 0.15)", accent: "#9dbcd6" },
-  { bg: "#33305a", fg: "#ecedf7", line: "rgba(236, 238, 247, 0.14)", accent: "#adb2d8" },
-  { bg: "#2c4150", fg: "#e9f2f4", line: "rgba(233, 242, 244, 0.15)", accent: "#a5c3cc" },
-  { bg: "#243a45", fg: "#ecf2f5", line: "rgba(236, 242, 245, 0.15)", accent: "#a9c2cc" },
+  { bg: "#1f3f3a", fg: "#e9f4f0", line: "rgba(226, 244, 238, 0.15)", accent: "#9dc9bb" },
+  { bg: "#432b32", fg: "#f6ebee", line: "rgba(246, 233, 237, 0.14)", accent: "#d3a8b5" },
+  { bg: "#3d3227", fg: "#f4eee6", line: "rgba(244, 236, 224, 0.15)", accent: "#cdb697" },
+  { bg: "#25332c", fg: "#ecf2ee", line: "rgba(232, 242, 236, 0.15)", accent: "#a9c4b1" },
   { bg: "#3B6FB6", fg: "#ffffff", line: "rgba(255, 255, 255, 0.2)", accent: "#E9F0FA" },
   { bg: "#262c4a", fg: "#eceef8", line: "rgba(234, 237, 249, 0.15)", accent: "#b2bade" },
   { bg: "#33404a", fg: "#edf2f5", line: "rgba(235, 242, 246, 0.14)", accent: "#adc2cd" },
