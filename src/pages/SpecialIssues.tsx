@@ -95,17 +95,6 @@ const formatDate = (value?: string | null) => {
   });
 };
 
-const formatUpdatedAt = (value?: string | null) => {
-  if (!value) return "not yet scraped";
-  const parsed = Date.parse(value);
-  if (Number.isNaN(parsed)) return value;
-  return new Date(parsed).toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-};
-
 const formatMetric = (value?: number | null) => {
   if (value == null || !Number.isFinite(value)) return null;
   return Number.isInteger(value) ? String(value) : value.toFixed(1);
@@ -343,12 +332,6 @@ const SpecialIssues = () => {
                   Updating...
                 </span>
               )}
-            </div>
-            <div className="text-sm text-muted-foreground">
-              Last updated{" "}
-              <span className="font-medium text-foreground">
-                {formatUpdatedAt(meta?.scrapedAt)}
-              </span>
             </div>
           </div>
 
