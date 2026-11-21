@@ -221,98 +221,102 @@ const SpecialIssues = () => {
 
           {/* Search panel styled like the journals page */}
           <section className="space-y-3">
-            <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-base font-medium text-foreground">
-                    Search by keywords, guest editors & journal titles
-                  </span>
-                </div>
+            <div className="overflow-hidden rounded-[28px] bg-card/60">
+              <div className="p-6 md:p-8">
+                <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-base font-medium text-foreground">
+                        Search by keywords, guest editors & journal titles
+                      </span>
+                    </div>
 
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input
-                    placeholder="Try federated learning, edge computing, cybersecurity..."
-                    value={searchQuery}
-                    onChange={(event) => setSearchQuery(event.target.value)}
-                    className="h-14 rounded-xl pl-12 text-[15px] md:text-base shadow-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
-                    aria-label="Search special issues"
-                  />
-                </div>
+                    <div className="relative">
+                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                      <Input
+                        placeholder="Try federated learning, edge computing, cybersecurity..."
+                        value={searchQuery}
+                        onChange={(event) => setSearchQuery(event.target.value)}
+                        className="h-14 rounded-xl pl-12 text-[15px] md:text-base shadow-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                        aria-label="Search special issues"
+                      />
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr_auto] gap-3">
-                  <Select
-                    value={sortBy}
-                    onValueChange={(value) =>
-                      setSortBy(value as SpecialIssueSort)
-                    }
-                  >
-                    <SelectTrigger
-                      className="h-12 rounded-xl min-w-[200px]"
-                      aria-label="Sort by"
-                    >
-                      <SelectValue placeholder="Sort by deadline" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {SORT_OPTIONS.map((option) => (
-                        <SelectItem key={option.value} value={option.value}>
-                          {option.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-
-                  <Select
-                    value={secondarySubject}
-                    onValueChange={setSecondarySubject}
-                  >
-                    <SelectTrigger
-                      className="h-12 rounded-xl min-w-[220px]"
-                      aria-label="Secondary subject area"
-                    >
-                      <SelectValue placeholder="All secondary subject areas" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value={ALL_SECONDARY_SUBJECTS}>
-                        All secondary subject areas
-                      </SelectItem>
-                      {secondaryOptions.map((subject) => (
-                        <SelectItem key={subject} value={subject}>
-                          {subject}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-
-                  <Button
-                    type="button"
-                    onClick={() => setCurrentPage(1)}
-                    className="h-12 rounded-xl px-7 bg-[#3B6FB6] hover:bg-[#335F9C] text-white dark:bg-[#7FA6DB] dark:hover:bg-[#9DBBE6] dark:text-[#0B1320] font-semibold text-sm sm:text-base shadow-sm"
-                  >
-                    <Sparkles className="h-4 w-4" />
-                    Find special issues
-                  </Button>
-                </div>
-
-                <div className="mt-4">
-                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground mb-3">
-                    Popular searches
-                  </p>
-                  <div className="flex gap-2.5 overflow-x-auto whitespace-nowrap pb-1 pr-1 custom-scrollbar">
-                    {POPULAR_SEARCHES.map((topic) => (
-                      <Badge
-                        key={topic}
-                        variant="outline"
-                        className="cursor-pointer rounded-full px-3.5 py-2 text-xs shrink-0"
-                        onClick={() => {
-                          setSearchQuery(topic);
-                          setDebouncedQuery(topic);
-                          setCurrentPage(1);
-                        }}
+                    <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr_auto] gap-3">
+                      <Select
+                        value={sortBy}
+                        onValueChange={(value) =>
+                          setSortBy(value as SpecialIssueSort)
+                        }
                       >
-                        {topic}
-                      </Badge>
-                    ))}
+                        <SelectTrigger
+                          className="h-12 rounded-xl min-w-[200px]"
+                          aria-label="Sort by"
+                        >
+                          <SelectValue placeholder="Sort by deadline" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {SORT_OPTIONS.map((option) => (
+                            <SelectItem key={option.value} value={option.value}>
+                              {option.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+
+                      <Select
+                        value={secondarySubject}
+                        onValueChange={setSecondarySubject}
+                      >
+                        <SelectTrigger
+                          className="h-12 rounded-xl min-w-[220px]"
+                          aria-label="Secondary subject area"
+                        >
+                          <SelectValue placeholder="All secondary subject areas" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value={ALL_SECONDARY_SUBJECTS}>
+                            All secondary subject areas
+                          </SelectItem>
+                          {secondaryOptions.map((subject) => (
+                            <SelectItem key={subject} value={subject}>
+                              {subject}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+
+                      <Button
+                        type="button"
+                        onClick={() => setCurrentPage(1)}
+                        className="h-12 rounded-xl px-7 bg-[#3B6FB6] hover:bg-[#335F9C] text-white dark:bg-[#7FA6DB] dark:hover:bg-[#9DBBE6] dark:text-[#0B1320] font-semibold text-sm sm:text-base shadow-sm"
+                      >
+                        <Sparkles className="h-4 w-4" />
+                        Find special issues
+                      </Button>
+                    </div>
+
+                    <div className="mt-4">
+                      <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground mb-3">
+                        Popular searches
+                      </p>
+                      <div className="flex gap-2.5 overflow-x-auto whitespace-nowrap pb-1 pr-1 custom-scrollbar">
+                        {POPULAR_SEARCHES.map((topic) => (
+                          <Badge
+                            key={topic}
+                            variant="outline"
+                            className="cursor-pointer rounded-full px-3.5 py-2 text-xs shrink-0"
+                            onClick={() => {
+                              setSearchQuery(topic);
+                              setDebouncedQuery(topic);
+                              setCurrentPage(1);
+                            }}
+                          >
+                            {topic}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
