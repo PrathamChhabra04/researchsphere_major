@@ -1,4 +1,4 @@
-import { Users } from "lucide-react";
+import { Award, Users } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -187,30 +187,37 @@ const About = () => {
                 The people behind ResearchSphere
               </h2>
 
-              <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                <article className="flex h-full flex-col items-start rounded-lg border border-border bg-card p-5 transition-colors hover:border-foreground/25">
-                  <img
-                    src="/mohit-sir.jpg"
-                    alt="Dr. Mohit Kumar"
-                    loading="lazy"
-                    className="h-14 w-14 shrink-0 rounded-full object-cover object-top ring-1 ring-border"
-                  />
-                  <div className="mt-4">
-                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-                      Mentor
-                    </p>
-                    <p className="mt-1 text-base font-medium text-foreground">
-                      Dr. Mohit Kumar
-                    </p>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
-                      Assistant Professor, Department of Information Technology
-                    </p>
-                    <p className="text-sm leading-6 text-muted-foreground">
-                      NIT Jalandhar
-                    </p>
-                  </div>
-                </article>
+              {/* Mentor — featured card */}
+              <article className="mt-8 flex flex-col gap-5 rounded-xl border border-primary/25 bg-primary/[0.045] p-6 ring-1 ring-primary/10 sm:flex-row sm:items-center sm:gap-6">
+                <img
+                  src="/mohit-sir.jpg"
+                  alt="Dr. Mohit Kumar"
+                  loading="lazy"
+                  className="h-20 w-20 shrink-0 rounded-full object-cover object-top ring-2 ring-primary/20"
+                />
+                <div className="min-w-0">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
+                    <Award className="h-3 w-3" />
+                    Faculty mentor
+                  </span>
+                  <p className="mt-2 text-lg font-semibold text-foreground">
+                    Dr. Mohit Kumar
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                    Assistant Professor, Department of Information Technology · NIT Jalandhar
+                  </p>
+                </div>
+              </article>
 
+              {/* Student team */}
+              <div className="mt-10 flex items-center gap-3">
+                <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                  Student team
+                </p>
+                <span aria-hidden="true" className="h-px flex-1 bg-border" />
+              </div>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {TEAM_MEMBERS.map(({ name, initials, rollNumber }) => (
                   <article
                     key={name}
